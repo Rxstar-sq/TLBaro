@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Override>
+  <Factions>
+    <Faction identifier="TLhui" initialreputation="-20" minreputation="-150" maxreputation="200">
+      <Icon texture="%ModDir%/UI/TL.png" sourcerect="0,0,172,195" />
+      <Portrait name="TLhui" texture="%ModDir%/UI/TLbei.jpg" sourcerect="0,0,535,300" />
+    </Faction>
+  </Factions>
+</Override>

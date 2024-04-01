@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor1" scale="0.15" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+	<Item name="万能钥匙（NPC）" identifier="idcardplus1" description="" nonplayerteaminteractable="True" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor" scale="0.15" cargocontaineridentifier="metalcrate">
+		<InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+		<Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
+		<Body width="16" height="12" density="20" />
+		<IdCard slots="Card" msg="ItemMsgPickUpSelect" />
+	</Item>
+</Items>
+
+	

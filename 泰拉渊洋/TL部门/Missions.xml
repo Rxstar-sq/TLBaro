@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+ <Missions>
+	<MonsterMission name="迷失舰艇" identifier="hunting" type="Monster" tags="TL" description="附件有几艘未证明身份的舰艇，就雇佣你们去吧，事成后[reward]mk" commonness="100" reward="15000" sonarlabel="迷失舰艇" maxsonarmarkerdistance="30000" successmessage="未知船只已被集团已击沉" missionfailure="连这点小事都做不好，还得我们亲自出手" difficulty="4">
+		<Reputation identifier="location" amount="5" />
+		<Reputation identifier="huskcult" amount="3" />
+		<Reputation identifier="TLhui" amount="5" />
+		<monster character="CarrierEXs" min="20" max="30" />
+		<monster character="CarrierEX2s" min="20" max="30" />
+		<Icon texture="%ModDir%/TL.png" sourcerect="0,0,172,195" color="214,50,48" />
+		<message header="得到认可" text="呦呵居然成功了？这么狼狈..." />
+	</MonsterMission>
+
+	 <MonsterMission name="迅猛龙群" identifier="mudraptors" description="[location1]和[location2]之间发现迅猛龙抱团进攻。有些影响船只通行，事后[reward]mk奖励。" type="Monster" tags="TL" difficulty="4" commonness="100" reward="7000" sonarlabel="迅猛龙群" maxsonarmarkerdistance="10000" successmessage="迅猛龙群已被集团清除" missionfailure="垃圾，船的维修费我可不出">
+		 <Reputation identifier="location" amount="3" />
+		 <Reputation identifier="huskcult" amount="3" />
+		 <Reputation identifier="TLhui" amount="2" />
+		 <monster character="DoomMudraptor" min="40" max="60" />
+		 <Icon texture="%ModDir%/TL.png" sourcerect="0,0,172,195" color="214,50,48" />
+		 <message header="目标已击杀" text="来前哨站拿钱吧" />
+	 </MonsterMission>
+
+	 <MonsterMission name="保密行动" identifier="TLceshiji" description="很抱歉不能透露更多，但是行动非常危险...事后[reward]mk,你们可以去捡一部分战利品...但残骸要留给我们" type="Monster" tags="TL" difficulty="4" commonness="100" reward="30000" sonarlabel="初代失控机" maxsonarmarkerdistance="10000" successmessage="失控测试机已被集团清除" missionfailure="唉...">
+		 <Reputation identifier="location" amount="3" />
+		 <Reputation identifier="huskcult" amount="3" />
+		 <Reputation identifier="TLhui" amount="10" />
+		 <monster character="Tl测试机" min="3" max="5" />
+		 <Icon texture="%ModDir%/TL.png" sourcerect="0,0,172,195" color="214,50,48" />
+		 <message header="测试机已损毁" text="很抱歉让你们去处理这种事情...但活下来了不是吗..." />
+	 </MonsterMission>
+ 
+  <MonsterMission name="烛光晚宴" identifier="TLhunting" type="Monster" tags="TL" description="别离的歌早已哼在嘴边，是你 为我 题词" commonness="100" reward="30000" sonarlabel="深渊气息" maxsonarmarkerdistance="30000" successmessage="集团已完成清理任务" missionfailure="废物，我就知道你不行" spawntype="Abyss" difficulty="4">
+    <Reputation identifier="location" amount="10" />
+    <Reputation identifier="clowns" amount="3" />
+	  <Reputation identifier="TLhui" amount="5" />
+    <monster character="EndwormSubspecies" min="1" max="2" />
+    <monster character="LatcherSubspecies" min="1" max="2" />
+    <monster character="CharybdisSubspecies" min="1" max="2" />
+    <monster character="doomwormSubspecies" min="1" max="2" />
+    <monster character="CyborgwormSubspecies" min="1" max="2" />
+    <Icon texture="%ModDir%/TL.png" sourcerect="0,0,172,195" color="214,50,48" />
+    <message header="MAN！" text="What Can I Say ！深渊OUT！" />
+  </MonsterMission>
+	 
+	 <PirateMission name="测试海盗任务" type="Pirate"  identifier="TLhaidao"  tags="TL"  difficulty="4"  commonness="100"  reward="25000" description="该死的分离主义居然不投降，还胆敢向我还击！">
+		 <Reputation identifier="coalition" amount="10" amountforopposingfaction="-10" />
+		 <Reputation identifier="TLhui" amount="5" />
+		 <SubmarineTypes>
+			 <Submarine path="%ModDir%/Sub/鼬獾-海盗船版本.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+		 </SubmarineTypes>
+		 <Characters>
+			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
+			 <Character typeidentifier="separatistsecurity" minamount="4" maxamount="5" />
+			 <Character typeidentifier="separatistmechanic" minamount="2" maxamount="5" />
+			 <Character typeidentifier="separatistengineer" minamount="2" maxamount="5" />
+		 </Characters>
+		 <CharacterTypes>
+			 <CharacterType typeidentifier="separatistcaptain">
+				 <Character identifier="separatistcaptain" from="combatmissionseparatistnpcs" preferreddifficulty="50" iscommander="true" />
+				 <Character identifier="separatistcaptainlord" from="combatmissionseparatistnpcs" preferreddifficulty="90" iscommander="true" />
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistsecurity">
+				 <Character identifier="separatistsecurityrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistsecuritygunner" from="combatmissionseparatistnpcs" preferreddifficulty="60"/>
+				 <Character identifier="separatistsecuritybrute" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+				 <Character identifier="separatistsecurityelite" from="combatmissionseparatistnpcs" preferreddifficulty="100"/>
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistmechanic">
+				 <Character identifier="separatistmechanicrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistmechanicveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistengineer">
+				 <Character identifier="separatistengineerrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistengineerveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+			 </CharacterType>
+		 </CharacterTypes>
+		 <Icon texture="%ModDir%/TL.png" sourcerect="0,0,172,195" color="214,50,48" />
+		 <message header="已发现敌对势力" text="杀！！！"/>
+		 <message header="任务完成" text="海盗已被全剿"/>
+		 <LocationType from="AnyOutpost" to="AnyOutpost" />
+	 </PirateMission>
+ </Missions>

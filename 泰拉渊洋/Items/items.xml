@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<Items>
+		<Item name="TL背包" identifier="TLbag" HideConditionBar="true" category="Equipment" tags="mediumitem,mobilecontainer,tool，TLbag" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof = "true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+			<Deconstruct time="4">
+				<Item identifier="organicfiber" amount="1" />
+				<Item identifier="plastic" amount="1" />
+			</Deconstruct>
+			<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
+			<Sprite texture="icon.png" depth="0.6" sourcerect="525,201,145,160" origin="0.5,0.6" />
+			<Body width="95" height="115" density="15" />
+			<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" >
+				<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+					<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+					<StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
+						<Conditional condition="gt 50"/>
+					</StatusEffect>
+					<Button text="折叠">
+						<StatusEffect type="OnUse" target="This">
+							<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+							<SpawnItem identifier="TLbagzhe" count="1" spawnposition="This" />
+							<Remove />
+						</StatusEffect>
+					</Button>
+				</CustomInterface>
+			</Holdable>
+			<Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+				<sprite name="Backpack Wearable" texture="%ModDir%/TL产物/icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="525,201,145,160" origin="0.725,0.55" scale="0.35" />
+			</Wearable>
+			<ItemContainer capacity="79" depth="0.5">
+				<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers = "TLbag" >
+					<StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10"/>
+				</Containable>
+			</ItemContainer>
+		</Item>
+		<Item name="TL背包(折叠）" identifier="TLbagzhe" category="Equipment" tags="mediumitem,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof = "true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+			<Deconstruct time="4">
+				<Item identifier="organicfiber" amount="1" />
+				<Item identifier="plastic" amount="1" />
+			</Deconstruct>
+			<Price baseprice="1800" sold="false">
+				<Price storeidentifier="merchantoutpost" />
+				<Price storeidentifier="merchantcity" multiplier="0.9" />
+				<Price storeidentifier="merchantresearch" multiplier="0.9" />
+				<Price storeidentifier="merchantmilitary" multiplier="1.1" />
+				<Price storeidentifier="merchantmine" multiplier="1.1" />
+			</Price>
+			<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5"/>
+			<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
+			<Sprite texture="Content/Items/Jobgear/MiscJobGear.png" depth="0.6" sourcerect="243,71,130,74" origin="0.5,0.6" />
+			<Body width="95" height="50" density="15" />
+			<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" >
+				<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+					<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+					<Button text="打开">
+						<StatusEffect type="OnUse" target="This">
+							<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+							<SpawnItem identifier="TLbag" count="1" spawnposition="This" />
+							<Remove />
+						</StatusEffect>
+					</Button>
+				</CustomInterface>
+			</Holdable>
+		</Item>
+
+		<Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing"
+	   scale="0.35" cargocontaineridentifier="metalcrate" description=""
+	   impactsoundtag="impact_soft">
+			<Upgrade gameversion="0.9.3.0" scale="0.35" />
+			<PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
+			<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,256,64,64"
+				origin="0.5,0.5" />
+			<Sprite name="Security Vest Item" texture="Content/Items/Jobgear/Mechanic/safetyharness.png"
+				sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
+			<Body width="85" height="90" density="25" />
+			<Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+				<sprite name="Security Vest Wearable"
+					texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="Torso"
+					hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false"
+					origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+				
+				<damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="1"
+					damagesound="LimbArmor" deflectprojectiles="true" />
+
+				<sprite name="shellshield" texture="Content/Items/CreatureLoot/CreatureLoot.png"
+					sourcerect="363,0,100,165" limb="Torso" depthlimb="head" hidelimb="false"
+					inherittexturescale="true" inheritorigin="false" inheritsourcerect="false"
+					origin="0.5,0.65" />
+				<StatusEffect type="Always" target="This" condition="5"/>
+			</Wearable>
+		</Item>
+
+		<Item name="高级治疗床" identifier="probed" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
+			<Upgrade gameversion="0.12.0.0" noninteractable="false" />
+			<sprite texture="bed.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+			<Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+				<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+				<limbposition limb="Head" position="-6,-10" />
+				<limbposition limb="Torso" position="104,0" />
+				<limbposition limb="Waist" position="244,-80" />
+				<limbposition limb="RightFoot" position="380,-20" />
+				<limbposition limb="LeftFoot" position="380,-20" />
+				<limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
+				<limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
+				<StatusEffect type="OnActive" target="Character">
+					<reduceaffliction type="damage" strength="0.5" />
+					<reduceaffliction identifier="bloodloss" strength="1.0" />
+					<reduceaffliction identifier="bleeding" strength="1.0" />
+					<reduceaffliction identifier="nausea" strength="1.0" />
+					<reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
+					<reduceaffliction identifier="opiateaddiction" strength="1.0" />
+					<reduceaffliction identifier="drunk" strength="1.0" />
+					<reduceaffliction identifier="burn" strength="1.0" />
+					<reduceaffliction identifier="internaldamage" strength="1.0" />
+					<reduceaffliction identifier="organdamage" strength="1.0" />
+					<reduceaffliction identifier="explosiondamage" strength="1.0" />
+				</StatusEffect>
+			</Controller>
+			<Upgrade gameversion="0.20.8.0">
+				<Controller>
+					<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+				</Controller>
+			</Upgrade>
+		</Item>
+
+	</Items>
+
+	
