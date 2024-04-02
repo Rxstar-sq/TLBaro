@@ -14,7 +14,7 @@
 		 <Reputation identifier="location" amount="3" />
 		 <Reputation identifier="huskcult" amount="3" />
 		 <Reputation identifier="TLhui" amount="2" />
-		 <monster character="DoomMudraptor" min="40" max="60" />
+		 <monster character="毒脓迅猛龙" min="40" max="60" />
 		 <Icon texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
 		 <message header="目标已击杀" text="安保部：轻而易举呢~来前哨站拿钱吧" />
 	 </MonsterMission>
