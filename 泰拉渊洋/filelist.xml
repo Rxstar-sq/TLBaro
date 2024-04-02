@@ -18,4 +18,5 @@
   <OutpostModule file="%ModDir%/Sub/实验体牢房.sub" />
   <LocationTypes file="%ModDir%/Sub/LocationTypes.xml" />
   <OutpostModule file="%ModDir%/Sub/实验室.sub" />
+  <BeaconStation file="%ModDir%/Sub/TL研究所收容失效.sub" />
 </contentpackage>
