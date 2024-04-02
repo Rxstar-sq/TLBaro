@@ -2,6 +2,8 @@
 <Randomevents>
 <EventSprites>
 	<Sprite identifier="hes" texture="%ModDir%/TL部门/hes.png" sourcerect="0,0,640,640" origin="0.5,0.5" />
+	<Sprite identifier="TL" texture="%ModDir%/TL部门/TL.png" sourcerect="0,0,912,921" origin="0.5,0.5" />
+	<Sprite identifier="HX" texture="%ModDir%/TL部门/HX.png" sourcerect="0,0,172,195" origin="0.5,0.5" />
 </EventSprites>
 <EventPrefabs>
 	<ScriptedEvent identifier="TL1" commonness="100">
@@ -16,6 +18,11 @@
 		<NPCWaitAction npctag="TLnpc1" wait="true" />
 	</ScriptedEvent>
 	
+	<ScriptedEvent identifier="TL5" commonness="100">
+		<TagAction criteria="player" tag="player" />
+		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc5" targettag="TLnpc5" spawnlocation="Outpost" targetmoduletags="airlock" />
+		<NPCWaitAction npctag="TLnpc5" wait="true" />
+	</ScriptedEvent>
 	
 	<ScriptedEvent identifier="TL2" commonness="100">
 		<TagAction criteria="player" tag="player" />
@@ -25,7 +32,7 @@
 		<TriggerAction target1tag="TLnpc2" target2tag="player" applytotarget2="triggerer_player" radius="200" waitforinteraction="true" />
 		<ConversationAction targettag="triggerer_player" text="你好...？我是泰拉集团负责人，有什么事情吗？" eventsprite="suger">
 			<Option text="介绍一下你们集团...？">
-				<ConversationAction targettag="triggerer_player" text="泰拉科技，木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，这破联盟站点我是一点不想来...垃圾堆一样...还想了解一些什么？" eventsprite="suger">
+				<ConversationAction targettag="triggerer_player" text="泰拉科技，木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，这破联盟站点我是一点不想来...垃圾堆一样...还想了解一些什么？" eventsprite="TL">
 					<Option text="集团研发部门">
 						<ConversationAction  text="呦呵？对研发部感兴趣？研发部负责管理公司的所有实物材料。研发部还负责安置与治疗各种生物。因此该部门的员工常常待在公司应对着某些东西，久而久之他们的内心都缺失了一大块..." targettag="triggerer_player" />
 						<ClearTagAction tag="triggerer_player" />
@@ -42,7 +49,7 @@
 						<GoTo name="xiangqing" />
 					</Option>
 					<Option text="关于神秘的'幻星'？">
-						<ConversationAction  text="嘘……这个可不能在大庭广众之下说这个……据说幻星原本应该是联盟新创立的工业集团。但是就在交接文件的前一天，负责这个项目的负责人被发现在家里喝酒喝死了……很微妙？对吧？最关键的是联盟不知道怎么整的，就把幻星直接甩给了一群不知道来历的陌生人……总之现在幻星隐约开始脱离联盟的掌控，要是你运气实在差的不行没准还能在某个站点里看到他们的人呢" targettag="triggerer_player" />
+						<ConversationAction  text="嘘……这个可不能在大庭广众之下说这个……据说幻星原本应该是联盟新创立的工业集团。但是就在交接文件的前一天，负责这个项目的负责人被发现在家里喝酒喝死了……很微妙？对吧？最关键的是联盟不知道怎么整的，就把幻星直接甩给了一群不知道来历的陌生人……总之现在幻星隐约开始脱离联盟的掌控，要是你运气实在差的不行没准还能在某个站点里看到他们的人呢" eventsprite="HX" targettag="triggerer_player" />
 						<ClearTagAction tag="triggerer_player" />
 						<GoTo name="xiangqing" />
 					</Option>
@@ -61,6 +68,15 @@
 		</ConversationAction>
 		<NPCWaitAction npctag="TLnpc2" wait="true" />
 	</ScriptedEvent>
+
+	<ScriptedEvent identifier="HXnpc" commonness="80">
+		<TagAction criteria="player" tag="player" />
+		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="HXnpc" targettag="HXnpc" spawnlocation="Outpost" targetmoduletags="airlock" />
+		<ConversationAction text="starllusion" speakertag="HXnpc" endeventifinterrupted="false" dialogtype="Small" />
+		<!--DoSomthing-->
+
+		<NPCWaitAction npctag="HXnpc" wait="true" />
+	</ScriptedEvent>
 </EventPrefabs>
 	<EventSet identifier="outpostTL" leveltype="outpost" locationtype="outpost,city,research,military,mine,colony,settlement,construction,camp,base,blockade,survey,excavation,study,lab,clinic,hospital,surgery,hydroponics,biosphere,nourishment,factory,shipyard,fusion" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" commonness="120" >
 		<EventSet identifier="outpostTLNpc1" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
@@ -68,6 +84,12 @@
 		</EventSet>
 		<EventSet identifier="outpostTLNpc2" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
 			<ScriptedEvent identifier="TL2" commonness="25" />
+		</EventSet>
+		<EventSet identifier="outpostTLNpc3" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
+			<ScriptedEvent identifier="TL5" commonness="25" />
+		</EventSet>
+		<EventSet identifier="HXnpc" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
+			<ScriptedEvent identifier="HX" commonness="25" />
 		</EventSet>
 	</EventSet>
 </Randomevents>

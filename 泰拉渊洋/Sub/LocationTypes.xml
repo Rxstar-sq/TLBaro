@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<locationtypes>
+	<Override>
+		<None identifier="None" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 5.0, 2: 5.0, 3: 5.0, 4: 5.0, 5: 5.0, 6: 0.0" hasoutpost="false" beaconstationchance="0.25">
+			<Symbol texture="Content/Map/MapAtlas.png" sourcerect="384,640,128,128" color="128,206,175,255" />
+			<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+			<ChangeTo type="Waypoint" messagetag="locationchange.none.changeto.waypoint" disallowedadjacentlocations="Waypoint,Lair,HuskgroundsDE,WasteyardDE" disallowedproximity="3">
+				<Requirement requiredlocations="Colony" requireddurationrange="1,5" probability="0.05" requiredproximity="1" />
+				<Requirement requiredlocations="Settlement" requireddurationrange="2,3" probability="0.15" requiredproximity="3" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.15" />
+				<Requirement requiredlocations="Outpost" requireddurationrange="1,2" probability="0.25" requiredproximity="4" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.25" />
+				<Requirement requiredlocations="City" requireddurationrange="1,2" probability="0.50" requiredproximity="5" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.25" />
+				<!-- if near a beacon station, increase the probability -->
+				<Requirement requirebeaconstation="true" requireddurationrange="1,2" probability="0.15" requiredproximity="2" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.75" />
+				<!-- multiply probability by 0 if next to hunting grounds-->
+				<Requirement function="Multiply" requirehuntinggrounds="true" probability="0" requiredproximity="1" />
+			</ChangeTo>
+			<ChangeTo type="UnderAttack" messagetag="locationchange.none.changeto.UnderAttack">
+				<!-- May be infested if within 1 steps of a lair. -->
+				<Requirement requiredlocations="Lair,LairMudraptor,Lair,HuskgroundsDE,WasteyardDE" requiredduration="1" probability="1" requiredproximity="1" />
+			</ChangeTo>
+		</None>
+	</Override>
+	<Waypoint identifier="Waypoint" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1.0, 2: 0.5, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" hasoutpost="false" beaconstationchance="1">
+		<Symbol texture="Content/Map/MapAtlas.png" sourcerect="640,640,128,128" color="128,206,175,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="Colony" disallowedadjacentlocations="Colony" disallowedproximity="1" messagetag="locationchange.none.changeto.outpost">
+			<!-- May be settled if within 5 steps of a colony, with an increasing chance should it be within 3 or less steps -->
+			<Requirement requiredlocations="City" requireddurationrange="1,5" probability="0.25" requiredproximity="10" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.25" />
+			<Requirement requiredlocations="Outpost" requireddurationrange="1,5" probability="0.25" requiredproximity="5" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.25" />
+			<Requirement requiredlocations="Settlement" requireddurationrange="1,5" probability="0.25" requiredproximity="3" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.25" />
+			<Requirement requiredlocations="Colony" requireddurationrange="1,5" probability="0.25" requiredproximity="1" />
+			<!-- if near a beacon station, increase the probability -->
+			<Requirement requirebeaconstation="true" requireddurationrange="1,2" probability="0.15" requiredproximity="2" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.75" />
+			<!-- multiply probability by 0 if next to hunting grounds-->
+			<Requirement function="Multiply" requirehuntinggrounds="true" probability="0" requiredproximity="1" />
+		</ChangeTo>
+		<ChangeTo type="Blockade" messagetag="locationchange.UnderAttack.changeto.blockade">
+			<Requirement requiredlocations="PirateOutpost" requireddurationrange="1,3" probability="0.2" requiredproximity="1" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Blockade" requireddurationrange="1,3" probability="0.25" requiredproximity="1" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<!-- Pirates may settle here if a city is nearby, but no military or fauna threats are nearby -->
+		<ChangeTo type="PirateOutpost" disallowedadjacentlocations="Lair,LairMudraptor,LairThresher,Blockade,Military,Base,Camp" messagetag="locationchange.none.changeto.pirateoutpost">
+			<!--<Requirement requiredlocations="PirateOutpost" requireddurationrange="1,2" probability="0.2" requiredproximity="2" requiredproximityforprobabilityincrease="2" proximityprobabilityincrease="0.15" />-->
+			<Requirement requiredlocations="City" requireddurationrange="1,5" probability="0.25" requiredproximity="3" requiredproximityforprobabilityincrease="2" proximityprobabilityincrease="0.1" />
+			<Requirement requirebeaconstation="true" requireddurationrange="1,5" probability="0.25" requiredproximity="2" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.1" />
+			<Requirement function="Multiply" requirehuntinggrounds="true" probability="0.0" requiredproximity="1" />
+			<Requirement function="Multiply" requiredlocations="Blockade,Military,Base" probability="0.0" requiredproximity="1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.none.changeto.UnderAttack">
+			<!-- May be infested if within 1 steps of a lair. -->
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher,HuskgroundsDE,WasteyardDE" requireddurationrange="1,3" probability="0.35" requiredproximity="1" />
+		</ChangeTo>
+	</Waypoint>
+	<Colony identifier="Colony" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.1, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,0,128,128" color="162,213,220,255" />
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" premultiplyalpha="false" />
+		<Hireable identifier="assistant" commonness="1" />
+		<ChangeTo type="Settlement" disallowedadjacentlocations="City,Outpost,Settlement" disallowedproximity="2" messagetag="locationchange.colony.changeto.settlement">
+			<Requirement requiredlocations="Hydroponics" probability="0.1" requireddurationrange="1,5" requiredproximity="3" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.3" />
+			<Requirement requiredlocations="Biosphere" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.3" />
+			<Requirement requiredlocations="Nourishment" probability="0.2" requireddurationrange="1,5" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.3" />
+			<!-- if near a beacon station, increase the probability -->
+			<Requirement requirebeaconstation="true" requireddurationrange="1,2" probability="0.15" requiredproximity="2" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.75" />
+		</ChangeTo>
+		<ChangeTo type="Construction" disallowedadjacentlocations="Construction" disallowedproximity="1" messagetag="locationchange.colony.changeto.construction">
+			<Requirement requiredlocations="Colony" probability="0.1" requireddurationrange="1,3" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.3" />
+			<Requirement requiredlocations="Settlement" probability="0.1" requireddurationrange="1,3" requiredproximity="3" requiredproximityforprobabilityincrease="3" proximityprobabilityincrease="0.3" />
+			<Requirement requiredlocations="Outpost" probability="0.1" requireddurationrange="1,3" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.3" />
+			<Requirement requiredlocations="City" probability="0.1" requireddurationrange="1,3" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.3" />
+			<!-- if near a beacon station, increase the probability -->
+			<Requirement requirebeaconstation="true" requireddurationrange="1,2" probability="0.15" requiredproximity="2" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.75" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.3" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.45" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requireddurationrange="1,2" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+	</Colony>
+	<Construction identifier="Construction" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.1, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="512,0,128,128" color="255,237,105,255" />
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<ChangeTo type="TL" disallowedadjacentlocations="TL" disallowedproximity="3" messagetag="locationchange.construction.changeto.factory">
+			<Requirement requiredlocations="Settlement" probability="0.1" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Outpost" probability="0.3" requireddurationrange="1,5" requiredproximity="2" requiredproximityforprobabilityincrease="2" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="City" probability="0.5" requireddurationrange="1,5" requiredproximity="4" requiredproximityforprobabilityincrease="4" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+	</Construction>
+	<Settlement identifier="Settlement" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.1, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,128,128,128" color="162,213,220,255" />
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" premultiplyalpha="false" />
+		<Hireable identifier="assistant" commonness="1" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<ChangeTo type="Outpost" disallowedadjacentlocations="Outpost" disallowedproximity="3" messagetag="locationchange.settlement.changeto.outpost">
+			<Requirement requiredlocations="Shipyard,Biosphere,Hospital" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Shipyard,Nourishment,Hospital" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Shipyard,Biosphere,Surgery" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Shipyard,Nourishment,Surgery" probability="0.1" requireddurationrange="1,5" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.1" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requireddurationrange="1,2" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<Store dailyspecialscount="3" requestedgoodscount="3" maxreputationmodifier="0.1" sellpricemodifier="0.5" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="3" initialbalance="100" pricemodifierrange="30">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.55" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.1" color="255,0,0,255" />
+		</Store>
+	</Settlement>
+	<Override>
+		<Outpost identifier="Outpost" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.3, 2: 0.2, 3: 0.1, 4: 0.0, 5: 0.0, 6: 0.0" mincountperzone="1: 1" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,256,128,128" color="162,213,220,255" />
+			<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" premultiplyalpha="false" />
+			<Hireable identifier="assistant" commonness="3" />
+			<Hireable identifier="engineer" commonness="1" />
+			<Hireable identifier="mechanic" commonness="1" />
+			<Hireable identifier="medicaldoctor" commonness="1" />
+			<Hireable identifier="securityofficer" commonness="1" />
+			<ChangeTo type="City" disallowedadjacentlocations="City" disallowedproximity="3" messagetag="locationchange.outpost.changeto.city">
+				<Requirement requiredlocations="Nourishment,Surgery,Fusion" probability="0.1" requireddurationrange="1,7" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.1" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" requireddurationrange="1,2" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requirehuntinggrounds="true" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<Store dailyspecialscount="5" requestedgoodscount="5" maxreputationmodifier="0.2" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="500" pricemodifierrange="15">
+				<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+				<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+				<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+			</Store>
+		</Outpost>
+	</Override>
+	<Override>
+		<City identifier="City" replaceinradiation="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.3, 2: 0.1, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,384,128,128" color="162,213,220,255" />
+			<Portrait texture="Content/Map/LocationPortraits/Colony.png" premultiplyalpha="false" />
+			<Hireable identifier="assistant" commonness="5" />
+			<Hireable identifier="engineer" commonness="2" />
+			<Hireable identifier="mechanic" commonness="2" />
+			<Hireable identifier="medicaldoctor" commonness="1" />
+			<Hireable identifier="securityofficer" commonness="1" />
+			<Hireable identifier="captain" commonness="1" />
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" requireddurationrange="1,5" probability="0.1" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="HuskgroundsDE" requireddurationrange="1,5" probability="0.15" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<Store dailyspecialscount="10" requestedgoodscount="10" maxreputationmodifier="0.3" sellpricemodifier="0.9" dailyspecialpricemodifier="0.7" requestgoodpricemodifier="1.5" initialbalance="5000" pricemodifierrange="5">
+				<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+				<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+				<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+			</Store>
+		</City>
+	</Override>
+	<Override>
+		<Abandoned identifier="Abandoned" namefile="Content/Map/cityNames.txt" commonnessperzone="1: 0.5, 2: 1.0, 3: 0.5, 4: 0.3, 5: 0.3, 6: 0.0" missiontags="abandonedoutpost" hideentitysubcategories="abandonedhuman,abandonedmonster" outpostteam="None" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,640,128,128" color="245,105,105,255" />
+			<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" premultiplyalpha="false" />
+			<ChangeTo type="UnderAttack" messagetag="locationchange.none.changeto.UnderAttack">
+				<!-- May be infested if within 1 steps of a lair. -->
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher,HuskgroundsDE" requireddurationrange="3,10" probability="0.1" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<!-- Change to pirate outpost disabled to reduce the amount of pirate havens on the map.
+      <ChangeTo type="PirateNone" probability="0.1" disallowedadjacentlocations="Lair,LairMudraptor,LairThresher,HuskgroundsDE,WasteyardDE,Blockade,Military,Base,Camp" messagetag="locationchange.abandoned.changeto.piratenone">
+        <Requirement requiredlocations="PirateOutpost" requireddurationrange="4,10" probability="0.15" requiredproximity="5" requiredproximityforprobabilityincrease="2" proximityprobabilityincrease="0.1" />
+        <Requirement function="Multiply" requiredlocations="Blockade,Military,Base,Camp,Lair,HuskgroundsDE,WasteyardDE" probability="0.0" requiredproximity="1" />
+      </ChangeTo>-->
+		</Abandoned>
+	</Override>
+	<Camp identifier="Camp" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1, 5: 0, 6: 0" mincountperzone="1: 2" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="128,0,128,128" color="50,255,148,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMilitary.png" premultiplyalpha="false" />
+		<Hireable identifier="securityofficer" commonness="1" />
+		<ChangeTo type="Base" disallowedadjacentlocations="Base" disallowedproximity="3" messagetag="locationchange.camp.changeto.base">
+			<Requirement requiredlocations="Factory" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.1" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="1" requestedgoodscount="1" maxreputationmodifier="0.3" sellpricemodifier="0.1" dailyspecialpricemodifier="0.6" requestgoodpricemodifier="2" initialbalance="500" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.95" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.50" color="255,0,0,255" />
+		</Store>
+	</Camp>
+	<Base identifier="Base" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.1, 3: 0.1, 4: 0.1, 5: 0, 6: 0" mincountperzone="1: 1" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="128,128,128,128" color="50,255,148,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMilitary.png" premultiplyalpha="false" />
+		<Hireable identifier="securityofficer" commonness="2" />
+		<Hireable identifier="assistant" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<ChangeTo type="Military" disallowedadjacentlocations="Military" disallowedproximity="3" messagetag="locationchange.base.changeto.military">
+			<Requirement requiredlocations="Shipyard" probability="0.1" requireddurationrange="1,7" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.01" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="3" requestedgoodscount="1" maxreputationmodifier="0.3" sellpricemodifier="0.1" dailyspecialpricemodifier="0.6" requestgoodpricemodifier="2" initialbalance="1000" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.95" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.50" color="255,0,0,255" />
+		</Store>
+	</Base>
+	<Override>
+		<Military identifier="Military" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.3, 3: 0.1, 4: 0.1, 5: 0, 6: 0" mincountperzone="1: 1" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="128,256,128,128" color="50,255,148,255" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampMilitary.png" premultiplyalpha="false" />
+			<Hireable identifier="securityofficer" commonness="3" />
+			<Hireable identifier="captain" commonness="1" />
+			<Hireable identifier="assistant" commonness="2" />
+			<Hireable identifier="engineer" commonness="1" />
+			<Hireable identifier="mechanic" commonness="1" />
+			<Hireable identifier="medicaldoctor" commonness="1" />
+			<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.01" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+			</ChangeTo>
+			<Store dailyspecialscount="5" requestedgoodscount="2" maxreputationmodifier="0.3" sellpricemodifier="0.2" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="10000" pricemodifierrange="10">
+				<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+				<BalanceStatus percentage="0.5" sellpricemodifier="0.95" color="255,165,0,255" />
+				<BalanceStatus percentage="0.25" sellpricemodifier="0.50" color="255,0,0,255" />
+			</Store>
+		</Military>
+	</Override>
+	<Blockade identifier="Blockade" replaceinradiation="Blockade" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.2, 2: 0.2, 3: 0.5, 4: 0.3, 5: 0, 6: 0" hideentitysubcategories="abandonedhuman,abandonedmonster" AllowAsBiomeGate="true">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="896,0,128,128" color="255,255,255,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining1.png" premultiplyalpha="false" />
+		<Hireable identifier="securityofficer" commonness="1" />
+		<ChangeTo type="Colony" disallowedadjacentlocations="Lair,LairMudraptor,LairThresher,HuskgroundsDE,WasteyardDE,PirateOutpost,UnderAttack" disallowedproximity="1" probability="0.5" requireddurationrange="1,3" messagetag="locationchange.none.changeto.outpost" />
+		<!--<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+      <Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+    </ChangeTo>-->
+		<Store dailyspecialscount="5" requestedgoodscount="2" maxreputationmodifier="0.3" sellpricemodifier="0.2" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="500" pricemodifierrange="15">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</Blockade>
+	<Study identifier="Study" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.3, 3: 0.0, 4: 0.0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="768,0,128,128" color="180,83,255,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="assistant" commonness="2" />
+		<ChangeTo type="Lab" disallowedadjacentlocations="Lab" disallowedproximity="3" messagetag="locationchange.study.changeto.lab">
+			<Requirement requiredlocations="Clinic" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="1" requestedgoodscount="3" maxreputationmodifier="0.1" sellpricemodifier="0.5" dailyspecialpricemodifier="0.3" requestgoodpricemodifier="2.0" initialbalance="1000" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</Study>
+	<Lab identifier="Lab" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.1, 3: 0.0, 4: 0.0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="768,128,128,128" color="180,83,255,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="medicaldoctor" commonness="1" />
+		<Hireable identifier="assistant" commonness="3" />
+		<ChangeTo type="Research" disallowedadjacentlocations="Research" disallowedproximity="3" messagetag="locationchange.lab.changeto.research">
+			<Requirement requiredlocations="Biosphere,Outpost" probability="0.1" requireddurationrange="1,5" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="1" requestedgoodscount="5" maxreputationmodifier="0.1" sellpricemodifier="0.5" dailyspecialpricemodifier="0.3" requestgoodpricemodifier="2.0" initialbalance="3500" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</Lab>
+	<Override>
+		<Research identifier="Research" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.0, 2: 0.1, 3: 0.2, 4: 0.00, 5: 0, 6: 0" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="768,256,128,128" color="180,83,255,255" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+			<Hireable identifier="engineer" commonness="2" />
+			<Hireable identifier="medicaldoctor" commonness="2" />
+			<Hireable identifier="assistant" commonness="3" />
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,3" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+			</ChangeTo>
+			<Store dailyspecialscount="1" requestedgoodscount="15" maxreputationmodifier="0.1" sellpricemodifier="0.5" dailyspecialpricemodifier="0.3" requestgoodpricemodifier="2.0" initialbalance="25000" pricemodifierrange="10">
+				<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+				<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+				<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+			</Store>
+		</Research>
+	</Override>
+	<Hydroponics identifier="Hydroponics" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.3, 2: 0.5, 3: 0.1, 4: 0.0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="384,0,128,128" color="233,149,99,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="assistant" commonness="1" />
+		<ChangeTo type="Biosphere" disallowedadjacentlocations="Biosphere" disallowedproximity="3" messagetag="locationchange.hydroponics.changeto.biosphere">
+			<Requirement requiredlocations="Lab" probability="0.1" requireddurationrange="1,5" requiredproximity="5" requiredproximityforprobabilityincrease="5" proximityprobabilityincrease="0.15" />
+			<Requirement requiredlocations="Research" probability="0.1" requireddurationrange="1,5" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+	</Hydroponics>
+	<Biosphere identifier="Biosphere" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.3, 3: 0.0, 4: 0.0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="384,128,128,128" color="233,149,99,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<Hireable identifier="assistant" commonness="2" />
+		<ChangeTo type="Nourishment" disallowedadjacentlocations="Nourishment" disallowedproximity="3" messagetag="locationchange.biosphere.changeto.nourishment">
+			<Requirement requiredlocations="Research" probability="0.1" requireddurationrange="1,7" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+	</Biosphere>
+	<Nourishment identifier="Nourishment" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.1, 2: 0.0, 3: 0.0, 4: 0.00, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="384,256,128,128" color="233,149,99,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<Hireable identifier="medicaldoctor" commonness="1" />
+		<Hireable identifier="assistant" commonness="3" />
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,3" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+	</Nourishment>
+	<Survey identifier="Survey" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1, 2: 0.1, 3: 0.0, 4: 0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="640,0,128,128" color="143,465,239,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining3.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining4.png" premultiplyalpha="false" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<Hireable identifier="assistant" commonness="1" />
+		<ChangeTo type="Extraction" disallowedadjacentlocations="Extraction" disallowedproximity="3" messagetag="locationchange.survey.changeto.extraction">
+			<Requirement requiredlocations="Factory" probability="0.1" requireddurationrange="1,5" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="5" requestedgoodscount="1" maxreputationmodifier="0.2" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="1.5" initialbalance="500" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</Survey>
+	<Extraction identifier="Extraction" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1, 2: 0.1, 3: 0.0, 4: 0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="640,128,128,128" color="143,465,239,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining3.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampMining4.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="mechanic" commonness="1" />
+		<Hireable identifier="assistant" commonness="1" />
+		<ChangeTo type="Mine" disallowedadjacentlocations="Mine" disallowedproximity="3" messagetag="locationchange.excavation.changeto.mine">
+			<Requirement requiredlocations="Fusion" probability="0.1" requireddurationrange="1,7" requiredproximity="10" requiredproximityforprobabilityincrease="10" proximityprobabilityincrease="0.15" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="5" requestedgoodscount="1" maxreputationmodifier="0.2" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="1.5" initialbalance="500" pricemodifierrange="10">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</Extraction>
+	<Override>
+		<Mine identifier="Mine" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1, 2: 0.1, 3: 0.0, 4: 0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="640,256,128,128" color="143,465,239,255" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampMining1.png" premultiplyalpha="false" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampMining2.png" premultiplyalpha="false" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampMining3.png" premultiplyalpha="false" />
+			<Portrait texture="Content/Map/LocationPortraits/WorkCampMining4.png" premultiplyalpha="false" />
+			<Hireable identifier="engineer" commonness="2" />
+			<Hireable identifier="mechanic" commonness="2" />
+			<Hireable identifier="assistant" commonness="1" />
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+			</ChangeTo>
+			<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+				<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+			</ChangeTo>
+			<Store dailyspecialscount="10" requestedgoodscount="2" maxreputationmodifier="0.2" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="1.5" initialbalance="1000" pricemodifierrange="10">
+				<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+				<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+				<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+			</Store>
+		</Mine>
+	</Override>
+	<TL identifier="TL" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="512,256,128,128" color="255,237,105,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="assistant" commonness="1" />
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" probability="0.05" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" disallowedadjacentlocations="Military,Base" disallowedproximity="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requiredlocations="HuskgroundsDE" probability="0.15" requireddurationrange="1,5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Abandoned" requiredduration="1" messagetag="locationchange.outpost.changeto.abandoned">
+			<Requirement requirehuntinggrounds="true" probability="1" requiredproximity="1" />
+		</ChangeTo>
+		<Store dailyspecialscount="5" requestedgoodscount="5" maxreputationmodifier="0.1" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="1.5" initialbalance="1000" pricemodifierrange="50">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</TL>
+	<Lair commonnessperzone="1: 0.5, 2: 0.5, 3: 0.3, 4: 0.3, 5: 0.0, 6: 0" namefile="Content/Map/locationNames.txt" identifier="Lair" outpostteam="None" missiontags="crawlerlair" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,896,128,128" color="215,74,107,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Military" requiredduration="1" probability="1" requiredproximity="2" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Blockade,Base" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Camp" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+	</Lair>
+	<LairMudraptor commonnessperzone="1: 0.5, 2: 1.0, 3: 0.5, 4: 0.3, 5: 0.3, 6: 0" namefile="Content/Map/locationNames.txt" identifier="LairMudraptor" outpostteam="None" missiontags="mudraptorlair" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,896,128,128" color="215,74,107,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Military" requiredduration="1" probability="1" requiredproximity="2" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Blockade,Base" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Camp" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+	</LairMudraptor>
+	<LairThresher commonnessperzone="1: 0.0, 2: 0.3, 3: 1.0, 4: 0.3, 5: 0.8, 6: 0" namefile="Content/Map/locationNames.txt" identifier="LairThresher" outpostteam="None" missiontags="thresherlair" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="0,896,128,128" color="215,74,107,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Military" requiredduration="1" probability="1" requiredproximity="2" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Blockade,Base" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Camp" requireddurationrange="1,3" probability="0.5" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+	</LairThresher>
+	<HuskgroundsDE commonnessperzone="1: 0.0, 2: 0.1, 3: 1.5, 4: 1.5, 5: 1.0, 6: 0.0" namefile="Content/Map/locationNames.txt" identifier="HuskgroundsDE" outpostteam="None" missiontags="husklair" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="128,896,128,128" color="145,117,230,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Military" requiredduration="1" probability="1" requiredproximity="2" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Blockade,Base" requireddurationrange="1,3" probability="0.5" requiredproximity="1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Camp" requireddurationrange="1,3" probability="0.5" requiredproximity="1" />
+		</ChangeTo>
+	</HuskgroundsDE>
+	<WasteyardDE commonnessperzone="1: 0.0, 2: 0.0, 3: 0.0, 4: 0.1, 5: 1, 6: 0.0" namefile="Content/Map/alienNames.txt" identifier="WasteyardDE" outpostteam="None" missiontags="wastelair" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="256,896,128,128" color="119,208,107,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requirediscovered="true" requiredlocations="Military" requiredduration="1" probability="2" requiredproximity="1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Blockade,Base" requireddurationrange="1,3" probability="0.5" requiredproximity="1" />
+		</ChangeTo>
+		<ChangeTo type="UnderAttack" messagetag="locationchange.lair.changeto.none">
+			<Requirement requiredlocations="Camp" requireddurationrange="1,3" probability="0.5" requiredproximity="1" />
+		</ChangeTo>
+	</WasteyardDE>
+	<!--
+<Ruins
+    identifier="Ruins"
+    namefile="Content/Map/alienNames.txt"
+	commonnessperzone="1: 0.0, 2: 0.0, 3: 1, 4: 2, 5: 3, 6: 0.0">
+    <Symbol texture="Content/Map/MapAtlas.png" sourcerect="256,128,128,128" color="0,255,255,255"/>
+    <Portrait texture="Content/Map/LocationPortraits/AlienRuins.png" premultiplyalpha="false"/>
+ </Ruins>
+-->
+	<Override>
+		<EndLocation identifier="EndLocation" name="eyeofeuropa" commonnessperzone="1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 1" showsonarmarker="false" hasoutpost="true" outpostteam="None" allowinrandomlevels="false" UsePortraitInRandomLoadingScreens="false">
+			<Symbol texture="%ModDir%/Map/MapAtlasDE.png" color="14,255,222,255" sourcerect="384,896,128,128" />
+			<Portrait texture="Content/Map/LocationPortraits/EndPortrait4.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+		</EndLocation>
+	</Override>
+	<!-- PIRATE OUTPOSTS -->
+	<PirateOutpost identifier="PirateOutpost" replaceinradiation="Abandoned" namefile="%ModDir%/Map/HavenNames.txt" commonnessperzone="1: 0, 2: 0.3, 3: 0.8, 4: 1.0, 5: 0.5" disallowedadjacentlocations="PirateOutpost" outpostteam="None" missiontags="pirateoutpostmission" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="128,640,128,128" color="255,148,96,255" />
+		<Portrait texture="%ModDir%/Map/LocationPortraits/PirateHaven.png" sourcerect="0,0,2160,1080" premultiplyalpha="false" />
+		<Hireable identifier="assistant" commonness="1" />
+		<Hireable identifier="engineer" commonness="3" />
+		<Hireable identifier="mechanic" commonness="3" />
+		<Hireable identifier="medicaldoctor" commonness="1" />
+		<Hireable identifier="securityofficer" commonness="8" />
+		<Hireable identifier="captain" commonness="3" />
+		<Store maxreputationmodifier="0.1" sellpricemodifier="0.25" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="2" initialbalance="11389" pricemodifierrange="5" />
+		<ChangeTo type="UnderAttack" messagetag="locationchange.none.changeto.lair" disallowedproximity="1" disallowedadjacentlocations="Military,Blockade">
+			<!-- May be infested if within 1 steps of a lair. -->
+			<Requirement requiredlocations="Lair,LairMudraptor,LairThresher" requireddurationrange="3,7" probability="0.25" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="HuskgroundsDE" messagetag="locationchange.none.changeto.lair" disallowedproximity="1" disallowedadjacentlocations="Military,Base">
+			<!-- May be infested if within 1 steps of a HuskgroundsDE. -->
+			<Requirement requiredlocations="HuskgroundsDE" requireddurationrange="2,5" probability="0.25" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="WasteyardDE" messagetag="locationchange.none.changeto.lair" disallowedproximity="1" disallowedadjacentlocations="Military,Base">
+			<!-- May be infested if within 1 steps of a WasteyardDE. -->
+			<Requirement requiredlocations="WasteyardDE" requireddurationrange="2,5" probability="0.25" requiredproximity="1" requiredproximityforprobabilityincrease="1" proximityprobabilityincrease="0.1" />
+		</ChangeTo>
+		<ChangeTo type="Blockade" messagetag="locationchange.UnderAttack.changeto.blockade">
+			<Requirement requiredlocations="Blockade" requireddurationrange="3,10" probability="0.25" requiredproximity="1" />
+			<Requirement requiredlocations="Camp" requireddurationrange="3,10" probability="0.25" requiredproximity="1" />
+			<Requirement requiredlocations="Base" requireddurationrange="2,5" probability="0.5" requiredproximity="1" />
+			<Requirement requiredlocations="Military" requireddurationrange="2,4" probability="0.75" requiredproximity="1" />
+		</ChangeTo>
+	</PirateOutpost>
+	<!-- A non-outpost level that gets placed before transforming into a pirate outpost for 1 round to get rid of previous missions that were stored at the outpost location -->
+	<PirateNone identifier="PirateNone" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 0.0, 2: 0.0, 3: 0.0, 4: 0.0, 5: 0.0, 6: 0.0" hasoutpost="false" beaconstationchance="0.25" missiontags="piratehumpback,pirate1">
+		<Symbol texture="Content/Map/MapAtlas.png" sourcerect="384,640,128,128" color="128,206,175,255" />
+		<Portrait texture="Content/Map/LocationPortraits/NaturalFormations.png" premultiplyalpha="false" />
+		<ChangeTo type="PirateOutpost" probability="1" requiredduration="0" messagetag="locationchange.none.changeto.pirateoutpost" />
+	</PirateNone>
+</locationtypes>

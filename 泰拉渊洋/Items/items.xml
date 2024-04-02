@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<Items>
 		<Item name="TL背包" identifier="TLbag" HideConditionBar="true" category="Equipment" tags="mediumitem,mobilecontainer,tool，TLbag" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof = "true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+		<Deconstruct time="4">
+		<Item identifier="organicfiber" amount="1" />
+		<Item identifier="plastic" amount="1" />
+		</Deconstruct>
+		<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
+		<Sprite texture="icon.png" depth="0.6" sourcerect="525,201,145,160" origin="0.5,0.6" />
+		<Body width="95" height="115" density="15" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" >
+		<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+			<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+			<StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
+				<Conditional condition="gt 50"/>
+			</StatusEffect>
+			<Button text="折叠">
+				<StatusEffect type="OnUse" target="This">
+					<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+					<SpawnItem identifier="TLbagzhe" count="1" spawnposition="This" />
+					<Remove />
+				</StatusEffect>
+			</Button>
+		</CustomInterface>
+		</Holdable>
+		<Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+		<sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="525,201,145,160" origin="0.725,0.55" scale="0.35" />
+		</Wearable>
+		<ItemContainer capacity="79" depth="0.5">
+		<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers = "TLbag" >
+			<StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10"/>
+		</Containable>
+		</ItemContainer>
 			<Deconstruct time="4">
 				<Item identifier="organicfiber" amount="1" />
 				<Item identifier="plastic" amount="1" />

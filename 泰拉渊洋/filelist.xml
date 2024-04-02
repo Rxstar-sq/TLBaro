@@ -13,5 +13,9 @@
   <Text file="%ModDir%/Text.xml" />
   <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
   <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
-  <OutpostModule file="%ModDir%/MedicalModule1.sub" />
+  <OutpostModule file="%ModDir%/Sub/MedicalModule1.sub" />
+  <OutpostModule file="%ModDir%/Sub/生物材料库.sub" />
+  <OutpostModule file="%ModDir%/Sub/实验体牢房.sub" />
+  <LocationTypes file="%ModDir%/Sub/LocationTypes.xml" />
+  <OutpostModule file="%ModDir%/Sub/实验室.sub" />
 </contentpackage>

@@ -16,6 +16,25 @@
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
 				<Item identifier="boardingaxe" equip="true" />
+				<Item identifier="TLbag" equip="true" />
+			</ItemSet>
+		</npc>	
+		<npc identifier="TLnpc4" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+			<Character name="泰拉战斗部-末雨" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
+				<job name="securityofficer" identifier="securityofficer">
+					<skill identifier="electrical" level="100" />
+					<skill identifier="mechanical" level="100" />
+					<skill identifier="weapons" level="100" />
+					<skill identifier="medical" level="100" />
+					<skill identifier="helm" level="100" />
+				</job>
+			</Character>
+			<ItemSet commonness="1">
+				<Item identifier="idcardplus1" equip="true" />
+				<Item identifier="maidclothes1" equip="true" />
+				<Item identifier="bodyarmor" equip="true" />
+				<Item identifier="boardingaxe" equip="true" />
+				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
 	  <npc identifier="TLnpc2" job="Captain" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
@@ -54,9 +73,9 @@
 				</Item>
 			</ItemSet>
 		</npc>
-		<npc identifier="TLnpc3" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+		<npc identifier="TLnpc5" job="watchman" spawnpointtags="TLshop" healthmultiplier="3" campaigninteractiontype="Store" behavior="StayInHull">
 			<Character name="泰拉工程部-HES" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
-				<job name="securityofficer" identifier="securityofficer">
+				<job name="watchman" identifier="watchman">
 					<skill identifier="electrical" level="100" />
 					<skill identifier="mechanical" level="100" />
 					<skill identifier="weapons" level="100" />
@@ -74,7 +93,7 @@
 				</Item>
 			</ItemSet>
 		</npc>
-		<npc identifier="TLnpc3" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+		<npc identifier="HXnpc" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
 			<Character name="殇泣乀" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
