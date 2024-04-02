@@ -1,7 +1,7 @@
 ﻿<Character SpeciesName="毒脓迅猛龙" SpeciesTranslationOverride="" DisplayName="" Group="" Humanoid="False" HasInfo="False" CanInteract="False" Husk="False" UseHuskAppendage="False" NeedsAir="False" NeedsWater="False" UseHumanAI="False" IsMachine="False" CanSpeak="False" ShowHealthBar="True" UseBossHealthBar="False" Noise="100" Visibility="100" BloodDecal="blood" BleedParticleAir="blooddrop" BleedParticleWater="waterblood" BleedParticleMultiplier="1" CanEat="True" EatingSpeed="10" UsePathFinding="True" PathFinderPriority="0.8" HideInSonar="False" HideInThermalGoggles="False" SonarDisruption="0" DistantSonarRange="0" DisableDistance="25000" SoundInterval="10" DrawLast="False" AITurretPriority="1" AISlowTurretPriority="1" DespawnContainer="">
   <ragdolls folder="%ModDir%/Characters/毒脓迅猛龙/Ragdolls/" />
   <animations folder="%ModDir%/Characters/毒脓迅猛龙/Animations/" />
-  <health Vitality="145" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="False" BleedingReduction="1" BurnReduction="0" ConstantHealthRegeneration="0" HealthRegenerationWhenEating="1" StunImmunity="False" PoisonImmunity="True" PoisonVulnerability="0" EmpVulnerability="0" ApplyAfflictionColors="True">
+  <health Vitality="160" DoesBleed="True" CrushDepth="Infinity" UseHealthWindow="False" BleedingReduction="1" BurnReduction="0" ConstantHealthRegeneration="0" HealthRegenerationWhenEating="1" StunImmunity="False" PoisonImmunity="True" PoisonVulnerability="0" EmpVulnerability="0" ApplyAfflictionColors="True">
     <Limb name="Torso" />
     <Limb name="Head" />
     <Limb name="LeftLeg" />
@@ -25,13 +25,6 @@
   <sound File="Content/Characters/Mudraptor/MUDRAPTOR_idle4.ogg" State="Idle" Range="2000" Volume="1" Tags="" />
   <sound File="Content/Characters/Mudraptor/MUDRAPTOR_death1.ogg" State="Die" Range="3000" Volume="1" Tags="" />
   <sound File="Content/Characters/Mudraptor/MUDRAPTOR_death2.ogg" State="Die" Range="3000" Volume="1" Tags="" />
-  <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="15">
-    <item Identifier="" />
-  </Inventory>
-  <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="5">
-    <Item Identifier="hydroxyapatite" />
-    <Item Identifier="diversremains" />
-  </Inventory>
   <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1">
     <Item Identifier="hydroxyapatite" />
     <Item forcetoslot="true" Identifier="mudraptorshell" />
