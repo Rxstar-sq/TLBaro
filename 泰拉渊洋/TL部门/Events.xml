@@ -9,7 +9,7 @@
 	<ScriptedEvent identifier="TL1" commonness="100">
 		<TagAction criteria="player" tag="player" />
 		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc1" targettag="TLnpc1" spawnlocation="Outpost" targetmoduletags="airlock" />
-		<ConversationAction text="你好，我是TL战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." speakertag="TLnpc1" endeventifinterrupted="false" dialogtype="Small" />
+		<ConversationAction text="你好，我是TL战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." eventsprite="TL" speakertag="TLnpc1" endeventifinterrupted="false" dialogtype="Small" />
 		<MissionAction missiontag="TL" />
 		<MissionAction missiontag="TL" />
 		<MissionAction missiontag="TL" />
@@ -30,7 +30,7 @@
 		<Label name="xiangqing" />
 		<NPCWaitAction npctag="TLnpc2" wait="true" />
 		<TriggerAction target1tag="TLnpc2" target2tag="player" applytotarget2="triggerer_player" radius="200" waitforinteraction="true" />
-		<ConversationAction targettag="triggerer_player" text="你好...？我是泰拉集团负责人，有什么事情吗？" eventsprite="suger">
+		<ConversationAction targettag="triggerer_player" text="你好...？我是泰拉集团负责人，有什么事情吗？" eventsprite="hes">
 			<Option text="介绍一下你们集团...？">
 				<ConversationAction targettag="triggerer_player" text="泰拉科技，木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，这破联盟站点我是一点不想来...垃圾堆一样...还想了解一些什么？" eventsprite="TL">
 					<Option text="集团研发部门">
@@ -72,7 +72,7 @@
 	<ScriptedEvent identifier="HXnpc" commonness="80">
 		<TagAction criteria="player" tag="player" />
 		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="HXnpc" targettag="HXnpc" spawnlocation="Outpost" targetmoduletags="airlock" />
-		<ConversationAction text="starllusion" speakertag="HXnpc" endeventifinterrupted="false" dialogtype="Small" />
+		<ConversationAction text="starllusion" speakertag="HXnpc" endeventifinterrupted="false" dialogtype="Small"  eventsprite="HX"/>
 		<!--DoSomthing-->
 
 		<NPCWaitAction npctag="HXnpc" wait="true" />
