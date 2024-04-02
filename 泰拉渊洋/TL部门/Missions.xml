@@ -4,13 +4,13 @@
 		<Reputation identifier="location" amount="5" />
 		<Reputation identifier="huskcult" amount="3" />
 		<Reputation identifier="TLhui" amount="5" />
-		<monster character="CarrierEXs" min="20" max="30" />
+		<monster character="CarrierEXs" min="20" max="25" />
 		<monster character="CarrierEX2s" min="20" max="30" />
 		<Icon texture="%ModDir%/TL部门/Sprite/mizhi.png" sourcerect="0,0,1024,1024" />
-		<message header="花与..." text="在鲜花中离去吧" />
+		<message header="花与..." text="在鲜花簇拥中离去吧" />
 	</MonsterMission>
 
-	 <MonsterMission name="迅猛龙群" identifier="mudraptors" description="[location1]和[location2]之间发现迅猛龙抱团进攻。有些影响船只通行，事后[reward]mk奖励。" type="Monster" tags="TL" difficulty="4" commonness="100" reward="6000" sonarlabel="迅猛龙群" maxsonarmarkerdistance="10000" successmessage="迅猛龙群已被集团清除" missionfailure="垃圾，船的维修费我可不出">
+	 <MonsterMission name="迅猛龙群" identifier="mudraptors" description="[location1]和[location2]之间发现迅猛龙抱团进攻。有些影响船只通行，事后[reward]mk奖励。" type="Monster" tags="TL" difficulty="4" commonness="100" reward="6000" sonarlabel="迅猛龙群" maxsonarmarkerdistance="10000" successmessage="迅猛龙群已被集团清除" missionfailure="船的维修费我们可不出">
 		 <Reputation identifier="location" amount="3" />
 		 <Reputation identifier="huskcult" amount="3" />
 		 <Reputation identifier="TLhui" amount="2" />
@@ -28,7 +28,7 @@
 		 <message header="测试机已损毁" text="研发部：任何一项成功的技术都充满荆棘，但我们只能赤脚踩过" />
 	 </MonsterMission>
  
-  <MonsterMission name="烛光晚宴" identifier="TLhunting" type="Monster" tags="TL" description="别离的歌早已哼在嘴边，是你 为我 题词" commonness="100" reward="30000" sonarlabel="深渊气息" maxsonarmarkerdistance="30000" successmessage="集团已完成清理任务" missionfailure="废物，我就知道你不行" spawntype="Abyss" difficulty="4">
+  <MonsterMission name="烛光晚宴" identifier="TLhunting" type="Monster" tags="TL" description="别离的歌早已哼在嘴边，是你 为我 题词" commonness="100" reward="30000" sonarlabel="晚会嘉宾" maxsonarmarkerdistance="30000" successmessage="是的，主角是你" missionfailure="你没有参加晚宴的资格" spawntype="Abyss" difficulty="4">
     <Reputation identifier="location" amount="10" />
     <Reputation identifier="clowns" amount="3" />
 	  <Reputation identifier="TLhui" amount="5" />

@@ -12,11 +12,12 @@
   <Factions file="%ModDir%/factions.xml" />
   <Text file="%ModDir%/Text.xml" />
   <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
+  <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
   <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
   <OutpostModule file="%ModDir%/Sub/MedicalModule1.sub" />
   <OutpostModule file="%ModDir%/Sub/生物材料库.sub" />
   <OutpostModule file="%ModDir%/Sub/实验体牢房.sub" />
   <LocationTypes file="%ModDir%/Sub/LocationTypes.xml" />
   <OutpostModule file="%ModDir%/Sub/实验室.sub" />
-  <BeaconStation file="%ModDir%/Sub/TL研究所收容失效.sub" />
+  <Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
 </contentpackage>
