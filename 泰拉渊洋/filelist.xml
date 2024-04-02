@@ -3,6 +3,7 @@
   <Item file="%ModDir%/Items/items.xml" />
   <Item file="%ModDir%/Items/sundries.xml" />
   <Item file="%ModDir%/Clothing/clothings.xml" />
+  <Item file="%ModDir%/Items/Creatureloot/毒脓龙爪.xml" />
   <UIStyle file="%ModDir%/UI/style.xml" />
   <Submarine file="%ModDir%/Sub/测试地.sub" />
   <Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
@@ -20,4 +21,5 @@
   <LocationTypes file="%ModDir%/Sub/LocationTypes.xml" />
   <OutpostModule file="%ModDir%/Sub/实验室.sub" />
   <Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
+  <Afflictions file="%ModDir%/Afflictions.xml" />
 </contentpackage>
