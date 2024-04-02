@@ -24,7 +24,7 @@
 				</CustomInterface>
 			</Holdable>
 			<Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
-				<sprite name="Backpack Wearable" texture="%ModDir%/TL产物/icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="525,201,145,160" origin="0.725,0.55" scale="0.35" />
+				<sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="525,201,145,160" origin="0.725,0.55" scale="0.35" />
 			</Wearable>
 			<ItemContainer capacity="79" depth="0.5">
 				<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers = "TLbag" >
@@ -37,12 +37,8 @@
 				<Item identifier="organicfiber" amount="1" />
 				<Item identifier="plastic" amount="1" />
 			</Deconstruct>
-			<Price baseprice="1800" sold="false">
-				<Price storeidentifier="merchantoutpost" />
-				<Price storeidentifier="merchantcity" multiplier="0.9" />
-				<Price storeidentifier="merchantresearch" multiplier="0.9" />
-				<Price storeidentifier="merchantmilitary" multiplier="1.1" />
-				<Price storeidentifier="merchantmine" multiplier="1.1" />
+			<Price baseprice="2500" sold="false">
+				<Price storeidentifier="TLnpc5" multiplier="1.5" minavailable="1" maxavailable="3" sold="true" />
 			</Price>
 			<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5"/>
 			<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
@@ -65,6 +61,9 @@
 		<Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing"
 	   scale="0.35" cargocontaineridentifier="metalcrate" description=""
 	   impactsoundtag="impact_soft">
+	   		<Price baseprice="3500" sold="false">
+				<Price storeidentifier="TLnpc3" multiplier="1.1" />
+			</Price>
 			<Upgrade gameversion="0.9.3.0" scale="0.35" />
 			<PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
 			<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,256,64,64"
@@ -85,7 +84,7 @@
 					sourcerect="363,0,100,165" limb="Torso" depthlimb="head" hidelimb="false"
 					inherittexturescale="true" inheritorigin="false" inheritsourcerect="false"
 					origin="0.5,0.65" />
-				<StatusEffect type="Always" target="This" condition="5"/>
+				<StatusEffect type="Always" target="This" condition="1"/>
 			</Wearable>
 		</Item>
 
