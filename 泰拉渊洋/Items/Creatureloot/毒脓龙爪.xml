@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
 <!--毒脓迅猛龙掉落-->
-    <Item name="毒脓龙爪" identifier="IchorClaw"
-        category="Weapon"   
-        Tags="smallitem,weapon,mountableweapon,sharptool" description="毒脓迅猛龙上被剥离的上肢甲壳，坚硬且仍然具有一定毒性" 
-        cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" 
-        hideinmenus="true" allowasextracargo="true" RequireAimToUse="True">
+<Item name="毒脓龙爪" identifier="IchorClaw"
+    category="Weapon"   
+    Tags="smallitem,weapon,mountableweapon,sharptool" description="毒脓迅猛龙上被剥离的上肢甲壳，坚硬且仍然具有一定毒性" 
+    cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" 
+    hideinmenus="true" allowasextracargo="true" RequireAimToUse="True">
     <Price baseprice="1000" sold="false" canbespecial="false" />
     <Deconstruct time="8">
       <Item identifier="iron" />
@@ -15,8 +15,10 @@
     <InventoryIcon texture="" sourcerect=" " origin="0.5,0.5" />
     <Sprite texture="" sourcerect="" depth="0.55" origin="0.5,0.5" />
     <Body width="65" height="15" density="25" />
+    <!--单手可持-->
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="0,0" holdangle="45" reload="0.6" range="55" combatPriority="30" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
         <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="5" structuredamage="2" penetration="0.5" structuresoundtype="StructureSlash">
+        <!--攻击给予氰化物中毒-->
             <Affliction identifier="lacerations" strength="20" />
             <Affliction identifier="bleeding" strength="10" />
             <Affliction identifier="stun" strength="0.5" />
@@ -31,10 +33,46 @@
                 <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
             </StatusEffect>
         </Attack>
+        <!--持有的时候右键可以短暂格挡飞弹-->
+        <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="1.25" setvalue="true">
+          <Affliction identifier="IchorClawBlock" amount="2" />
+        </StatusEffect>
+        <StatusEffect type="OnSecondaryUse" target="this" duration="5.0">
+            <!--武器耐久大于40-->
+            <Conditional Condition="gt 40" />
+            <!--生成格挡碰撞体-->
+            <SpawnItem identifier="blocker" spawnposition="This" />
+        </StatusEffect>
+        <!--每触发一次格挡降低10耐久，最低30-->
+        <StatusEffect type="OnSecondaryUse" target="This" Condition="-10" comparison="And">
+            <Conditional Condition="gt 10" />
+        </StatusEffect>
     </MeleeWeapon>
-    
-
-
-
-
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+</Item>
+<!--格挡碰撞体-->
+<Item name="格挡" identifier="blocker" damagedbyprojectiles="true" hideinmenus="true">
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="0,0,1,1" />
+    <Body radius="20" bodytype="Static" />
+    <ItemComponent>
+        <StatusEffect type="OnSpawn" target="This" delay="0.02">
+          <Remove/>
+        </StatusEffect>
+        <StatusEffect type="OnDamaged" target="This">
+            <Explosion range="10.0" force="1" camerashake="3.0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+            <particleemitter particle="weldspark" particlespersecond="100" scalemin="0.45" scalemax="0.7" anglemin="-180" anglemax="180" velocitymin="200" velocitymax="1000" distancemin="1" distancemax="10" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight1.ogg" selectionmode="random" range="500" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight1.ogg" range="500" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight2.ogg" range="500" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight3.ogg" range="500" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight4.ogg" range="500" />
+            <Sound file="Content\Sounds\Impact\MetalImpactLight5.ogg" range="500" />
+        </StatusEffect>
+      </ItemComponent>
+      <Quality>
+         <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+      </Quality>
+</Item>
 </Items>
