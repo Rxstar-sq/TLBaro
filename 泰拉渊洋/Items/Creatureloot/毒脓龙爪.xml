@@ -12,8 +12,8 @@
       <Item identifier="hydroxyapatite" />
       <Item identifier="cyanide" outcondition="0.5"/>
     </Deconstruct>
-    <InventoryIcon texture="" sourcerect=" " origin="0.5,0.5" />
-    <Sprite texture="" sourcerect="" depth="0.55" origin="0.5,0.5" />
+    <InventoryIcon texture="%ModDir%\Items\Creatureloot\毒脓龙爪.png" sourcerect="0,0,126,30" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%\Items\Creatureloot\毒脓龙爪.png" sourcerect="0,0,126,30" depth="0.55" origin="0.5,0.5" />
     <Body width="65" height="15" density="25" />
     <!--单手可持-->
     <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="0,0" holdangle="45" reload="0.6" range="55" combatPriority="30" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
