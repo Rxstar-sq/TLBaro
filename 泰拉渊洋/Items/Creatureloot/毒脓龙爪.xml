@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+<!--毒脓迅猛龙掉落-->
+    <Item name="毒脓龙爪" identifier="IchorClaw"
+        category="Weapon"   
+        Tags="smallitem,weapon,mountableweapon,sharptool" description="毒脓迅猛龙上被剥离的上肢甲壳，坚硬且仍然具有一定毒性" 
+        cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light" 
+        hideinmenus="true" allowasextracargo="true" RequireAimToUse="True">
+    <Price baseprice="1000" sold="false" canbespecial="false" />
+    <Deconstruct time="8">
+      <Item identifier="iron" />
+      <Item identifier="hydroxyapatite" />
+      <Item identifier="cyanide" outcondition="0.5"/>
+    </Deconstruct>
+    <InventoryIcon texture="" sourcerect=" " origin="0.5,0.5" />
+    <Sprite texture="" sourcerect="" depth="0.55" origin="0.5,0.5" />
+    <Body width="65" height="15" density="25" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="0,0" holdangle="45" reload="0.6" range="55" combatPriority="30" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+        <Attack targetimpulse="3" severlimbsprobability="0.1" itemdamage="5" structuredamage="2" penetration="0.5" structuresoundtype="StructureSlash">
+            <Affliction identifier="lacerations" strength="20" />
+            <Affliction identifier="bleeding" strength="10" />
+            <Affliction identifier="stun" strength="0.5" />
+            <Affliction identifier="cyanidepoisoning" strength="12" />
+            <StatusEffect type="OnUse" target="UseTarget">
+                <Conditional entitytype="eq Character" />
+                <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+                <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+                <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+                <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+                <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+                <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+            </StatusEffect>
+        </Attack>
+    </MeleeWeapon>
+    
+
+
+
+
+</Items>
