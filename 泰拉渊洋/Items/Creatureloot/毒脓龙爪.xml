@@ -37,7 +37,7 @@
         <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="1.25" setvalue="true">
           <Affliction identifier="IchorClawBlock" amount="2" />
         </StatusEffect>
-        <StatusEffect type="OnSecondaryUse" target="this" duration="5.0">
+        <StatusEffect type="OnSecondaryUse" target="this"  comparison="And" setvalue="true" reload="0.1" aimpos="35,-5" holdangle="-10" swingforce="6,-3">
             <!--武器耐久大于40-->
             <Conditional Condition="gt 40" />
             <!--生成格挡碰撞体-->
