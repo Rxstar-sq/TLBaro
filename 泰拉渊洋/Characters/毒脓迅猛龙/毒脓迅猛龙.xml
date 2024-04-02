@@ -38,7 +38,7 @@
   </Inventory>
   <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="1">
     <Item Identifier="hydroxyapatite" />
-    <Item Identifier="smallmudraptoregg" />
+    <Item Identifier="IchorClaw" />
   </Inventory>
   <ai CombatStrength="248" Sight="2" Hearing="3" AggressionHurt="350" AggressionGreed="20" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="True" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="True" RandomAttack="True" CanOpenDoors="False" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="True" StayInAbyss="False" PatrolFlooded="True" PatrolDry="False" StartAggression="30" MaxAggression="100" AggressionCumulation="0.2" WallTargetingMethod="Target">
     <latchonto attachtowalls="true" attachtosub="false" attachlimb="HeadArmor" />
