@@ -2,19 +2,31 @@
 <Randomevents>
 <EventSprites>
 	<Sprite identifier="hes" texture="%ModDir%/TL部门/hes.png" sourcerect="0,0,640,640" origin="0.5,0.5" />
-	<Sprite identifier="TL" texture="%ModDir%/TL部门/TL.png" sourcerect="0,0,912,921" origin="0.5,0.5" />
-	<Sprite identifier="HX" texture="%ModDir%/TL部门/HX.png" sourcerect="0,0,172,195" origin="0.5,0.5" />
+	<Sprite identifier="TL" texture="%ModDir%/TL部门/TL.png" sourcerect="0,0,172,195" origin="0.5,0.5" />
+	<Sprite identifier="HX" texture="%ModDir%/TL部门/HX.png" sourcerect="0,0,912,921" origin="0.5,0.5" />
+	<Sprite identifier="hua" texture="%ModDir%/TL部门/Sprite/mizhi.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
+	<Sprite identifier="haidao" texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
+	<Sprite identifier="baomi" texture="%ModDir%/TL部门/Sprite/baomi.png" sourcerect="0,0,1024.1024" origin="0.5,0.5" />
+	<Sprite identifier="zhu" texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
+	
 </EventSprites>
 <EventPrefabs>
 	<ScriptedEvent identifier="TL1" commonness="100">
 		<TagAction criteria="player" tag="player" />
 		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc1" targettag="TLnpc1" spawnlocation="Outpost" targetmoduletags="airlock" />
-		<ConversationAction text="你好，我是TL战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." eventsprite="TL" speakertag="TLnpc1" endeventifinterrupted="false" dialogtype="Small" />
-		<MissionAction missiontag="TL" />
-		<MissionAction missiontag="TL" />
-		<MissionAction missiontag="TL" />
-		<MissionAction missiontag="TL" />
-		<MissionAction missiontag="TL" />
+		<TriggerAction target1tag="TLnpc1" target2tag="player" applytotarget2="triggerer_player" radius="200" waitforinteraction="true" />
+		<ConversationAction text="你好，我是TL战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." targettag="triggerer_player" eventsprite="TL"  >
+			<Option text="我们可以帮忙">
+				<ConversationAction text="在鲜花中离去吧"  targettag="triggerer_player" eventsprite="hua"/>
+					<MissionAction missionidentifier="hunting" />
+				<ConversationAction text="放弃船，或者放弃希望"  targettag="triggerer_player" eventsprite="haidao"/>
+					<MissionAction missionidentifier="TLhaidao" />
+				<ConversationAction text="任何一项成功的技术都充满荆棘，但我们只能赤脚踩过"  targettag="triggerer_player" eventsprite="baomi"/>
+				<MissionAction missionidentifier="TLceshiji" />
+				<ConversationAction text="烛光中求生的勇士，你值得敬爱"  targettag="triggerer_player" eventsprite="zhu"/>
+				<MissionAction missionidentifier="TLhunting" />
+			</Option>
+		</ConversationAction>
 		<NPCWaitAction npctag="TLnpc1" wait="true" />
 	</ScriptedEvent>
 	
