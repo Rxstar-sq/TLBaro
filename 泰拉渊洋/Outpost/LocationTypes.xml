@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<locationtypes>
+
+	<TL identifier="TL" replaceinradiation="Abandoned" namefile="Content/Map/locationNames.txt" commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0" AllowAsBiomeGate="false">
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sourcerect="512,256,128,128" color="255,237,105,255" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility1.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility2.png" premultiplyalpha="false" />
+		<Portrait texture="Content/Map/LocationPortraits/WorkCampResearchFacility3.png" premultiplyalpha="false" />
+		<Hireable identifier="engineer" commonness="1" />
+		<Hireable identifier="assistant" commonness="1" />
+		<Store dailyspecialscount="5" requestedgoodscount="5" maxreputationmodifier="0.1" sellpricemodifier="0.8" dailyspecialpricemodifier="0.5" requestgoodpricemodifier="1.5" initialbalance="1000" pricemodifierrange="50">
+			<BalanceStatus percentage="1.0" sellpricemodifier="1.0" color="255,255,255,255" />
+			<BalanceStatus percentage="0.5" sellpricemodifier="0.75" color="255,165,0,255" />
+			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
+		</Store>
+	</TL>
+</locationtypes>

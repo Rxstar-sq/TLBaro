@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<OutpostGenerationParameters>
+  
+   <OutpostConfig
+    identifier="TL"
+    replaceinradiation="abandonedoutpost"
+    totalmodulecount="9"
+    appendtoreachtotalmodulecount="false"
+    minhallwaylength="0"
+    allowedlocationtypes="TL">
+    <modulecount flag="Airlock" count="1"/>
+    <modulecount flag="EngineeringModule" count="2"/>
+    <modulecount flag="AdminModule" count="2"/>
+    <modulecount flag="MedicalModule" count="2"/>
+    <modulecount flag="ResearchModule" count="2"/>
+    <modulecount flag="ResidentialModuleMain" count="2"/>
+    <modulecount flag="SecurityModule" count="2"/>
+    <modulecount flag="ArmoryModule" count="2"/>
+
+    <npcs>
+      <npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="TLhui"/>
+      <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
+      <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
+      <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
+      <npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
+	     <npc from="TLnpc" identifier="TLnpc3" faction="TLhui"/>
+		<npc from="TLnpc" identifier="TLnpc5" faction="TLhui"/>
+		
+      <npc from="outpostnpcs1" identifier="outpostmanagerseparatists" faction="separatists"/>
+      <npc from="outpostnpcs1" identifier="securitynpcseparatists" faction="separatists"/>
+      <npc from="outpostnpcs1" identifier="securitynpcseparatists" faction="separatists"/>
+      <npc from="outpostnpcs1" identifier="securitynpcseparatists" faction="separatists"/>
+      <npc from="outpostnpcs1" identifier="securitynpcseparatists" faction="separatists"/>
+      <npc from="outpostnpcs1" identifier="securitynpcseparatists" faction="separatists"/>
+      
+      <npc from="outpostnpcs1" identifier="hrmanager"/>
+      <npc from="outpostnpcs1" identifier="subupgradenpc"/>
+      <npc from="outpostnpcs1" identifier="subsalesnpc"/>
+      <npc from="outpostnpcs1" identifier="reactoroperator"/>
+      <npc from="outpostnpcs1" identifier="merchantcity"/>
+      <npc from="outpostnpcs1" identifier="merchantarmory"/>
+      <npc from="outpostnpcs1" identifier="merchantmedical"/>
+      <npc from="outpostnpcs1" identifier="merchantengineering"/>
+      <npc from="outpostnpcs1" identifier="outpostdoctor"/>
+      <npc from="outpostnpcs1" identifier="commoner"/>
+      <npc from="outpostnpcs1" identifier="commoner"/>
+      <npc from="outpostnpcs1" identifier="commoner"/>
+      <npc from="outpostnpcs1" identifier="researcher"/>
+      <npc from="outpostnpcs1" identifier="researcher"/>
+
+    </npcs>
+  </OutpostConfig>
+</OutpostGenerationParameters>
