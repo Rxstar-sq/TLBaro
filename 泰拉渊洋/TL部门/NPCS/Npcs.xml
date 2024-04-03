@@ -73,7 +73,7 @@
 				</Item>
 			</ItemSet>
 		</npc>
-		<npc identifier="TLnpc5" job="watchman" spawnpointtags="TLshop" healthmultiplier="3" campaigninteractiontype="Store" behavior="StayInHull">
+		<npc identifier="TLnpc5" job="watchman" spawnpointtags="shop" healthmultiplier="3" campaigninteractiontype="Store" behavior="StayInHull">
 			<Character name="泰拉工程部-HES" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="watchman" identifier="watchman">
 					<skill identifier="electrical" level="100" />
