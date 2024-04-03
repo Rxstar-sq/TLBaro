@@ -30,11 +30,7 @@
 		<NPCWaitAction npctag="TLnpc1" wait="true" />
 	</ScriptedEvent>
 
-	<ScriptedEvent identifier="TL5" commonness="100">
-		<TagAction criteria="player" tag="player" />
-		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc5" targettag="TLnpc5" spawnlocation="Outpost,TL" targetmoduletags="SecCrewModule" />
-		<NPCWaitAction npctag="TLnpc5" wait="true" />
-	</ScriptedEvent>
+
 	
 	<ScriptedEvent identifier="TL2" commonness="100">
 		<TagAction criteria="player" tag="player" />
@@ -81,14 +77,7 @@
 		<NPCWaitAction npctag="TLnpc2" wait="true" />
 	</ScriptedEvent>
 
-	<ScriptedEvent identifier="HXnpc" commonness="80">
-		<TagAction criteria="player" tag="player" />
-		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="HXnpc" targettag="HXnpc" spawnlocation="Outpost" targetmoduletags="airlock" />
-		<ConversationAction text="starllusion" speakertag="HXnpc" endeventifinterrupted="false" dialogtype="Small"  eventsprite="HX"/>
-		<!--DoSomthing-->
 
-		<NPCWaitAction npctag="HXnpc" wait="true" />
-	</ScriptedEvent>
 </EventPrefabs>
 	<EventSet identifier="outpostTL" leveltype="outpost" locationtype="outpost,city,research,military,mine,colony,settlement,construction,camp,base,blockade,survey,excavation,study,lab,clinic,hospital,surgery,hydroponics,biosphere,nourishment,factory,shipyard,fusion" allowatstart="true" minleveldifficulty="0" maxleveldifficulty="100" chooserandom="false" ignorecooldown="true" additive="true" commonness="120" >
 		<EventSet identifier="outpostTLNpc1" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
@@ -96,12 +85,6 @@
 		</EventSet>
 		<EventSet identifier="outpostTLNpc2" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
 			<ScriptedEvent identifier="TL2" commonness="25" />
-		</EventSet>
-		<EventSet identifier="outpostTLNpc3" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
-			<ScriptedEvent identifier="TL5" commonness="25" />
-		</EventSet>
-		<EventSet identifier="HXnpc" minleveldifficulty="0" maxleveldifficulty="100" allowatstart="true" chooserandom="true" onceperoutpost="true">
-			<ScriptedEvent identifier="HX" commonness="25" />
 		</EventSet>
 	</EventSet>
 </Randomevents>

@@ -67,8 +67,8 @@
 				<Item identifier="organicfiber" amount="1" />
 				<Item identifier="plastic" amount="1" />
 			</Deconstruct>
-			<Price baseprice="2500" sold="false">
-				<Price storeidentifier="TLnpc5" multiplier="1.5" minavailable="1" maxavailable="3" sold="true" />
+			<Price baseprice="2500"  minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+				<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
 			</Price>
 			<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5"/>
 			<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
