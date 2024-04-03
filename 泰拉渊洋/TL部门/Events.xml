@@ -32,7 +32,7 @@
 	
 	<ScriptedEvent identifier="TL5" commonness="100">
 		<TagAction criteria="player" tag="player" />
-		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc5" targettag="TLnpc5" spawnlocation="Outpost" targetmoduletags="airlock" />
+		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc5" targettag="TLnpc5" spawnlocation="Outpost" targetmoduletags="crewmodule" />
 		<NPCWaitAction npctag="TLnpc5" wait="true" />
 	</ScriptedEvent>
 	
