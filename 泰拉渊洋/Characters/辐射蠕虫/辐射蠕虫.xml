@@ -23,16 +23,9 @@
   <sound dontmuffle="true" File="Content/Characters/Endworm/ENDWORM_death1.ogg" State="Die" Range="30000" Volume="1" Tags="" />
   <sound dontmuffle="true" File="Content/Characters/Endworm/ENDWORM_death2.ogg" State="Die" Range="30000" Volume="1" Tags="" />
   <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="15">
-    <Item Identifier="endwormshell" />
-    <item Identifier="endwormshell" />
-    <item Identifier="endwormshell" />
-    <item Identifier="radiotoxin" />
-  </Inventory>
-  <Inventory Slots="Any, Any, Any, Any" AccessibleWhenAlive="False" Commonness="5">
-    <Item amount="2" Identifier="radiotoxin" />
-    <item Identifier="endwormshell" />
-    <item Identifier="radiotoxin" />
-    <item Identifier="radiotoxin" />
+    <Item amount="4" Identifier="endwormshell" />
+    <Item Identifier="worm_fs_nz" />
+    <Item amount="5" Identifier="radiotoxin" />
   </Inventory>
   <ai CombatStrength="10000" Sight="10" Hearing="10" AggressionHurt="120" AggressionGreed="10" FleeHealthThreshold="0" AttackWhenProvoked="True" AvoidGunfire="False" DamageThreshold="0" AvoidTime="3" MinFleeTime="20" AggressiveBoarding="False" EnforceAggressiveBehaviorForMissions="True" TargetOuterWalls="True" RandomAttack="False" CanOpenDoors="False" UsePathFindingToGetInside="False" KeepDoorsClosed="False" AvoidAbyss="False" StayInAbyss="True" PatrolFlooded="False" PatrolDry="False" StartAggression="0" MaxAggression="100" AggressionCumulation="10" WallTargetingMethod="6">
     <target Tag="decoy" State="Attack" Priority="100" ReactDistance="0" AttackDistance="0" Timer="0" IgnoreContained="False" IgnoreInside="False" IgnoreOutside="False" IgnoreIfNotInSameSub="True" IgnoreIncapacitated="False" Threshold="0" ThresholdMin="-1" ThresholdMax="-1" Offset="0,0" AttackPattern="Straight" PrioritizeSubCenter="False" SweepDistance="0" SweepStrength="10" SweepSpeed="1" CircleStartDistance="5000" IgnoreTargetSize="False" CircleRotationSpeed="1" DynamicCircleRotationSpeed="False" CircleRandomRotationFactor="0" CircleStrikeDistanceMultiplier="5" CircleMaxRandomOffset="0" />

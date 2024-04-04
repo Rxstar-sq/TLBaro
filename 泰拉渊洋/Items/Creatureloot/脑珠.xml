@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+    <Item name="脑珠" identifier="worm_fs_nz" tags="smallitem" maxstacksize="1" category="Misc" cargocontaineridentifier="metalcrate" pickdistance="150" scale="0.5" description="" HideConditionBar="true" isshootable="true">
+        <Body width="106" height="95" density="40" />
+        <Sprite texture="" depth="0.85" sourcerect="27,28,136,119" origin="0.5,0.5" />
+        <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetach" PickingTime="1" aimpos="85,-10" handle1="0,0" attachable="true" aimable="true" />
+        <PreferredContainer primary="storagecab" minamount="0" maxamount="1" spawnprobability="0.001" />
+    </Item>
+</Items>
