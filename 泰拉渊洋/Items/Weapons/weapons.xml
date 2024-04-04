@@ -44,11 +44,11 @@
 					<Sound file="Content/Items/Weapons/ShotgunLoad3.ogg" type="OnUse" range="500" />
 					<ParticleEmitter particle="casingfirearm" colormultiplier="0.5,0.5,0.5,1" ScaleMultiplier="1.5,1.5" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
 				</StatusEffect>
-				<RequiredItems items="TL13ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+				<RequiredItems items="shotgunammo" type="Contained" msg="ItemMsgAmmoRequired" />
 				<RequiredSkill identifier="weapons" level="10" />
 			</RangedWeapon>
 			<ItemContainer capacity="1" maxstacksize="8" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
-				<Containable items="TL13ammo" hide="true" />
+				<Containable items="shotgunammo" hide="true" />
 				<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
 				<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
 				<SubContainer capacity="1" maxstacksize="1">
@@ -60,7 +60,11 @@
 				<QualityStat stattype="FirepowerMultiplier" value="0.1" />
 			</Quality>
 		</Item>
-		<Item name="TL13散弹弹药（常规弹头）" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+
+
+
+		<!--弹药相关-->
+		<Item name="TL13常规弹头" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
 			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
@@ -91,7 +95,7 @@
 					<Affliction identifier="stun" strength="0.3" />
 					<Affliction identifier="bleeding" strength="10" />
 					<Affliction identifier="gunshotwound" strength="12" />
-					<Affliction identifier="lacerations" strength="18" />
+					<!--Affliction identifier="lacerations" strength="18" /-->
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
 					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
