@@ -132,11 +132,11 @@
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射3发射弹-->
-			<Projectile characterusable="false" maxtargetstohit="20" hitscan="true" hitscancount="3" removeonhit="true" spread="6">
+			<Projectile characterusable="false" maxtargetstohit="20" hitscan="true" hitscancount="3" removeonhit="true" spread="7">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="1" itemdamage="15" severlimbsprobability="60" penetration="0.95">
 					<Affliction identifier="bleeding" strength="10" />
-					<Affliction identifier="lacerations" strength="90" />
+					<Affliction identifier="lacerations" strength="50" />
 					<Affliction identifier="gunshotwound" strength="3" />
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
@@ -172,8 +172,8 @@
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<!--一次发射10发射弹-->
-			<Projectile characterusable="false" maxtargetstohit="2" hitscan="true" hitscancount="10" removeonhit="true" spread="12">
+			<!--一次发射8发射弹-->
+			<Projectile characterusable="false" maxtargetstohit="2" hitscan="true" hitscancount="8" removeonhit="true" spread="12">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="6" itemdamage="15" severlimbsprobability="0.5" penetration="0.5">
 					<Affliction identifier="bleeding" strength="10" />
