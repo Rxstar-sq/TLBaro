@@ -32,7 +32,7 @@
     <Reputation identifier="location" amount="10" />
     <Reputation identifier="clowns" amount="3" />
 	  <Reputation identifier="TLhui" amount="5" />
-    <monster character="EndwormSubspecies" min="1" max="2" />
+    <monster character="辐射蠕虫" min="1" max="2" />
     <monster character="LatcherSubspecies" min="1" max="2" />
     <monster character="CharybdisSubspecies" min="1" max="2" />
     <monster character="doomwormSubspecies" min="1" max="2" />

@@ -13,9 +13,9 @@
   <RandomEvents file="%ModDir%/TL部门/Events.xml" />
   <Missions file="%ModDir%/TL部门/Missions.xml" />
   <Factions file="%ModDir%/factions.xml" />
-  <Text file="%ModDir%/Text.xml" />
   <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
   <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
+  <Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
   <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
   <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
   <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
@@ -25,4 +25,5 @@
   <OutpostModule file="%ModDir%/Sub/TL医疗模块.sub" />
   <OutpostModule file="%ModDir%/Sub/实验室.sub" />
   <OutpostModule file="%ModDir%/Sub/TL宿舍模块.sub" />
+  <Text file="%ModDir%/Text.xml" />
 </contentpackage>
