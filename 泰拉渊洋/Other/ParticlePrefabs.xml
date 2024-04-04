@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<prefabs>
+    <tsmlaserborebreak LifeTime="0.04" LifeTimeMin="0" StartDelayMin="0" StartDelayMax="0" AngularVelocityMin="0" AngularVelocityMax="0" StartRotationMin="0" StartRotationMax="360" RotateToDirection="False" Drag="0" WaterDrag="0" VelocityChange="0,0" VelocityChangeWater="0,0" CollisionRadius="0" UseCollision="False" DeleteOnCollision="False" Friction="0.5" Restitution="0.5" StartSizeMin="0.3,0.3" StartSizeMax="0.3,0.3" SizeChangeMin="-0.2,-0.2" SizeChangeMax="-0.2,-0.2" GrowTime="0" StartColor="255,200,200,200" MiddleColor="255,255,255,255" EndColor="200,0,0,150" UseMiddleColor="False" DrawTarget="Both" DrawOnTop="False" DrawAlways="False" BlendState="Additive" Priority="0" AnimDuration="1" LoopAnim="False">
+        <sprite texture="%ModDir%/png/tsm_muzzleflashlaser.png" sourcerect="0,0,256,256" premultiplyalpha="false" origin="0.5,0.5" />
+    </tsmlaserborebreak>
+
+
+
+</prefabs>
