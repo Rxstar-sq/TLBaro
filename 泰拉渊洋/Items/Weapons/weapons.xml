@@ -81,8 +81,9 @@
 			</Price>
 			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
 				<RequiredSkill identifier="weapons" level="30" />
-				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
-				<RequiredItem identifier="rubber" amount="2" />
+				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion"/>
+				<RequiredItem identifier="aluminium" amount="2" />
+				<RequiredItem identifier="lead" amount="2" />
 			</Fabricate>
 			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
@@ -122,8 +123,8 @@
 			</Price>
 			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
 				<RequiredSkill identifier="weapons" level="30" />
-				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
-				<RequiredItem identifier="rubber" amount="2" />
+				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+				<RequiredItem tag="advmunition_tip" amount="2" />
 			</Fabricate>
 			<!--等待贴图-->
 			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
@@ -136,7 +137,6 @@
 				<Attack structuredamage="1" targetforce="1" itemdamage="15" severlimbsprobability="60" penetration="0.95">
 					<Affliction identifier="bleeding" strength="10" />
 					<Affliction identifier="lacerations" strength="60" />
-					<!--Affliction identifier="lacerations" strength="18" /-->
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
 					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
