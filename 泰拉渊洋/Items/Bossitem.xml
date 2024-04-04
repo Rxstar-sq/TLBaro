@@ -11,10 +11,12 @@
         </Attack>
         <StatusEffect type="OnActive" target="This">
             <sound file="Content/Sounds/FireMedium.ogg" range="20000" loop="true" />
+            <ParticleEmitter particle="Worm_radi" AngleMax="360" DistanceMin="3" DistanceMax="3" ScaleMin="0" ScaleMultiplier="2,1" ParticleAmount="3" ParticlesPerSecond="20" ColorMultiplier="255,255,255,255" Distance="3" />
         </StatusEffect>
         <StatusEffect type="OnNotContained" target="This" stackable="false" Condition="-1.0" />
-        <StatusEffect type="OnImpact" target="This"
+        <StatusEffect type="OnImpact" target="This">
             <sound file="Content/Sounds/FireMedium.ogg" range="20000" loop="true" />
+            <ParticleEmitter particle="Worm_radi" AngleMax="360" DistanceMin="3" DistanceMax="3" ScaleMin="0" ScaleMultiplier="2,1" ParticleAmount="3" ParticlesPerSecond="20" ColorMultiplier="255,255,255,255" Distance="3" />
             <Explosion range="500.0" structuredamage="100" stun="1" force="5.0" smoke="false" flames="false" flash="true" applyFireEffects="false" sparks="false" underwaterbubble="false">
             <Affliction identifier="radiationsickness" strength="99" />
             </Explosion>
