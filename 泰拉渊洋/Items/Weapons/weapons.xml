@@ -80,7 +80,7 @@
 				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
 				<RequiredItem identifier="rubber" amount="2" />
 			</Fabricate>
-			<InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,640,64,64" origin="0.5,0.5" />
+			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
