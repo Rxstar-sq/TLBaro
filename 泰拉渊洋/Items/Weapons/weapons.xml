@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<Items>
+	
+
+		<!--制式装备-->
+		<Item name="TL-13常规型制式霰弹枪" description="TL集团开发的廉价制式装备，使用简单，制造方便，没有战斗经验的小白也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
+			<PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
+			<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
+			<PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
+			<PreferredContainer secondary="armcab" />
+			<Price baseprice="1000" sold="false">
+				<Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="3" sold="true" />
+			</Price>
+			<Deconstruct time="10">
+				<Item identifier="steel" />
+				<Item identifier="titaniumaluminiumalloy" amount="2" />
+				<Item identifier="plastic" amount="2" />
+			</Deconstruct>
+			<Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+				<RequiredSkill identifier="weapons" level="30" />
+				<RequiredItem identifier="steel" amount="4" />
+				<RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+				<RequiredItem identifier="plastic" amount="4" />
+			</Fabricate>
+			<Sprite texture="weapons_new.png" sourcerect="0,65,185,54" depth="0.55" origin="0.5,0.25" />
+			<Body width="180" height="30" density="25" />
+			<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect" />
+			<RangedWeapon barrelpos="80,5" spread="0.1" unskilledspread="3" combatPriority="80" reload="1" drawhudwhenequipped="true" crosshairscale="0.2">
+				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+				<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+				<Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+				<Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/Weapons/ShotgunShot3.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/Weapons/ShotgunShot4.ogg" type="OnUse" range="3000" />
+				<StatusEffect type="OnUse">
+					<Explosion range="200.0" force="10" shockwave="false" smoke="true" flash="true" sparks="false" flames="false" underwaterbubble="false" camerashake="6.0" />
+				</StatusEffect>
+				<!-- Cocking sound, delayed by 1.0 seconds. -->
+				<StatusEffect type="OnUse" delay="1.0">
+					<Sound file="Content/Items/Weapons/ShotgunLoad1.ogg" type="OnUse" range="500" selectionmode="Random" />
+					<Sound file="Content/Items/Weapons/ShotgunLoad2.ogg" type="OnUse" range="500" />
+					<Sound file="Content/Items/Weapons/ShotgunLoad3.ogg" type="OnUse" range="500" />
+					<ParticleEmitter particle="casingfirearm" colormultiplier="0.5,0.5,0.5,1" ScaleMultiplier="1.5,1.5" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+				</StatusEffect>
+				<RequiredItems items="TL13ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+				<RequiredSkill identifier="weapons" level="10" />
+			</RangedWeapon>
+			<ItemContainer capacity="1" maxstacksize="8" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+				<Containable items="TL13ammo" hide="true" />
+				<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+				<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+				<SubContainer capacity="1" maxstacksize="1">
+					<Containable items="flashlight" hide="false" itempos="26,-3" setactive="true" />
+				</SubContainer>
+			</ItemContainer>
+			<aitarget sightrange="3000" soundrange="5000" fadeouttime="5" />
+			<Quality>
+				<QualityStat stattype="FirepowerMultiplier" value="0.1" />
+			</Quality>
+		</Item>
+		<Item name="TL13散弹弹药（常规弹头）" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
+			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
+			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
+			<PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+			<PreferredContainer secondary="secarmcab" />
+			<Price baseprice="25" minleveldifficulty="30">
+				<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+				<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
+				<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+				<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+				<Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+				<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+				<Price storeidentifier="TLarmory" multiplier="0.6" minavailable="5"  sold="true" />
+			</Price>
+			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
+				<RequiredSkill identifier="weapons" level="30" />
+				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
+				<RequiredItem identifier="rubber" amount="2" />
+			</Fabricate>
+			
+			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
+			<Body width="23" height="10" density="30" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<!--When fired, spawns 8 projectiles simultaneously.-->
+			<Projectile characterusable="false" hitscan="true" hitscancount="6" removeonhit="true" spread="9">
+				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
+				<Attack structuredamage="15" targetforce="4" itemdamage="15" severlimbsprobability="0.5">
+					<Affliction identifier="stun" strength="0.3" />
+					<Affliction identifier="bleeding" strength="10" />
+					<Affliction identifier="gunshotwound" strength="12" />
+					<Affliction identifier="lacerations" strength="18" />
+				</Attack>
+				<StatusEffect type="OnImpact" target="UseTarget">
+					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
+				</StatusEffect>
+				<StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+					<Remove />
+				</StatusEffect>
+			</Projectile>
+		</Item>
+	
+	</Items>
+
+	
