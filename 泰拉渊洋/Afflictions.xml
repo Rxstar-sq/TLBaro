@@ -1,5 +1,4 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Override>
   <Afflictions>
     <!--招架姿态-->
     <Affliction name="格挡" description="使用武器招架" identifier="IchorClawBlock" isbuff="true" indicatorlimb="Torso" limbspecific="false" showiconthreshold="11" maxstrength="10">
@@ -9,5 +8,11 @@
       <!--图标:路径,定位,颜色-->
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,0,94,91" color="255,255,255,255" origin="0,0" />
     </Affliction>
+    <Affliction name="细胞崩解" identifier="al_cellruin" description="你因部分细胞永久失去了活性而变得更加脆弱了" type="debuff" limbspecific="false" maxstrength="100" affectmachines="false">
+      <Effect minstrength="0" maxstrength="100" strengthchange="-1" resistancefor="damage,poison" minresistance="0" maxresistance="-100" />
+      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="179,49,218,255" origin="0,0" />
+    </Affliction>
+
+
+
   </Afflictions>
-</Override>
