@@ -3,7 +3,7 @@
 	
 
 		<!--制式装备-->
-		<Item name="TL-13常规型制式霰弹枪" description="TL集团开发的廉价制式装备，使用简单，制造方便，没有战斗经验的小白也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="TL-13常规型制式霰弹枪" description="TL集团的制式装备，使用简单，制造方便，没有战斗经验也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
 			<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
@@ -80,7 +80,7 @@
 				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
 				<RequiredItem identifier="rubber" amount="2" />
 			</Fabricate>
-			
+			<InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="384,640,64,64" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
