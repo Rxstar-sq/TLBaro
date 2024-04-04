@@ -3,7 +3,7 @@
 	
 
 		<!--制式装备-->
-		<Item name="TL-13常规型制式霰弹枪" description="TL集团的制式装备，使用简单，制造方便，没有战斗经验也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="TL-13常规型制式霰弹枪" description="泰拉集团的制式装备，使用简单，制造方便，没有战斗经验也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
 			<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
@@ -64,7 +64,7 @@
 
 
 		<!--弹药相关-->
-		<Item name="TL13常规弹头" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="TL13常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
 			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
