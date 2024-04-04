@@ -6,19 +6,17 @@
         <Body width="10" height="10" density="10" />
         <Projectile characterusable="false" launchimpulse="57.0">
         <Attack structuredamage="100" penetration="1">
-            <Affliction identifier="radiationsickness" strength="50" />
-            <Affliction identifier="lacerations" strength="25" />
+            <Affliction identifier="bitewounds" strength="50" />
+            <Affliction identifier="lacerations" strength="50" />
         </Attack>
         <StatusEffect type="OnActive" target="This">
             <sound file="Content/Sounds/FireMedium.ogg" range="20000" loop="true" />
-            <ParticleEmitter particle="bossfireball" AngleMax="360" DistanceMin="3" DistanceMax="3" ScaleMin="0" ScaleMultiplier="6,3" ParticleAmount="3" ParticlesPerSecond="20" ColorMultiplier="72,123,57,200" Distance="3" />
         </StatusEffect>
         <StatusEffect type="OnNotContained" target="This" stackable="false" Condition="-1.0" />
         <StatusEffect type="OnImpact" target="This"
             <sound file="Content/Sounds/FireMedium.ogg" range="20000" loop="true" />
-            <ParticleEmitter particle="bossfireball" AngleMax="360" ScaleMultiplier="5,5" ParticleAmount="1" ParticlesPerSecond="0.5" ColorMultiplier="255,255,255,255" LifeTimeMultiplier="1.5" />
             <Explosion range="500.0" structuredamage="100" stun="1" force="5.0" smoke="false" flames="false" flash="true" applyFireEffects="false" sparks="false" underwaterbubble="false">
-            <Affliction identifier="radiationsickness" strength="50" />
+            <Affliction identifier="radiationsickness" strength="99" />
             </Explosion>
         </StatusEffect>
         <StatusEffect type="OnImpact" target="This">
