@@ -2,7 +2,7 @@
 <npcsets>
 <Override>
 	<npcset identifier="TLnpc">
-		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="9">
 			<Character name="泰拉战斗部-吸管" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -16,11 +16,12 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="boardingaxe" equip="true" />
+				<Item identifier="TL13" equip="true" />
+				<Item identifier="TL13ammo" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
-		<npc identifier="TLnpc4" job="securityofficer" spawnpointtags="Airlock" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+		<npc identifier="TLnpc4" job="securityofficer" spawnpointtags="Airlock" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="7">
 			<Character name="泰拉战斗部-末雨" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -34,11 +35,12 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="boardingaxe" equip="true" />
+				<Item identifier="TL13" equip="true" />
+				<Item identifier="TL13ammo" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
-	  <npc identifier="TLnpc2" job="Captain" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">
+	  <npc identifier="TLnpc2" job="Captain" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="2">
 		  <Character name="豹" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 			  <job name="Captain" identifier="Captain">
 				  <skill identifier="electrical" level="100" />
