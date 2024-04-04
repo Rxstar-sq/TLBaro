@@ -64,7 +64,7 @@
 
 
 		<!--弹药相关-->
-		<Item name="TL13常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL13ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="TL常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
 			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
@@ -88,10 +88,10 @@
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<!--When fired, spawns 8 projectiles simultaneously.-->
-			<Projectile characterusable="false" hitscan="true" hitscancount="6" removeonhit="true" spread="9">
+			<!--When fired, spawns 9 projectiles simultaneously.-->
+			<Projectile characterusable="false" hitscan="true" hitscancount="9" removeonhit="true" spread="9">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
-				<Attack structuredamage="15" targetforce="4" itemdamage="15" severlimbsprobability="0.5">
+				<Attack structuredamage="15" targetforce="4" itemdamage="15" severlimbsprobability="0.3">
 					<Affliction identifier="stun" strength="0.3" />
 					<Affliction identifier="bleeding" strength="10" />
 					<Affliction identifier="gunshotwound" strength="12" />
@@ -105,7 +105,50 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
-	
+		<Item name="TL箭型弹" description="泰拉集团研制的另一款特化型霰弹枪子弹，钢制箭型弹头，拥有极强的穿透能力" identifier="TL13ammo_ap" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
+			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
+			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
+			<PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
+			<PreferredContainer secondary="secarmcab" />
+			<Price baseprice="100" minleveldifficulty="30">
+				<Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
+				<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
+				<Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+				<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="12" />
+				<Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+				<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
+				<Price storeidentifier="TLarmory" multiplier="0.6" minavailable="5" sold="true" />
+			</Price>
+			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
+				<RequiredSkill identifier="weapons" level="30" />
+				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" />
+				<RequiredItem identifier="rubber" amount="2" />
+			</Fabricate>
+			<!--等待贴图-->
+			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
+			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
+			<Body width="23" height="10" density="30" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<!--一次发射3发射弹-->
+			<Projectile characterusable="false" maxtargetstohit="20" hitscan="true" hitscancount="3" removeonhit="true" spread="6">
+				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
+				<Attack structuredamage="1" targetforce="1" itemdamage="15" severlimbsprobability="60" penetration="0.95">
+					<Affliction identifier="bleeding" strength="10" />
+					<Affliction identifier="lacerations" strength="60" />
+					<!--Affliction identifier="lacerations" strength="18" /-->
+				</Attack>
+				<StatusEffect type="OnImpact" target="UseTarget">
+					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
+				</StatusEffect>
+				<StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+					<Remove />
+				</StatusEffect>
+			</Projectile>
+		</Item>
+
+
+
 	</Items>
 
 	
