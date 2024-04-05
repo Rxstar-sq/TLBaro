@@ -173,13 +173,12 @@
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射8发射弹-->
-			<Projectile characterusable="false" maxtargetstohit="2" hitscan="true" hitscancount="8" removeonhit="true" spread="12">
+			<Projectile characterusable="false" maxtargetstohit="1" hitscan="true" hitscancount="6" removeonhit="true" spread="12">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="6" itemdamage="15" severlimbsprobability="0.5" penetration="0.5">
-					<Affliction identifier="bleeding" strength="5" />
-					<Affliction identifier="alcellruin" strength="10" /> <!--赋予易伤效果-->
-					<Affliction identifier="organdamage" strength="5" />
-					<Affliction identifier="gunshotwound" strength="8" /> 
+					<Affliction identifier="alcellruin" strength="5" /> <!--赋予易伤效果-->
+					<Affliction identifier="organdamage" strength="2" />
+					<Affliction identifier="gunshotwound" strength="3" /> 
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
 					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
