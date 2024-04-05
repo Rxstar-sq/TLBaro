@@ -106,7 +106,7 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
-		<Item name="TL箭型弹" description="泰拉集团研制的另一款特化型霰弹枪子弹，钢制箭型弹头，拥有极强的穿透能力" identifier="TL13ammo_ap" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="TL箭型弹" description="泰拉集团研制的另一款特化型霰弹枪子弹，钢制箭型弹头，拥有极强的穿甲和穿透能力" identifier="TL13ammo_ap" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
 			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
 			<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
@@ -132,11 +132,11 @@
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射3发射弹-->
-			<Projectile characterusable="false" maxtargetstohit="20" hitscan="true" hitscancount="3" removeonhit="true" spread="7">
+			<Projectile characterusable="false" maxtargetstohit="5" hitscan="true" hitscancount="3" removeonhit="true" spread="7">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="1" itemdamage="15" severlimbsprobability="60" penetration="0.95">
-					<Affliction identifier="bleeding" strength="10" />
-					<Affliction identifier="lacerations" strength="50" />
+					<Affliction identifier="bleeding" strength="1" />
+					<Affliction identifier="lacerations" strength="20" />
 					<Affliction identifier="gunshotwound" strength="3" />
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
@@ -176,7 +176,7 @@
 			<Projectile characterusable="false" maxtargetstohit="2" hitscan="true" hitscancount="8" removeonhit="true" spread="12">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="6" itemdamage="15" severlimbsprobability="0.5" penetration="0.5">
-					<Affliction identifier="bleeding" strength="10" />
+					<Affliction identifier="bleeding" strength="5" />
 					<Affliction identifier="al_cellruin" strength="10" /> <!--赋予易伤效果-->
 					<Affliction identifier="organdamage" strength="5" />
 					<Affliction identifier="gunshotwound" strength="8" /> 
