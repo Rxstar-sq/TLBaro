@@ -13,6 +13,19 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="179,49,218,200" origin="0,0" />
     </Affliction>
 
+<Afflictions>
+  <Affliction name="吞噬" identifier="tl_consumed" target="human" description="你被异兽活炫啦" type="consumed" limbspecific="false" indicatorlimb="Torso" causeofdeathdescription="被吞噬" selfcauseofdeathdescription="你被异兽活炫啦" activationthreshold="0" showinhealthscannerthreshold="1" showiconthreshold="1" showicontoothersthreshold="1" maxstrength="1">
+    <Effect minstrength="0.1" maxstrength="1" minvitalitydecrease="0" maxvitalitydecrease="2" multiplybymaxvitality="true" strengthchange="0.1">
+      <StatusEffect target="Character" comparison="and">
+        <Conditional speciesname="human" />
+        <Affliction identifier="Bleeding" strength="200" />
+      </StatusEffect>
+      <StatusEffect type="OnDeath" target="Character">
+        <RemoveCharacter />
+      </StatusEffect>
+    </Effect>
+    <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,512,128,128" color="195,136,60,255" origin="0,0" />
+  </Affliction>
 
 
   </Afflictions>
