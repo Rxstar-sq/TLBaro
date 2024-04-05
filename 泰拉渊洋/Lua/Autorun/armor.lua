@@ -1,4 +1,3 @@
-print("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
 Hook.Add("character.applyDamage", "LuaArmor.ApplyDamage", function (characterHealth, attackResult, hitLimb)
     if hitLimb.type ~= LimbType.Torso then return end
 
@@ -23,4 +22,22 @@ Hook.Add("character.applyDamage", "LuaArmor.ApplyDamage", function (characterHea
     else
         Entity.Spawner.AddEntityToRemoveQueue(armor)
     end
+end)
+
+Hook.Add("chatMessage", "examples.giveAfflictions", function (message, client)
+    if message ~= "!xibao" then return end
+    local burnPrefab = AfflictionPrefab.Prefabs["alcellruin"]
+    local character
+    if SERVER then
+        character = client.Character
+    else
+        character = Character.Controlled
+    end
+
+    if character == nil then return end
+
+    local limb = character.AnimController.GetLimb(LimbType.Torso)
+
+    -- give 50 of burns to the head of the character
+    character.CharacterHealth.ApplyAffliction(limb, burnPrefab.Instantiate(50))
 end)

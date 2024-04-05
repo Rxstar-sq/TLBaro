@@ -62,7 +62,7 @@
 	   scale="0.35" cargocontaineridentifier="metalcrate" description=""
 	   impactsoundtag="impact_soft">
 	   		<Price baseprice="3500" sold="false">
-				<Price storeidentifier="TLnpc3" multiplier="1.1" />
+				<Price storeidentifier="TLarmory" multiplier="1.1" />
 			</Price>
 			<Upgrade gameversion="0.9.3.0" scale="0.35" />
 			<PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
@@ -88,6 +88,44 @@
 			</Wearable>
 		</Item>
 		
+		
+	<!-- 药品 -->
+	<REalcellruin name="细胞神经生长因子" identifier="REalcellruin"  category="Medical" Tags="smallitem,medical" maxstacksize="18" maxstacksizecharacterinventory="6" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="昂贵的细胞再生药品，由集团研发部供货，其他商人那里都是假货哦" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
+    <Price baseprice="1500" minavailable="25">
+      <Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
+    </Price>
+	<!-- 药物合成待定
+	<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="2">
+      <RequiredSkill identifier="medical" level="5" />
+      <RequiredItem identifier="organicfiber" />
+    </Fabricate>
+		-->
+    <Deconstruct time="3"/>
+    <SuitableTreatment type="alcellruin" suitability="50" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+	<!--等待贴图-->
+    <Sprite texture="Medicines.png" sourcerect="310,33,26,42" depth="0.6" origin="0.5,0.5" />
+    <Body width="25" height="40" density="10.05" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+        <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+        <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="20" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="15" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <SkillRequirementHint identifier="medical" level="45" />
+  </REalcellruin>
+
 	</Items>
 
 	

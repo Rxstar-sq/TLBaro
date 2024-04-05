@@ -72,7 +72,6 @@
         </StatusEffect>
       </ItemComponent>
 </Item>
-<Items>
     <Item name="脑珠" identifier="worm_fs_nz" tags="smallitem" maxstacksize="1" category="Misc" cargocontaineridentifier="metalcrate" pickdistance="150" scale="0.5" description="" HideConditionBar="true" isshootable="true">
         <Body width="106" height="95" density="40" />
         <Sprite texture="%ModDir%\Items\Creatureloot\脑珠.png" depth="0.75" sourcerect="0,0,411,401" origin="0.5,0.5" />
