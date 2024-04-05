@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Weather Particles -->
+  <Item name="Env Particles Snow 1" identifier="ekdockyard_customenvironmentparticles_precipitationsnow1small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Snowfall (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer1" anglemin="0" anglemax="360" particlespersecond="6" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="400" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer2" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="400" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer3" anglemin="0" anglemax="360" particlespersecond="4" velocitymin="0" velocitymax="50" scalemin="0.70" scalemax="0.90" distancemin="0" distancemax="400" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Snow 1" identifier="ekdockyard_customenvironmentparticles_precipitationsnow1medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Snowfall (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer1" anglemin="0" anglemax="360" particlespersecond="12" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="800" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer2" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="800" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer3" anglemin="0" anglemax="360" particlespersecond="8" velocitymin="0" velocitymax="50" scalemin="0.70" scalemax="0.90" distancemin="0" distancemax="800" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Snow 1" identifier="ekdockyard_customenvironmentparticles_precipitationsnow1large" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Snowfall (Large)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="512,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer1" anglemin="0" anglemax="360" particlespersecond="18" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="1200" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer2" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="1200" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow1layer3" anglemin="0" anglemax="360" particlespersecond="12" velocitymin="0" velocitymax="50" scalemin="0.70" scalemax="0.90" distancemin="0" distancemax="1200" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Snow 2" identifier="ekdockyard_customenvironmentparticles_precipitationsnow2small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Heavy Snow (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer1" anglemin="0" anglemax="360" particlespersecond="7" velocitymin="0" velocitymax="50" scalemin="1.00" scalemax="1.20" distancemin="0" distancemax="400" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer2" anglemin="0" anglemax="360" particlespersecond="5" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="400" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer3" anglemin="0" anglemax="360" particlespersecond="6" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="400" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Snow 2" identifier="ekdockyard_customenvironmentparticles_precipitationsnow2medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Heavy Snow (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer1" anglemin="0" anglemax="360" particlespersecond="14" velocitymin="0" velocitymax="50" scalemin="1.00" scalemax="1.20" distancemin="0" distancemax="800" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer2" anglemin="0" anglemax="360" particlespersecond="10" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="800" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer3" anglemin="0" anglemax="360" particlespersecond="12" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="800" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Snow 2" identifier="ekdockyard_customenvironmentparticles_precipitationsnow2large" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Heavy Snow (Large)" Tags="" scale="0.25" isshootable="false" spritecolor="200,225,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer1" anglemin="0" anglemax="360" particlespersecond="21" velocitymin="0" velocitymax="50" scalemin="1.00" scalemax="1.20" distancemin="0" distancemax="1200" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer2" anglemin="0" anglemax="360" particlespersecond="15" velocitymin="0" velocitymax="50" scalemin="0.90" scalemax="1.10" distancemin="0" distancemax="1200" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_snow2layer3" anglemin="0" anglemax="360" particlespersecond="18" velocitymin="0" velocitymax="50" scalemin="0.80" scalemax="1.00" distancemin="0" distancemax="1200" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Rain 1" identifier="ekdockyard_customenvironmentparticles_precipitationrain1small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Rain (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer1" anglemin="0" anglemax="360" particlespersecond="4" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="500" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer2" anglemin="0" anglemax="360" particlespersecond="4" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="500" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Rain 1" identifier="ekdockyard_customenvironmentparticles_precipitationrain1medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Rain (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer1" anglemin="0" anglemax="360" particlespersecond="8" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="1000" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer2" anglemin="0" anglemax="360" particlespersecond="8" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="1000" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Particles Rain 1" identifier="ekdockyard_customenvironmentparticles_precipitationrain1large" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Rain (Large)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="512,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer1" anglemin="0" anglemax="360" particlespersecond="16" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="1500" />
+        <ParticleEmitter particle="ekdockyard_environmentprecipitation_rain1layer2" anglemin="0" anglemax="360" particlespersecond="16" velocitymin="0" velocitymax="50" scalemin="1" scalemax="1" distancemin="0" distancemax="1500" />
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Lightning 1" identifier="ekdockyard_customenvironment_lightning1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Near Lightning and Thunder" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="768,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="0,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,175" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_ultrabright_hires.png" origin="0.5,0.5" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="10" setvalue="true" range="4096" />
+    </LightComponent>
+    <!--
+	<LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q3.png" origin="1.0,0.0" size="1.01,1.01" />
+    </LightComponent>
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q2.png" origin="0.0,1.0" size="1.01,1.01" />
+    </LightComponent>
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q1.png" origin="1.0,1.0" size="1.01,1.01" />
+    </LightComponent>
+	-->
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" Condition="-99.0" disabledeltatime="true" delay="0.01" IsOn="true">
+          <Conditional condition="eq 100" />
+          <sound file="%ModDir%/Items/Environment/thunder_near1_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_near2_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_near3_mono.ogg" selectionmode="Random" range="5000" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" delay="0.65" IsOn="false">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" Condition="100.0" disabledeltatime="true" delay="2">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Lightning 2" identifier="ekdockyard_customenvironment_lightning2" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Distant Lightning and Thunder" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="768,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weather.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,75" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_ultrabright_hires.png" origin="0.5,0.5" />
+      <StatusEffect type="Always" target="This" disabledeltatime="true" stackable="false" delay="10" setvalue="true" range="4096" />
+    </LightComponent>
+    <!--
+	<LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q3.png" origin="1.0,0.0" size="1.01,1.01" />
+    </LightComponent>
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q2.png" origin="0.0,1.0" size="1.01,1.01" />
+    </LightComponent>
+    <LightComponent canbeselected="false" IsOn="false" flicker="1" flickerspeed="0.6" lightcolor="225,225,255,255" castshadows="true" allowingameediting="false" range="4096">
+      <LightTexture texture="%ModDir%/Lights/pointlight_bright_q1.png" origin="1.0,1.0" size="1.01,1.01" />
+    </LightComponent>
+	-->
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" Condition="-99.0" disabledeltatime="true" delay="0.01" IsOn="true">
+          <Conditional condition="eq 100" />
+          <sound file="%ModDir%/Items/Environment/thunder_far1_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far2_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far3_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far4_mono.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far5_mono.ogg" selectionmode="Random" range="5000" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" delay="0.65" IsOn="false">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+        <StatusEffect type="OnUse" target="This" Condition="100.0" disabledeltatime="true" delay="2">
+          <Conditional condition="eq 100" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+</Items>

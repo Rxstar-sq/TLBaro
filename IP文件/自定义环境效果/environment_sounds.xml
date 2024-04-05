@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Weather Sounds -->
+  <Item name="Env Sound Rain 1" identifier="ekdockyard_customenvironmentsounds_rain1small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Rain (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="0,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rain_loop1.ogg" type="OnActive" range="1000.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Rain 1" identifier="ekdockyard_customenvironmentsounds_rain1medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Rain (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="256,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rain_loop1.ogg" type="OnActive" range="2500.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Rain 2" identifier="ekdockyard_customenvironmentsounds_rain2small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Rain (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="0,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rainlight_loop1.ogg" type="OnActive" range="1000.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Rain 2" identifier="ekdockyard_customenvironmentsounds_rain2medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Light Rain (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="256,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rainlight_loop1.ogg" type="OnActive" range="2500.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Rain 3" identifier="ekdockyard_customenvironmentsounds_rain3small" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Heavy Rain (Small)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="0,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rainheavy_loop1.ogg" type="OnActive" range="1000.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Rain 3" identifier="ekdockyard_customenvironmentsounds_rain3medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Heavy Rain (Medium)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="256,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <sound file="%ModDir%/Items/Environment/rainheavy_loop1.ogg" type="OnActive" range="2500.0" loop="true" volume="1.0" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Thunder 1" identifier="ekdockyard_customenvironmentsounds_thunder2medium" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Distant Thunder (medium)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="768,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="256,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" delay="0.01" IsOn="true">
+          <Conditional condition="eq 100" />
+          <sound file="%ModDir%/Items/Environment/thunder_far1.ogg" selectionmode="Random" range="2500" />
+          <sound file="%ModDir%/Items/Environment/thunder_far2.ogg" selectionmode="Random" range="2500" />
+          <sound file="%ModDir%/Items/Environment/thunder_far3.ogg" selectionmode="Random" range="2500" />
+          <sound file="%ModDir%/Items/Environment/thunder_far4.ogg" selectionmode="Random" range="2500" />
+          <sound file="%ModDir%/Items/Environment/thunder_far5.ogg" selectionmode="Random" range="2500" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Sound Thunder" identifier="ekdockyard_customenvironmentsounds_thunder2large" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Distant Thunder (large)" Tags="" scale="0.25" isshootable="false" spritecolor="175,175,200,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="768,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_weathersounds.png" sourcerect="512,0,256,64" offset="0,152" depth="0.551" origin="0.5,0.5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true" delay="0.01" IsOn="true">
+          <Conditional condition="eq 100" />
+          <sound file="%ModDir%/Items/Environment/thunder_far1.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far2.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far3.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far4.ogg" selectionmode="Random" range="5000" />
+          <sound file="%ModDir%/Items/Environment/thunder_far5.ogg" selectionmode="Random" range="5000" />
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+</Items>

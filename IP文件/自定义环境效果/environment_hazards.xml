@@ -1,0 +1,530 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!-- Affliction Emitters -->
+  <!-- 環境輻射源 -->
+  <!-- 這裡基本不需要改 -->
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (1.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter2" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (3m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter3" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter4" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (7.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="768,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter5" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (10m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter6" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Radiation Emitter (20m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!--
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter7" category="Alien"
+  description="Ambient Radiation Emitter (30m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5"/>
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5" >
+		<Explosion range="3100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" >
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate" >
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+		  <Explosion range="3100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" >
+			<Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+		</StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  
+  <Item name="Env Radiation Source" identifier="ekdockyard_customenvironmenthazard_radiationemitter8" category="Alien"
+  description="Ambient Radiation Emitter (40m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="175,200,100,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="768,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5"/>
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5" >
+		<Explosion range="4100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" >
+          <Affliction identifier="radiationsickness" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate" >
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+		  <Explosion range="4100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false" >
+			<Affliction identifier="radiationsickness" amount="10" />
+          </Explosion>
+		</StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  -->
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (1.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter2" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (3m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter3" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter4" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (7.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="768,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter5" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (10m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Psychosis Source" identifier="ekdockyard_customenvironmenthazard_psychosisemitter6" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Psychosis Emitter (20m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="200,100,150,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="psychosis" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="psychosis" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (1.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="175.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter2" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (3m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="325.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter3" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="550.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter4" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (7.5m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="768,0,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="775.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter5" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (10m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="1100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Burn Source" identifier="ekdockyard_customenvironmenthazard_burnemitter6" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Burn Emitter (20m Range)" Tags="" scale="0.25" isshootable="false" spritecolor="255,125,0,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,256,256,256" depth="0.55" origin="0.5,0.5" />
+    <DecorativeSprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,64,256,64" offset="0,84" depth="0.551" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="This" disabledeltatime="true" stackable="false" delay="0.5">
+        <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+          <Affliction identifier="burn" amount="0.5" />
+        </Explosion>
+      </StatusEffect>
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+      <input name="activate" displayname="connection.activate">
+        <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+          <Explosion range="2100.0" structuredamage="0" itemdamage="0" force="0.005" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" camerashake="0" playtinnitus="false" applyfireeffects="false">
+            <Affliction identifier="burn" amount="10" />
+          </Explosion>
+        </StatusEffect>
+      </input>
+    </ConnectionPanel>
+  </Item>
+  <!-- Atmosphere Emitters -->
+  <Item name="Env Oxygen Source" identifier="ekdockyard_customenvironmenthazard_oxygenemitter1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Oxygen Emitter" Tags="" scale="0.25" isshootable="false" spritecolor="100,175,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="0,512,256,256" depth="0.55" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="Hull" Oxygen="2000000" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Oxygen Remover" identifier="ekdockyard_customenvironmenthazard_oxygenremover1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Oxygen Remover" Tags="" scale="0.25" isshootable="false" spritecolor="100,175,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="256,512,256,256" depth="0.55" origin="0.5,0.5" />
+    <LightComponent canbeselected="false" IsOn="true" lightcolor="25,25,25,0" castshadows="false" allowingameediting="false" range="1">
+      <StatusEffect type="OnActive" target="Hull" Oxygen="-2000000" />
+    </LightComponent>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_state" displayname="connection.setstate" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="Env Water" identifier="ekdockyard_customenvironmenthazard_pump1" category="Alien" subcategory="ekr_dockyard_customenvironment" description="Ambient Water Emitter/Remover" Tags="" scale="0.25" isshootable="false" spritecolor="100,125,255,175" hiddeningame="true">
+    <sprite texture="%ModDir%/Items/Environment/environmentemitters_afflictions.png" sourcerect="512,512,256,256" depth="0.55" origin="0.5,0.5" />
+    <Pump canbeselected="true" maxflow="600" PowerConsumption="0.0" MinVoltage="0.0" IsOn="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.25,0.2" minsize="420,220" anchor="Center" style="ItemUI" />
+    </Pump>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="toggle" displayname="connection.togglestate" />
+      <input name="set_active" displayname="connection.setstate" />
+      <input name="set_speed" displayname="connection.setpumpingspeed" />
+      <input name="set_targetlevel" displayname="connection.settargetwaterlevel" />
+    </ConnectionPanel>
+  </Item>
+</Items>
