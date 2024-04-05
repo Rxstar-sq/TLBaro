@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
+    <!--辐射蠕虫投射物-->
     <Item name="Worm_Radi" identifier="Worm_Radi" noninteractable="true" category="Misc" scale="0.5" sonarsize="2" hideinmenus="true" health="12" spritecolor="72,123,57,0">
         <InventoryIcon texture="%ModDir%/Characters/辐射蠕虫/攻击贴图.png" sourcerect="0,0,234,234" origin="0.5,0.5" />
         <Sprite texture="%ModDir%/Characters/辐射蠕虫/攻击贴图.png" sourcerect="827,176,122,126" depth="0.55" />
