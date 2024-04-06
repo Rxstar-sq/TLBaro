@@ -248,8 +248,8 @@
 				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture=" " sourcerect=" " origin="0.5,0.5" />
-			<Sprite texture=" " sourcerect=" " depth="0.55" origin="0.5,0.5" />
+			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
+			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="30" height="50" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--发射普通子弹-->
@@ -315,8 +315,8 @@
 				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture=" " sourcerect=" " origin="0.5,0.5" />
-			<Sprite texture=" " sourcerect=" " depth="0.55" origin="0.5,0.5" />
+			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
+			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="30" height="50" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--发射崩解子弹-->

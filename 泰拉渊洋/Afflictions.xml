@@ -15,12 +15,7 @@
     </xibao>
 	  
     <Affliction name="细胞崩解" identifier="alcellruin_in" target="human" description="你因部分细胞永久失去了活性而变得更加脆弱了" type="alcellruin_in" limbspecific="false" indicatorlimb="Torso" maxstrength="100">
-      <Effect minstrength="0" maxstrength="1" strengthchange="0" minvitalitydecrease="10" maxvitalitydecrease="20"/>
-        <StatusEffect target="Character" interval="2">
-          <Affliction identifier="alcellruin" strength="1" />
-        </StatusEffect>
-      </Effect>
-      <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="179,49,218,200" origin="0,0" />
+      <Effect minstrength="0" maxstrength="100" strengthchange="1" resistancefor="damage,poison" minresistance="0" maxresistance="-100" minvitalitydecrease="10" maxvitalitydecrease="20"/>
     </Affliction>
       
     <Affliction name="吞噬" identifier="tl_consumed" target="human" description="你被异兽活炫啦" type="consumed" limbspecific="false" indicatorlimb="Torso" causeofdeathdescription="被吞噬" selfcauseofdeathdescription="你被异兽活炫啦" activationthreshold="0" showinhealthscannerthreshold="1" showiconthreshold="1" showicontoothersthreshold="1" maxstrength="1">
