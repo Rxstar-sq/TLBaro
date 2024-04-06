@@ -10,7 +10,7 @@
     </Affliction>
 	  
     <xibao name="细胞崩解" isbuff="false" identifier="alcellruin" description="你因部分细胞永久失去了活性而变得更加脆弱了" type="alcellruin" limbspecific="false" showinhealthscannerthreshold="1" showiconthreshold="1" showicontoothersthreshold="1" maxstrength="100" affectmachines="false" indicatorlimb="Torso">
-      <Effect minstrength="0" maxstrength="100" strengthchange="-0.1" resistancefor="damage,poison" minresistance="0" maxresistance="-100" />
+      <Effect minstrength="0" maxstrength="100" strengthchange="0" resistancefor="damage,poison" minresistance="0" maxresistance="-100" />
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,384,128,128" color="179,49,218,200" origin="0,0" />
     </xibao>
 	  
