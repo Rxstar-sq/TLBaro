@@ -387,21 +387,16 @@
 	
    <OutpostConfig
     identifier="TL"
- 	  replaceinradiation="abandonedoutpost"
-	  totalmodulecount="9"
-	  appendtoreachtotalmodulecount="false"
-	  minhallwaylength="0"
-	  allowedlocationtypes="TL">
+ 	replaceinradiation="abandonedoutpost"
+	totalmodulecount="6"
+	appendtoreachtotalmodulecount="false"
+	minhallwaylength="400"
+	allowedlocationtypes="TL">
 		<modulecount flag="Airlock" count="1"/>
 		<modulecount flag="EngineeringModule" count="1"/>
 		<modulecount flag="AdminModule" count="1"/>
+		<modulecount flag="CrewModule" count="1"/>
 		<modulecount flag="MedicalModule" count="1"/>
-		<modulecount flag="ResearchModule" count="1"/>
-		<modulecount flag="ResidentialModuleMain" count="1"/>
-		<modulecount flag="SecurityModule" count="1"/>
-		<modulecount flag="ArmoryModule" count="1"/>
-		<modulecount flag="ClownModule" count="1" order="1" requiredfaction="clowns"/>
-		<modulecount flag="HuskModule" count="1" order="1" requiredfaction="huskcult"/>
 
 		<npcs>
 			<npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="coalition"/>
