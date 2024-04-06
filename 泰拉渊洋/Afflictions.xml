@@ -2,7 +2,7 @@
   <Afflictions>
     <!--招架姿态-->
     <Affliction name="格挡" description="使用武器招架" identifier="IchorClawBlock" isbuff="true" indicatorlimb="Torso" limbspecific="false" showiconthreshold="11" maxstrength="10">
-      <!--招架类型:撕裂伤,钝击伤,咬伤,流血-->
+      <!--招架类型:撕裂伤,钝击伤,咬伤,流血，枪伤-->
       <Effect minstrength="0" maxstrength="10" strengthchange="-10" resistancefor="lacerations,blunttrauma,bitewounds,bleeding,gunshotwound" minresistance="0.00" maxresistance="1.00" />
       <!--招架效果:强度范围,效果移除,招架类型,招架强度-->
       <!--图标:路径,定位,颜色-->

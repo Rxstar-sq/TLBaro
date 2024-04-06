@@ -79,12 +79,14 @@
 				<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
 				<Price storeidentifier="TLarmory" multiplier="0.6" minavailable="5"  sold="true" />
 			</Price>
-			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
+			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="4">
 				<RequiredSkill identifier="weapons" level="30" />
 				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion"/>
 				<RequiredItem identifier="aluminium" amount="2" />
 				<RequiredItem identifier="lead" amount="2" />
 			</Fabricate>
+			<Deconstruct time="8">
+			</Deconstruct>
 			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
@@ -121,11 +123,14 @@
 				<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
 				<Price storeidentifier="TLarmory" multiplier="0.6" minavailable="5" sold="true" />
 			</Price>
-			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="12">
+			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
 				<RequiredSkill identifier="weapons" level="30" />
 				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
 				<RequiredItem tag="advmunition_tip" amount="2" />
 			</Fabricate>
+			<Deconstruct time="8">
+				<Item identifier="plastic" />
+			</Deconstruct>
 			<!--等待贴图-->
 			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
@@ -162,11 +167,15 @@
 				<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
 				<Price storeidentifier="TLarmory" multiplier="0.6" minavailable="5" sold="true" />
 			</Price>
-			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="4">
+			<Fabricate suitablefabricators="fabricator" requiredtime="20" amount="2">
 				<RequiredSkill identifier="weapons" level="30" />
-				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="1"/>
-				<RequiredItem tag="advmunition_jacket" amount="1" />
+				<RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2"/>
+				<RequiredItem tag="advmunition_jacket" amount="2" />
+				<RequiredItem identifier ="nanogel_cr" amount="2" />
 			</Fabricate>
+			<Deconstruct time="8">
+				<Item identifier="plastic" />
+			</Deconstruct>
 			<!--等待贴图-->
 			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
 			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
@@ -188,6 +197,193 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
+		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+			<PreferredContainer primary="secarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<Price baseprice="200" buyingpricemultiplier="1.3" minleveldifficulty="0">
+				<Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="1" />
+				<Price locationtype="city" multiplier="1" minavailable="1" maxavailable="2" />
+				<Price locationtype="research" multiplier="1.05" sold="false" />
+				<Price locationtype="military" multiplier="0.9" minavailable="2" maxavailable="4" />
+				<Price locationtype="mine" multiplier="1.25" sold="false" />
+				<Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
+			</Price>
+			<!--需要武器等级20，材料为铝，钾，铅/铜/钢筋-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="12" requiresrecipe="false">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="aluminium" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+			</Fabricate>
+			<!--可通过其他通用弹夹回收制作-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="TL_magazine_cr" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+			</Fabricate>
+			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="TL_magazine" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+			</Fabricate>
+			<!--留空以用于其他可能的通用弹夹回收-->
+
+			<!---->
+			<!--批量制作，一次8个【也就是背包里的两组】-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="40" requiresrecipe="false" amount="8" displayname="多量制作">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="aluminium" amount="8" />
+				<RequiredItem tag="munition_core" amount="6"/>
+				<RequiredItem identifier="potassium" amount="3" />
+			</Fabricate>
+			<!--分解获得铝和钛铝合金-->
+			<Deconstruct time="8">
+				<Item identifier="aluminium" />
+				<Item identifier="titaniumaluminiumalloy" />
+			</Deconstruct>
+			<!--等待贴图-->
+			<InventoryIcon texture=" " sourcerect=" " origin="0.5,0.5" />
+			<Sprite texture=" " sourcerect=" " depth="0.55" origin="0.5,0.5" />
+			<Body width="30" height="50" density="30" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<!--发射普通子弹-->
+			<ItemContainer hideitems="true" capacity="1" drawinventory="true" canbeselected="true" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+				<Containable items="TL_zd_normal" />
+				<StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+					<SpawnItem identifiers="TL_zd_normal" spawnposition="ThisInventory" />
+				</StatusEffect>
+			</ItemContainer>
+			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+		</Item>
+		<Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的崩解弹弹匣" identifier="TL_magazine_cr" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+			<PreferredContainer primary="secarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+			<Price baseprice="300" buyingpricemultiplier="1.3" minleveldifficulty="0">
+				<Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="1" />
+				<Price locationtype="city" multiplier="1" minavailable="1" maxavailable="2" />
+				<Price locationtype="research" multiplier="1.05" sold="false" />
+				<Price locationtype="military" multiplier="0.9" minavailable="2" maxavailable="4" />
+				<Price locationtype="mine" multiplier="1.25" sold="false" />
+				<Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
+			</Price>
+			<!--需要武器等级20，材料为钛铝合金，钾，铅/铜/钢筋，破坏性纳米凝胶-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="12" requiresrecipe="false">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem identifier ="nanogel_cr" amount="1" />
+			</Fabricate>
+			<!--可通过其他通用弹夹回收制作-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="TL_magazine_cr" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem identifier ="nanogel_cr" amount="1" />
+			</Fabricate>
+			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="TL_magazine" amount="1" />
+				<RequiredItem tag="munition_core" />
+				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem identifier ="nanogel_cr" amount="1" />
+			</Fabricate>
+			<!--留空以用于其他可能的通用弹夹回收-->
+
+			<!---->
+			<!--批量制作，一次8个【也就是背包里的两组】-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="40" requiresrecipe="false" amount="8" displayname="多量制作">
+				<RequiredSkill identifier="weapons" level="20" />
+				<RequiredItem identifier="titaniumaluminiumalloy" amount="8" />
+				<RequiredItem tag="munition_core" amount="6"/>
+				<RequiredItem identifier="potassium" amount="3" />
+				<RequiredItem identifier ="nanogel_cr" amount="8" />
+			</Fabricate>
+			<!--分解获得钛铝合金-->
+			<Deconstruct time="8">
+				<Item identifier="titaniumaluminiumalloy" />
+			</Deconstruct>
+			<!--等待贴图-->
+			<InventoryIcon texture=" " sourcerect=" " origin="0.5,0.5" />
+			<Sprite texture=" " sourcerect=" " depth="0.55" origin="0.5,0.5" />
+			<Body width="30" height="50" density="30" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<!--发射崩解子弹-->
+			<ItemContainer hideitems="true" capacity="1" drawinventory="true" canbeselected="true" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+				<Containable items="TL_zd_cr" />
+				<StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+					<SpawnItem identifiers="TL_zd_cr" spawnposition="ThisInventory" />
+				</StatusEffect>
+			</ItemContainer>
+			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+		</Item>
+
+
+		<!--子弹实体-->
+		<!--制式弹夹普通子弹-->
+		<Item name="TL_zd_normal" identifier="TL_zd_normal" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
+			<InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
+			<Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
+			<Body width="40" height="14" density="40" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
+				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
+				<Attack structuredamage="6" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.265">
+					<Affliction identifier="gunshotwound" strength="16" />
+					<Affliction identifier="gunshotwound" strength="2" probability="0.05" />
+					<Affliction identifier="gunshotwound" strength="2" probability="0.1" />
+					<Affliction identifier="bleeding" strength="15" />
+					<Affliction identifier="stun" strength="0.1" probability="0.4" />
+					<Affliction identifier="stun" strength="0.2" probability="0.3" />
+				</Attack>
+				<StatusEffect type="OnImpact" target="UseTarget">
+				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+				</StatusEffect>
+				<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure" />
+				<Conditional hastag="eq door" />
+				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+				</StatusEffect>
+			</Projectile>
+		</Item>
+		<!--制式弹夹崩解子弹-->
+		<Item name="TL_zd_cr" identifier="TL_zd_cr" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
+			<InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
+			<Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
+			<Body width="40" height="14" density="40" />
+			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
+				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
+				<Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.3">
+					<Affliction identifier="gunshotwound" strength="5" />
+					<Affliction identifier="gunshotwound" strength="2" probability="0.15" />
+					<Affliction identifier="alcellruin" strength="2" />
+					<Affliction identifier="alcellruin" strength="4" probability="0.1"/>
+					<Affliction identifier="stun" strength="0.1" probability="0.4" />
+					<Affliction identifier="stun" strength="0.2" probability="0.3" />
+				</Attack>
+				<StatusEffect type="OnImpact" target="UseTarget">
+				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+				</StatusEffect>
+				<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure" />
+				<Conditional hastag="eq door" />
+				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+				</StatusEffect>
+			</Projectile>
+		</Item>
+
 
 	</Items>
 
