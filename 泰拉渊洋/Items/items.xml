@@ -186,11 +186,11 @@
 		<StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
 		<StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
 		<StatusEffect type="OnSuccess" target="UseTarget" multiplyafflictionsbymaxvitality="true">
-			<Affliction identifier="alcellruin_in" amount="1" />
+			<Affliction identifier="alcellruin" amount="1" />
 		</StatusEffect>
 		<StatusEffect type="OnFailure" target="UseTarget" multiplyafflictionsbymaxvitality="true">
 			<!--Single dose always wears off. Two doses combined are always effective on humans.-->
-			<Affliction identifier="alcellruin_in" amount="1" />
+			<Affliction identifier="alcellruin" amount="1" />
 		</StatusEffect>
 		<StatusEffect type="OnSuccess" target="UseTarget">
 			<Conditional entitytype="eq Character"/>
