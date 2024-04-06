@@ -17,7 +17,7 @@
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
 				<Item identifier="TL13" equip="true" />
-				<Item identifier="TL13ammo" amount="16" />
+				<Item identifier="TL13ammo_cr" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
@@ -36,7 +36,7 @@
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
 				<Item identifier="TL13" equip="true" />
-				<Item identifier="TL13ammo" amount="16" />
+				<Item identifier="TL13ammo_cr" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
