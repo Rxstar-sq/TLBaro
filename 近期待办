@@ -9,6 +9,8 @@
   细胞神经生长因子合成配方
   完善TL13各种弹药平衡
   创建灭刃
+  增加job新装备配置（等待灭刃中）
+  重做Airlock，EngineeringModule，AdminModule，CrewModule，MedicalModule类型前哨模块，放弃之前所有类型前哨模块
 ...
 
 数据记录：

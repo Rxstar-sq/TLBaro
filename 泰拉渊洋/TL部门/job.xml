@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<jobs>
+	<Job identifier="TLsafe"
+	 maxnumber="3" minkarma="0"
+	 uicolor="0.7,0.5,0.43"
+	 vitalitymodifier="10"
+	 pricemultiplier="2.5"
+	 idlebehavior="Patrol">
+		<Jobicon>
+			<sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5"/>
+		</Jobicon>
+		<JobiconSmall>
+			<sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5"/>
+		</JobiconSmall>
+		<Skills>
+			<Skill identifier="weapons" level="80,100" primary="true"/>
+			<Skill identifier="medical" level="40,50"/>
+			<Skill identifier="mechanical" level="25,30"/>
+			<Skill identifier="electrical" level="20,25"/>
+			<Skill identifier="helm" level="20,25"/>
+		</Skills>
+		<ItemSet>
+			<Item identifier="securityuniform1" equip="true" outfit="true"/>
+			<Item identifier="idcardplus"  />
+			<Item identifier="idcard" equip="true" showpreview="false" />
+			<Item identifier="headset" equip="true" showpreview="false"/>
+			<Item identifier="handcuffs"/>
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13ammo" />
+			<Item identifier="TL13">
+			</Item>
+		</ItemSet>
+		<ItemSet>
+			<Item identifier="securityuniform2" equip="true" outfit="true"/>
+			<Item identifier="idcard" equip="true" showpreview="false" />
+			<Item identifier="headset" equip="true" showpreview="false"/>
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13ammo_ap" />
+			<Item identifier="TL13">
+			</Item>
+		</ItemSet>
+		<ItemSet>
+			<Item identifier="securityuniform3" equip="true" outfit="true"/>
+			<Item identifier="idcard" equip="true" showpreview="false" />
+			<Item identifier="headset" equip="true" showpreview="false"/>
+			<Item identifier="handcuffs"/>
+			<Item identifier="TL13ammo_cr" />
+			<Item identifier="TL13ammo_cr" />
+			<Item identifier="TL13ammo_cr" />
+			<Item identifier="TL13ammo_cr" />
+			<Item identifier="TL13">
+			</Item>
+		</ItemSet>
+		<AutonomousObjectives>
+			<Order identifier="fightintruders" prioritymodifier="1"/>
+			<Order identifier="rescue" prioritymodifier="1"/>
+			<Order identifier="extinguishfires" prioritymodifier ="0.75"/>
+			<Order identifier="operatereactor" option="powerup" prioritymodifier="0.2"/>
+			<Order identifier="fixleaks" prioritymodifier="0.1"/>
+		</AutonomousObjectives>
+		<AppropriateOrders>
+			<Order identifier="operateweapons"/>
+			<Order identifier="fightintruders"/>
+		</AppropriateOrders>
+	</Job>
+</jobs>
