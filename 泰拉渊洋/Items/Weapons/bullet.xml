@@ -53,6 +53,31 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
+        <!--灭刃的飞刃-->
+        <Item name="" identifier="mr_zd" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+            <InventoryIcon texture="%ModDir%/png/bullet.png" sourcerect="17,21,20,5" origin="0.5,0.5" />
+            <Sprite texture="%ModDir%/png/bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
+            <Body width="40" height="14" density="30" />
+            <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+            <Projectile characterusable="false" hitscan="true" removeonhit="true">
+                <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+                <Attack structuredamage="1" targetforce="1.5" itemdamage="6" severlimbsprobability="0.1" penetration="0.2">
+                    <Affliction identifier="lacerations" strength="18" />
+                    <Affliction identifier="lacerations" strength="8" probability="0.05"/>
+                    <Affliction identifier="lacerations" strength="18" probability="0.02"/><!--2%几率打出双倍伤害-->
+                    <Affliction identifier="bleeding" strength="9" />
+                </Attack>
+                <StatusEffect type="OnImpact" target="UseTarget">
+                    <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+                </StatusEffect>
+                <StatusEffect type="OnImpact" target="UseTarget">
+                    <Conditional entitytype="eq Structure" />
+                    <Conditional hastag="eq door" />
+                    <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+                </StatusEffect>
+            </Projectile>
+        </Item>
+
 	</Items>
 
 	

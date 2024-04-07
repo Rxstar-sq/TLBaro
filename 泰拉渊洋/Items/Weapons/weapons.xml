@@ -9,7 +9,7 @@
 			<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
 			<PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
 			<PreferredContainer secondary="armcab" />
-			<Price baseprice="1000" sold="false">
+			<Price baseprice="1000" sold="true">
 				<Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="3" sold="true" />
 			</Price>
 			<Deconstruct time="10">
@@ -62,68 +62,116 @@
 		</Item>
 		<Item name="灭刃" description="泰拉科技工程研究的特珠武器,发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-			<Price baseprice="720" sold="false">
-			<Price storeidentifier="merchantoutpost" multiplier="1.5" />
-			<Price storeidentifier="merchantcity" multiplier="1.25" />
-			<Price storeidentifier="merchantresearch" multiplier="1.25" />
-			<Price storeidentifier="merchantmilitary" multiplier="0.9" />
-			<Price storeidentifier="merchantmine" multiplier="1.25" />
+				<Price baseprice="720" minleveldifficulty="30">
+				<Price storeidentifier="merchantcity" multiplier="1.25" />
+				<Price storeidentifier="merchantmilitary" multiplier="0.9" />
+				<Price storeidentifier="TLarmory" multiplier="0.6" sold="true" />
 			</Price>
-			<Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
-			<RequiredSkill identifier="weapons" level="55" />
-			<RequiredItem identifier="physicorium" amount="2" />
-			<RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
-			<RequiredItem identifier="rubber" />
+			<Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="false">
+				<RequiredSkill identifier="weapons" level="55" />
+				<RequiredItem identifier="physicorium" amount="1" />
+				<RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+				<RequiredItem identifier="silicon" amount="1" />
 			</Fabricate>
 			<Deconstruct time="35">
-			<Item identifier="physicorium" amount="2" />
-			<Item identifier="titaniumaluminiumalloy" amount="2" />
-			<Item identifier="rubber" />
+				<Item identifier="silicon" amount="" />
+				<Item identifier="titaniumaluminiumalloy" amount="1" />
 			</Deconstruct>
 			<InventoryIcon texture="灭刃.png" sourcerect="0,0,228,46" origin="0.5,0.5" />
 			<Sprite texture="灭刃.png" sourcerect="0,0,228,46" depth="0.55" origin="0.5,0.5" />
 			<Body width="220" height="50" density="25" />
 			<!--handle1是调整右手的左右，左边数字为负数便是后退，正为前进，右边数字正数为上，负数为下，与handle2所调整的左手同理 -->
 			<!-- aimpos左边数字是用于调整枪械贴图的左右，负数向后，正数向前，右边数字是上下，同理 -->
+			<!--装备时减速-->
 			<Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
-			<StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+				<StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+				<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.4" setvalue="true" />
+				<!--半自动-->
+				<StatusEffect type="OnUse" target="This" ReloadTimer="1" setvalue="true">
+					<Conditional HasTag="eq used" />
+				</StatusEffect>
 			</Holdable>
-			<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select">
-			<sprite name="Assault Rifle Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="276,63,233,62" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
+			<Wearable slots="Bag" msg="ItemMsgEquipSelect" canbeselected="true" canbepicked="true" pickkey="Select">
+				<sprite name="Assault Rifle Worn" texture="Content/Items/JobGear/TalentGear.png" canbehiddenbyotherwearables="false" rotation="90" depth="0.6" sourcerect="276,63,233,62" limb="Torso" depthlimb="LeftArm" scale="0.5" origin="0.5,0.8" />
 			</Wearable>
-			<RangedWeapon reload="0.24" holdtrigger="true" barrelpos="100,20" spread="1" uns灭刃edspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
-			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
-			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-			<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,100" />
-			<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
-			<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
-			<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
-			<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
-			<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
-			<StatusEffect type="OnUse">
-				<ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
-				<Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
-			</StatusEffect>
-			<StatusEffect type="OnUse" target="Contained">
-				<Use />
-			</StatusEffect>
-			<RequiredItems items="kill_tear" type="Contained" msg="ItemMsgAmmoRequired" />
-			<RequiredSkill identifier="weapons" level="55" />
+			<RangedWeapon reload="0.16" penetration="0.2" holdtrigger="true" barrelpos="205,35" spread="5" unskilledspread="35" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+				<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+				<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,100" />
+				<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+				<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_2.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_3.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_4.ogg" type="OnUse" range="3000" />
+				<Sound file="Content/Items/JobGear/Security/WEAPONS_assaultRifle_5.ogg" type="OnUse" range="3000" />
+				<!--散布随技能与开火频率影响（想了想半自动好像没必要加这个东西）
+				<StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+					<Conditional skillrequirement="true" weapons="lt 75" />
+					<Conditional recoilstabilized="lte 0" />
+					<Conditional incrementalstun="lte 54" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+					<Conditional skillrequirement="true" weapons="lt 50" />
+					<Conditional recoilstabilized="lte 0" />
+					<Conditional incrementalstun="lte 69" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" setvalue="true">
+					<Conditional skillrequirement="true" weapons="lt 25" />
+					<Conditional recoilstabilized="lte 0" />
+					<Conditional incrementalstun="lte 89" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="Contained">
+					<Use />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="This" spread="-1.5" unskilledspread="-8" disabledeltatime="true">
+					<Conditional spread="gte 1.5" />
+				</StatusEffect>
+				<StatusEffect type="OnUse" target="This" spread="0" unskilledspread="10" setvalue="true" disabledeltatime="true">
+					<Conditional spread="lt 1.5" />
+				</StatusEffect>
+				<StatusEffect type="OnSecondaryUse" target="This" spread="3" unskilledspread="20">
+					<Conditional spread="gt 0" />
+				</StatusEffect>
+				<StatusEffect type="Always" target="This" spread="4" unskilledspread="50" setvalue="true" delay="0.2" checkconditionalalways="true" disabledeltatime="true">
+					<Conditional ReloadTimer="0" />
+				</StatusEffect>
+				<StatusEffect type="OnUse">
+					<ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+					<Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+				</StatusEffect>
+				-->
+				<!--后座与屏幕抖动-->
+				<StatusEffect type="OnUse">
+					<Explosion range="50.0" force="0.3" camerashake="4" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+				</StatusEffect>
+				<!--使用时消耗已填装弹匣-->
+				<StatusEffect type="OnUse" target="Contained">
+					<Use />
+				</StatusEffect>
+				<RequiredItems items="mr_magazine" type="Contained" msg="ItemMsgAmmoRequired" />
+				<RequiredSkill identifier="weapons" level="55" />
+				<!--半自动实现-->
+				<StatusEffect type="OnUse" target="This" Tags="used" setvalue="true" />
+				<StatusEffect type="OnSecondaryUse" target="This" comparison="And" Tags="unused" setvalue="true">
+					<Conditional HasTag="eq used" />
+					<Conditional ReloadTimer="lte 0.16" />
+				</StatusEffect>
+				<StatusEffect type="OnSecondaryUse" target="This" comparison="And" ReloadTimer="0.16" setvalue="true">
+					<Conditional HasTag="eq used" />
+					<Conditional ReloadTimer="gt 0.01" />
+				</StatusEffect>
 			</RangedWeapon>
-			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
-			<!-- itempos是用修改弹匣的位置，左边数字用来调整弹匣左右，负数为左，其次相反，右边数字为上下，负数为上，正数为下-->
-			<Containable items="assaultrifleammo" itempos="1,-5" />
-			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
-			<SubContainer capacity="1" maxstacksize="1">
-				<Containable items="flashlight" hide="false" itempos="24,4" setactive="true" />
-			</SubContainer>
+			<ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-5"  containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+				<!-- itempos是用修改弹匣的位置，左边数字用来调整弹匣左右，负数为左，其次相反，右边数字为上下，负数为上，正数为下-->
+				<Containable items="mr_magazine"/>
+				<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+				<SubContainer capacity="1" maxstacksize="1">
+					<Containable items="flashlight" hide="false" itempos="37,2.5" setactive="true" />
+				</SubContainer>
 			</ItemContainer>
-			<aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+			<aitarget sightrange="4000" soundrange="6000" fadeouttime="5" />
 			<Quality>
-			<QualityStat stattype="FirepowerMultiplier" value="0.1" />
+				<QualityStat stattype="FirepowerMultiplier" value="0.1" />
 			</Quality>
-			<SkillRequirementHint identifier="weapons" level="50" />
 		</Item>
 	</Items>
 
