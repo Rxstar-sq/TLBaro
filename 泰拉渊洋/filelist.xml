@@ -20,10 +20,6 @@
   <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
   <Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
   <Afflictions file="%ModDir%/Afflictions.xml" />
-  <OutpostModule file="%ModDir%/Sub/实验体牢房.sub" />
-  <OutpostModule file="%ModDir%/Sub/TL医疗模块.sub" />
-  <OutpostModule file="%ModDir%/Sub/实验室.sub" />
-  <OutpostModule file="%ModDir%/Sub/TL宿舍模块.sub" />
   <Text file="%ModDir%/Text.xml" />
   <Submarine file="%ModDir%/Sub/测试地.sub" />
 	<Jobs file="%ModDir%/TL部门/job.xml"/>
