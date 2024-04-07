@@ -74,7 +74,7 @@
 				<RequiredItem identifier="silicon" amount="1" />
 			</Fabricate>
 			<Deconstruct time="35">
-				<Item identifier="silicon" amount="" />
+				<Item identifier="silicon" amount="1" />
 				<Item identifier="titaniumaluminiumalloy" amount="1" />
 			</Deconstruct>
 			<InventoryIcon texture="灭刃.png" sourcerect="0,0,228,46" origin="0.5,0.5" />
@@ -240,7 +240,7 @@
 			</Fabricate>
 		</Item>
 
-		
+
 	</Items>
 
 	
