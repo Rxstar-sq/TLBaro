@@ -29,6 +29,13 @@
   <Submarine file="%ModDir%/Sub/测试地.sub" />
 	<Jobs file="%ModDir%/TL部门/job.xml"/>
 
-  <!--前哨模块-->
+  <!--常规前哨模块-->
+  <OutpostModule file="%ModDir%/Sub/EngineeringModuleTL02.sub" />
+  <OutpostModule file="%ModDir%/Sub/MedicalModuleTL02.sub" />
+  <OutpostModule file="%ModDir%/Sub/AdminModuleTL01L.sub" />
+  <OutpostModule file="%ModDir%/Sub/AdminModuleTL01R.sub" />
+  <OutpostModule file="%ModDir%/Sub/CrewModulTL01.sub" />
+  <OutpostModule file="%ModDir%/Sub/test_HallwayModuleVerticalTL.sub" />
+  <OutpostModule file="%ModDir%/Sub/DockingModuleTL1.sub" />
   
 </contentpackage>
