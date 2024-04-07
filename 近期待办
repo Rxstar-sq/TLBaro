@@ -14,23 +14,22 @@
   崩解弹实体
   穿甲弹实体
   通用弹药箱
+...
 
 声音等待：
   灭刃开火音效
   灭刃空仓音效
   装弹器装填声音
-
-
 ...
   
 待办：
-  细胞神经生长因子合成配方
-  完善TL13各种弹药平衡
-  创建灭刃
-  增加job新装备配置（等待灭刃中）
-  重做Airlock，EngineeringModule，AdminModule，CrewModule，MedicalModule类型前哨模块，放弃之前所有类型前哨模块
+  增加job新装备配置（等待灭刃平衡中）
+  Airlock，EngineeringModule，AdminModule，CrewModule，MedicalModule类型前哨模块已完成，生成一种固定前哨
+  增加更多哨站类型
+  新角色的天赋树
 ...
 
 数据记录：
   细胞神经生长因子： OnSuccess 40 OnFailure 30 baseprice="1500" minavailable="15"
+  集团特战队：配置1---万能钥匙+8发常规+TL13  配置2---8发箭形+TL13  配置3---4发崩解+TL13  |配置4（没做，待确认）---灭刃+常规弹夹x2+万能钥匙
 ...
