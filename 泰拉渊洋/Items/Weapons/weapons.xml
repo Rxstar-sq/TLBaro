@@ -173,6 +173,74 @@
 				<QualityStat stattype="FirepowerMultiplier" value="0.1" />
 			</Quality>
 		</Item>
+
+
+
+		<!--泰拉通用弹药箱-->
+		<Item name="泰拉通用弹药箱" description="泰拉集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="TL_ammobox" health="800" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
+			<Sprite texture="%ModDir%/png/icon.png" depth="0.54" sourcerect="873,879,219,105" />
+			<Body width="112" height="65" density="50" />
+				<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
+				<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="2" spawnprobability="0.1" />
+				<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+				<PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+				<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+				<PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="1" spawnprobability="0.1" />
+			<RangedWeapon reload="1" MaxChargeTime="20" />
+			<Holdable slots="RightHand+LeftHand" aimable="false" holdpos="50,-50" aimpos="50,-40" handle1="-0,16" handle2="0,0" swingamount="20,100" swingspeed="1" swingwhenusing="true" msg="ItemMsgPickUpSelect">
+				<StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.7" setvalue="true" />
+				<StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+				<StatusEffect type="OnUse" target="Contained" Condition="10">
+				<Conditional IsFullCondition="flase" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This" Condition="-15" comparison="and">
+				<RequiredItems items="TL_zd" type="Contained" />
+				<Conditional IsFullCondition="flase" targetcontaineditem="true" />
+				<!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This" Condition="-30" comparison="and">
+				<RequiredItems items="TL_bjzd" type="Contained" />
+				<Conditional IsFullCondition="flase" targetcontaineditem="true" />
+				<!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This" Condition="-25" comparison="and">
+				<RequiredItems items="TL_mrzd" type="Contained" />
+				<Conditional IsFullCondition="flase" targetcontaineditem="true" />
+				<!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+			</StatusEffect>
+			</Holdable>
+			<ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
+				<SlotIcon slotindex="0" texture="%ModDir%/png/icon.png" sourcerect="149,501,111,111" origin="0.5,0.5" />
+				<Containable items="TL_zd,TL_bjzd,TL_mrzd" />
+			</ItemContainer>
+			<PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
+			<PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
+			<PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
+			<Price baseprice="1000" buyingpricemultiplier="1" minleveldifficulty="0">
+				<Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="2" />
+				<Price locationtype="city" multiplier="1.35" minavailable="1" maxavailable="2" />
+				<Price locationtype="research" multiplier="1.25" minavailable="0" maxavailable="2" />
+				<Price locationtype="military" multiplier="1.10" minavailable="2" maxavailable="4" />
+				<Price locationtype="mine" multiplier="1.25" minavailable="0" maxavailable="1" />
+				<Price locationtype="TLarmory" multiplier="1.05" minavailable="2" maxavailable="6" />
+			</Price>
+			<Deconstruct time="20">
+				<Item identifier="aluminium" />
+				<Item identifier="steel" copycondition="true" />
+				<Item identifier="copper" copycondition="true" />
+				<Item identifier="copper" copycondition="true" />
+			</Deconstruct>
+			<!--制造材料为铝,铅/铜/钢筋，钾，钛铝合金-->
+			<Fabricate suitablefabricators="fabricator" requiredtime="30">
+				<RequiredSkill identifier="weapons" level="50" />
+				<RequiredItem identifier="munition_core" amount="4" />
+				<RequiredItem identifier="aluminium" amount="3" />
+				<RequiredItem identifier="potassium" amount="3" />
+				<RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+			</Fabricate>
+		</Item>
+
+		
 	</Items>
 
 	
