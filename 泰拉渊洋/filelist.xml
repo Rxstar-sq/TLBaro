@@ -5,7 +5,12 @@
   <Item file="%ModDir%/Items/sundries.xml" />
   <Item file="%ModDir%/Clothing/clothings.xml" />
   <Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
+
+  <!--武器，子弹，弹夹-->
   <Item file="%ModDir%/Items/weapons/weapons.xml" />
+  <Item file="%ModDir%/Items/weapons/bullet.xml" />
+  <Item file="%ModDir%/Items/weapons/magazine.xml" />
+
   <UIStyle file="%ModDir%/UI/style.xml" />
   <Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
   <NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
@@ -23,4 +28,7 @@
   <Text file="%ModDir%/Text.xml" />
   <Submarine file="%ModDir%/Sub/测试地.sub" />
 	<Jobs file="%ModDir%/TL部门/job.xml"/>
+
+  <!--前哨模块-->
+  
 </contentpackage>
