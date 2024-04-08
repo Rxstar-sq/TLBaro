@@ -1,44 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Items>
-	<Item name="豹" identifier="bao" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
-		<PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
-		<PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
-		<Price baseprice="150">
-			<Price storeidentifier="merchantoutpost" minavailable="2" />
-			<Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
-			<Price storeidentifier="merchantresearch" minavailable="2" />
-			<Price storeidentifier="merchantmilitary" minavailable="2" />
-			<Price storeidentifier="merchantmine" minavailable="2" />
-		</Price>
-		<Deconstruct time="10">
-			<Item identifier="organicfiber" />
-		</Deconstruct>
-		<InventoryIcon name="Maid Clothes Icon" texture="Content/Items/Jobgear/OutfitIcons.png" sourcerect="383,274,128,110" origin="0.5,0.5" />
-		<Sprite texture="Maid1.png" sourcerect="6,363,124,67" depth="0.6" origin="0.5,0.5" />
-		<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-		<Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
-			<sprite name="Maid's Uniform 1 Torso" texture="Maid1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Hand" texture="Maid1.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Hand" texture="Maid1.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Lower Arm" texture="Maid1.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Lower Arm" texture="Maid1.png" limb="RightForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Upper Arm" texture="Maid1.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Upper Arm" texture="Maid1.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Waist" texture="Maid1.png" limb="Waist" hidelimb="false" inheritorigin="true" inherittexturescale="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Thigh" texture="Maid1.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Thigh" texture="Maid1.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Leg" texture="Maid1.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Leg" texture="Maid1.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Right Shoe" texture="Maid1.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Left Shoe" texture="Maid1.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Boobs" texture="Maid1.png" limb="Tail" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<sprite name="Maid's Uniform 1 Boobs" texture="Maid1.png" limb="Jaw" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-			<SkillModifier skillidentifier="electrical" skillvalue="5" />
-			<SkillModifier skillidentifier="helm" skillvalue="5" />
-			<SkillModifier skillidentifier="mechanical" skillvalue="5" />
-			<SkillModifier skillidentifier="medical" skillvalue="5" />
-			<SkillModifier skillidentifier="weapons" skillvalue="5" />
-			<damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
+	<Item name="HES" subcategory="hesclo" identifier="tsm_at" hideinmenus="true" cargocontaineridentifier="tsm_metalcrate" tags="smallitem,mobileradio,sonar" description="阿糖的耳机，可以幻化成阿糖" variantof="autoinjectorheadset">
+		<InventoryIcon texture="%ModDir%/Clothing/Lerentin_heads.png" sourcerect="444,17,84,133" origin="0.5,0.5" />
+		<Sprite name="Headset" texture="Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="28,321,49,62" origin="0.5,0.5" />
+		<WifiComponent range="50000.0" LinkToChat="true" MinChatMessageInterval="0.0">
+			<StatusEffect type="OnActive" targettype="This">
+				<Conditional JamTimer="gt 0" targetitemcomponent="WifiComponent" />
+				<sound file="Content/Sounds/RadioStatic.ogg" range="500.0" frequencymultiplier="0.7" loop="true" volume="0.5" />
+			</StatusEffect>
+		</WifiComponent>
+		<Wearable>
+			<sprite name="AT Head" texture="at_head.png" limb="Head" sourcerect="0,0,160,160" inheritsourcerect="false" alphaclipotherwearables="false" hidelimb="true" hidewearablesoftype="moustache,beard,hair,faceattachment,husk,herpes" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="false" Scale="1" hideotherwearables="false" inheritorigin="false" origin="0.47048324,0.48" />
+			<sprite name="AT Torso" texture="AT.png" limb="Torso" sourcerect="144,0,112,160" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.49,0.545" />
+			<sprite name="AT Right Hand" texture="AT.png" limb="RightHand" sourcerect="256,151,64,57" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.36,0.53" />
+			<sprite name="AT Left Hand" texture="AT.png" limb="LeftHand" sourcerect="320,151,64,57" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.36,0.52" />
+			<sprite name="AT Left Lower Arm" texture="AT.png" limb="LeftForearm" sourcerect="320,80,64,72" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.37812376,0.565" />
+			<sprite name="AT Right Lower Arm" texture="AT.png" limb="RightForearm" sourcerect="256,80,64,72" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.41425222,0.565" />
+			<sprite name="AT Left Upper Arm" texture="AT.png" limb="LeftArm" sourcerect="320,0,64,80" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.42934397,0.43" />
+			<sprite name="AT Right Upper Arm" texture="AT.png" limb="RightArm" sourcerect="256,0,64,80" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.423565,0.43" />
+			<sprite name="AT Waist" texture="AT.png" limb="Waist" sourcerect="144,160,112,96" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="false" depth="0.13" inheritorigin="false" origin="0.72,0.55" />
+			<sprite name="AT Right Thigh" texture="AT.png" limb="RightThigh" sourcerect="0,0,64,112" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.38,0.48" />
+			<sprite name="AT Left Thigh" texture="AT.png" limb="LeftThigh" sourcerect="64,0,80,112" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.49,0.48" />
+			<sprite name="AT Right Leg" texture="AT.png" limb="RightLeg" sourcerect="0,112,64,144" inheritsourcerect="false" inheritdepth="false" depth="0.121" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.35,0.415" />
+			<sprite name="AT Left Leg" texture="AT.png" limb="LeftLeg" sourcerect="64,112,80,144" inheritsourcerect="false" inheritdepth="false" depth="0.131" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.45,0.415" />
+			<sprite name="AT Right Shoe" texture="AT.png" limb="RightFoot" sourcerect="256,208,64,48" inheritsourcerect="false" inheritdepth="false" depth="0.122" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.5,0.475" />
+			<sprite name="AT Left Shoe" texture="AT.png" limb="LeftFoot" sourcerect="320,208,64,48" inheritsourcerect="false" inheritdepth="false" depth="0.132" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.45,0.475" />
+			<sprite name="AT Boobs" texture="痴.png" limb="Tail" hidelimb="true" inherittexturescale="true" sourcerect="0,0,1,1" inheritorigin="true" />
+ 			<sprite name="AT Boobs" texture="痴.png" limb="Jaw" hidelimb="true" inherittexturescale="true" sourcerect="0,0,1,1" inheritorigin="true" />
 		</Wearable>
 	</Item>
 </Items>
