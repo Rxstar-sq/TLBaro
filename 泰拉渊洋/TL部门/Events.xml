@@ -8,7 +8,7 @@
 	<Sprite identifier="haidao" texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
 	<Sprite identifier="baomi" texture="%ModDir%/TL部门/Sprite/baomi.png" sourcerect="0,0,1024.1024" origin="0.5,0.5" />
 	<Sprite identifier="zhu" texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
-	<Sprite identifier="yiliao" texture="%ModDir%/TL部门/Sprite/yilaio.png" sourcerect="0,0,1024,1024" />
+	<Sprite identifier="yiliao" texture="%ModDir%/TL部门/Sprite/yiliaoo.png" sourcerect="0,0,1024,1024" />
 </EventSprites>
 <EventPrefabs>
 	<ScriptedEvent identifier="TL1" commonness="100">
