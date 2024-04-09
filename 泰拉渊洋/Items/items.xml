@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+	<Items>
+		<Item name="TL背包" identifier="TLbag" HideConditionBar="true" category="Equipment" tags="mediumitem,mobilecontainer,tool,TLbag" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof = "true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+		<Deconstruct time="4">
+		<Item identifier="organicfiber" amount="1" />
+		<Item identifier="plastic" amount="1" />
+		</Deconstruct>
+		<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
+		<Sprite texture="icon.png" depth="0.6" sourcerect="525,201,145,160" origin="0.5,0.6" />
+		<Body width="95" height="115" density="15" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" >
+		<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+			<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+			<StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
+				<Conditional condition="gt 50"/>
+			</StatusEffect>
+			<Button text="折叠">
+				<StatusEffect type="OnUse" target="This">
+					<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+					<SpawnItem identifier="TLbagzhe" count="1" spawnposition="This" />
+					<Remove />
+				</StatusEffect>
+			</Button>
+		</CustomInterface>
+		</Holdable>
+		<Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+		<sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="525,201,145,160" origin="0.725,0.55" scale="0.35" />
+		</Wearable>
+		<ItemContainer capacity="40" depth="0.5">
+		<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers = "TLbag" >
+			<StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10"/>
+		</Containable>
+		</ItemContainer>
+		</Item>
+		<Item name="TL背包(折叠）" identifier="TLbagzhe" category="Equipment" tags="mediumitem,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof = "true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+			<Deconstruct time="4">
+				<Item identifier="organicfiber" amount="1" />
+				<Item identifier="plastic" amount="1" />
+			</Deconstruct>
+			<Price baseprice="2500"  minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+				<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+			</Price>
+			<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5"/>
+			<InventoryIcon texture="icon.png" sourcerect="525,201,145,160" origin="0.5,0.5" />
+			<Sprite texture="Content/Items/Jobgear/MiscJobGear.png" depth="0.6" sourcerect="243,71,130,74" origin="0.5,0.6" />
+			<Body width="95" height="50" density="15" />
+			<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false" >
+				<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+					<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+					<Button text="打开">
+						<StatusEffect type="OnUse" target="This">
+							<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+							<SpawnItem identifier="TLbag" count="1" spawnposition="This" />
+							<Remove />
+						</StatusEffect>
+					</Button>
+				</CustomInterface>
+			</Holdable>
+		</Item>
+
+		<Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing"
+	   scale="0.35" cargocontaineridentifier="metalcrate" description=""
+	   impactsoundtag="impact_soft">
+	   		<Price baseprice="3500" sold="false">
+				<Price storeidentifier="TLarmory" multiplier="1.1" />
+			</Price>
+			<Upgrade gameversion="0.9.3.0" scale="0.35" />
+			<PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
+			<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,256,64,64"
+				origin="0.5,0.5" />
+			<Sprite name="Security Vest Item" texture="Content/Items/Jobgear/Mechanic/safetyharness.png"
+				sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
+			<Body width="85" height="90" density="25" />
+			<Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+				<sprite name="Security Vest Wearable"
+					texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="Torso"
+					hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false"
+					origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+
+				<damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="1"
+					damagesound="LimbArmor" deflectprojectiles="true" />
+
+				<sprite name="shellshield" texture="Content/Items/CreatureLoot/CreatureLoot.png"
+					sourcerect="363,0,100,165" limb="Torso" depthlimb="head" hidelimb="false"
+					inherittexturescale="true" inheritorigin="false" inheritsourcerect="false"
+					origin="0.5,0.65" />
+				<StatusEffect type="Always" target="This" condition="1"/>
+			</Wearable>
+		</Item>
+
+		<Item name="纳米凝胶" identifier="nanogel" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对木卫二遗迹材料的研究，泰拉集团与幻星工业合作制作出了这种珍贵的具有生物性质的纳米材料" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="mineralcab" secondary="storagecab" />
+			<Price baseprice="180" buyingpricemultiplier="1" minleveldifficulty="0">
+				<Price storeidentifier="TLarmory" multiplier="1" minavailable="5" sold="true" />
+				<Price storeidentifier="merchantcity" multiplier="2.25" />
+				<Price storeidentifier="merchantresearch" multiplier="1.6" />
+				<Price storeidentifier="merchantmilitary" multiplier="1.8" />
+			</Price>
+			<Deconstruct time="10">
+			</Deconstruct>
+			<!--等待贴图-->
+			<Sprite texture="%ModDir%/png/矿物.png" depth="0.3" sourcerect="354,186,66,71" origin="0.5,0.5" />
+			<ContainedSprite texture="%ModDir%/png/矿物.png" depth="0.55" sourcerect="354,186,66,71" origin="0.5,0.5" />
+			<Body radius="60" width="65" density="50" />
+			<Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+		</Item>
+		<Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+			<PreferredContainer primary="mineralcab" secondary="storagecab" />
+			<Fabricate suitablefabricators="fabricator" requiredtime="15" requiresrecipe="false">
+				<RequiredItem identifier="nanogel" amount="1" />
+				<RequiredItem identifier="alienblood" amount="2" />
+				<RequiredItem identifier="fpgacircuit" amount="1" />
+			</Fabricate>
+			<Deconstruct time="10">
+				<Item identifier="alienblood" amount="1"/>
+			</Deconstruct>
+			<!--等待贴图-->
+			<Sprite texture="%ModDir%/png/矿物.png" depth="0.3" sourcerect="354,186,66,71" origin="0.5,0.5" />
+			<ContainedSprite texture="%ModDir%/png/矿物.png" depth="0.55" sourcerect="354,186,66,71" origin="0.5,0.5" />
+			<Body radius="60" width="65" density="50" />
+			<Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+		</Item>
+
+
+
+	<!-- 药品 -->
+	<REalcellruin name="细胞神经生长因子" identifier="REalcellruin"  category="Medical" Tags="smallitem,medical" maxstacksize="18" maxstacksizecharacterinventory="6" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="昂贵的细胞再生药品，由集团研发部供货，其他商人那里都是假货哦" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
+    <Price baseprice="1500" buyingpricemultiplier="1" minleveldifficulty="0">
+      <Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
+    </Price>
+	<!-- 药物合成待定-->
+	<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="2">
+      <RequiredSkill identifier="medical" level="15" />
+      <RequiredItem identifier="antibleeding2" />
+	  <RequiredItem identifier="nanogel" />
+	  <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+
+    <Deconstruct time="3"/>
+    <SuitableTreatment type="alcellruin" suitability="50" />
+    <InventoryIcon texture="pingzi.png" sourcerect="0,0,25,43" origin="0.5,0.5" />
+	<!--等待贴图-->
+    <Sprite texture="pingzi.png" sourcerect="0,0,25,43" depth="0.6" origin="0.5,0.5" />
+    <Body width="25" height="40" density="10.05" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+        <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+        <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="20" />
+		<ReduceAffliction type="alcellruin_in" amount="1" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="15" />
+		<ReduceAffliction type="alcellruin_in" amount="1" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <SkillRequirementHint identifier="medical" level="45" />
+  </REalcellruin>
+
+	<!--解离药剂-->
+	<!--给予持续增长的细胞崩解效果-->
+	<CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
+		<Upgrade gameversion="0.10.0.0" scale="0.5" />
+		<PreferredContainer primary="toxcab" secondary="toxcontainer"/>
+		<PreferredContainer primary="wrecktoxcab,abandonedtoxcab" spawnprobability="0.05" />
+		<Price baseprice="2900" minavailable="1">
+		<Price storeidentifier="merchantoutpost" sold="false" />
+		<Price storeidentifier="merchantcity" multiplier="0.9" />
+		<Price storeidentifier="merchantresearch" multiplier="0.9" />
+		<Price storeidentifier="merchantmilitary" multiplier="1.1" />
+		<Price storeidentifier="merchantmine" sold="false" multiplier="1.1" />
+		</Price>
+		<Deconstruct time="5" />
+		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="448,704,64,64" origin="0.5,0.5" />
+		<Sprite texture="Medicines.png" sourcerect="225,140,38,69" depth="0.6" origin="0.5,0.5" />
+		<Body width="35" height="65" density="10.2" waterdragcoefficient="1" />
+		<MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="220" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+		<RequiredSkill identifier="medical" level="35" />
+		<StatusEffect type="OnSuccess" target="This" Condition="-100.0" setvalue="true" />
+		<StatusEffect type="OnFailure" target="This" Condition="-100.0" setvalue="true" />
+		<StatusEffect type="OnSuccess" target="UseTarget" multiplyafflictionsbymaxvitality="true">
+			<Affliction identifier="alcellruin" amount="1" />
+		</StatusEffect>
+		<StatusEffect type="OnFailure" target="UseTarget" multiplyafflictionsbymaxvitality="true">
+			<!--Single dose always wears off. Two doses combined are always effective on humans.-->
+			<Affliction identifier="alcellruin" amount="1" />
+		</StatusEffect>
+		<StatusEffect type="OnSuccess" target="UseTarget">
+			<Conditional entitytype="eq Character"/>
+			<Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+		</StatusEffect>
+		<StatusEffect type="OnFailure" target="UseTarget">
+			<Conditional entitytype="eq Character"/>
+			<Sound file="Content/Items/Medical/Syringe.ogg" range="500" />
+		</StatusEffect>
+		<StatusEffect type="OnImpact" target="UseTarget" multiplyafflictionsbymaxvitality="true" AllowWhenBroken="true">
+			<Affliction identifier="stun" amount="0.1" />
+		</StatusEffect>
+		<!-- Remove the item when fully used -->
+		<StatusEffect type="OnBroken" target="This">
+			<Remove />
+		</StatusEffect>
+		</MeleeWeapon>
+		<Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon"/>
+		<SkillRequirementHint identifier="medical" level="35"/>
+	</CellruinToxi>
+</Items>

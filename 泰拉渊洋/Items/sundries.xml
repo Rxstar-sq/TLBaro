@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor1" scale="0.15" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Any" msg="ItemMsgPickUpSelect" />
+  </Item>
+
+	<Item name="万能钥匙（NPC）" identifier="idcardplus1" description="" nonplayerteaminteractable="True" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor" scale="0.15" cargocontaineridentifier="metalcrate">
+		<InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+		<Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
+		<Body width="16" height="12" density="20" />
+		<IdCard slots="Card" msg="ItemMsgPickUpSelect" />
+	</Item>
+
+  <Item name="智脑日志" identifier="zhiheldterminal" category="Electrical" Tags="smallitem,logic" description="智脑离开此地终端时的最后运行日志，如果你看到这个说明这里已经发生了一些事情而被集团抛弃抹除" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
+    <Upgrade gameversion="0.9.9000.0" scale="0.25" />
+    <Price baseprice="100" sold="false" />
+    <PreferredContainer primary="reactorcab" secondary="engcab" />
+    <InventoryIcon texture="rizhi.png" sourcerect="0,0,512,512" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="149,371,69,93" depth="0.8" origin="0.5,0.5" />
+    <Body width="60" height="90" density="15" />
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" />
+    <Terminal canbeselected="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true">
+      <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
+    </Terminal>
+  </Item>
+
+  	<Item name="高级治疗床" identifier="probed" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
+			<Upgrade gameversion="0.12.0.0" noninteractable="false" />
+			<sprite texture="bed.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+			<Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+				<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+				<limbposition limb="Head" position="-6,-10" />
+				<limbposition limb="Torso" position="104,0" />
+				<limbposition limb="Waist" position="244,-80" />
+				<limbposition limb="RightFoot" position="380,-20" />
+				<limbposition limb="LeftFoot" position="380,-20" />
+				<limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
+				<limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
+				<StatusEffect type="OnActive" target="Character">
+					<reduceaffliction type="damage" strength="0.5" />
+					<reduceaffliction identifier="bloodloss" strength="1.0" />
+					<reduceaffliction identifier="bleeding" strength="1.0" />
+					<reduceaffliction identifier="nausea" strength="1.0" />
+					<reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
+					<reduceaffliction identifier="opiateaddiction" strength="1.0" />
+					<reduceaffliction identifier="drunk" strength="1.0" />
+					<reduceaffliction identifier="burn" strength="1.0" />
+					<reduceaffliction identifier="internaldamage" strength="1.0" />
+					<reduceaffliction identifier="organdamage" strength="1.0" />
+					<reduceaffliction identifier="explosiondamage" strength="1.0" />
+				</StatusEffect>
+			</Controller>
+			<Upgrade gameversion="0.20.8.0">
+				<Controller>
+					<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+				</Controller>
+			</Upgrade>
+		</Item>
+</Items>
