@@ -51,6 +51,17 @@
 			<Item identifier="TL13">
 			</Item>
 		</ItemSet>
+				<ItemSet>
+			<Item identifier="securityuniform1" equip="true" outfit="true"/>
+			<Item identifier="idcardplus"  />
+			<Item identifier="idcard" equip="true" showpreview="false" />
+			<Item identifier="headset" equip="true" showpreview="false"/>
+			<Item identifier="handcuffs"/>
+			<Item identifier="TL_magazine" />
+			<Item identifier="TL_magazine" />
+			<Item identifier="TL14">
+			</Item>
+		</ItemSet>
 		<ItemSet>
 			<Item identifier="securityuniform3" equip="true" outfit="true"/>
 			<Item identifier="idcard" equip="true" showpreview="false" />
