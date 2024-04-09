@@ -131,7 +131,7 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
-		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd,TL14ammo" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -261,7 +261,7 @@
 			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
 		</Item>
         <!--灭刃弹匣-->
-        <Item name="灭刃撕裂弹匣" identifier="mr_magazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_magazine,TL_ammo,TL_mrzd" impactsoundtag="impact_metal_light">
+        <Item name="灭刃撕裂弹匣" identifier="mr_magazine" maxstacksize="4" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_mr_magazine,TL_mr_ammo,TL_mrzd" impactsoundtag="impact_metal_light">
             <PreferredContainer primary="灭刃" minamount="1" maxamount="1" spawnprobability="1" />
             <PreferredContainer primary="armcab" secondary="secarmcab" />
             <Price baseprice="300" minleveldifficulty="30">

@@ -61,11 +61,11 @@
   </Item>
   <Item name="TL-14常规制式突击步枪" identifier="TL14" description="泰拉集团制式装备，得益于出色的精度和" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-    <Price baseprice="2000" sold="false">
+    <Price baseprice="2000" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantmilitary" multiplier="1.2" />
-      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="2" sold="true" />
+      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="1" maxavailable="2" sold="true" />
     </Price>
     <!--合成分解待定-->
     <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
@@ -81,16 +81,60 @@
     </Deconstruct>
     <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
     <Body width="235" height="55" density="25" />
-    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.38" setvalue="true" />
+      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.15" setvalue="true" />
     </Holdable>
     <RangedWeapon reload="0.17" holdtrigger="true" barrelpos="100,23" spread="4" unskilledspread="16" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
       <Sound file="%ModDir%/ogg/连发1.ogg" type="OnUse" range="3000" />
-      <Sound file="%ModDir%/ogg/连发2.ogg" type="OnUse" range="3000" />
+      <Sound file="%ModDir%/ogg/连发2.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="%ModDir%/ogg/连发3.ogg" type="OnUse" range="3000" />
+      <!--散步-->
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 75" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 34" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 59" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" setvalue="true">
+        <Conditional skillrequirement="true" weapons="lt 25" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 77" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" spread="-1.5" unskilledspread="-8" disabledeltatime="true">
+        <Conditional spread="gte 1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" spread="0" unskilledspread="10" setvalue="true" disabledeltatime="true">
+        <Conditional spread="lt 1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This" spread="3" unskilledspread="20">
+        <Conditional spread="gt 0" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" spread="4" unskilledspread="50" setvalue="true" delay="0.2" checkconditionalalways="true" disabledeltatime="true">
+        <Conditional ReloadTimer="0" />
+      </StatusEffect>
+      <!--空仓-->
+      <StatusEffect type="OnUse" target="This">
+          <Conditional Condition="eq 0" targetcontaineditem="true" />
+          <Sound file="%ModDir%/ogg/outamoo.ogg" range="2000" loop="false" />
+      </StatusEffect>
+      <!--后座与屏幕抖动-->
+      <StatusEffect type="OnUse">
+        <Explosion range="80.0" force="0.3" camerashake="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <!--留空用来加弹壳音效-->
+      <!---->
       <StatusEffect type="OnUse">
         <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
         <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
@@ -98,11 +142,11 @@
       <StatusEffect type="OnUse" target="Contained">
         <Use />
       </StatusEffect>
-      <RequiredItems items="TL14ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="30" />
     </RangedWeapon>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
-      <Containable items="TL14ammo" />
+      <Containable items="TL_ammo" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
@@ -139,7 +183,7 @@
     <!--handle1是调整右手的左右，左边数字为负数便是后退，正为前进，右边数字正数为上，负数为下，与handle2所调整的左手同理 -->
     <!-- aimpos左边数字是用于调整枪械贴图的左右，负数向后，正数向前，右边数字是上下，同理 -->
     <!--装备时减速-->
-    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
       <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.4" setvalue="true" />
       <!--半自动-->
@@ -253,17 +297,17 @@
       <StatusEffect type="OnUse" target="This" Condition="-15" comparison="and">
         <RequiredItems items="TL_zd" type="Contained" />
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
-        <!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-30" comparison="and">
         <RequiredItems items="TL_bjzd" type="Contained" />
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
-        <!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-25" comparison="and">
         <RequiredItems items="TL_mrzd" type="Contained" />
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
-        <!--sound file="%ModDir%/ogg/reload4.ogg" type="OnUse" range="300" loop="true" /等待装填声音-->
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
@@ -296,7 +340,7 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
     </Fabricate>
   </Item>
-  <Item name="幻星通用弹药箱" description="幻星集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="HX_ammobox" health="800" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
+  <Item name="幻星通用弹药箱" description="幻星工业研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="HX_ammobox" health="800" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
     <Sprite texture="weapons.png" depth="0.54" sourcerect="0,437,153,75" origin="0.5,0.5" />
     <Body width="112" height="65" density="50" />
     <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
