@@ -78,4 +78,20 @@
 		 <message header="任务完成" text="十年航海，一日上岸"/>
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>
+
+	 <CargoMission name="急救物资运输" identifier="yiliao" tags="cargo,cargoresearch"  type="Cargo"  difficulty="1"  commonness="100"  reward="4500"  achievementidentifier="cargomission"  description="把这批物资送给需要的人，集团不会放弃任何人" requireddeliveryamount="0.98">
+  <Reputation identifier="location" amount="1" amountforopposingfaction="-1" />
+  <Items>
+    <Item identifier="mediccrate" reward="120" maxcount="20">
+      <Item identifier="antidama1" amount="10"/>
+      <Item identifier="antidama2" amount="10"/>
+      <Item identifier="antibloodloss1" amount="10"/>
+      <Item identifier="antibiotics" amount="10"/>
+      <Item identifier="antibleeding1" amount="10"/>
+      <Item identifier="antibleeding3" amount="10"/>
+    </Item>
+  </Items>
+  <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,0,256,256" color="243,146,55"/>
+  <LocationType from="AnyOutpost" to="AnyOutpost" />    
+</CargoMission>
  </Missions>

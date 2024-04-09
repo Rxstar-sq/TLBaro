@@ -8,7 +8,7 @@
 	<Sprite identifier="haidao" texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
 	<Sprite identifier="baomi" texture="%ModDir%/TL部门/Sprite/baomi.png" sourcerect="0,0,1024.1024" origin="0.5,0.5" />
 	<Sprite identifier="zhu" texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
-	
+	<Sprite identifier="yiliao" texture="%ModDir%/TL部门/Sprite/yilaio.png" sourcerect="0,0,1024,1024" />
 </EventSprites>
 <EventPrefabs>
 	<ScriptedEvent identifier="TL1" commonness="100">
@@ -25,6 +25,9 @@
 				<MissionAction missionidentifier="TLceshiji" />
 				<ConversationAction text="烛光中求生的勇士，你值得敬爱"  targettag="triggerer_player" eventsprite="zhu"/>
 				<MissionAction missionidentifier="TLhunting" />
+				<MissionAction missionidentifier="mudraptors" />
+				<ConversationAction text="你也不想在连止痛药都没有的情况下死去吧"  targettag="triggerer_player" eventsprite="yiliao"/>
+				<MissionAction missionidentifier="yiliao" />
 			</Option>
 		</ConversationAction>
 		<NPCWaitAction npctag="TLnpc1" wait="true" />
