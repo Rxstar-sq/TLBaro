@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 	<Items>
-		<!--弹药相关-->
 		<Item name="TL常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
 			<PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
@@ -24,9 +23,8 @@
 			</Fabricate>
 			<Deconstruct time="8">
 			</Deconstruct>
-			<InventoryIcon texture="heavyshotshell.png" sourcerect="0,230,580,220" origin="0.5,0.5" />
-			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
-			<Body width="23" height="10" density="30" />
+			<Sprite texture="weapons.png" sourcerect="0,64,45,20" depth="0.55" origin="0.5,0.5" />
+			<Body width="25" height="15" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--When fired, spawns 9 projectiles simultaneously.-->
 			<Projectile characterusable="false" hitscan="true" hitscancount="9" removeonhit="true" spread="9">
@@ -69,8 +67,7 @@
 				<Item identifier="plastic" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture="heavyshotshell.png" sourcerect="0,460,580,220" origin="0.5,0.5" />
-			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
+			<Sprite texture="weapons.png" sourcerect="0,85,45,20" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射3发射弹-->
@@ -114,17 +111,17 @@
 				<Item identifier="plastic" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture="heavyshotshell.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
-			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
+			<Sprite texture="weapons.png" sourcerect="0,104,45,20" depth="0.55" origin="0.5,0.5" />
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射8发射弹-->
 			<Projectile characterusable="false" maxtargetstohit="1" hitscan="true" hitscancount="6" removeonhit="true" spread="12">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="6" itemdamage="15" severlimbsprobability="0.5" penetration="0.5">
-					<Affliction identifier="alcellruin" strength="5" /> <!--赋予易伤效果-->
+					<Affliction identifier="alcellruin" strength="5" />
+					<!--赋予易伤效果-->
 					<Affliction identifier="organdamage" strength="2" />
-					<Affliction identifier="gunshotwound" strength="3" /> 
+					<Affliction identifier="gunshotwound" strength="3" />
 				</Attack>
 				<StatusEffect type="OnImpact" target="UseTarget">
 					<ParticleEmitter particle="impactfirearm" particleamount="2" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,130" />
@@ -134,7 +131,7 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
-		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd,TL14ammo" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -185,9 +182,8 @@
 				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
-			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
-			<Body width="30" height="50" density="30" />
+			<Sprite texture="weapons.png" sourcerect="385,66,32,37" depth="0.55" origin="0.5,0.5" />
+			<Body width="30" height="40" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--发射普通子弹-->
 			<ItemContainer hideitems="true" capacity="1" drawinventory="true" canbeselected="true" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
@@ -198,7 +194,7 @@
 			</ItemContainer>
 			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
 		</Item>
-		<Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的崩解弹弹匣" identifier="TL_magazine_cr" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的崩解弹弹匣" identifier="TL_magazine_cr" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -252,9 +248,8 @@
 				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<!--等待贴图-->
-			<InventoryIcon texture="子弹.png" sourcerect="0,0,580,225" origin="0.5,0.5" />
-			<Sprite texture="weapons_new.png" sourcerect="189,269,22,10" depth="0.55" origin="0.5,0.5" />
-			<Body width="30" height="50" density="30" />
+			<Sprite texture="weapons.png" sourcerect="282,66,27,37" depth="0.55" origin="0.5,0.5" />
+			<Body width="30" height="40" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--发射崩解子弹-->
 			<ItemContainer hideitems="true" capacity="1" drawinventory="true" canbeselected="true" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
@@ -296,9 +291,8 @@
                 <Item identifier="steel" />
             </Deconstruct>
             <!--灭刃撕裂弹匣 -->
-            <InventoryIcon texture="灭刃撕裂弹匣.png" sourcerect="0,0,33,44" origin="0.5,0.5" />
-            <Sprite texture="灭刃撕裂弹匣.png" sourcerect="0,0,33,44" depth="0.55" origin="0.5,0.5" />
-            <Body width="28" height="40" density="25" />
+            <Sprite texture="weapons.png" sourcerect="335,67,30,35" depth="0.55" origin="0.5,0.5" />
+            <Body width="30" height="35" density="25" />
             <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="kill_tear" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
                 <Containable items="mr_zd" />
                 <StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">

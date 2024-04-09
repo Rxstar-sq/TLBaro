@@ -55,8 +55,7 @@
 		</Item>
         <!--灭刃的飞刃-->
         <Item name="" identifier="mr_zd" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
-            <InventoryIcon texture="%ModDir%/png/bullet.png" sourcerect="17,21,20,5" origin="0.5,0.5" />
-            <Sprite texture="%ModDir%/png/bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
+            <Sprite texture="bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
             <Body width="40" height="14" density="30" />
             <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
             <Projectile characterusable="false" hitscan="true" removeonhit="true">
