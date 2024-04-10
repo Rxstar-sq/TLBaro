@@ -10,7 +10,7 @@
 			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
 				<Attack structuredamage="6" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.265">
-					<Affliction identifier="gunshotwound" strength="16" />
+					<Affliction identifier="gunshotwound" strength="18" />
 					<Affliction identifier="gunshotwound" strength="2" probability="0.05" />
 					<Affliction identifier="gunshotwound" strength="2" probability="0.1" />
 					<Affliction identifier="bleeding" strength="15" />
@@ -36,8 +36,8 @@
 			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
 				<Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.3">
-					<Affliction identifier="gunshotwound" strength="5" />
-					<Affliction identifier="gunshotwound" strength="2" probability="0.15" />
+					<Affliction identifier="gunshotwound" strength="10" />
+					<Affliction identifier="gunshotwound" strength="8" probability="0.15" />
 					<Affliction identifier="alcellruin" strength="2" />
 					<Affliction identifier="alcellruin" strength="4" probability="0.1"/>
 					<Affliction identifier="stun" strength="0.1" probability="0.4" />
@@ -58,13 +58,15 @@
             <Sprite texture="bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
             <Body width="40" height="14" density="30" />
             <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-            <Projectile characterusable="false" hitscan="true" removeonhit="true">
+            <Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="3">
                 <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
-                <Attack structuredamage="1" targetforce="1.5" itemdamage="6" severlimbsprobability="0.1" penetration="0.2">
-                    <Affliction identifier="lacerations" strength="18" />
-                    <Affliction identifier="lacerations" strength="8" probability="0.05"/>
-                    <Affliction identifier="lacerations" strength="18" probability="0.02"/><!--2%几率打出双倍伤害-->
-                    <Affliction identifier="bleeding" strength="9" />
+                <Attack structuredamage="1" targetforce="1.5" itemdamage="6" severlimbsprobability="0.1" penetration="0.3">
+					<!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
+                    <Affliction identifier="bleeding" strength="5" />
+                    <Affliction identifier="lacerations" strength="20" />
+                    <Affliction identifier="lacerations" strength="20" probability="0.05"/><!--2%几率打出双倍伤害-->
+                    <Affliction identifier="lacerations" strength="40" probability="0.02"/><!--2%几率打出三倍倍伤害-->
+                    <Affliction identifier="bleeding" strength="5" />
                 </Attack>
                 <StatusEffect type="OnImpact" target="UseTarget">
                     <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
