@@ -150,11 +150,9 @@
       </StatusEffect>
       <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
         <ReduceAffliction type="alcellruin" amount="20" />
-		<ReduceAffliction type="alcellruin_in" amount="1" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
         <ReduceAffliction type="alcellruin" amount="15" />
-		<ReduceAffliction type="alcellruin_in" amount="1" />
       </StatusEffect>
       <!-- Remove the item when fully used -->
       <StatusEffect type="OnBroken" target="This">
