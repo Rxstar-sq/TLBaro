@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Talents>
+	<Talent identifier="gedouke">
+		<!--图标待定-->
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.gedouke">
+			<Replace tag="[gedou]" value="25" color="gui.green"/>
+			<Replace tag="[other]" value="3" color="gui.green"/>
+		</Description>
+		<Description tag="talentdescription.additionalstattype">
+			<Replace tag="[amount]" value="10" color="gui.green"/>
+			<Replace tag="[stattype]" value="stattypenames.WeaponsSkillBonus" color="gui.orange"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="HelmSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="25"/>
+				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+</Talents>

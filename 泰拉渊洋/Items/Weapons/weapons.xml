@@ -126,8 +126,8 @@
       </StatusEffect>
       <!--空仓-->
       <StatusEffect type="OnUse" target="This">
-          <Conditional Condition="eq 0" targetcontaineditem="true" />
-          <Sound file="%ModDir%/ogg/outammo.ogg" range="2000" loop="false" />
+        <Conditional Condition="eq 0" targetcontaineditem="true" />
+        <Sound file="%ModDir%/ogg/outammo.ogg" range="2000" loop="false" />
       </StatusEffect>
       <!--后座与屏幕抖动-->
       <StatusEffect type="OnUse">
@@ -159,7 +159,6 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
-  
   <!--特殊武器-->
   <Item name="灭刃" description="泰拉科技工程研究的特珠武器,发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
@@ -191,14 +190,13 @@
       <StatusEffect type="OnUse" target="This" ReloadTimer="1" setvalue="true">
         <Conditional HasTag="eq mr_used" />
       </StatusEffect>
-    </Holdable> 
+    </Holdable>
     <RangedWeapon reload="0.6" weapondamagemodifier="1.6" penetration="0.6" holdtrigger="true" barrelpos="120,34" spread="5" unskilledspread="35" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,100" />
       <Sound file="%ModDir%/ogg/灭刃.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="%ModDir%/ogg/灭刃.ogg" type="OnUse" range="3000" />
-
       <!--散布随技能与开火频率影响（想了想半自动好像没必要加这个东西）
 				<StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
 					<Conditional skillrequirement="true" weapons="lt 75" />
@@ -271,7 +269,7 @@
   </Item>
   <!--泰拉通用弹药箱-->
   <Item name="泰拉通用弹药箱" description="泰拉集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="TL_ammobox" health="600" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
-    <Sprite texture="weapons.png" depth="0.54" sourcerect="0,405,219,105" origin="0.5,0.5" />
+    <Sprite texture="weapons.png" depth="0.54" sourcerect="153,437,152,75" origin="0.5,0.5" />
     <Body width="112" height="65" density="50" />
     <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
     <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="2" spawnprobability="0.1" />
@@ -307,7 +305,7 @@
       </StatusEffect>
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5"/>
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
       <Containable items="TL_zd,TL_bjzd,TL_mrzd" />
     </ItemContainer>
     <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />

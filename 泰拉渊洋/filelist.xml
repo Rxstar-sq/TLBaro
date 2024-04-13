@@ -27,7 +27,11 @@
   <Afflictions file="%ModDir%/Afflictions.xml" />
   <Text file="%ModDir%/Text.xml" />
   <Submarine file="%ModDir%/Sub/测试地.sub" />
-	<Jobs file="%ModDir%/TL部门/job.xml"/>
+	
+	<!--JOB+天赋-->
+	<Jobs file="%ModDir%/TL部门/Job/job.xml"/>
+	<TalentTrees file="%ModDir%/TL部门/Job/TalentTrees.xml"/>
+	<Talents file="%ModDir%/TL部门/Job/TalentsAssistant.xml"/>
 
   <!--常规前哨模块-->
   <OutpostModule file="%ModDir%/Sub/EngineeringModuleTL02.sub" />

@@ -13,8 +13,8 @@
 			<sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5"/>
 		</JobiconSmall>
 		<Skills>
-			<Skill identifier="weapons" level="80,100" primary="true"/>
-			<Skill identifier="medical" level="40,50"/>
+			<Skill identifier="weapons" level="50,80" primary="true"/>
+			<Skill identifier="medical" level="30,45"/>
 			<Skill identifier="mechanical" level="25,30"/>
 			<Skill identifier="electrical" level="20,25"/>
 			<Skill identifier="helm" level="20,25"/>

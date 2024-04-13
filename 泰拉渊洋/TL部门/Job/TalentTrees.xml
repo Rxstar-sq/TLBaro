@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TalentTrees>
+  <TalentTree jobidentifier="TLsafe">
+    <SubTree identifier="TLsafe_primary" nameidentifier="talenttree.primary" type="primary">
+      <TalentOptions requiredtalents="2" maxchosentalents="6">
+        <TalentOption identifier="gedouke"/>
+        <TalentOption identifier="logisticsexpert"/>
+        <TalentOption identifier="prodigy"/>
+        <TalentOption identifier="inspirationalleader"/>
+        <TalentOption identifier="veteran"/>
+        <TalentOption identifier="travelingtradesman"/>
+      </TalentOptions>
+      <TalentOptions requiredtalents="2" maxchosentalents="6">
+        <TalentOption identifier="emergencymaneuvers"/>
+        <TalentOption identifier="sailorwithnoname"/>
+        <TalentOption identifier="camaraderie"/>
+        <TalentOption identifier="downwiththeship"/>
+        <TalentOption identifier="gunsmith"/>
+        <TalentOption identifier="steadytune"/>
+      </TalentOptions>
+    </SubTree>
+  </TalentTree>
+  
+</TalentTrees>
