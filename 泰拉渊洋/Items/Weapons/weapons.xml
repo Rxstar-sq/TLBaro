@@ -270,7 +270,7 @@
     </Quality>
   </Item>
   <!--泰拉通用弹药箱-->
-  <Item name="泰拉通用弹药箱" description="泰拉集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="TL_ammobox" health="800" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
+  <Item name="泰拉通用弹药箱" description="泰拉集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="TL_ammobox" health="600" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
     <Sprite texture="weapons.png" depth="0.54" sourcerect="0,405,219,105" origin="0.5,0.5" />
     <Body width="112" height="65" density="50" />
     <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
@@ -328,7 +328,7 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
     </Fabricate>
   </Item>
-  <Item name="幻星通用弹药箱" description="幻星工业研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="HX_ammobox" health="800" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
+  <Item name="幻星通用弹药箱" description="幻星工业研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="HX_ammobox" health="700" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
     <Sprite texture="weapons.png" depth="0.54" sourcerect="0,437,153,75" origin="0.5,0.5" />
     <Body width="112" height="65" density="50" />
     <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="2" spawnprobability="0.1" />
