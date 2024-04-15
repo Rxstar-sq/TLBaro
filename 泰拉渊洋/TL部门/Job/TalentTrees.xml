@@ -2,13 +2,12 @@
 <TalentTrees>
   <TalentTree jobidentifier="TLsafe">
     <SubTree identifier="TLsafe_primary" nameidentifier="talenttree.primary" type="primary">
-      <TalentOptions requiredtalents="2" maxchosentalents="6">
+      <TalentOptions requiredtalents="5" maxchosentalents="5">
         <TalentOption identifier="gedouke"/>
-        <TalentOption identifier="logisticsexpert"/>
-        <TalentOption identifier="prodigy"/>
-        <TalentOption identifier="inspirationalleader"/>
-        <TalentOption identifier="veteran"/>
-        <TalentOption identifier="travelingtradesman"/>
+        <TalentOption identifier="dianqi"/>
+        <TalentOption identifier="jixie"/>
+        <TalentOption identifier="yiliao"/>
+        <TalentOption identifier="jiashi"/>
       </TalentOptions>
       <TalentOptions requiredtalents="2" maxchosentalents="6">
         <TalentOption identifier="emergencymaneuvers"/>

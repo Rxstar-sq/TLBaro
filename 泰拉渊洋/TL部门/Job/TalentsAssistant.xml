@@ -22,4 +22,76 @@
 			</Abilities>
 		</AbilityGroupEffect>
 	</Talent>
+	<Talent identifier="dianqi">
+		<!--图标待定-->
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.dianqi">
+			<Replace tag="[dianqi]" value="10" color="gui.green"/>
+			<Replace tag="[other]" value="3" color="gui.green"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="HelmSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="10"/>
+				<CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="jixie">
+		<!--图标待定-->
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.jixie">
+			<Replace tag="[jixie]" value="10" color="gui.green"/>
+			<Replace tag="[other]" value="3" color="gui.green"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="HelmSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="10"/>
+				<CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="yiliao">
+		<!--图标待定-->
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.yiliao">
+			<Replace tag="[yiliao]" value="10" color="gui.green"/>
+			<Replace tag="[other]" value="3" color="gui.green"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="HelmSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="10"/>
+				<CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="jiashi">
+		<!--图标待定-->
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,1" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.jiashi">
+			<Replace tag="[jiashi]" value="10" color="gui.green"/>
+			<Replace tag="[other]" value="3" color="gui.green"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="HelmSkillBonus" value="10"/>
+				<CharacterAbilityGiveStat stattype="ElectricalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MechanicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="MedicalSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="WeaponsSkillBonus" value="3"/>
+				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
 </Talents>

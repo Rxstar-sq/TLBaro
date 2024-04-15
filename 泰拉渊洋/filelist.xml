@@ -6,10 +6,15 @@
   <Item file="%ModDir%/Clothing/clothings.xml" />
   <Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
 
-  <!--武器，子弹，弹夹-->
+<!--武器，子弹，弹夹-->
   <Item file="%ModDir%/Items/weapons/weapons.xml" />
   <Item file="%ModDir%/Items/weapons/bullet.xml" />
   <Item file="%ModDir%/Items/weapons/magazine.xml" />
+
+  <!--生物-->
+  <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
+  <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
+  <Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
 
   <UIStyle file="%ModDir%/UI/style.xml" />
   <Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
@@ -17,9 +22,7 @@
   <RandomEvents file="%ModDir%/TL部门/Events.xml" />
   <Missions file="%ModDir%/TL部门/Missions.xml" />
   <Factions file="%ModDir%/factions.xml" />
-  <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
-  <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
-  <Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
+ 
   <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
   <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
   <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />

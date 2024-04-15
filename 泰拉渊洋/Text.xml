@@ -15,4 +15,12 @@
 
 <talentname.gedouke>集团格斗训练课程</talentname.gedouke>
 <talentdescription.gedouke>经过集团训练课程获得[gedou]武器操控和[other]所有其他技能奖励。</talentdescription.gedouke>
+<talentname.dianqi>集团电气训练课程</talentname.dianqi>
+<talentdescription.dianqi>经过集团训练课程获得[dianqi]电气维修和[other]所有其他技能奖励。</talentdescription.dianqi>
+<talentname.jixie>集团机械训练课程</talentname.jixie>
+<talentdescription.jixie>经过集团训练课程获得[jixie]机械技能和[other]所有其他技能奖励。</talentdescription.jixie>
+<talentname.yiliao>集团医疗训练课程</talentname.yiliao>
+<talentdescription.yiliao>经过集团训练课程获得[yiliao]医疗技能和[other]所有其他技能奖励。</talentdescription.yiliao>
+<talentname.jiashi>集团船长训练课程</talentname.jiashi>
+<talentdescription.jiashi>经过集团训练课程获得[jiashi]船长技能和[other]所有其他技能奖励。</talentdescription.jiashi>
 </infotexts>
