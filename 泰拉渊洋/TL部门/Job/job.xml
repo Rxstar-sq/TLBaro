@@ -6,12 +6,12 @@
 	 vitalitymodifier="10"
 	 pricemultiplier="2.5"
 	 idlebehavior="Patrol">
-		<Jobicon>
-			<sprite texture="Content/UI/MainIconsAtlas.png" sourcerect="256,256,128,128" origin="0.5,0.5"/>
-		</Jobicon>
-		<JobiconSmall>
-			<sprite texture="Content/UI/CommandUIAtlas.png" sourcerect="612,640,28,28" origin="0.5,0.5"/>
-		</JobiconSmall>
+	<Jobicon>
+		<sprite texture="%ModDir%/TL部门/Job/safe.png" sourcerect="0,0,489,489" origin="0.5,0.5"/>
+	</Jobicon>
+	<JobiconSmall>
+		<sprite texture="%ModDir%/TL部门/Job/safe2.png" sourcerect="0,0,28,28" origin="0.5,0.5"/>
+	</JobiconSmall>
 		<Skills>
 			<Skill identifier="weapons" level="50,80" primary="true"/>
 			<Skill identifier="medical" level="30,45"/>
