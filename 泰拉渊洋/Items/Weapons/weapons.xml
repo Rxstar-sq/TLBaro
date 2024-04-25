@@ -160,7 +160,7 @@
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
   <!--TL15步枪改-->
-  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的发挥弹药的杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的发挥弹药的杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" FirepowerMultiplier="0.25" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2000" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" />
@@ -192,10 +192,6 @@
       <Sound file="%ModDir%/ogg/连发1.ogg" type="OnUse" range="3000" />
       <Sound file="%ModDir%/ogg/连发2.ogg" type="OnUse" range="3000" selectionmode="Random" />
       <Sound file="%ModDir%/ogg/连发3.ogg" type="OnUse" range="3000" />
-      <!--增加伤害-->
-      <StatusEffect type="OnSecondaryUse" target="Character" setvalue="true">
-        
-      </StatusEffect>
       <!--散步-->
       <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
         <Conditional skillrequirement="true" weapons="lt 75" />
