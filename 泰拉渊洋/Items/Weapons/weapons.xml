@@ -59,7 +59,7 @@
       <QualityStat stattype="FirepowerMultiplier" value="0.1" />
     </Quality>
   </Item>
-  <Item name="TL-14常规制式突击步枪" identifier="TL14" description="泰拉集团制式装备，得益于出色的精度和" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL-14常规制式突击步枪" identifier="TL14" description="泰拉集团制式装备，得益于出色的精度和设计，使其使用于各类场景" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2000" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" />
@@ -160,6 +160,108 @@
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
   <!--TL15步枪改-->
+  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的发挥弹药的杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
+    <Price baseprice="2000" minleveldifficulty="15">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.2" />
+      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="1" maxavailable="2" sold="true" />
+    </Price>
+    <!--通过TL14与刚素合成-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="physicorium" amount="2" />
+      <RequiredItem identifier="TL14" amount="3" />
+    </Fabricate>
+    <Deconstruct time="35">
+      <Item identifier="physicorium" amount="1" />
+      <Item identifier="TL14"/>
+    </Deconstruct>
+    <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
+    <Body width="235" height="55" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.38" setvalue="true" />
+      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+    </Holdable>
+    <RangedWeapon reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
+      <Sound file="%ModDir%/ogg/连发1.ogg" type="OnUse" range="3000" />
+      <Sound file="%ModDir%/ogg/连发2.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="%ModDir%/ogg/连发3.ogg" type="OnUse" range="3000" />
+      <!--增加伤害-->
+      <StatusEffect type="OnSecondaryUse" target="Character" setvalue="true">
+        
+      </StatusEffect>
+      <!--散步-->
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 75" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 34" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 59" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" setvalue="true">
+        <Conditional skillrequirement="true" weapons="lt 25" />
+        <Conditional recoilstabilized="lte 0" />
+        <Conditional incrementalstun="lte 77" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" spread="-1.5" unskilledspread="-8" disabledeltatime="true">
+        <Conditional spread="gte 1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" spread="0" unskilledspread="8" setvalue="true" disabledeltatime="true">
+        <Conditional spread="lt 1.5" />
+      </StatusEffect>
+      <StatusEffect type="OnSecondaryUse" target="This" spread="3" unskilledspread="12">
+        <Conditional spread="gt 0" />
+      </StatusEffect>
+      <StatusEffect type="Always" target="This" spread="4" unskilledspread="30" setvalue="true" delay="0.2" checkconditionalalways="true" disabledeltatime="true">
+        <Conditional ReloadTimer="0" />
+      </StatusEffect>
+      <!--空仓-->
+      <StatusEffect type="OnUse" target="This">
+        <Conditional Condition="eq 0" targetcontaineditem="true" />
+        <Sound file="%ModDir%/ogg/outammo.ogg" range="2000" loop="false" />
+      </StatusEffect>
+      <!--后座与屏幕抖动-->
+      <StatusEffect type="OnUse">
+        <Explosion range="80.0" force="0.3" camerashake="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+      <!--留空用来加弹壳音效-->
+      <!---->
+      <StatusEffect type="OnUse">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="30" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false"  itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="TL_ammo" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="24,4" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+    </Quality>
+    <SkillRequirementHint identifier="weapons" level="30" />
+  </Item>
   <!--特殊武器-->
   <Item name="灭刃" description="泰拉科技工程研究的特珠武器,发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
