@@ -159,6 +159,7 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
+  <!--TL15步枪改-->
   <!--特殊武器-->
   <Item name="灭刃" description="泰拉科技工程研究的特珠武器,发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
