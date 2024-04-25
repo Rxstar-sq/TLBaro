@@ -63,4 +63,35 @@
 			</Controller>
 		</Upgrade>
 	</Item>
+	<Item name="燃料补充系统" identifier="weldingfueltankhelf2"  category="Diving" tags="container,oxygentankcontainer,oxygentankrefiller" pickdistance="50" scale="0.5">
+		<Sprite name="Diving Suit Locker Small" texture="Content/Items/Containers/containers.png" sourcerect="714,259,99,82" depth="0.84" origin="0.5,0.5" />
+		<!--TODO: add light textures for powered-on state?-->
+		<Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
+			<GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
+		</Powered>
+		<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+			<GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+			<RequiredSkill identifier="electrical" level="25" />
+			<StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+				<Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+				<Explosion range="100.0" stun="0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+				<Affliction identifier="stun" strength="4" />
+				<Affliction identifier="burn" strength="5" />
+			</StatusEffect>
+			<RequiredItem items="screwdriver" type="Equipped" />
+			<ParticleEmitter particle="spark" particleamount="5" emitinterval="1.05" anglemax="360" distancemax="20" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+			<ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+			<input name="power_in" displayname="connection.powerin" />
+		</ConnectionPanel>
+		<ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
+			<GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
+			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+			<StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
+			<Containable items="weldingfuel" excludebroken="false" excludefullcondition="true">
+				<StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And"/>
+			</Containable>
+		</ItemContainer>
+	</Item>
 </Items>
