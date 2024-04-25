@@ -275,15 +275,51 @@
       <!--抗性待定-->
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewoundsv,blunttrauma" damagemultiplier="0.95" />
     </Wearable>
+	  <Sonar range="6000.0" powerconsumption="10" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="true" allowuioverlap="true">
+		  <StatusEffect type="OnUse" targettype="Contained" Condition="-0.7" disabledeltatime="true">
+			  <RequiredItem items="mobilebattery" type="Contained" />
+		  </StatusEffect>
+		  <StatusEffect type="OnUse" targettype="Contained" Condition="-0.1" disabledeltatime="true">
+			  <RequiredItem items="Powerbattery" type="Contained" />
+		  </StatusEffect>
+		  <sound file="Content/Items/Command/SonarPing.ogg" type="OnUse" range="1000.0" frequencymultiplier="1.5" />
+		  <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01"/>
+		  <PingCircle texture="Content/Items/Command/pingCircle.png" origin="0.5,0.5" />
+		  <DirectionalPingCircle texture="Content/Items/Command/directionalPingCircle.png" origin="0.0,0.5" />
+		  <ScreenOverlay texture="Content/Items/Command/sonarOverlay.png" origin="0.5,0.5" />
+		  <ScreenBackground texture="Content/Items/Command/sonarBackground.png" origin="0.5,0.5" />
+		  <DirectionalPingBackground texture="Content/Items/Command/directionalPingBackground.png" origin="0.5,0.5" />
+		  <DirectionalPingButton index="0" texture="Content/Items/Command/directionalPingButton.png" sourcerect="0,0,91,266" origin="-4.5275,0.5" />
+		  <DirectionalPingButton index="1" texture="Content/Items/Command/directionalPingButton.png" sourcerect="133,0,91,266" origin="-4.5275,0.5" />
+		  <DirectionalPingButton index="2" texture="Content/Items/Command/directionalPingButton.png" sourcerect="266,0,91,266" origin="-4.5275,0.5" />
+		  <Blip texture="Content/Items/Command/sonarBlip.png" origin="0.5,0.5" />
+		  <LineSprite texture="Content/Items/Command/NavUI.png" sourcerect="181,141,109,4" origin="0,0.5"/>
+		  <icon identifier="outpost" texture="Content/UI/MainIconsAtlas.png" sourcerect="352,398,16,8" origin="0.5,0.5"/>
+		  <icon identifier="submarine" texture="Content/UI/MainIconsAtlas.png" sourcerect="353,407,14,6" origin="0.5,0.5"/>
+		  <icon identifier="shuttle" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,407,8,6" origin="0.5,0.5"/>
+		  <icon identifier="artifact" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,414,8,8" origin="0.5,0.5"/>
+		  <icon identifier="location" texture="Content/UI/MainIconsAtlas.png" sourcerect="349,435,11,11" origin="0.5,0.5"/>
+		  <icon identifier="mineral" texture="Content/UI/MainIconsAtlas.png" sourcerect="336,434,7,12" origin="0.5,0.5"/>
+		  <icon identifier="" texture="Content/UI/MainIconsAtlas.png" sourcerect="346,416,4,4" origin="0.5,0.5"/>
+		  <LightComponent LightColor="120,255,120,255" range="25" powerconsumption="10" pulsefrequency="0.5" pulseamount="0.8" castshadows="false" IsOn="false" canbeselected="false">
+			  <IsActive TargetItemComponent="Sonar" CurrentMode="Active"/>
+		  </LightComponent>
+	  </Sonar>
     <ItemContainer capacity="0" maxstacksize="0" hideitems="true" containedstateindicatorstyle="battery" containedstateindicatorslot="0">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
-        <Containable items="reactorfuel">
-          <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.3" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.35" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
             <Conditional IsDead="false" />
           </StatusEffect>
-		<StatusEffect type="OnWearing" target="Contained" Condition="-0.4" comparison="And"/>
+		<StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And"/>
         </Containable>
+		  <Containable items="Powerbattery">
+			  <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.35" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
+				  <Conditional IsDead="false" />
+			  </StatusEffect>
+			  <StatusEffect type="OnWearing" target="Contained" Condition="-0.05" comparison="And"/>
+		  </Containable>
       </SubContainer>
       <SubContainer capacity="11" maxstacksize="16">
         <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate"  />

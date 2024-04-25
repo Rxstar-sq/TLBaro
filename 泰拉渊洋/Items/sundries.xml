@@ -1,19 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor1" scale="0.15" cargocontaineridentifier="metalcrate">
-    <InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
-    <Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
+  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true" Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor1" scale="0.15" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Sprite texture="icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
     <Body width="16" height="12" density="20" />
     <IdCard slots="Any" msg="ItemMsgPickUpSelect" />
   </Item>
-
-	<Item name="万能钥匙（NPC）" identifier="idcardplus1" description="" nonplayerteaminteractable="True" category="Hidden" hideinmenus="true"  Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor" scale="0.15" cargocontaineridentifier="metalcrate">
-		<InventoryIcon texture="card.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
-		<Sprite texture="card.png" depth="0.8" sourcerect="0,0,170,70" />
-		<Body width="16" height="12" density="20" />
-		<IdCard slots="Card" msg="ItemMsgPickUpSelect" />
-	</Item>
-
+  <Item name="万能钥匙（NPC）" identifier="idcardplus1" description="" nonplayerteaminteractable="True" category="Hidden" hideinmenus="true" Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor" scale="0.15" cargocontaineridentifier="metalcrate">
+    <InventoryIcon texture="icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Sprite texture="icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Body width="16" height="12" density="20" />
+    <IdCard slots="Card" msg="ItemMsgPickUpSelect" />
+  </Item>
   <Item name="智脑日志" identifier="zhiheldterminal" category="Electrical" Tags="smallitem,logic" description="智脑离开此地终端时的最后运行日志，如果你看到这个说明这里已经发生了一些事情而被集团抛弃抹除" cargocontaineridentifier="metalcrate" scale="0.25" impactsoundtag="impact_metal_light" isshootable="true">
     <Upgrade gameversion="0.9.9000.0" scale="0.25" />
     <Price baseprice="100" sold="false" />
@@ -26,72 +24,71 @@
       <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
     </Terminal>
   </Item>
-
-	<Item name="高级治疗床" identifier="probed" description="集团专用的治疗床，可以治愈大部分伤痛，直接丢在地上即可使用，无需左键放置" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
-	     <Price baseprice="20000" sold="true">
-			<Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="2" />
-		</Price>
-		<Body width="420" height="195" density="10" />
-	<Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" holdpos="-20,-100" handle1="-20,-50" holdangle="0" aimable="false" PickingTime="1.0" msg="ItemMsgDetach" />
-		<sprite texture="bed.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
-		<Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
-			<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
-			<limbposition limb="Head" position="-6,-10" />
-			<limbposition limb="Torso" position="104,0" />
-			<limbposition limb="Waist" position="244,-80" />
-			<limbposition limb="RightFoot" position="380,-20" />
-			<limbposition limb="LeftFoot" position="380,-20" />
-			<limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
-			<limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
-			<StatusEffect type="OnActive" target="Character">
-				<reduceaffliction type="damage" strength="0.5" />
-				<reduceaffliction identifier="bloodloss" strength="1.0" />
-				<reduceaffliction identifier="bleeding" strength="1.0" />
-				<reduceaffliction identifier="nausea" strength="1.0" />
-				<reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
-				<reduceaffliction identifier="opiateaddiction" strength="1.0" />
-				<reduceaffliction identifier="drunk" strength="1.0" />
-				<reduceaffliction identifier="burn" strength="1.0" />
-				<reduceaffliction identifier="internaldamage" strength="1.0" />
-				<reduceaffliction identifier="organdamage" strength="1.0" />
-				<reduceaffliction identifier="explosiondamage" strength="1.0" />
-			</StatusEffect>
-		</Controller>
-		<Upgrade gameversion="0.20.8.0">
-			<Controller>
-				<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
-			</Controller>
-		</Upgrade>
-	</Item>
-	<Item name="燃料补充系统" identifier="weldingfueltankhelf2"  category="Diving" tags="container,oxygentankcontainer,oxygentankrefiller" pickdistance="50" scale="0.5">
-		<Sprite name="Diving Suit Locker Small" texture="Content/Items/Containers/containers.png" sourcerect="714,259,99,82" depth="0.84" origin="0.5,0.5" />
-		<!--TODO: add light textures for powered-on state?-->
-		<Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
-			<GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
-		</Powered>
-		<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
-			<GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
-			<RequiredSkill identifier="electrical" level="25" />
-			<StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
-				<Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
-				<Explosion range="100.0" stun="0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
-				<Affliction identifier="stun" strength="4" />
-				<Affliction identifier="burn" strength="5" />
-			</StatusEffect>
-			<RequiredItem items="screwdriver" type="Equipped" />
-			<ParticleEmitter particle="spark" particleamount="5" emitinterval="1.05" anglemax="360" distancemax="20" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
-			<ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
-			<input name="power_in" displayname="connection.powerin" />
-		</ConnectionPanel>
-		<ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
-			<GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
-			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-			<SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
-			<StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
-			<Containable items="weldingfuel" excludebroken="false" excludefullcondition="true">
-				<StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And"/>
-			</Containable>
-		</ItemContainer>
-	</Item>
+  <Item name="高级治疗床" identifier="probed" description="集团专用的治疗床，可以治愈大部分伤痛，直接丢在地上即可使用，无需左键放置" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
+    <Price baseprice="20000" sold="true">
+      <Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="2" />
+    </Price>
+    <Body width="420" height="195" density="10" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" holdpos="-20,-100" handle1="-20,-50" holdangle="0" aimable="false" PickingTime="1.0" msg="ItemMsgDetach" />
+    <sprite texture="icon.png" sourcerect="9,181,421,201" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+    <Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+      <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+      <limbposition limb="Head" position="-6,-10" />
+      <limbposition limb="Torso" position="104,0" />
+      <limbposition limb="Waist" position="244,-80" />
+      <limbposition limb="RightFoot" position="380,-20" />
+      <limbposition limb="LeftFoot" position="380,-20" />
+      <limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
+      <limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
+      <StatusEffect type="OnActive" target="Character">
+        <reduceaffliction type="damage" strength="0.5" />
+        <reduceaffliction identifier="bloodloss" strength="1.0" />
+        <reduceaffliction identifier="bleeding" strength="1.0" />
+        <reduceaffliction identifier="nausea" strength="1.0" />
+        <reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
+        <reduceaffliction identifier="opiateaddiction" strength="1.0" />
+        <reduceaffliction identifier="drunk" strength="1.0" />
+        <reduceaffliction identifier="burn" strength="1.0" />
+        <reduceaffliction identifier="internaldamage" strength="1.0" />
+        <reduceaffliction identifier="organdamage" strength="1.0" />
+        <reduceaffliction identifier="explosiondamage" strength="1.0" />
+      </StatusEffect>
+    </Controller>
+    <Upgrade gameversion="0.20.8.0">
+      <Controller>
+        <RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+      </Controller>
+    </Upgrade>
+  </Item>
+  <Item name="燃料补充系统" identifier="weldingfueltankhelf2" category="Diving" tags="container,oxygentankcontainer,oxygentankrefiller" pickdistance="50" scale="0.5">
+    <Sprite name="Diving Suit Locker Small" texture="Content/Items/Containers/containers.png" sourcerect="714,259,99,82" depth="0.84" origin="0.5,0.5" />
+    <!--TODO: add light textures for powered-on state?-->
+    <Powered powerconsumption="30" currpowerconsumption="30" isactive="true">
+      <GuiFrame relativesize="0.18,0.15" minsize="350,160" maxsize="420,192" anchor="Center" relativeoffset="0,-0.1" style="ItemUI" msg="ItemMsgInteractSelect" />
+    </Powered>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredSkill identifier="electrical" level="25" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Sounds/Damage/Electrocution1.ogg" range="1000" />
+        <Explosion range="100.0" stun="0" force="1.0" flames="false" shockwave="false" sparks="true" underwaterbubble="false" />
+        <Affliction identifier="stun" strength="4" />
+        <Affliction identifier="burn" strength="5" />
+      </StatusEffect>
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <ParticleEmitter particle="spark" particleamount="5" emitinterval="1.05" anglemax="360" distancemax="20" scalemin="0.5" scalemax="1" mincondition="0.0" maxcondition="15.0" />
+      <ParticleEmitter particle="fleshsmoke" particlespersecond="2" scalemin="1" scalemax="2" mincondition="0.0" maxcondition="50.0" />
+      <input name="power_in" displayname="connection.powerin" />
+    </ConnectionPanel>
+    <ItemContainer hideitems="false" drawinventory="true" capacity="3" maxstacksize="1" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.16,0.18" anchor="Center" style="ItemUI" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="Content/UI/StatusMonitorUI.png" sourcerect="64,448,64,64" origin="0.5,0.5" />
+      <StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
+      <Containable items="weldingfuel" excludebroken="false" excludefullcondition="true">
+        <StatusEffect type="OnContaining" targettype="Contained" Condition="1.0" Comparison="And" />
+      </Containable>
+    </ItemContainer>
+  </Item>
 </Items>
