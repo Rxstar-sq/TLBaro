@@ -160,7 +160,7 @@
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
   <!--TL15步枪改-->
-  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的发挥弹药的杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" FirepowerMultiplier="0.25" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的提升杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" FirepowerMultiplier="0.25" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2000" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" />
