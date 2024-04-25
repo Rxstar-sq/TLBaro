@@ -27,36 +27,40 @@
     </Terminal>
   </Item>
 
-  	<Item name="高级治疗床" identifier="probed" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
-			<Upgrade gameversion="0.12.0.0" noninteractable="false" />
-			<sprite texture="bed.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
-			<Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+	<Item name="高级治疗床" identifier="probed" description="集团专用的治疗床，可以治愈大部分伤痛，直接丢在地上即可使用，无需左键放置" width="416" height="192" texturescale="1.0,1.0" scale="0.5" noninteractable="false" category="misc">
+	     <Price baseprice="20000" sold="true">
+			<Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="2" />
+		</Price>
+		<Body width="420" height="195" density="10" />
+	<Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" holdpos="-20,-100" handle1="-20,-50" holdangle="0" aimable="false" PickingTime="1.0" msg="ItemMsgDetach" />
+		<sprite texture="bed.png" sourcerect="96,304,416,192" depth="0.97" premultiplyalpha="false" origin="0.5,0.5" />
+		<Controller UserPos="0,-300" direction="Right" hidehud="false" canbeselected="true" noninteractablewhenflippedy="true">
+			<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
+			<limbposition limb="Head" position="-6,-10" />
+			<limbposition limb="Torso" position="104,0" />
+			<limbposition limb="Waist" position="244,-80" />
+			<limbposition limb="RightFoot" position="380,-20" />
+			<limbposition limb="LeftFoot" position="380,-20" />
+			<limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
+			<limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
+			<StatusEffect type="OnActive" target="Character">
+				<reduceaffliction type="damage" strength="0.5" />
+				<reduceaffliction identifier="bloodloss" strength="1.0" />
+				<reduceaffliction identifier="bleeding" strength="1.0" />
+				<reduceaffliction identifier="nausea" strength="1.0" />
+				<reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
+				<reduceaffliction identifier="opiateaddiction" strength="1.0" />
+				<reduceaffliction identifier="drunk" strength="1.0" />
+				<reduceaffliction identifier="burn" strength="1.0" />
+				<reduceaffliction identifier="internaldamage" strength="1.0" />
+				<reduceaffliction identifier="organdamage" strength="1.0" />
+				<reduceaffliction identifier="explosiondamage" strength="1.0" />
+			</StatusEffect>
+		</Controller>
+		<Upgrade gameversion="0.20.8.0">
+			<Controller>
 				<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
-				<limbposition limb="Head" position="-6,-10" />
-				<limbposition limb="Torso" position="104,0" />
-				<limbposition limb="Waist" position="244,-80" />
-				<limbposition limb="RightFoot" position="380,-20" />
-				<limbposition limb="LeftFoot" position="380,-20" />
-				<limbposition limb="RightHand" position="234,-10" allowusinglimb="false" />
-				<limbposition limb="LeftHand" position="234,-10" allowusinglimb="false" />
-				<StatusEffect type="OnActive" target="Character">
-					<reduceaffliction type="damage" strength="0.5" />
-					<reduceaffliction identifier="bloodloss" strength="1.0" />
-					<reduceaffliction identifier="bleeding" strength="1.0" />
-					<reduceaffliction identifier="nausea" strength="1.0" />
-					<reduceaffliction identifier="opiatewithdrawal" strength="1.0" />
-					<reduceaffliction identifier="opiateaddiction" strength="1.0" />
-					<reduceaffliction identifier="drunk" strength="1.0" />
-					<reduceaffliction identifier="burn" strength="1.0" />
-					<reduceaffliction identifier="internaldamage" strength="1.0" />
-					<reduceaffliction identifier="organdamage" strength="1.0" />
-					<reduceaffliction identifier="explosiondamage" strength="1.0" />
-				</StatusEffect>
 			</Controller>
-			<Upgrade gameversion="0.20.8.0">
-				<Controller>
-					<RequiredItem items="deepdivinglarge" type="Picked" requireempty="true" />
-				</Controller>
-			</Upgrade>
-		</Item>
+		</Upgrade>
+	</Item>
 </Items>
