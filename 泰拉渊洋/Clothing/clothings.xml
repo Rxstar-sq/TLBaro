@@ -309,13 +309,13 @@
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
         <Containable items="mobilebattery">
-          <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.35" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
+          <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.25" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
             <Conditional IsDead="false" />
           </StatusEffect>
 		<StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And"/>
         </Containable>
 		  <Containable items="Powerbattery">
-			  <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.35" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
+			  <StatusEffect type="OnContaining" target="This,Character" SpeedMultiplier="1.4" PropulsionSpeedMultiplier="1.5" Voltage="1.0" setvalue="true">
 				  <Conditional IsDead="false" />
 			  </StatusEffect>
 			  <StatusEffect type="OnWearing" target="Contained" Condition="-0.05" comparison="And"/>
