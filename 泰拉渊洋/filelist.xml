@@ -1,10 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <contentpackage name="泰拉渊洋" modversion="1.0.39" corepackage="False" gameversion="1.3.0.1">
+  <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
+  <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
+  <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
+  <Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
+  <Afflictions file="%ModDir%/Afflictions.xml" />
+  <Text file="%ModDir%/Text.xml" />
+  <Submarine file="%ModDir%/Sub/测试地.sub" />
   <Item file="%ModDir%/Items/items.xml" />
   <Item file="%ModDir%/Items/Bossitem.xml" />
   <Item file="%ModDir%/Items/sundries.xml" />
   <Item file="%ModDir%/Clothing/clothings.xml" />
   <Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
+  <UIStyle file="%ModDir%/UI/style.xml" />
+
+  <!--舰船-->
+  <Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
+  <Submarine file="%ModDir%/Sub/A型护卫舰.sub" />
 
 <!--武器，子弹，弹夹-->
   <Item file="%ModDir%/Items/weapons/weapons.xml" />
@@ -16,21 +28,12 @@
   <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
   <Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
 
-  <UIStyle file="%ModDir%/UI/style.xml" />
-  <Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
+  <!--NPC+事件+任务-->
   <NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
   <RandomEvents file="%ModDir%/TL部门/Events.xml" />
   <Missions file="%ModDir%/TL部门/Missions.xml" />
   <Factions file="%ModDir%/factions.xml" />
  
-  <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
-  <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
-  <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
-  <Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
-  <Afflictions file="%ModDir%/Afflictions.xml" />
-  <Text file="%ModDir%/Text.xml" />
-  <Submarine file="%ModDir%/Sub/测试地.sub" />
-	
 	<!--JOB+天赋-->
 	<Jobs file="%ModDir%/TL部门/Job/job.xml"/>
 	<TalentTrees file="%ModDir%/TL部门/Job/TalentTrees.xml"/>
