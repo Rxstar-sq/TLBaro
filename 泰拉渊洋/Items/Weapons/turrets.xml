@@ -29,7 +29,7 @@
       <ChargeSound file="Content/Items/Weapons/WEAPONS_chargeUp.ogg" range="10000" />
       <RequiredSkill identifier="weapons" level="50" />
       <LightComponent Flicker="0.0" range="2500" directional="true" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true" InheritParentIsActive="false">
-        <LightTexture texture="%ModDir%/Items/weapons/lightcone.png" origin="0.0,0.5" size="1.0,1.0" />
+      <LightTexture texture="%ModDir%/UI/lightcone.png" origin="0.0,0.5" size="1.0,1.0" />
       </LightComponent>
       <ParticleEmitter particle="muzzleflashchaingun" particleamount="1" velocitymin="0" velocitymax="0" distancemin="-50" distancemax="-50" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2" scalemax="3" />
