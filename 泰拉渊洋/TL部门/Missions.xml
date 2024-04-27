@@ -41,7 +41,44 @@
     <message header="MAN！" text="安保部：烛光中求生的勇士，你值得敬爱" />
   </MonsterMission>
 	 
-	 <PirateMission name="放弃船，或者放弃希望。" type="Pirate"  identifier="TLhaidao"  tags="TL"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
+	 <PirateMission name="放弃船，或者放弃希望。" type="Pirate"  identifier="TLhaidao"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
+		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
+		 <Reputation identifier="TLhui" amount="8" />
+		 <SubmarineTypes>
+			 <Submarine path="%ModDir%/Sub/A型护卫舰.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+		 </SubmarineTypes>
+		 <Characters>
+			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
+			 <Character typeidentifier="separatistsecurity" minamount="5" maxamount="7" />
+			 <Character typeidentifier="separatistmechanic" minamount="5" maxamount="7" />
+			 <Character typeidentifier="separatistengineer" minamount="5" maxamount="7" />
+		 </Characters>
+		 <CharacterTypes>
+			 <CharacterType typeidentifier="separatistcaptain">
+				 <Character identifier="separatistcaptain" from="combatmissionseparatistnpcs" preferreddifficulty="50" iscommander="true" />
+				 <Character identifier="separatistcaptainlord" from="combatmissionseparatistnpcs" preferreddifficulty="90" iscommander="true" />
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistsecurity">
+				 <Character identifier="separatistsecurityrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistsecuritygunner" from="combatmissionseparatistnpcs" preferreddifficulty="60"/>
+				 <Character identifier="separatistsecuritybrute" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+				 <Character identifier="separatistsecurityelite" from="combatmissionseparatistnpcs" preferreddifficulty="100"/>
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistmechanic">
+				 <Character identifier="separatistmechanicrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistmechanicveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+			 </CharacterType>
+			 <CharacterType typeidentifier="separatistengineer">
+				 <Character identifier="separatistengineerrecruit" from="combatmissionseparatistnpcs" preferreddifficulty="40"/>
+				 <Character identifier="separatistengineerveteran" from="combatmissionseparatistnpcs" preferreddifficulty="70"/>
+			 </CharacterType>
+		 </CharacterTypes>
+		 <Icon texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" />
+		 <message header="已发现敌对势力" text="杀！！！"/>
+		 <message header="任务完成" text="十年航海，一日上岸"/>
+		 <LocationType from="AnyOutpost" to="AnyOutpost" />
+	 </PirateMission>
+	 <PirateMission name="放弃船，或者放弃希望。" type="Pirate"  identifier="TLhaidao2"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
 		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
 		 <Reputation identifier="TLhui" amount="8" />
 		 <SubmarineTypes>
@@ -74,7 +111,7 @@
 			 </CharacterType>
 		 </CharacterTypes>
 		 <Icon texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" />
-		 <message header="已发现敌对势力" text="杀！！！"/>
+		 <message header="已发现敌方海盗" text="杀！！！"/>
 		 <message header="任务完成" text="十年航海，一日上岸"/>
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>

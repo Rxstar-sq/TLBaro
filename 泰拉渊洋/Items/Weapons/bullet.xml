@@ -78,7 +78,35 @@
                 </StatusEffect>
             </Projectile>
         </Item>
-
+		<Item name="近防炮子弹" identifier="chaingunbolt2" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
+			<Sprite texture="%ModDir%/Items/weapons/1130.png" sourcerect="839,823,180,49" depth="0.55" origin="0.5,0.5" />
+			<Body width="170" height="10" density="10" />
+			<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+			<Projectile characterusable="false" launchimpulse="0" spread="9.5" removeonhit="true" damagedoors="true">
+				<Attack targetimpulse="400" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
+					<Affliction identifier="lacerations" strength="15" />
+					<Affliction identifier="bleeding" strength="1" />
+					<Affliction identifier="stun" strength="0.125" />
+					<Affliction identifier="stun" strength="0.125" probability="0.5" />
+				</Attack>
+				<StatusEffect type="OnActive" target="This">
+					<ParticleEmitter particle="chainguntrail" copyentityangle="true" particlespersecond="50" initialdelay="0.05" colormultiplier="240,200,50" />
+				</StatusEffect>
+				<StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+					<Remove />
+				</StatusEffect>
+				<StatusEffect type="OnImpact" target="UseTarget">
+					<ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2.0" scalemax="3.0" />
+					<ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="8" velocitymin="-300" velocitymax="-800" scalemin="1" scalemax="2" />
+					<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="500" scalemin="0.4" scalemax="0.5" />
+				</StatusEffect>
+				<StatusEffect type="OnImpact" target="UseTarget">
+					<Conditional entitytype="eq Structure" />
+					<Conditional hastag="eq door" />
+					<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+				</StatusEffect>
+			</Projectile>
+		</Item>
 	</Items>
 
 	

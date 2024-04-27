@@ -20,7 +20,7 @@
 				<ConversationAction text="在鲜花中离去吧"  targettag="triggerer_player" eventsprite="hua"/>
 					<MissionAction missionidentifier="hunting" />
 				<ConversationAction text="放弃船，或者放弃希望"  targettag="triggerer_player" eventsprite="haidao"/>
-					<MissionAction missionidentifier="TLhaidao" />
+					<MissionAction missiontag="TLhaidao" />
 				<ConversationAction text="任何一项成功的技术都充满荆棘，但我们只能赤脚踩过"  targettag="triggerer_player" eventsprite="baomi"/>
 				<MissionAction missionidentifier="TLceshiji" />
 				<ConversationAction text="烛光中求生的勇士，你值得敬爱"  targettag="triggerer_player" eventsprite="zhu"/>
