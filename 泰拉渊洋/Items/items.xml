@@ -26,7 +26,7 @@
     <Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
       <sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="816,11,172,207" origin="0.725,0.55" scale="0.35" />
     </Wearable>
-    <ItemContainer capacity="40" depth="0.5">
+    <ItemContainer capacity="40" maxstacksize="16" depth="0.5">
       <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers="TLbag">
         <StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10" />
       </Containable>

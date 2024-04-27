@@ -24,10 +24,9 @@ Hook.Add("character.applyDamage", "LuaArmor.ApplyDamage", function (characterHea
     end
 end)
 
-Hook.Add("chatMessage", "examples.giveAfflictions", function (message, client)
-    if message ~= "!xibao" then return end
-    local burnPrefab = AfflictionPrefab.Prefabs["alcellruin"]
-    local character
+Hook.Add("examples.givemoney", "examples.givemoney", function ()
+ local MoneyAmount = 1000;
+ local character
     if SERVER then
         character = client.Character
     else
@@ -35,9 +34,5 @@ Hook.Add("chatMessage", "examples.giveAfflictions", function (message, client)
     end
 
     if character == nil then return end
-
-    local limb = character.AnimController.GetLimb(LimbType.Torso)
-
-    -- give 50 of burns to the head of the character
-    character.CharacterHealth.ApplyAffliction(limb, burnPrefab.Instantiate(50))
+ character.GiveMoney(MoneyAmount);
 end)
