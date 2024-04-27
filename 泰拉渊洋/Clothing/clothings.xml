@@ -273,9 +273,10 @@
       <SkillModifier skillidentifier="medical" skillvalue="5" />
       <SkillModifier skillidentifier="weapons" skillvalue="5" />
       <!--抗性待定-->
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewoundsv,blunttrauma" damagemultiplier="0.95" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="weapons,electrical,mechanical,medical,lacerations,bitewoundsv,blunttrauma" damagemultiplier="0.05" />
+	  <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="alcellruin" damagemultiplier="0.5" />
     </Wearable>
-	  <Sonar range="6000.0" powerconsumption="10" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="true" allowuioverlap="true">
+	  <Sonar range="6500.0" powerconsumption="10" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="true" allowuioverlap="true">
 		  <StatusEffect type="OnUse" targettype="Contained" Condition="-0.7" disabledeltatime="true">
 			  <RequiredItem items="mobilebattery" type="Contained" />
 		  </StatusEffect>

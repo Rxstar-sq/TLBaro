@@ -45,6 +45,27 @@
       <Sound file="%ModDir%/ogg/神鹰1.ogg" type="OnUse" range="2000" />
     </RangedWeapon>
   </Item>
+  <Item name="奇怪的小喇叭2(失重状态）" identifier="shenyingge2" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="有明显失重感">
+    <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true"/>
+    <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05"/>
+    <Price baseprice="10" canbespecial="false">
+      <Price storeidentifier="merchantoutpost" minavailable="1"/>
+      <Price storeidentifier="merchantcity" minavailable="1"/>
+      <Price storeidentifier="merchantresearch" sold="false" />
+      <Price storeidentifier="merchantmilitary" sold="false" />
+      <Price storeidentifier="merchantmine" sold="false" />
+      <Price storeidentifier="merchantclown" minavailable="3" maxavailable="5">
+        <Reputation faction="clowns" min="30"/>
+      </Price>
+    </Price>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Misc/Misc.png" sourcerect="101,45,53,22" depth="0.55" />
+    <Body width="50" height="20" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" handle1="-15,-3" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="16">
+      <Sound file="%ModDir%/ogg/神鹰2.ogg" type="OnUse" range="2000" />
+    </RangedWeapon>
+  </Item>
 	
   <Item name="10000TMK" description="集团暗中“发行”的“货币”，这可不是“假币”，10000TMK可以换1000MK" identifier="TMKmoney" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
