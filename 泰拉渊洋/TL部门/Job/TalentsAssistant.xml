@@ -104,7 +104,7 @@
 		<AddedRecipe itemidentifier="bianse"/>
 	</Talent>
 	<Talent identifier="UNzhi">
-		<Description tag="talentdescription.OLBzhi">
+		<Description tag="talentdescription.UNzhi">
 			<Replace tag="[OLBzhi]" value="欧罗巴纸" color="gui.orange"/>
 		</Description>
 		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="7,0"/>
