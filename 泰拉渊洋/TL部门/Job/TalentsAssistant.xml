@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
 	<Talent identifier="gedouke">
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/gedouke.png" sourcerect="0,0,128,128"/>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="1,0"/>
 		<Description tag="talentdescription.gedouke">
 			<Replace tag="[gedou]" value="25" color="gui.green"/>
 			<Replace tag="[other]" value="3" color="gui.green"/>
@@ -22,7 +22,7 @@
 		</AbilityGroupEffect>
 	</Talent>
 	<Talent identifier="dianqi">
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/dianqi.png" sourcerect="0,0,128,128"/>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="0,0"/>
 		<Description tag="talentdescription.dianqi">
 			<Replace tag="[dianqi]" value="10" color="gui.green"/>
 			<Replace tag="[other]" value="3" color="gui.green"/>
@@ -39,7 +39,7 @@
 		</AbilityGroupEffect>
 	</Talent>
 	<Talent identifier="jixie">
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/jixie.png" sourcerect="0,0,128,128"/>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="3,0"/>
 		<Description tag="talentdescription.jixie">
 			<Replace tag="[jixie]" value="10" color="gui.green"/>
 			<Replace tag="[other]" value="3" color="gui.green"/>
@@ -56,7 +56,7 @@
 		</AbilityGroupEffect>
 	</Talent>
 	<Talent identifier="yiliao">
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/yiliao.png" sourcerect="0,0,128,128"/>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="4,0"/>
 		<Description tag="talentdescription.yiliao">
 			<Replace tag="[yiliao]" value="10" color="gui.green"/>
 			<Replace tag="[other]" value="3" color="gui.green"/>
@@ -73,7 +73,7 @@
 		</AbilityGroupEffect>
 	</Talent>
 	<Talent identifier="jiashi">
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/jiashi.png"  sourcerect="0,0,128,128"/>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="2,0"/>
 		<Description tag="talentdescription.jiashi">
 			<Replace tag="[jiashi]" value="10" color="gui.green"/>
 			<Replace tag="[other]" value="3" color="gui.green"/>
@@ -88,5 +88,33 @@
 				<CharacterAbilityGiveStat stattype="RepairSpeed" value="0.1"/>
 			</Abilities>
 		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="UNmoneymaker">
+		<Description tag="talentdescription.UNmoneymaker">
+			<Replace tag="[moneymaker]" value="集团打印机" color="gui.orange"/>
+		</Description>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="5,0"/>
+		<AddedRecipe itemidentifier="moneymaker"/>
+	</Talent>
+	<Talent identifier="UNbianse">
+		<Description tag="talentdescription.UNbianse">
+			<Replace tag="[UNbianse]" value="变色墨汁" color="gui.orange"/>
+		</Description>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="6,0"/>
+		<AddedRecipe itemidentifier="bianse"/>
+	</Talent>
+	<Talent identifier="UNzhi">
+		<Description tag="talentdescription.OLBzhi">
+			<Replace tag="[OLBzhi]" value="欧罗巴纸" color="gui.orange"/>
+		</Description>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="7,0"/>
+		<AddedRecipe itemidentifier="bianse"/>
+	</Talent>
+	<Talent identifier="TMK">
+		<Description tag="talentdescription.TMK">
+			<Replace tag="[TMK]" value="TMK" color="gui.orange"/>
+		</Description>
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="0,1"/>
+		<AddedRecipe itemidentifier="bianse"/>
 	</Talent>
 </Talents>

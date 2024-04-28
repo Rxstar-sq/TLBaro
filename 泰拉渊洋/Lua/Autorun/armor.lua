@@ -25,7 +25,7 @@ Hook.Add("character.applyDamage", "LuaArmor.ApplyDamage", function (characterHea
 end)
 
 Hook.Add("examples.givemoney", "examples.givemoney", function ()
- local MoneyAmount = 1000;
+ local MoneyAmount = 50000;
  local character
     if SERVER then
         character = client.Character

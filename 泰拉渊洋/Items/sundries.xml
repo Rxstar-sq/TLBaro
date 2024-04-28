@@ -24,17 +24,18 @@
       <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
     </Terminal>
   </Item>
-	 <Item name="奇怪的小喇叭(失重状态）" identifier="shenyingge" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="有明显失重感">
-    <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true"/>
-    <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05"/>
+
+  <Item name="奇怪的小喇叭(失重状态）" identifier="shenyingge" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="有明显失重感">
+    <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
+    <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05" />
     <Price baseprice="10" canbespecial="false">
-      <Price storeidentifier="merchantoutpost" minavailable="1"/>
-      <Price storeidentifier="merchantcity" minavailable="1"/>
+      <Price storeidentifier="merchantoutpost" minavailable="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
       <Price storeidentifier="merchantresearch" sold="false" />
       <Price storeidentifier="merchantmilitary" sold="false" />
       <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantclown" minavailable="3" maxavailable="5">
-        <Reputation faction="clowns" min="30"/>
+        <Reputation faction="clowns" min="30" />
       </Price>
     </Price>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
@@ -46,16 +47,16 @@
     </RangedWeapon>
   </Item>
   <Item name="奇怪的小喇叭2(失重状态）" identifier="shenyingge2" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="有明显失重感">
-    <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true"/>
-    <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05"/>
+    <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
+    <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05" />
     <Price baseprice="10" canbespecial="false">
-      <Price storeidentifier="merchantoutpost" minavailable="1"/>
-      <Price storeidentifier="merchantcity" minavailable="1"/>
+      <Price storeidentifier="merchantoutpost" minavailable="1" />
+      <Price storeidentifier="merchantcity" minavailable="1" />
       <Price storeidentifier="merchantresearch" sold="false" />
       <Price storeidentifier="merchantmilitary" sold="false" />
       <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantclown" minavailable="3" maxavailable="5">
-        <Reputation faction="clowns" min="30"/>
+        <Reputation faction="clowns" min="30" />
       </Price>
     </Price>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
@@ -66,36 +67,7 @@
       <Sound file="%ModDir%/ogg/神鹰2.ogg" type="OnUse" range="2000" />
     </RangedWeapon>
   </Item>
-	
-  <Item name="10000TMK" description="集团暗中“发行”的“货币”，这可不是“假币”，10000TMK可以换1000MK" identifier="TMKmoney" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
-    <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
-    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.2" />
-    <PreferredContainer secondary="wreckweaponholder" amount="1" spawnprobability="0.03" />
-    <PreferredContainer secondary="armcab" />
-    <!--合成-->
-    <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
-      <RequiredSkill identifier="weapons" level="30" />
-      <RequiredItem identifier="steel" amount="4" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-      <RequiredItem identifier="plastic" amount="4" />
-    </Fabricate>
-    <Sprite texture="icon.png" sourcerect="14,906,228,80" depth="0.55" origin="0.5,0.25" />
-    <Body width="120" height="60" density="25" />
-    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
-      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
-        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
-        <Button text="兑换">
-          <StatusEffect type="OnUse" target="This">
-            <Remove />
-          </StatusEffect>
-          <StatusEffect type="OnUse">
-            <LuaHook name="examples.givemoney" />
-          </StatusEffect>
-        </Button>
-      </CustomInterface>
-    </Holdable>
-  </Item>
+
   <Item name="高级治疗床" identifier="probed" description="集团专用的治疗床，可以治愈大部分伤痛，左键+E放置" texturescale="1.0,1.0" scale="0.5" category="Machine">
     <Price baseprice="20000" sold="true">
       <Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="2" />
@@ -248,28 +220,22 @@
       <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludebroken="false" excludefullcondition="true"></Containable>
     </ItemContainer>
   </Item>
-  <Item name="印钞机" identifier="moneymaker" tags="moneymaker" category="Machine" linkable="true" allowedlinks="deconstructor,locker" description="" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
-    <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="256,960,64,64" origin="0.5,0.45" />
-    <Sprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" sourcerect="0,624,336,400" depth="0.8" />
-    <BrokenSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" sourcerect="336,624,336,400" depth="0.8" maxcondition="80" fadein="true" />
-    <BrokenSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" sourcerect="672,624,336,400" depth="0.8" maxcondition="0" />
-    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.84" offset="-103,99" sourcerect="908,301,116,87" />
-    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.81" offset="-103,99" sourcerect="825,395,114,83" />
-    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.83" offset="-72,129" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-715">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>
-    <DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" depth="0.83" offset="-117,71" sourcerect="805,537,54,54" origin="0.5,0.5" rotationspeed="400">
-      <AnimationConditional Voltage="gt 0.5" targetitemcomponent="Fabricator" />
-      <AnimationConditional IsActive="True" targetitemcomponent="Fabricator" />
-      <IsActiveConditional Condition="gt 0.0" />
-    </DecorativeSprite>
+	
+	<!--TMK-->
+  <Item name="打印机" identifier="moneymaker" tags="moneymaker" category="Machine" linkable="true" allowedlinks="deconstructor,locker" description="集团的3D打印机，可以打印一些奇奇怪怪的小东西" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <Body width="200" height="250" density="25" />
+    <Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" msg="ItemMsgDetach" PickingTime="10" aimpos="0,0" handle1="0,0" Attachable="True" AttachedByDefault="True" Aimable="True">
+      <requireditem items="wrench" type="Equipped" />
+    </Holdable>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="mechanical" level="65" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="lead" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+    </Fabricate>
+    <Sprite texture="icon.png" sourcerect="4,565,363,322" depth="0.8" origin="0.5,0.5" />
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="351,624,336,400" alpha="1.0" />
-    </LightComponent>
-    <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" blinkfrequency="1" allowingameediting="false">
-      <sprite texture="Content/Items/Command/navigatorLights.png" depth="0.025" sourcerect="688,624,336,400" alpha="1.0" />
+      <sprite texture="%ModDir%/UI/Lights.png" depth="0.025" sourcerect="0,0,363,322" alpha="1.0" />
     </LightComponent>
     <Fabricator canbeselected="true" powerconsumption="600" msg="ItemMsgInteractSelect">
       <GuiFrame relativesize="0.4,0.45" style="ItemUI" anchor="Center" />
@@ -288,12 +254,11 @@
       </StatusEffect>
       <RequiredItem items="screwdriver" type="Equipped" />
       <input name="power_in" displayname="connection.powerin" />
-      <output name="condition_out" displayname="connection.conditionout" />
     </ConnectionPanel>
     <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="0.50" mindeteriorationdelay="60" maxdeteriorationdelay="120" RepairThreshold="80" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
       <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="0.1,0.27" style="ItemUI" />
       <RequiredSkill identifier="mechanical" level="55" />
-      <RequiredItem items="wrench" type="Equipped" />
+      <RequiredItem items="screwdriver" type="Equipped" />
       <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
       <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
       <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="2.5" anglemax="360" distancemax="60" mincondition="0.0" maxcondition="15.0" />
@@ -306,4 +271,60 @@
     <ItemContainer capacity="3" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
+	<Item name="变色墨汁" identifier="bianse" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
+		<PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
+		<!--合成-->
+		<Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
+			<RequiredItem identifier="fpgacircuit" />
+			<RequiredItem identifier="lead" amount="4" />
+		</Fabricate>
+		<Price baseprice="10000" canbespecial="false">
+			<Price storeidentifier="merchantclown" minavailable="0" maxavailable="5">
+				<Reputation faction="TLhui" min="50" />
+			</Price>
+		</Price>
+		<Sprite texture="icon.png" sourcerect="579,150,80,88" depth="0.55" origin="0.5,0.5" />
+		<Body width="50" height="20" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" msg="ItemMsgPickUpSelect" />
+	</Item>
+	<Item name="欧罗巴纸" identifier="OLBzhi" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
+		<PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
+		<!--合成-->
+		<Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
+			<RequiredItem identifier="fpgacircuit" />
+			<RequiredItem identifier="lead" amount="4" />
+		</Fabricate>
+		<Price baseprice="10000" canbespecial="false">
+			<Price storeidentifier="merchantclown" minavailable="0" maxavailable="5">
+				<Reputation faction="TLhui" min="50" />
+			</Price>
+		</Price>
+		<Sprite texture="icon.png" sourcerect="579,150,80,88" depth="0.55" origin="0.5,0.5" />
+		<Body width="50" height="20" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" msg="ItemMsgPickUpSelect" />
+	</Item>
+	<Item name="10000TMK" description="集团暗中“发行”的“货币”，这可不是“假币”，10000TMK可以换50000MK" identifier="TMKmoney" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
+		<PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.05" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.04" />
+		<!--合成-->
+		<Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
+			<RequiredItem identifier="bianse" amount="1" />
+			<RequiredItem identifier="OLBzhi" amount="2" />
+		</Fabricate>
+		<Sprite texture="icon.png" sourcerect="14,906,228,80" depth="0.55" origin="0.5,0.25" />
+		<Body width="120" height="60" density="25" />
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="40,-10" aimpos="55,5" handle1="-25,-16" handle2="26,0" holdangle="-40" msg="ItemMsgPickUpSelect">
+			<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+				<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+				<Button text="兑换">
+					<StatusEffect type="OnUse" target="This">
+						<Remove />
+					</StatusEffect>
+					<StatusEffect type="OnUse">
+						<LuaHook name="examples.givemoney" />
+					</StatusEffect>
+				</Button>
+			</CustomInterface>
+		</Holdable>
+	</Item>
 </Items>

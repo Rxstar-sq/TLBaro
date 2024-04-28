@@ -145,7 +145,7 @@
   </Item>
   <!-- 药品 -->
   <REalcellruin name="细胞神经生长因子" identifier="REalcellruin" category="Medical" Tags="smallitem,medical" maxstacksize="18" maxstacksizecharacterinventory="6" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="昂贵的细胞再生药品，由集团研发部供货，其他商人那里都是假货哦" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
-    <Price baseprice="1500" buyingpricemultiplier="1" minleveldifficulty="0">
+    <Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="0">
       <Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
     </Price>
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="2">
@@ -166,7 +166,7 @@
         <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
-        <ReduceAffliction type="alcellruin" amount="20" />
+        <ReduceAffliction type="alcellruin" amount="25" />
       </StatusEffect>
       <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
         <ReduceAffliction type="alcellruin" amount="15" />

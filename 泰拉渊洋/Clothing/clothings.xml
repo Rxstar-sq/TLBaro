@@ -242,6 +242,7 @@
     <Deconstruct time="10">
       <Item identifier="organicfiber" />
     </Deconstruct>
+    <!--物品栏以及丢地上贴图-->
     <InventoryIcon name="泰拉集团初代外骨骼Icon" texture="泰拉集团初代外骨骼.png" sourcerect="293,85,123,297" origin="0.5,0.5" />
     <Sprite texture="泰拉集团初代外骨骼.png" sourcerect="63,25,177,375" depth="0.6" origin="0.5,0.5" />
     <Body width="100" height="315" density="15" friction="0.8" restitution="0.01" />

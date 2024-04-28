@@ -1,26 +1,36 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文（简体）">
-<faction.TLhui>泰拉渊洋</faction.TLhui>
-<faction.TLhui.description>木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.description>
-<faction.TLhui.shortdescription>中立的科技公司，拥有先进技术扶持的强势和人工智能决策的严谨，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.shortdescription>
+	<faction.TLhui>泰拉渊洋</faction.TLhui>
+	<faction.TLhui.description>木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.description>
+	<faction.TLhui.shortdescription>中立的科技公司，拥有先进技术扶持的强势和人工智能决策的严谨，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.shortdescription>
 	
-<locationname.TL>泰拉科技常规前哨站</locationname.TL>
-<locationnameformat.TL>泰拉科技站点--[name]分部</locationnameformat.TL>
-<npctitle.TLarmory>泰拉科技外务商</npctitle.TLarmory>
-<storename.TLarmory>泰拉科技工程部</storename.TLarmory>
+	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
+	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>
+	<npctitle.TLarmory>泰拉科技外务商</npctitle.TLarmory>
+	<storename.TLarmory>泰拉科技工程部</storename.TLarmory>
 	
-<jobname.TLsafe>集团特战队</jobname.TLsafe>
-<jobdescription.TLsafe>集团特战队是接受过集团特殊改造和训练的特种部队，拥有超乎常人的战斗能力，绝对是最强的安全保障</jobdescription.TLsafe>
-<charactername.TLarmory>泰拉集团工程部负责人--HES</charactername.TLarmory>
+	<jobname.TLsafe>集团特战队</jobname.TLsafe>
+	<jobdescription.TLsafe>集团特战队是接受过集团特殊改造和训练的特种部队，拥有超乎常人的战斗能力，绝对是最强的安全保障</jobdescription.TLsafe>
+	<charactername.TLarmory>泰拉集团工程部负责人--HES</charactername.TLarmory>
 
-<talentname.gedouke>集团格斗训练课程</talentname.gedouke>
-<talentdescription.gedouke>经过集团训练课程获得[gedou]武器操控和[other]所有其他技能奖励。</talentdescription.gedouke>
-<talentname.dianqi>集团电气训练课程</talentname.dianqi>
-<talentdescription.dianqi>经过集团训练课程获得[dianqi]电气维修和[other]所有其他技能奖励。</talentdescription.dianqi>
-<talentname.jixie>集团机械训练课程</talentname.jixie>
-<talentdescription.jixie>经过集团训练课程获得[jixie]机械技能和[other]所有其他技能奖励。</talentdescription.jixie>
-<talentname.yiliao>集团医疗训练课程</talentname.yiliao>
-<talentdescription.yiliao>经过集团训练课程获得[yiliao]医疗技能和[other]所有其他技能奖励。</talentdescription.yiliao>
-<talentname.jiashi>集团船长训练课程</talentname.jiashi>
-<talentdescription.jiashi>经过集团训练课程获得[jiashi]船长技能和[other]所有其他技能奖励。</talentdescription.jiashi>
+	<talentname.gedouke>集团格斗训练课程</talentname.gedouke>
+	<talentdescription.gedouke>经过集团训练课程获得[gedou]武器操控和[other]所有其他技能奖励。</talentdescription.gedouke>
+	<talentname.dianqi>集团电气训练课程</talentname.dianqi>
+	<talentdescription.dianqi>经过集团训练课程获得[dianqi]电气维修和[other]所有其他技能奖励。</talentdescription.dianqi>
+	<talentname.jixie>集团机械训练课程</talentname.jixie>
+	<talentdescription.jixie>经过集团训练课程获得[jixie]机械技能和[other]所有其他技能奖励。</talentdescription.jixie>
+	<talentname.yiliao>集团医疗训练课程</talentname.yiliao>
+	<talentdescription.yiliao>经过集团训练课程获得[yiliao]医疗技能和[other]所有其他技能奖励。</talentdescription.yiliao>
+	<talentname.jiashi>集团船长训练课程</talentname.jiashi>
+	<talentdescription.jiashi>经过集团训练课程获得[jiashi]船长技能和[other]所有其他技能奖励。</talentdescription.jiashi>
+	<talentname.UNmoneymaker>开始走上不归路？</talentname.UNmoneymaker>
+	<talentdescription.UNmoneymaker>解锁[moneymaker]，看看可以做一些什么怪东西吧</talentdescription.UNmoneymaker>
+	<talentname.UNbianse>有点难搞哦...</talentname.UNbianse>
+	<talentdescription.UNbianse>解锁[UNbianse]，也不知道咋弄来的</talentdescription.UNbianse>
+	<talentname.UNzhi>就快成功了...！</talentname.UNzhi>
+	<talentdescription.UNzhi>解锁[OLBzhi]，就差一步了</talentdescription.UNzhi>
+	<talentname.TMK>TMK!!!</talentname.TMK>
+	<talentdescription.TMK>解锁[TMK]!!好日子开始了！</talentdescription.TMK>
+
+	<talenttree.TLsafe_specialization>不归路</talenttree.TLsafe_specialization>
 </infotexts>

@@ -18,6 +18,24 @@
         <TalentOption identifier="steadytune"/>
       </TalentOptions>
     </SubTree>
+	  <SubTree identifier="TLsafe_specialization" type="specialization"  blocks="">
+		  <TalentOptions>
+			  <TalentOption identifier="UNmoneymaker"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="UNbianse"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="UNzhi"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="TMK"/>
+		  </TalentOptions>
+	  </SubTree>
+	  <SubTree identifier="skipper" type="specialization" requires="captain_primary" blocks="gunslinger,politician">
+	  </SubTree>
+	  <SubTree identifier="politician" type="specialization" requires="captain_primary" blocks="gunslinger,skipper">
+	  </SubTree>
   </TalentTree>
   
 </TalentTrees>
