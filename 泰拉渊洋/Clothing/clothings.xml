@@ -31,7 +31,7 @@
     </Wearable>
   </Item>
   <!--衣物-->
-  <Item name="幻星常服" identifier="clothing1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="幻星集团的普通短款女式制服" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="幻星常服" identifier="clothing1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="幻星工业集团的普通短款女式制服。简约，精致。" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="150">
@@ -62,13 +62,12 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="Shigure_Cloth_Sprite2.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="Shigure_Cloth_Sprite2.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="Shigure_Cloth_Sprite2.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <SkillModifier skillidentifier="electrical" skillvalue="5" />
-      <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
-      <SkillModifier skillidentifier="medical" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
     </Wearable>
+    <ItemContainer capacity="3">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
   </Item>
   <Item name="执政官" identifier="clothing2" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
@@ -101,15 +100,17 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="Shigure_Cloth_Sprite6.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="Shigure_Cloth_Sprite6.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="Shigure_Cloth_Sprite6.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <SkillModifier skillidentifier="electrical" skillvalue="5" />
-      <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
+      <SkillModifier skillidentifier="helm" skillvalue="10" />
       <SkillModifier skillidentifier="medical" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
+      <SkillModifier skillidentifier="weapons" skillvalue="15" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
     </Wearable>
+    <ItemContainer capacity="4">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
   </Item>
-  <Item name="杀手制服" identifier="clothing3" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="舞会设计的杀手套装，帮助融入群体的同时不影响肢体运动" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="杀手制服" identifier="clothing3" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="舞会设计的杀手套装，帮助融入群体的同时不影响肢体运动。对于专业人士来说反而会增加反应速度" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="150">
@@ -140,15 +141,21 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="Shigure_Cloth_Sprite3.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="Shigure_Cloth_Sprite3.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="Shigure_Cloth_Sprite3.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <SkillModifier skillidentifier="electrical" skillvalue="5" />
-      <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
-      <SkillModifier skillidentifier="medical" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
+      <SkillModifier skillidentifier="medical" skillvalue="15" />
+      <SkillModifier skillidentifier="weapons" skillvalue="15" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations" damagemultiplier="0.8" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.85" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.75" />
+      <StatusEffect type="OnWearing" target="Character" SpeedMultiplier="1.15" setvalue="true">
+        <Conditional skillrequirement="true" weapons="lt 45" />
+      </StatusEffect>
     </Wearable>
+    <ItemContainer capacity="4">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
+
   </Item>
-  <Item name="初音未来" identifier="clothing4" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="初音未来" identifier="clothing4" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="一件古早但很精致的cos服，格格不入的设计风格似乎不应该出现在木卫二这种地方。据说是幻星第五星席的女儿曾经最喜欢的cos服……" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="150">
@@ -179,15 +186,15 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="Shigure_Cloth_Sprite4.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="Shigure_Cloth_Sprite4.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="Shigure_Cloth_Sprite4.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <SkillModifier skillidentifier="electrical" skillvalue="5" />
-      <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
-      <SkillModifier skillidentifier="medical" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds" damagemultiplier="0.95" />
+      <SkillModifier skillidentifier="medical" skillvalue="10" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
     </Wearable>
+    <ItemContainer capacity="2">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
   </Item>
-  <Item name="幻星作战服" identifier="clothing5" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="幻星作战服" identifier="clothing5" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="幻星工业设计的特种紧身作战服，贴合设计可以使穿戴者更加自由的伸展身体而不会感到不适。额外的内衬层还保证了一定的防御能力" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="150">
@@ -218,13 +225,15 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="Shigure_Cloth_Sprite5.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="Shigure_Cloth_Sprite5.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="Shigure_Cloth_Sprite5.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <SkillModifier skillidentifier="electrical" skillvalue="5" />
-      <SkillModifier skillidentifier="helm" skillvalue="5" />
-      <SkillModifier skillidentifier="mechanical" skillvalue="5" />
-      <SkillModifier skillidentifier="medical" skillvalue="5" />
-      <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="lacerations,bitewounds,alcellruin" damagemultiplier="0.95" />
+      <SkillModifier skillidentifier="medical" skillvalue="8" />
+      <SkillModifier skillidentifier="weapons" skillvalue="20" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="damagealcellruin" damagemultiplier="0.7" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="alcellruin" damagemultiplier="0.75" />
+      <damagemodifier afflictionidentifiers="explosiondamage" armorsector="0.0,360.0" damagemultiplier="0.8" />
     </Wearable>
+    <ItemContainer capacity="6">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
   </Item>
   <!--外骨骼（骨架类）-->
   <Item name="泰拉集团初代外骨骼" HideConditionBar="true" identifier="waiguge1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="集团开发的第一代测试外骨骼，穿戴者须全身脱光，不用担心，强大的防护板会遮住你那些部位" scale="0.5" impactsoundtag="impact_soft">
