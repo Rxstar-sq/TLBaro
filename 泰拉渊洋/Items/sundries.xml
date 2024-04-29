@@ -227,8 +227,8 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
       <RequiredSkill identifier="mechanical" level="65" />
       <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="lead" amount="4" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
+      <RequiredItem identifier="Plastic" amount="4" />
+      <RequiredItem identifier="fpgacircuit" amount="3" />
     </Fabricate>
     <Sprite texture="icon.png" sourcerect="4,565,363,322" depth="0.8" origin="0.5,0.5" />
     <LightComponent range="10.0" lightcolor="255,255,255,0" powerconsumption="5" IsOn="true" castshadows="false" alphablend="false" allowingameediting="false">
@@ -272,8 +272,8 @@
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
     <!--合成-->
     <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
-      <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="lead" amount="4" />
+      <RequiredItem identifier="carbon" amount="4"/>
+      <RequiredItem identifier="potassium" amount="2" />
     </Fabricate>
     <Price baseprice="10000" canbespecial="false">
       <Price storeidentifier="merchantclown" minavailable="0" maxavailable="5">
@@ -288,8 +288,7 @@
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
     <!--合成-->
     <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
-      <RequiredItem identifier="fpgacircuit" />
-      <RequiredItem identifier="lead" amount="4" />
+      <RequiredItem identifier="Plastic" amount="4" />
     </Fabricate>
     <Price baseprice="10000" canbespecial="false">
       <Price storeidentifier="merchantclown" minavailable="0" maxavailable="5">

@@ -28,6 +28,7 @@
 	<Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
 	<Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
 	<Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
+	<Character file="%ModDir%/Characters/Leopard2a6/Leopard2a6.xml" />
 
 	<!--NPC+事件+任务-->
 	<NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
