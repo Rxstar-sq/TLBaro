@@ -272,7 +272,7 @@
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
     <!--合成-->
     <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
-      <RequiredItem identifier="carbon" amount="4"/>
+      <RequiredItem identifier="carbon" amount="4" />
       <RequiredItem identifier="potassium" amount="2" />
     </Fabricate>
     <Price baseprice="10000" canbespecial="false">

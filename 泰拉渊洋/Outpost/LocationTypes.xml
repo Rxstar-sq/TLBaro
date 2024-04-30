@@ -14,4 +14,20 @@
 			<BalanceStatus percentage="0.25" sellpricemodifier="0.2" color="255,0,0,255" />
 		</Store>
 	</TL>
+
+	<TLAbandoned
+	  identifier="TLAbandoned"
+	  nameidentifiers="alien"
+	 commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0"
+	  missiontags="TLabandonedoutpost"
+	  hideentitysubcategories="abandonedhuman,abandonedmonster"
+	  outpostteam="None"
+	  AllowAsBiomeGate="false">
+
+		<Symbol texture="Content/Map/MapAtlas.png" sourcerect="896,512,128,128" color="245,105,105"/>
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost2.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost3.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
+		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost4.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
+	</TLAbandoned>
 </locationtypes>

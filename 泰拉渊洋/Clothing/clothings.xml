@@ -236,17 +236,17 @@
     </ItemContainer>
   </Item>
   <!--外骨骼（骨架类）-->
-  <Item name="泰拉集团初代外骨骼" HideConditionBar="true" identifier="waiguge1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="集团开发的第一代测试外骨骼，穿戴者须全身脱光，不用担心，强大的防护板会遮住你那些部位" scale="0.5" impactsoundtag="impact_soft">
+  <Item name="泰拉集团初代外骨骼" HideConditionBar="true" identifier="waiguge1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="集团开发的第一代测试外骨骼，内置强大的生命维持系统，安装电池可提升移动速度" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <!--合成分解售价-->
-    <Price baseprice="15000">
+    <Price baseprice="17000">
       <Price storeidentifier="merchantoutpost" minavailable="2" />
       <Price storeidentifier="merchantcity" multiplier="1.6" minavailable="2" />
       <Price storeidentifier="merchantresearch" minavailable="2" />
       <Price storeidentifier="merchantmilitary" minavailable="2" />
       <Price storeidentifier="merchantmine" minavailable="2" />
-      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+      <Price storeidentifier="TLarmory" multiplier="1.35" minavailable="0" maxavailable="3" sold="true" />
     </Price>
     <Deconstruct time="10">
       <Item identifier="organicfiber" />
@@ -276,8 +276,8 @@
       <SkillModifier skillidentifier="medical" skillvalue="5" />
       <SkillModifier skillidentifier="weapons" skillvalue="5" />
       <!--抗性待定-->
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="weapons,electrical,mechanical,medical,lacerations,bitewoundsv,blunttrauma" damagemultiplier="0.05" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="alcellruin" damagemultiplier="0.5" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="internaldamage,blunttrauma,lacerations,bitewounds,gunshotwound,burn,bleeding" damagemultiplier="0.08" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="alcellruin,explosiondamage,organdamage,acidburn,infection,bloodloss,incrementalstun,concussion" damagemultiplier="0.5" />
     </Wearable>
     <Sonar range="6500.0" powerconsumption="10" drawhudwhenequipped="true" detectsubmarinewalls="true" displaybordersize="-0.1" characterusable="false" hasmineralscanner="true" allowuioverlap="true">
       <StatusEffect type="OnUse" targettype="Contained" Condition="-0.7" disabledeltatime="true">

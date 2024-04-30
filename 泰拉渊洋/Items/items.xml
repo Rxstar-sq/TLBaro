@@ -96,6 +96,38 @@
     </Quality>
     <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
   </Item>
+  <Item name="华强的砍刀" identifier="huaqiang" category="Weapon" description="违禁品昂，别瞎碰" Tags="mediumitem,mountableweapon,weapon,gunsmith" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <Deconstruct time="10">
+      <Item identifier="FuelRod" />
+    </Deconstruct>
+	  <Fabricate suitablefabricators="moneymaker" requiredtime="75" requiresrecipe="false">
+		  <RequiredSkill identifier="mechanical" level="65" />
+		  <RequiredItem identifier="fpgacircuit" />
+		  <RequiredItem identifier="lead" amount="4"/>
+		  <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+	  </Fabricate>
+    <Sprite texture="icon.png" sourcerect="28,444,122,26" depth="0.55" origin="0.5,0.5" />
+    <Body width="110" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="1500" severlimbsprobability="9" itemdamage="100" structuredamage="250">
+        <Affliction identifier="kill" strength="100" />
+		 <Affliction identifier="lacerations" strength="100" />
+		 <Affliction identifier="internaldamage" strength="100" />
+		 <Affliction identifier="blunttrauma" strength="100" />
+		 <Affliction identifier="bleeding" strength="100" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/ogg/撒日朗.ogg" selectionmode="random" range="2000" />
+          <Sound file="%ModDir%/ogg/故意找茬.ogg" range="2000" />
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
   <Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
     <Price baseprice="3500" sold="false">
       <Price storeidentifier="TLarmory" multiplier="1.1" />

@@ -78,7 +78,7 @@
 		 <message header="任务完成" text="十年航海，一日上岸"/>
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>
-	 <PirateMission name="放弃船，或者放弃希望。" type="Pirate"  identifier="TLhaidao2"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
+	 <PirateMission name="放弃船，或者放弃希望" type="Pirate"  identifier="TLhaidao2"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
 		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
 		 <Reputation identifier="TLhui" amount="2" />
 		 <SubmarineTypes>
@@ -116,27 +116,6 @@
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>
 
-	 <EscortMission
-   identifier="TLescort1"
-   tags="escortVIP,escort"
-   type="Escort"
-   difficulty="1"
-   commonness="100"
-   reward="10000"
-   achievementidentifier="escortmission">
-		 <Characters>
-			 <Character from="escortnpcs1" identifier="vip" escortidentifier="vip" color="238,130,238"/>
-			 <Character from="TLnpc" identifier="TLnpc1"/>
-			 <Character from="TLnpc" identifier="TLnpc4"/>
-			 <Character from="TLnpc" identifier="TLnpc2"/>
-			 <Character from="TLnpc" identifier="TLnpc3"/>
-		 </Characters>
-		 <Reputation identifier="coalition" amount="7" amountforopposingfaction="-7" />
-		 <Reputation identifier="TLhui" amount="3" />
-		 <Icon texture="Content/UI/MissionIcons.png" sourcerect="256,512,256,256" color="243,146,55" />
-		 <LocationType from="AnyOutpost" to="AnyOutpost" />
-		 <message header="missionheader0.escort2" text="missionmessage0.escort2"/>
-	 </EscortMission>
 
 	 <CargoMission name="急救物资运输" identifier="yiliao" tags="cargo,cargoresearch"  type="Cargo"  difficulty="1"  commonness="100"  reward="4500"  achievementidentifier="cargomission"  description="把这批物资送给需要的人，集团不会放弃任何人" requireddeliveryamount="0.98">
   <Reputation identifier="location" amount="1" amountforopposingfaction="-1" />
@@ -153,4 +132,35 @@
   <Icon texture="Content/UI/MissionIcons2.png" sourcerect="0,0,256,256" color="243,146,55"/>
   <LocationType from="AnyOutpost" to="AnyOutpost" />    
 </CargoMission>
+ 
+  <OutpostDestroyMission
+	  name="能源塔回收"
+	  description="请去清理集团能源塔，会有集团的人协助你们，记得多带点皮虫净"
+    identifier="TLAbandoned"
+    tags="TLabandonedoutpost"
+    type="AbandonedOutpost"
+    achievementidentifier="huskcultrescuesubra"
+    reward="0"
+    difficulty="4"
+    commonness="100"
+    allowretry="true"
+    hostageskilledmessage="subrakilled"
+    allowothermissionsinlevel="false"
+    unhideentitysubcategories="abandonedmonster"
+    BlockLocationTypeChanges="true">
+    <Reputation identifier="TLhui" amount="4" />
+    <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48"/>
+    <LocationType identifier="TLAbandoned" />
+    <LocationTypeChange from="TLAbandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+    <Characters>
+		<Character identifier="husk" min="50" max="60"  />
+		<Character identifier="husk" min="50" max="60"  />
+		<Character identifier="husk" min="50" max="60"  />
+		<Character identifier="TLnpc1" from="TLnpc" asfaraspossible="true" requirerescue="false"/>
+		<Character identifier="TLnpc4" from="TLnpc" asfaraspossible="true" requirerescue="false"/>
+    </Characters>
+    <TriggerEvent state="0" delay="5" eventidentifier="waytoascensionfoundsubra" campaignonly="true"/>
+    <Metadata identifier="waytoascension" value="8"/>
+    <message header="任务成功" text="成功清理能源塔，是时候离开了"/>
+  </OutpostDestroyMission>
  </Missions>

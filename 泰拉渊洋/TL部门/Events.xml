@@ -28,8 +28,6 @@
 				<MissionAction missionidentifier="mudraptors" />
 				<ConversationAction text="你也不想在连止痛药都没有的情况下死去吧"  targettag="triggerer_player" eventsprite="yiliao"/>
 				<MissionAction missionidentifier="yiliao" />
-			    <ConversationAction text="最后还有件事，把我们也带走，我们的船遇到了技术故障"  targettag="triggerer_player" />
-				<MissionAction missionidentifier="TLescort1" />
 			</Option>
 		</ConversationAction>
 		<NPCWaitAction npctag="TLnpc1" wait="true" />

@@ -405,11 +405,6 @@
 			<npc from="outpostnpcs1" identifier="securitynpccoalition" faction="coalition"/>
 			<npc from="outpostnpcs1" identifier="securitynpccoalition" faction="coalition"/>
 
-			<npc from="outpostnpcs1" identifier="outpostmanagercoalition" faction="TLhui"/>
-			<npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
-			<npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
-			<npc from="outpostnpcs1" identifier="securitynpccoalition" faction="TLhui"/>
-
 			<npc from="outpostnpcs1" identifier="hrmanager"/>
 			<npc from="outpostnpcs1" identifier="subupgradenpc"/>
 			<npc from="outpostnpcs1" identifier="subsalesnpc"/>
@@ -441,6 +436,16 @@
 			<npc from="outpostnpcs1" identifier="merchanthusk" faction="huskcult"/>
 		</npcs>
   </OutpostConfig>
+	<OutpostConfig
+	  identifier="TLAbandoned"
+	  totalmodulecount="1" minhallwaylength="0"
+	  allowedlocationtypes="TLAbandoned"
+	  spawncrewinsideoutpost="false"
+	  alwaysdestructible="true"
+	  alwaysrewireable="true"
+	  allowstealing="true">
+		<modulecount flag="Airlock" count="1"/>
+	</OutpostConfig>
 	
 	
 </OutpostGenerationParameters>

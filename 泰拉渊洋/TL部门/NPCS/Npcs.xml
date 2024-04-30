@@ -2,7 +2,7 @@
 <npcsets>
 <Override>
 	<npcset identifier="TLnpc">
-		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="9">
+		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="15">
 			<Character name="泰拉战斗部-吸管" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -16,7 +16,16 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="TL13" equip="true" />
+				<Item identifier="TL13" equip="true">
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+				</Item>
 				<Item identifier="TL13ammo_cr" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
@@ -35,7 +44,16 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="TL13" equip="true" />
+				<Item identifier="TL13" equip="true">
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+				</Item>
 				<Item identifier="TL13ammo_cr" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
@@ -53,7 +71,6 @@
 		  <ItemSet commonness="1">
 			  <Item identifier="idcardplus1" equip="true" />
 			  <Item identifier="maidclothes1" equip="true" />
-			  <Item identifier="" equip="false" />
 		  </ItemSet>
 	  </npc>
 		<npc identifier="TLnpc3" job="securityofficer" spawnpointtags="tlyan" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="1">

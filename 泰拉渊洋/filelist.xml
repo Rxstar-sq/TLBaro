@@ -4,7 +4,7 @@
 	<LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
 	<OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
 	<Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
-	<Afflictions file="%ModDir%/Afflictions.xml" />
+	<Afflictions file="%ModDir%/Afflictions/Afflictions.xml" />
 	<Text file="%ModDir%/Text.xml" />
 	<Submarine file="%ModDir%/Sub/测试地.sub" />
 	<Item file="%ModDir%/Items/items.xml" />
@@ -49,4 +49,7 @@
 	<OutpostModule file="%ModDir%/Sub/CrewModulTL01.sub" />
 	<OutpostModule file="%ModDir%/Sub/test_HallwayModuleVerticalTL.sub" />
 	<OutpostModule file="%ModDir%/Sub/DockingModuleTL1.sub" />
+	
+	<!--特殊-->
+	<OutpostModule file="%ModDir%/Sub/能源采集塔.sub" />
 </contentpackage>

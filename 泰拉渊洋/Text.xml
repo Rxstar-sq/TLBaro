@@ -6,6 +6,8 @@
 	
 	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
 	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>
+	<locationname.TLAbandoned>泰拉科技能源塔</locationname.TLAbandoned>
+	<locationnameformat.TLAbandoned>泰拉科技遗弃设施</locationnameformat.TLAbandoned>
 	<npctitle.TLarmory>泰拉科技外务商</npctitle.TLarmory>
 	<storename.TLarmory>泰拉科技工程部</storename.TLarmory>
 	
@@ -33,4 +35,7 @@
 	<talentdescription.TMK>解锁[TMK]!!好日子开始了！</talentdescription.TMK>
 
 	<talenttree.TLsafe_specialization>不归路</talenttree.TLsafe_specialization>
+
+	<afflictioncauseofdeath.kill>被华强劈开了</afflictioncauseofdeath.kill>
+	<afflictioncauseofdeathself.kill>被华强砍死惹</afflictioncauseofdeathself.kill>
 </infotexts>
