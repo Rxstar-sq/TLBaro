@@ -71,10 +71,10 @@
 			<Body width="23" height="10" density="30" />
 			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
 			<!--一次发射3发射弹-->
-			<Projectile characterusable="false" maxtargetstohit="10" hitscan="true" hitscancount="3" removeonhit="true" spread="8">
+			<Projectile characterusable="false" maxtargetstohit="10" hitscan="true" hitscancount="3" removeonhit="true" spread="6">
 				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="150,150,200,200" scalemultiplier="1,0.5" />
 				<Attack structuredamage="1" targetforce="1" itemdamage="15" severlimbsprobability="60" penetration="0.9">
-					<Affliction identifier="bleeding" strength="1" />
+					<Affliction identifier="bleeding" strength="3" />
 					<Affliction identifier="lacerations" strength="18" />
 					<Affliction identifier="gunshotwound" strength="3" />
 				</Attack>
