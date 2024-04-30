@@ -254,7 +254,7 @@
     </ItemContainer>
     <aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
     <Quality>
-      <QualityStat stattype="FirepowerMultiplier" value="0.1" />
+      <QualityStat stattype="FirepowerMultiplier" value="0.2" />
     </Quality>
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>

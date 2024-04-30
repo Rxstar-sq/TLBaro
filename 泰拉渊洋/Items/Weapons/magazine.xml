@@ -131,7 +131,7 @@
 				</StatusEffect>
 			</Projectile>
 		</Item>
-		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" health="40" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="泰拉集团制式弹匣" description="适配泰拉集团大部分武器的制式弹匣" identifier="TL_magazine" category="Weapon" health="70" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL_magazine,TL_ammo,TL_zd" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -150,21 +150,21 @@
 			<Fabricate suitablefabricators="fabricator" requiredtime="12" requiresrecipe="false">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="aluminium" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="munition_core" amount="3"/>
+				<RequiredItem identifier="potassium" amount="1" />
 			</Fabricate>
 			<!--可通过其他通用弹夹回收制作-->
 			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="TL_magazine_cr" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="munition_core" amount="3"/>
+				<RequiredItem identifier="potassium" amount="1" />
 			</Fabricate>
 			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="TL_magazine" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="munition_core" amount="3"/>
+				<RequiredItem identifier="potassium" amount="1" />
 			</Fabricate>
 			<!--留空以用于其他可能的通用弹夹回收-->
 
@@ -174,12 +174,11 @@
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="aluminium" amount="8" />
 				<RequiredItem tag="munition_core" amount="6"/>
-				<RequiredItem identifier="potassium" amount="3" />
+				<RequiredItem identifier="potassium" amount="6" />
 			</Fabricate>
-			<!--分解获得铝和钛铝合金-->
+			<!--分解获得铝-->
 			<Deconstruct time="8">
 				<Item identifier="aluminium" />
-				<Item identifier="titaniumaluminiumalloy" />
 			</Deconstruct>
 			<!--等待贴图-->
 			<Sprite texture="weapons.png" sourcerect="385,66,32,37" depth="0.55" origin="0.5,0.5" />
@@ -194,7 +193,7 @@
 			</ItemContainer>
 			<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
 		</Item>
-		<Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的崩解弹弹匣" identifier="TL_magazine_cr" category="Weapon" health="30" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的崩解弹弹匣" identifier="TL_magazine_cr" category="Weapon" health="60" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
 			<PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
 			<PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -209,27 +208,27 @@
 				<Price locationtype="mine" multiplier="1.25" sold="false" />
 				<Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
 			</Price>
-			<!--需要武器等级20，材料为钛铝合金，钾，铅/铜/钢筋，破坏性纳米凝胶-->
+			<!--需要武器等级20，材料为钛铝合金，钾，钛/钢筋，破坏性纳米凝胶-->
 			<Fabricate suitablefabricators="fabricator" requiredtime="12" requiresrecipe="false">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="titaniumaluminiumalloy" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="advmunition_tip" />
+				<RequiredItem identifier="potassium" amount="1" />
 				<RequiredItem identifier ="nanogel_cr" amount="1" />
 			</Fabricate>
 			<!--可通过其他通用弹夹回收制作-->
 			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="TL_magazine_cr" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="advmunition_tip" />
+				<RequiredItem identifier="potassium" amount="1" />
 				<RequiredItem identifier ="nanogel_cr" amount="1" />
 			</Fabricate>
 			<Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="TL_magazine" amount="1" />
-				<RequiredItem tag="munition_core" />
-				<RequiredItem identifier="potassium" amount="0.5" />
+				<RequiredItem tag="advmunition_tip" />
+				<RequiredItem identifier="potassium" amount="1" />
 				<RequiredItem identifier ="nanogel_cr" amount="1" />
 			</Fabricate>
 			<!--留空以用于其他可能的通用弹夹回收-->
@@ -240,7 +239,7 @@
 				<RequiredSkill identifier="weapons" level="20" />
 				<RequiredItem identifier="titaniumaluminiumalloy" amount="8" />
 				<RequiredItem tag="munition_core" amount="6"/>
-				<RequiredItem identifier="potassium" amount="3" />
+				<RequiredItem identifier="potassium" amount="6" />
 				<RequiredItem identifier ="nanogel_cr" amount="8" />
 			</Fabricate>
 			<!--分解获得钛铝合金-->
@@ -269,7 +268,7 @@
             <Price storeidentifier="merchantmilitary" sold="true" multiplier="1.2" minavailable="0" maxavailable="4" />
             <Price storeidentifier="TLarmory" multiplier="0.6" sold="true" />
             </Price>
-			<!--需要武器等级35，材料为钛铝合金/钢筋，镁，铝，铜/锌-->
+			<!--需要武器等级35，材料为钛/钢筋，镁，铝，铜/锌-->
             <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
                 <RequiredSkill identifier="weapons" level="40" />
                 <RequiredItem identifier="magnesium" />
