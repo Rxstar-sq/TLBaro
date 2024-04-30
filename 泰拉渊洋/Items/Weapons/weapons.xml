@@ -160,7 +160,7 @@
     <SkillRequirementHint identifier="weapons" level="30" />
   </Item>
   <!--TL15步枪改-->
-  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的提升杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" FirepowerMultiplier="0.25" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的提升杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2000" minleveldifficulty="15">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" />
@@ -185,7 +185,7 @@
       <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.38" setvalue="true" />
       <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.15" setvalue="true" />
     </Holdable>
-    <RangedWeapon reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon weapondamagemodifier="1.5"  reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
