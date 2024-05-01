@@ -7,4 +7,7 @@
 	<OpDeco name="TL2" nameidentifier="TL2Emblem" identifier="TL2Emblem" width="1008" height="448" texturescale="1.0,1.0" scale="0.5" category="Decorative">
 		<sprite texture="%ModDir%/Outpost/泰拉.png" sourcerect="0,0,1008,448" depth="0.965" premultiplyalpha="false" origin="0.5,0.5" />
 	</OpDeco>
+	<OpDeco name="HX" nameidentifier="HXEmblem" identifier="HXEmblem" width="94" height="104" texturescale="1.0,1.0" scale="0.5" category="Decorative">
+		<sprite texture="%ModDir%/Outpost/HX.png" sourcerect="0,0,94,104" depth="0.965" premultiplyalpha="false" origin="0.5,0.5" />
+	</OpDeco>
 </prefabs>
