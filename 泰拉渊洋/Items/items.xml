@@ -215,6 +215,7 @@
     </MeleeWeapon>
     <SkillRequirementHint identifier="medical" level="45" />
   </REalcellruin>
+  <![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
   <CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
@@ -262,6 +263,8 @@
     <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
     <SkillRequirementHint identifier="medical" level="35" />
   </CellruinToxi>
+	   ]]>
+	
   <Item name="动力电池" identifier="Powerbattery" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable，TLbattery" scale="0.5" cargocontaineridentifier="metalcrate" description="集团开发的大容量高电压的压缩电池，不适配小功耗物品" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="batterycellrecharger" maxcondition="80" />
     <PreferredContainer primary="stunbaton,underwaterscooter,handheldsonar,sonarbeacon,flashlight,portablepump,poweredcontainer" spawnprobability="1.0" mincondition="25" />
