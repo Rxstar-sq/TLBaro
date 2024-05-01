@@ -13,7 +13,7 @@ Hook.Add("character.applyDamage", "LuaArmor.ApplyDamage", function (characterHea
         damage = damage + aaaaa.Strength
     end
 
-    armor.Condition = armor.Condition - damage*0.6
+    armor.Condition = armor.Condition - damage*0.1
 
     print(armor.Condition)
 

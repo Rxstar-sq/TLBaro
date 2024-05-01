@@ -115,7 +115,7 @@
       <IsActiveConditional targetcontaineditem="true" conditionpercentage="gte 100" />
     </LightComponent>
   </Item>
-  <Item name="近防炮专用弹药箱" identifier="chaingunammobox2" scale="0.5" tags="chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉常规弹药箱" identifier="chaingunammobox2" scale="0.5" tags="chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="300" minavailable="1" displaynonempty="true">

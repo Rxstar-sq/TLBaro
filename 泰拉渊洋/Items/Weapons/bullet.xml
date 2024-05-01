@@ -1,121 +1,149 @@
-<?xml version="1.0" encoding="utf-8"?>
-	<Items>
-		<!--子弹实体-->
-		<!--制式弹夹普通子弹-->
-		<Item name="TL_zd_normal" identifier="TL_zd_normal" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
-			<InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
-			<Body width="40" height="14" density="40" />
-			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
-				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
-				<Attack structuredamage="6" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.265">
-					<Affliction identifier="gunshotwound" strength="18" />
-					<Affliction identifier="gunshotwound" strength="2" probability="0.05" />
-					<Affliction identifier="gunshotwound" strength="2" probability="0.1" />
-					<Affliction identifier="bleeding" strength="15" />
-					<Affliction identifier="stun" strength="0.1" probability="0.4" />
-					<Affliction identifier="stun" strength="0.2" probability="0.3" />
-				</Attack>
-				<StatusEffect type="OnImpact" target="UseTarget">
-				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-				<Conditional entitytype="eq Structure" />
-				<Conditional hastag="eq door" />
-				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-				</StatusEffect>
-			</Projectile>
-		</Item>
-		<!--制式弹夹崩解子弹-->
-		<Item name="TL_zd_cr" identifier="TL_zd_cr" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
-			<InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
-			<Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
-			<Body width="40" height="14" density="40" />
-			<Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-			<Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
-				<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
-				<Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.3">
-					<Affliction identifier="gunshotwound" strength="10" />
-					<Affliction identifier="gunshotwound" strength="8" probability="0.15" />
-					<Affliction identifier="alcellruin" strength="2" />
-					<Affliction identifier="alcellruin" strength="4" probability="0.1"/>
-					<Affliction identifier="stun" strength="0.1" probability="0.4" />
-					<Affliction identifier="stun" strength="0.2" probability="0.3" />
-				</Attack>
-				<StatusEffect type="OnImpact" target="UseTarget">
-				<ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-				<Conditional entitytype="eq Structure" />
-				<Conditional hastag="eq door" />
-				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-				</StatusEffect>
-			</Projectile>
-		</Item>
-        <!--灭刃的飞刃-->
-        <Item name="" identifier="mr_zd" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
-            <Sprite texture="bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
-            <Body width="40" height="14" density="30" />
-            <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
-            <Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="3">
-                <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
-                <Attack structuredamage="1" targetforce="1.5" itemdamage="6" severlimbsprobability="0.1" penetration="0.3">
-					<!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
-                    <Affliction identifier="bleeding" strength="5" />
-                    <Affliction identifier="lacerations" strength="20" />
-                    <Affliction identifier="lacerations" strength="20" probability="0.05"/><!--2%几率打出双倍伤害-->
-                    <Affliction identifier="lacerations" strength="40" probability="0.02"/><!--2%几率打出三倍倍伤害-->
-                    <Affliction identifier="bleeding" strength="5" />
-                </Attack>
-                <StatusEffect type="OnImpact" target="UseTarget">
-                    <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
-                </StatusEffect>
-                <StatusEffect type="OnImpact" target="UseTarget">
-                    <Conditional entitytype="eq Structure" />
-                    <Conditional hastag="eq door" />
-                    <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-                </StatusEffect>
-            </Projectile>
-        </Item>
-		<Item name="近防炮子弹" identifier="chaingunbolt2" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
-			<Sprite texture="%ModDir%/Items/weapons/1130.png" sourcerect="839,823,180,49" depth="0.55" origin="0.5,0.5" />
-			<Body width="170" height="10" density="10" />
-			<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-			<Projectile characterusable="false" launchimpulse="0" spread="9.5" removeonhit="true" damagedoors="true">
-				<Attack targetimpulse="400" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
-					<Affliction identifier="lacerations" strength="15" />
-					<Affliction identifier="bleeding" strength="1" />
-					<Affliction identifier="stun" strength="0.125" />
-					<Affliction identifier="stun" strength="0.125" probability="0.5" />
-				</Attack>
-				<StatusEffect type="OnActive" target="This">
-					<ParticleEmitter particle="chainguntrail" copyentityangle="true" particlespersecond="50" initialdelay="0.05" colormultiplier="240,200,50" />
-				</StatusEffect>
-				<StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
-					<Remove />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2.0" scalemax="3.0" />
-					<ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="8" velocitymin="-300" velocitymax="-800" scalemin="1" scalemax="2" />
-					<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="500" scalemin="0.4" scalemax="0.5" />
-				</StatusEffect>
-				<StatusEffect type="OnImpact" target="UseTarget">
-					<Conditional entitytype="eq Structure" />
-					<Conditional hastag="eq door" />
-					<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
-				</StatusEffect>
-			</Projectile>
-		</Item>
-<Item name="豹二炮弹" identifier="leo2" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
-    <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1"/>
-    <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1"/>
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+  <!--子弹实体-->
+  <!--制式弹夹普通子弹-->
+  <Item name="TL_zd_normal" identifier="TL_zd_normal" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
+    <InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
+      <Attack structuredamage="6" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.265">
+        <Affliction identifier="gunshotwound" strength="18" />
+        <Affliction identifier="gunshotwound" strength="2" probability="0.05" />
+        <Affliction identifier="gunshotwound" strength="2" probability="0.1" />
+        <Affliction identifier="bleeding" strength="15" />
+        <Affliction identifier="stun" strength="0.1" probability="0.4" />
+        <Affliction identifier="stun" strength="0.2" probability="0.3" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!--制式弹夹崩解子弹-->
+  <Item name="TL_zd_cr" identifier="TL_zd_cr" category="Equipment" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="1">
+    <InventoryIcon texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/items/Weapons/bullet.png" sourcerect="33,153,54,10" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="40" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
+      <Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.3">
+        <Affliction identifier="gunshotwound" strength="10" />
+        <Affliction identifier="gunshotwound" strength="8" probability="0.15" />
+        <Affliction identifier="alcellruin" strength="2" />
+        <Affliction identifier="alcellruin" strength="4" probability="0.1" />
+        <Affliction identifier="stun" strength="0.1" probability="0.4" />
+        <Affliction identifier="stun" strength="0.2" probability="0.3" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <!--灭刃的飞刃-->
+  <Item name="" identifier="mr_zd" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <Sprite texture="bullet.png" sourcerect="17,21,20,5" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="14" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="3">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+      <Attack structuredamage="1" targetforce="1.5" itemdamage="6" severlimbsprobability="0.1" penetration="0.3">
+        <!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
+        <Affliction identifier="bleeding" strength="5" />
+        <Affliction identifier="lacerations" strength="20" />
+        <Affliction identifier="lacerations" strength="20" probability="0.05" />
+        <!--2%几率打出双倍伤害-->
+        <Affliction identifier="lacerations" strength="40" probability="0.02" />
+        <!--2%几率打出三倍倍伤害-->
+        <Affliction identifier="bleeding" strength="5" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="近防炮子弹" identifier="chaingunbolt2" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Items/weapons/1130.png" sourcerect="839,823,180,49" depth="0.55" origin="0.5,0.5" />
+    <Body width="170" height="10" density="10" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" launchimpulse="0" spread="9.5" removeonhit="true" damagedoors="true">
+      <Attack targetimpulse="400" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
+        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="bleeding" strength="1" />
+        <Affliction identifier="stun" strength="0.125" />
+        <Affliction identifier="stun" strength="0.125" probability="0.5" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="chainguntrail" copyentityangle="true" particlespersecond="50" initialdelay="0.05" colormultiplier="240,200,50" />
+      </StatusEffect>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2.0" scalemax="3.0" />
+        <ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="8" velocitymin="-300" velocitymax="-800" scalemin="1" scalemax="2" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="500" scalemin="0.4" scalemax="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="M2常规子弹" identifier="M2ammo_ord" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <Sprite texture="Turret.png" sourcerect="15,993,55,9" depth="0.55" origin="0.5,0.5" />
+    <Body width="35" height="6" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true" spread="2">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
+      <Attack structuredamage="4" targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.4">
+        <Affliction identifier="gunshotwound" strength="12" />
+        <Affliction identifier="bleeding" strength="10" />
+        <Affliction identifier="stun" strength="0.1" />
+        <Affliction identifier="stun" strength="0.5" probability="0.01" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="2,2" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+      <!-- hmg rounds should not exist outside magazines -->
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="豹二炮弹" identifier="leo2" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
+    <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
     <!--Ensure that Thalamus always has some railgun shells to use-->
-    <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4"/>
-    <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5"/>
+    <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
+    <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5" />
     <Price baseprice="70">
       <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
-      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4"/>
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
       <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="10" />
       <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
@@ -143,9 +171,9 @@
         <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
-        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000"/>
-        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000"/>
-        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000"/>
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
         <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
           <Affliction identifier="explosiondamage" strength="250" />
@@ -153,7 +181,7 @@
         </Explosion>
       </StatusEffect>
       <!-- Trigger explosions on contained items -->
-      <StatusEffect type="OnBroken" target="Contained" >
+      <StatusEffect type="OnBroken" target="Contained">
         <Use />
       </StatusEffect>
       <!-- Remove the item after exploding -->
@@ -166,6 +194,4 @@
       <Containable items="smallitem" />
     </ItemContainer>
   </Item>
-	</Items>
-
-	
+</Items>

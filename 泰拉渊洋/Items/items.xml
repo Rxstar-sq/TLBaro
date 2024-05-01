@@ -101,21 +101,21 @@
     <Deconstruct time="10">
       <Item identifier="FuelRod" />
     </Deconstruct>
-	  <Fabricate suitablefabricators="moneymaker" requiredtime="75" requiresrecipe="false">
-		  <RequiredSkill identifier="mechanical" level="65" />
-		  <RequiredItem identifier="fpgacircuit" />
-		  <RequiredItem identifier="lead" amount="4"/>
-		  <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
-	  </Fabricate>
+    <Fabricate suitablefabricators="moneymaker" requiredtime="75" requiresrecipe="false">
+      <RequiredSkill identifier="mechanical" level="65" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="lead" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+    </Fabricate>
     <Sprite texture="icon.png" sourcerect="28,444,122,26" depth="0.55" origin="0.5,0.5" />
     <Body width="110" height="15" density="25" />
     <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
       <Attack targetimpulse="1500" severlimbsprobability="9" itemdamage="100" structuredamage="250">
         <Affliction identifier="kill" strength="100" />
-		 <Affliction identifier="lacerations" strength="100" />
-		 <Affliction identifier="internaldamage" strength="100" />
-		 <Affliction identifier="blunttrauma" strength="100" />
-		 <Affliction identifier="bleeding" strength="100" />
+        <Affliction identifier="lacerations" strength="100" />
+        <Affliction identifier="internaldamage" strength="100" />
+        <Affliction identifier="blunttrauma" strength="100" />
+        <Affliction identifier="bleeding" strength="100" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="eq Character" />
           <Sound file="%ModDir%/ogg/撒日朗.ogg" selectionmode="random" range="2000" />
@@ -152,16 +152,22 @@
       <Price storeidentifier="merchantresearch" multiplier="1.6" />
       <Price storeidentifier="merchantmilitary" multiplier="1.8" />
     </Price>
+	  
+	  <!--合成待定-->
+	<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
+		  <RequiredItem identifier="nanogel" amount="1" />
+		  <RequiredItem identifier="alienblood" amount="2" />
+		  <RequiredItem identifier="fpgacircuit" amount="1" />
+	</Fabricate>
+	  
     <Deconstruct time="10"></Deconstruct>
-    <!--等待贴图-->
-    <Sprite texture="%ModDir%/png/矿物.png" depth="0.3" sourcerect="354,186,66,71" origin="0.5,0.5" />
-    <ContainedSprite texture="%ModDir%/png/矿物.png" depth="0.55" sourcerect="354,186,66,71" origin="0.5,0.5" />
+    <Sprite name="纳米凝胶" texture="icon.png" depth="0.3" sourcerect="596,421,45,106" origin="0.5,0.5" />
     <Body radius="60" width="65" density="50" />
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>
   <Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab" />
-    <Fabricate suitablefabricators="fabricator" requiredtime="15" requiresrecipe="false">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
       <RequiredItem identifier="nanogel" amount="1" />
       <RequiredItem identifier="alienblood" amount="2" />
       <RequiredItem identifier="fpgacircuit" amount="1" />
@@ -170,8 +176,7 @@
       <Item identifier="alienblood" amount="1" />
     </Deconstruct>
     <!--等待贴图-->
-    <Sprite texture="%ModDir%/png/矿物.png" depth="0.3" sourcerect="354,186,66,71" origin="0.5,0.5" />
-    <ContainedSprite texture="%ModDir%/png/矿物.png" depth="0.55" sourcerect="354,186,66,71" origin="0.5,0.5" />
+    <Sprite name="破坏纳米凝胶" texture="icon.png" depth="0.3" sourcerect="482,413,53,117" origin="0.5,0.5" />
     <Body radius="60" width="65" density="50" />
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>

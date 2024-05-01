@@ -145,7 +145,7 @@
       <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="30" />
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="false"  itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="TL_ammo" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -176,7 +176,7 @@
     </Fabricate>
     <Deconstruct time="35">
       <Item identifier="physicorium" amount="1" />
-      <Item identifier="TL14"/>
+      <Item identifier="TL14" />
     </Deconstruct>
     <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
     <Body width="235" height="55" density="25" />
@@ -185,7 +185,7 @@
       <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.38" setvalue="true" />
       <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.15" setvalue="true" />
     </Holdable>
-    <RangedWeapon weapondamagemodifier="1.5"  reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon weapondamagemodifier="1.5" reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
@@ -244,7 +244,7 @@
       <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="30" />
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="false"  itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="TL_ammo" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -487,4 +487,213 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
     </Fabricate>
   </Item>
+  <Item name="M2勃朗宁重机枪" identifier="machineturret" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" health="800" Scale="0.2" damagedbyprojectiles="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
+    <PreferredContainer primary="weaponholder" spawnprobability="0.2" />
+    <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="1" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.13" />
+    <Price baseprice="1500" soldeverywhere="false">
+      <Price locationtype="outpost" multiplier="1.5" sold="false" />
+      <Price locationtype="city" multiplier="1.25" sold="false" />
+      <Price locationtype="research" multiplier="1.25" sold="false" />
+      <Price locationtype="military" multiplier="0.9" minavailable="3" />
+      <Price locationtype="mine" multiplier="1.25" sold="false" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="Turret.png" sourcerect="60,236,1014,580" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="450" density="200" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="160,-20" holdpos="45,-30" handle1="-450,120" handle2="-450,120" holdangle="0" blocksplayers="true" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.1" holdtrigger="true" barrelpos="507,30" spread="6" unskilledspread="50" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.22">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+		<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
+      <StatusEffect target="This" type="OnUse" forceplaysounds="true">
+		<ParticleEmitter particle="casingfirearm" AngleMax="360" ScaleMin="2" ScaleMax="2.5" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" DrawOnTop="True" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot2.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot3.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot4.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot5.ogg" type="OnUse" range="3000" />
+        <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot6.ogg" type="OnUse" range="3000" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+		<ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <Explosion range="180.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 75" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 50" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
+        <Conditional skillrequirement="true" weapons="lt 25" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="M2ammo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <Propulsion force="-30" usablein="both" ApplyToHands="false">
+      <RequiredItems items="M2ammo" type="Contained" />
+    </Propulsion>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="M2ammo" hide="false" itempos="-31,-10" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="30,1" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <SkillRequirementHint identifier="weapons" level="50" />
+  </Item>
+  <!--投掷物-->
+  <Item name="反人员子母手雷" description="会在接触到地面后的路径上形成五次密集的爆炸，没有建筑伤害" identifier="fraggrenadepro" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+    <PreferredContainer secondary="armcab" />
+    <Upgrade gameversion="0.9.3.0" scale="0.5" />
+    <Price baseprice="400">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="sodium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="60" />
+      <RequiredItem identifier="iron" amount="4" />
+      <RequiredItem identifier="uex" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="580,770,54,63" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="217,305,40,61" depth="0.55" origin="0.5,0.5" />
+    <Body radius="20" height="10" density="30" />
+    <ItemComponent characterusable="false">
+      <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnBroken" delay="5" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="750.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="500" force="5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5">
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="bleeding" strength="50" probability="0.1" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" delay="6" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="750.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="500" force="5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5">
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="bleeding" strength="50" probability="0.1" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" delay="7" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="750.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="500" force="5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5">
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="bleeding" strength="50" probability="0.1" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" delay="8" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="750.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="500" force="5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5">
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="bleeding" strength="50" probability="0.1" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" delay="9" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="750.0" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="500" force="5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5">
+          <Affliction identifier="explosiondamage" strength="150" />
+          <Affliction identifier="bleeding" strength="100" />
+          <Affliction identifier="bleeding" strength="50" probability="0.1" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="7" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="3500" />
+        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="3500" />
+      </StatusEffect>
+    </ItemComponent>
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="3.5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-100.0" delay="3.0" disabledeltatime="true" checkconditionalalways="true" />
+    </Throwable>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="菌群破坏手雷" description="还在为手雷炸坏压载舱烦恼吗？" identifier="ballastfloragrenade" category="Weapon" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="explosivecrate" tags="smallitem,weapon,explosive,demolitionsexpert" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="0.75" notcampaign="true" />
+    <PreferredContainer secondary="wreckarmcab,abandonedarmcab,piratearmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+    <PreferredContainer secondary="armcab" />
+    <Upgrade gameversion="0.9.3.0" scale="0.5" />
+    <Price baseprice="250">
+      <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.35" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.25" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="iron" />
+      <Item identifier="sodium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="moneymaker" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="10" />
+      <RequiredItem identifier="iron" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="580,770,54,63" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="217,305,40,61" depth="0.55" origin="0.5,0.5" />
+    <Body radius="20" height="10" density="30" />
+    <ItemComponent characterusable="false">
+      <!-- statuseffect that explodes the grenade when used by something else than a character (e.g. a detonator) -->
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true" />
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="5000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="5000" />
+        <Explosion range="1500" ballastfloradamage="100" structuredamage="0" levelwalldamage="0" itemdamage="0" force="5" severlimbsprobability="0.1" debris="true" decal="explosion" decalsize="0.5"></Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris1.ogg" range="3500" />
+        <sound file="Content/Items/Weapons/ExplosionDebris2.ogg" range="3500" />
+      </StatusEffect>
+    </ItemComponent>
+    <Throwable slots="Any,RightHand,LeftHand" holdpos="0,0" handle1="0,0" throwforce="3.5" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnSecondaryUse" target="This" Condition="-100.0" delay="3.0" disabledeltatime="true" checkconditionalalways="true" />
+    </Throwable>
+    <Quality>
+      <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
+  </Item>
+	
 </Items>
