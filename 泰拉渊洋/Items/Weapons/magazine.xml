@@ -330,9 +330,91 @@
     <Sprite texture="Turret.png" sourcerect="16,1032,31,53" depth="0.55" origin="0.5,0.5" />
     <Body width="29" height="50" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-      <Containable items="M2ammo_ord" />
+      <Containable items="M2_ammo_ord" />
       <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
-        <SpawnItem identifiers="M2ammo_ord" spawnposition="ThisInventory" />
+        <SpawnItem identifiers="M2_ammo_ord" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="M2穿甲弹药" identifier="M2ammo_ap" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="660" sold="true" minleveldifficulty="65" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredItem identifier="magnesium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="steel" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="M2ammo_ap" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite texture="Turret.png" sourcerect="70,1032,31,53" depth="0.55" origin="0.5,0.5" />
+    <Body width="29" height="50" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="M2_ammo_ap" />
+      <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+        <SpawnItem identifiers="M2_ammo_ap" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+  </Item>
+  <Item name="M2崩解弹药" identifier="M2ammo_bj" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer primary="armcab" secondary="secarmcab" />
+    <Price baseprice="1500" sold="true" minleveldifficulty="65" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="45" />
+      <RequiredItem identifier="magnesium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="steel" />
+	  <RequiredItem identifier="nanogel_cr" amount="3"/>
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="magnesium" />
+      <RequiredItem identifier="titaniumaluminiumalloy" />
+	  <RequiredItem identifier="nanogel_cr" amount="3"/>
+      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="M2ammo_bj" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Deconstruct time="15">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Sprite texture="Turret.png" sourcerect="119,1032,31,53" depth="0.55" origin="0.5,0.5" />
+    <Body width="29" height="50" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="M2_ammo_bj" />
+      <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+        <SpawnItem identifiers="M2_ammo_bj" spawnposition="ThisInventory" />
       </StatusEffect>
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />

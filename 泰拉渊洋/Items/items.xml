@@ -73,7 +73,7 @@
     <Sprite texture="icon.png" sourcerect="553,48,100,40" depth="0.55" origin="0.5,0.5" />
     <Body width="100" height="20" density="25" />
     <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
-      <Attack targetimpulse="1500" severlimbsprobability="9" itemdamage="100" structuredamage="250">
+      <Attack targetimpulse="1500" severlimbsprobability="1" itemdamage="100" structuredamage="10000">
         <Affliction identifier="lacerations" strength="90" />
         <Affliction identifier="internaldamage" strength="100" />
         <Affliction identifier="blunttrauma" strength="100" />

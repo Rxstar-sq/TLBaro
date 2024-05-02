@@ -487,7 +487,7 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
     </Fabricate>
   </Item>
-  <Item name="M2勃朗宁重机枪" identifier="machineturret" category="Equipment" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" health="800" Scale="0.2" damagedbyprojectiles="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
+  <Item name="M2勃朗宁重机枪" identifier="machineturret" category="weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" health="800" Scale="0.2" damagedbyprojectiles="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
     <PreferredContainer primary="weaponholder" spawnprobability="0.2" />
     <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="1" />
     <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.13" />
@@ -508,9 +508,9 @@
     <RangedWeapon reload="0.1" holdtrigger="true" barrelpos="507,30" spread="6" unskilledspread="50" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.22">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
-		<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
+      <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
       <StatusEffect target="This" type="OnUse" forceplaysounds="true">
-		<ParticleEmitter particle="casingfirearm" AngleMax="360" ScaleMin="2" ScaleMax="2.5" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" DrawOnTop="True" />
+        <ParticleEmitter particle="casingfirearm" AngleMax="360" ScaleMin="2" ScaleMax="2.5" ScaleMultiplier="1,1" ParticlesPerSecond="1" ColorMultiplier="255,255,255,255" DrawOnTop="True" />
         <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
         <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot2.ogg" type="OnUse" range="3000" />
         <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot3.ogg" type="OnUse" range="3000" />
@@ -519,7 +519,7 @@
         <Sound file="Content/Items/JobGear/Security/WEAPON_hmgShot6.ogg" type="OnUse" range="3000" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="This">
-		<ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
         <Explosion range="180.0" force="2" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
       </StatusEffect>
       <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
@@ -695,5 +695,4 @@
       <QualityStat stattype="ExplosionDamage" value="0.1" />
     </Quality>
   </Item>
-	
 </Items>
