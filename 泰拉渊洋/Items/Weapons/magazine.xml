@@ -157,13 +157,7 @@
     <!--可通过其他通用弹夹回收制作-->
     <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
       <RequiredSkill identifier="weapons" level="20" />
-      <RequiredItem identifier="TL_magazine_cr" amount="1" />
-      <RequiredItem tag="munition_core" amount="3" />
-      <RequiredItem identifier="potassium" amount="1" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
-      <RequiredSkill identifier="weapons" level="20" />
-      <RequiredItem identifier="TL_magazine" amount="1" />
+	  <RequiredItem tag="TL_ammo" amount="1" mincondition="0.0" maxcondition="0.1" usecondition="false" header="fabricationheader.TLammoK"/>
       <RequiredItem tag="munition_core" amount="3" />
       <RequiredItem identifier="potassium" amount="1" />
     </Fabricate>
@@ -219,17 +213,10 @@
     <!--可通过其他通用弹夹回收制作-->
     <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
       <RequiredSkill identifier="weapons" level="20" />
-      <RequiredItem identifier="TL_magazine_cr" amount="1" />
+      <RequiredItem tag="TL_ammo" amount="1" mincondition="0.0" maxcondition="0.1" usecondition="false" header="fabricationheader.TLammoK"/>
       <RequiredItem tag="advmunition_tip" />
       <RequiredItem identifier="potassium" amount="1" />
-      <RequiredItem identifier="nanogel_cr" amount="1" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
-      <RequiredSkill identifier="weapons" level="20" />
-      <RequiredItem identifier="TL_magazine" amount="1" />
-      <RequiredItem tag="advmunition_tip" />
-      <RequiredItem identifier="potassium" amount="1" />
-      <RequiredItem identifier="nanogel_cr" amount="1" />
+      <RequiredItem identifier="nanogel_cr" amount="1"  />
     </Fabricate>
     <!--留空以用于其他可能的通用弹夹回收-->
     <!---->
@@ -394,17 +381,14 @@
       <RequiredSkill identifier="weapons" level="45" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
-      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
-      <RequiredItem identifier="steel" />
 	  <RequiredItem identifier="nanogel_cr" amount="3"/>
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
-	  <RequiredItem identifier="nanogel_cr" amount="3"/>
-      <RequiredItem tag="advmunition_core" description="fabricationdescription.advmunition_core" />
+	  <RequiredItem identifier="nanogel_cr" amount="1"/>
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="M2ammo_bj" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>

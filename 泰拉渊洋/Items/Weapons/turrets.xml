@@ -115,7 +115,7 @@
       <IsActiveConditional targetcontaineditem="true" conditionpercentage="gte 100" />
     </LightComponent>
   </Item>
-  <Item name="泰拉常规弹药箱" identifier="chaingunammobox2" scale="0.5" tags="chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉常规弹药箱" identifier="chaingunammobox2" scale="0.5" tags="chaingunequipment,chaingunammobox2,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="300" minavailable="1" displaynonempty="true">
@@ -137,7 +137,7 @@
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
       <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="chaingunammobox2" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="915,931,95,78" origin="0.5,0.5" />
@@ -153,7 +153,7 @@
       <Containable items="chaingunbolt2" />
     </ItemContainer>
   </Item>
-  <Item name="泰拉穿甲弹药箱" identifier="chaingunammobox_ap" scale="0.5" tags="chaingunequipment,chaingunammo,1130,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉穿甲弹药箱" identifier="chaingunammobox_ap" scale="0.5" tags="chaingunequipment,chaingunammobox_ap,chaingunammo,1130,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource,ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckchaingunloader" amount="1" spawnprobability="0.05" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.1" />
@@ -178,7 +178,7 @@
       <RequiredSkill identifier="weapons" level="55" />
       <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
       <RequiredItem tag="advmunition_core" amount="3" description="fabricationdescription.advmunition_core" />
-      <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxshredder" />
+      <RequiredItem tag="chaingunammobox_ap" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxshredder" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="1130.png" depth="0.54" sourcerect="785,929,95,78" origin="0.5,0.5" />
@@ -194,7 +194,7 @@
       <Containable items="chaingunboltshredderap" />
     </ItemContainer>
   </Item>
-  <Item name="泰拉崩解弹药箱" identifier="chaingunammobox_bj" scale="0.5" tags="chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉崩解弹药箱" identifier="chaingunammobox_bj" scale="0.5" tags="chaingunequipment,1130,chaingunammobox_bj,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="1000" minavailable="1" displaynonempty="true">
@@ -212,12 +212,13 @@
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
       <RequiredItem identifier="aluminium" />
-      <RequiredItem identifier="nanogel_cr" amount="3" />
+      <RequiredItem identifier="nanogel_cr" amount="2" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
+	  <RequiredItem identifier="nanogel_cr" amount="1" />
       <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="chaingunammobox_bj" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="657,931,95,78" origin="0.5,0.5" />
@@ -233,7 +234,7 @@
       <Containable items="chaingunboltshredderbj" />
     </ItemContainer>
   </Item>
-  <Item name="高精度弹药箱" identifier="chaingunammobox_j" description="改良后的子弹拥有极其稳定的弹道和精度，但是牺牲了一些伤害，提升了弹速和穿透力" scale="0.5" tags="chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="高精度弹药箱" identifier="chaingunammobox_j" description="改良后的子弹拥有极其稳定的弹道和精度，但是牺牲了一些伤害，提升了弹速和穿透力" scale="0.5" tags="chaingunammobox_j,chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="500" minavailable="1" displaynonempty="true">
@@ -255,7 +256,7 @@
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
       <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="chaingunammobox_j" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="523,931,95,78" origin="0.5,0.5" />
