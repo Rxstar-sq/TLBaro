@@ -130,12 +130,12 @@
         <Sound file="%ModDir%/ogg/outammo.ogg" range="2000" loop="false" />
       </StatusEffect>
       <!--后座与屏幕抖动-->
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="80.0" force="0.3" camerashake="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
       </StatusEffect>
       <!--留空用来加弹壳音效-->
       <!---->
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
         <Explosion range="150.0" force="1" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="12.0" />
       </StatusEffect>

@@ -191,6 +191,43 @@
       </StatusEffect>
     </Projectile>
   </Item>
+  <Item name="近防炮散射爆炸子弹" identifier="chaingunbolt_bao" category="Weapon" scale="0.3" sonarsize="2" hideinmenus="true">
+    <Sprite texture="%ModDir%/Items/weapons/1130.png" sourcerect="873,626,115,46" depth="0.55" origin="0.5,0.5" />
+    <Body width="110" height="50" density="10" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+    <Projectile characterusable="false" launchimpulse="400" spread="35" removeonhit="true" damagedoors="true">
+      <Attack structuredamage="25" itemdamage="18" severlimbsprobability="0.5" penetration="0.75">
+        <Affliction identifier="lacerations" strength="8" />
+        <Affliction identifier="bleeding" strength="5" />
+        <Affliction identifier="stun" strength="0.04" />
+        <Affliction identifier="stun" strength="0.03" probability="0.5" />
+      </Attack>
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" copyentityangle="true" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2.0" scalemax="3.0" colormultiplier="255,220,220" />
+        <ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="8" velocitymin="-300" velocitymax="-800" scalemin="1" scalemax="2" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="500" scalemin="0.4" scalemax="0.5" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+        <Explosion range="200.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
+          <Affliction identifier="burn" strength="55" />
+          <Affliction identifier="stun" strength="1" />
+          <Affliction identifier="explosiondamage" strength="5" />
+        </Explosion>
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="3000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="3000" />
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
   <Item name="M2常规子弹" identifier="M2_ammo_ord" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
     <Sprite texture="Turret.png" sourcerect="15,993,55,9" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="6" density="30" />
@@ -273,7 +310,7 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <Item name="豹二炮弹" identifier="leo2" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="380MM无装药" identifier="leo2" description="380MM炮弹，内部装药区很空" tags="railgunequipment,380MMammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
     <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
     <!--Ensure that Thalamus always has some railgun shells to use-->
@@ -296,8 +333,8 @@
       <RequiredItem identifier="iron" />
     </Fabricate>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,128,64,64" origin="0.5,0.5" />
-    <Sprite texture="TurretsAndDepthCharges.png" sourcerect="2,91,215,33" depth="0.55" origin="0.5,0.5" />
-    <Body width="215" height="30" density="30" />
+    <Sprite name="380mm炮弹" texture="380.png" sourcerect="8,751,379,76" depth="0.55" origin="0.5,0.5" />
+    <Body width="380" height="80" density="30" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" launchimpulse="80" maxtargetstohit="1" damagedoors="true">
       <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.6" targetforce="1000">
@@ -313,10 +350,13 @@
         <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
         <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
-        <Explosion range="250.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
-          <Affliction identifier="explosiondamage" strength="250" />
-          <Affliction identifier="stun" strength="7" />
-        </Explosion>
+        <Explosion range="500" ballastfloradamage="100" structuredamage="200" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="500" />
+          <Affliction identifier="stun" strength="20" />
+		  <Affliction identifier="internaldamage" strength="200" />
+		  <Affliction identifier="organdamage" strength="200" />
+		  <Affliction identifier="bleeding" strength="70" />
+		</Explosion>
       </StatusEffect>
       <!-- Trigger explosions on contained items -->
       <StatusEffect type="OnBroken" target="Contained">

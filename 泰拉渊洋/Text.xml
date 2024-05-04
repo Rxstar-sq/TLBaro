@@ -5,6 +5,8 @@
 	<faction.TLhui.shortdescription>中立的科技公司，拥有先进技术扶持的强势和人工智能决策的严谨，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.shortdescription>
 
 	<fabricationheader.TLammoK>任意泰拉空弹夹</fabricationheader.TLammoK>
+	<fabricationheader.1130box>任意泰拉空弹药箱</fabricationheader.1130box>
+	<fabricationdescription.1130box>仅限泰拉渊洋本mod弹药箱</fabricationdescription.1130box>
 	
 	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
 	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>

@@ -115,7 +115,7 @@
       <IsActiveConditional targetcontaineditem="true" conditionpercentage="gte 100" />
     </LightComponent>
   </Item>
-  <Item name="泰拉常规弹药箱" identifier="chaingunammobox2" scale="0.5" tags="chaingunequipment,chaingunammobox2,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉常规弹药箱" identifier="chaingunammobox2" scale="0.5" tags="TL1130ammobox,chaingunequipment,chaingunammobox2,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="300" minavailable="1" displaynonempty="true">
@@ -132,12 +132,12 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
-      <RequiredItem identifier="aluminium" />
+      <RequiredItem identifier="aluminium" amount="1" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
-      <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="chaingunammobox2" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="munition_core" amount="1" description="fabricationdescription.munition_core" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="915,931,95,78" origin="0.5,0.5" />
@@ -153,7 +153,7 @@
       <Containable items="chaingunbolt2" />
     </ItemContainer>
   </Item>
-  <Item name="泰拉穿甲弹药箱" identifier="chaingunammobox_ap" scale="0.5" tags="chaingunequipment,chaingunammobox_ap,chaingunammo,1130,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉穿甲弹药箱" identifier="chaingunammobox_ap" scale="0.5" tags="TL1130ammobox,chaingunequipment,chaingunammobox_ap,chaingunammo,1130,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource,ammoboxcontainer" mincondition="1" />
     <PreferredContainer secondary="wreckchaingunloader" amount="1" spawnprobability="0.05" />
     <PreferredContainer secondary="wreckammoboxcontainer" amount="1" spawnprobability="0.1" />
@@ -170,15 +170,15 @@
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="60" />
-      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
-      <RequiredItem tag="advmunition_core" amount="3" description="fabricationdescription.advmunition_core" />
+      <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" amount="2" />
+      <RequiredItem tag="advmunition_core" amount="4" description="fabricationdescription.advmunition_core" />
       <RequiredItem identifier="aluminium" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
-      <RequiredSkill identifier="weapons" level="55" />
+      <RequiredSkill identifier="weapons" level="50" />
       <RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
       <RequiredItem tag="advmunition_core" amount="3" description="fabricationdescription.advmunition_core" />
-      <RequiredItem tag="chaingunammobox_ap" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammoboxshredder" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="1130.png" depth="0.54" sourcerect="785,929,95,78" origin="0.5,0.5" />
@@ -194,7 +194,7 @@
       <Containable items="chaingunboltshredderap" />
     </ItemContainer>
   </Item>
-  <Item name="泰拉崩解弹药箱" identifier="chaingunammobox_bj" scale="0.5" tags="chaingunequipment,1130,chaingunammobox_bj,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="泰拉崩解弹药箱" identifier="chaingunammobox_bj" scale="0.5" tags="TL1130ammobox,chaingunequipment,1130,chaingunammobox_bj,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="1000" minavailable="1" displaynonempty="true">
@@ -216,9 +216,9 @@
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
-	  <RequiredItem identifier="nanogel_cr" amount="1" />
+      <RequiredItem identifier="nanogel_cr" amount="1" />
       <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="chaingunammobox_bj" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="657,931,95,78" origin="0.5,0.5" />
@@ -234,7 +234,7 @@
       <Containable items="chaingunboltshredderbj" />
     </ItemContainer>
   </Item>
-  <Item name="高精度弹药箱" identifier="chaingunammobox_j" description="改良后的子弹拥有极其稳定的弹道和精度，但是牺牲了一些伤害，提升了弹速和穿透力" scale="0.5" tags="chaingunammobox_j,chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="高精度弹药箱" identifier="chaingunammobox_j" description="改良后的子弹拥有极其稳定的弹道和精度，但是牺牲了一些伤害，提升了弹速和穿透力" scale="0.5" tags="TL1130ammobox,chaingunammobox_j,chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
     <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
     <Price baseprice="500" minavailable="1" displaynonempty="true">
@@ -256,7 +256,7 @@
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
       <RequiredSkill identifier="weapons" level="35" />
       <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
-      <RequiredItem tag="chaingunammobox_j" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.ammoboxrecycle" header="fabricationheader.ammoboxrecycle" defaultitem="chaingunammobox2" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
     </Fabricate>
     <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
     <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="523,931,95,78" origin="0.5,0.5" />
@@ -270,6 +270,166 @@
         <RequiredItem items="chaingunboltshredderj" type="Contained" />
       </StatusEffect>
       <Containable items="chaingunboltshredderj" />
+    </ItemContainer>
+  </Item>
+  <Item name="散射爆炸弹药箱" identifier="chaingunammobox_bao" description="大范围散射的爆炸弹，有效对付群体目标" scale="0.5" tags="TL1130ammobox,chaingunequipment,chaingunammobox2,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
+    <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
+    <Price baseprice="300" minavailable="1" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.3" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.2" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="c4block" amount="3" />
+      <RequiredItem tag="advmunition_jacket" amount="3" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem identifier="aluminium" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="c4block" amount="2" />
+      <RequiredItem tag="advmunition_jacket" amount="2" description="fabricationdescription.advmunition_jacket" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
+    </Fabricate>
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
+    <Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="524,832,95,78" origin="0.5,0.5" />
+    <Body width="90" height="72" density="50" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="chaingunbolt_bao" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-0.17" disabledeltatime="true">
+        <RequiredItem items="chaingunbolt_bao" type="Contained" />
+      </StatusEffect>
+      <Containable items="chaingunbolt_bao" />
+    </ItemContainer>
+  </Item>
+  <!--俾斯麦380-->
+  <Item name="380MM主炮" description="" identifier="Bismarck" Tags="turret" category="Machine,Weapon" interactthroughwalls="true" Scale="0.7" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="800" linkable="true" allowedlinks="380railgunloader">
+    <Sprite texture="380.png" depth="0.01" sourcerect="11,4,587,235" canflipy="false" origin="0.5,0.5" />
+    <MinimapIcon name="Command_Weapons_FlakCannon" texture="Content/UI/CommandUIBackground.png" sourcerect="512,768,128,128" />
+    <SwappableItem price="7500" replacementonuninstall="largeturrethardpoint" origin="256,438" swapidentifier="largeturret">
+      <SchematicSprite texture="Content/UI/WeaponUI.png" sourcerect="768,389,256,389" />
+      <SwapConnectedItem tag="periscope" swapto="periscope" />
+      <SwapConnectedItem tag="turretammosource" swapto="380railgunloader" />
+    </SwappableItem>
+    <UpgradePreviewSprite scale="3.5" texture="Content/UI/WeaponUI.png" sourcerect="628,805,102,70" origin="0.5,0.5" />
+    <StaticBody width="80" radius="80" />
+    <Turret canbeselected="false" spread="8.0" launchimpulse="70.0" characterusable="false" linkable="true" barrelpos="530,110" rotationlimits="5,-25" powerconsumption="10000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="120" reload="5" springstiffnesslowskill="1" springstiffnesshighskill="50" springdampinglowskill="0.5" springdampinghighskill="10" rotationspeedlowskill="1" rotationspeedhighskill="8" firingoffset="0,-510" MaxAngleOffset="5" AICurrentTargetPriorityMultiplier="1" recoiltime="0.4" retractiondelay="1">
+      <sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+      <sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+      <sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+      <WeaponIndicator texture="Content/UI/WeaponUI.png" sourcerect="653,908,73,44" origin="0.24, 0.472" />
+      <RailSprite name="380布" texture="%ModDir%/Items/weapons/380.png" depth="0.011" sourcerect="426,300,146,138" origin="0.50915843,0.4629098" />
+      <BarrelSprite name="380管" texture="%ModDir%/Items/weapons/380.png" depth="0.2" sourcerect="803,5,69,756" origin="0.4951417,0.5130901" />
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+      <MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+      <StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+      <EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+      <RequiredSkill identifier="weapons" level="80" />
+      <LightComponent LightColor="1.0,0.8,0.8,1.0" Flicker="0.0" range="2500" directional="true" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true" InheritParentIsActive="false">
+        <LightTexture texture="Content/Lights/lightcone.png" origin="0.0,0.5" size="1.0,1.0" />
+      </LightComponent>
+      <ParticleEmitter particle="muzzleflashflakcannon" particleamount="1" velocitymin="50" velocitymax="100" distance="-20" />
+      <ParticleEmitter particle="swirlysmoke" particleamount="10" velocitymin="0" velocitymax="0" scalemin="10" scalemax="15" distancemin="-100" distancemax="50" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="1000.0" structuredamage="0" force="0.0" camerashake="100" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+      </StatusEffect>
+    </Turret>
+    <aitarget maxsightrange="3000" maxsoundrange="8000" fadeouttime="5" />
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <input name="power_in" displayname="connection.powerin" />
+      <input name="position_in" displayname="connection.turretaimingin" />
+      <input name="trigger_in" displayname="connection.turrettriggerin" />
+      <input name="toggle_light" displayname="connection.togglelight" />
+      <input name="set_light" displayname="connection.setlight" />
+    </ConnectionPanel>
+    <SkillRequirementHint identifier="weapons" level="80" />
+  </Item>
+  <Item name="380MM舰炮装弹器" identifier="380railgunloader" tags="railgunequipment,railgunammosource,turretammosource,railgunammoloader" category="Machine,Weapon" linkable="true" allowedlinks="Bismarck" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+    <SwappableItem canbebought="false" origin="110,353" spawnwithid="railgunshell,railgunshell,railgunshell,railgunshell,railgunshell" />
+    <Sprite name="Railgun Loader Front" texture="Loaders.png" depth="0.78" sourcerect="711,260,297,472" origin="0.5,0.5" />
+    <BrokenSprite texture="Content/Items/Weapons/Loaders.png" sourcerect="163,563,153,351" origin="0.5,0.5" offset="35,4" depth="0.77" fadein="true" maxcondition="99" />
+    <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="208,968,32,46" origin="0.5,0.5" />
+    <DecorativeSprite name="Railgun Loader Frame Front" texture="Loaders.png" depth="0.8" sourcerect="31,569,117,200" origin="0.5,0.5" offset="0,-30" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="4" slotsperrow="6" itempos="58,-255" iteminterval="65,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepths="0.79,0.791,0.792,0.793,0.794,0.795">
+      <GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
+      <SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+      <SlotIcon slotindex="2" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+      <SlotIcon slotindex="3" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+      <Containable items="380MMammo" />
+    </ItemContainer>
+    <Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="20" mindeteriorationdelay="5" maxdeteriorationdelay="15" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+      <StatusEffect type="InWater" target="This" condition="-0.25" />
+      <GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+      <RequiredSkill identifier="mechanical" level="55" />
+      <RequiredItem items="wrench" type="Equipped" />
+      <ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+      <ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+      <ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="2.5" anglemax="360" distancemax="60" mincondition="0.0" maxcondition="15.0" />
+      <StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+        <Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="stun" strength="4" />
+      </StatusEffect>
+    </Repairable>
+    <ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+      <GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+      <RequiredItem items="screwdriver" type="Equipped" />
+      <output name="condition_out" displayname="connection.conditionout" />
+    </ConnectionPanel>
+  </Item>
+  <Item name="轨道炮 炮弹架" identifier="guirailgunshellrack" tags="container,railgunammocontainer" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+    <Sprite texture="380.png" depth="0.84" sourcerect="4,473,394,229" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="2" slotsperrow="6" itempos="100,-5" iteminterval="210,0" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="railgunammo" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="50,-30" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="155,-30" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="50,-56" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="155,-56" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="50,-88" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="railgunammo" itempos="155,-88" />
+      </SubContainer>
+    </ItemContainer>
+  </Item>
+  <Item name="380MM炮弹架" identifier="380railgunshellrack" tags="container,railgunammocontainer" pickdistance="120" scale="0.5" canflipx="false" canflipy="false">
+    <Sprite texture="380.png" depth="0.84" sourcerect="4,473,394,229" origin="0.5,0.5" />
+    <ItemContainer hideitems="false" drawinventory="true" capacity="1" slotsperrow="6" itempos="200,-5" itemrotation="0" canbeselected="true" msg="ItemMsgInteractSelect">
+      <GuiFrame relativesize="0.3,0.2" anchor="Center" style="ItemUI" />
+      <Containable items="380MMammo" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="380MMammo" itempos="100,-30" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="380MMammo" itempos="100,-56" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="380MMammo" itempos="100,-88" />
+      </SubContainer>
     </ItemContainer>
   </Item>
 </Items>
