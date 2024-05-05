@@ -265,7 +265,7 @@
         <Affliction identifier="stun" strength="4" />
       </StatusEffect>
     </Repairable>
-    <ItemContainer capacity="3" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
+    <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
   <Item name="变色墨汁" identifier="bianse" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">

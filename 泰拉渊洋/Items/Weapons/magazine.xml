@@ -211,7 +211,7 @@
       <RequiredItem identifier="nanogel_cr" amount="1" />
     </Fabricate>
     <!--可通过其他通用弹夹回收制作-->
-    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+    <Fabricate suitablefabricators="moneymaker" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
       <RequiredSkill identifier="weapons" level="20" />
       <RequiredItem tag="TL_ammo" amount="1" mincondition="0.0" maxcondition="0.1" usecondition="false" header="fabricationheader.TLammoK"/>
       <RequiredItem tag="advmunition_tip" />
@@ -289,7 +289,7 @@
   <Item name="M2常规弹药" identifier="M2ammo" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
-    <Price baseprice="330" sold="true" minleveldifficulty="65" displaynonempty="true">
+    <Price baseprice="500" sold="true" minleveldifficulty="65" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
@@ -297,7 +297,7 @@
       <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" >
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -305,7 +305,7 @@
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
+    <Fabricate suitablefabricators="moneymaker" requiredtime="35" displayname="recycleitem" >
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -329,7 +329,7 @@
   <Item name="M2穿甲弹药" identifier="M2ammo_ap" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
-    <Price baseprice="660" sold="true" minleveldifficulty="65" displaynonempty="true">
+    <Price baseprice="1000" sold="true" minleveldifficulty="65" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
@@ -337,7 +337,7 @@
       <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="weapons" level="45" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -345,7 +345,7 @@
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
+    <Fabricate suitablefabricators="moneymaker" requiredtime="35" displayname="recycleitem" >
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -369,7 +369,7 @@
   <Item name="M2崩解弹药" identifier="M2ammo_bj" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
-    <Price baseprice="1500" sold="true" minleveldifficulty="65" displaynonempty="true">
+    <Price baseprice="2500" sold="true" minleveldifficulty="65" displaynonempty="true">
       <Price storeidentifier="merchantoutpost" multiplier="1.4" />
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.25" />
@@ -377,14 +377,14 @@
       <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" >
       <RequiredSkill identifier="weapons" level="45" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
 	  <RequiredItem identifier="nanogel_cr" amount="3"/>
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem" requiresrecipe="true">
+    <Fabricate suitablefabricators="moneymaker" requiredtime="35" displayname="recycleitem" >
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />

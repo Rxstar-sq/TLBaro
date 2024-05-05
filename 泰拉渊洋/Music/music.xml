@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Override>
+	<sounds>
+		<music file="%ModDir%/Music/Musics/Tycho - Awake.ogg" type="menu" continuefromprevioustime="true"/>
+		<music file="%ModDir%/Music/Musics/Tycho - Awake.ogg" type="editor" continuefromprevioustime="true" />
+	</sounds>
+</Override>
+
+
+	

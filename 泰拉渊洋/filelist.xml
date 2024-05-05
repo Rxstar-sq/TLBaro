@@ -13,6 +13,7 @@
 	<Item file="%ModDir%/Clothing/clothings.xml" />
 	<Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
 	<UIStyle file="%ModDir%/UI/style.xml" />
+	<Sounds file="%ModDir%/Music/music.xml" />
 
 	<!--舰船-->
 	<Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
