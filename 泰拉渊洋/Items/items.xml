@@ -152,14 +152,10 @@
       <Price storeidentifier="merchantresearch" multiplier="1.6" />
       <Price storeidentifier="merchantmilitary" multiplier="1.8" />
     </Price>
-	  
-	  <!--合成待定-->
-	<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
-		  <RequiredItem identifier="nanogel" amount="1" />
-		  <RequiredItem identifier="alienblood" amount="2" />
-		  <RequiredItem identifier="fpgacircuit" amount="1" />
-	</Fabricate>
-	  
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
+      <RequiredItem identifier="alienblood" amount="2" />
+      <RequiredItem identifier="fpgacircuit" amount="1" />
+    </Fabricate>
     <Deconstruct time="10"></Deconstruct>
     <Sprite name="纳米凝胶" texture="icon.png" depth="0.3" sourcerect="596,421,45,106" origin="0.5,0.5" />
     <Body radius="60" width="65" density="50" />
@@ -215,7 +211,60 @@
     </MeleeWeapon>
     <SkillRequirementHint identifier="medical" level="45" />
   </REalcellruin>
-  <![CDATA[
+  <Item name="彼岸花" description="地狱之花，生于忘川，盛于忘川" identifier="redspider" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <Fabricate suitablefabricators="moneymaker" requiredtime="600">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="thorium" amount="10" />
+      <RequiredItem identifier="lithium" amount="10" />
+      <RequiredItem identifier="ic4block" amount="10" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="5" />
+      <RequiredItem identifier="fpgacircuit" amount="8" />
+    </Fabricate>
+    <InventoryIcon name="彼岸花icon" texture="items.png" sourcerect="190,0,64,64" origin="0.5,0.5" />
+    <Sprite name="彼岸花" texture="items.png" sourcerect="2,2,153,174" depth="0.55" origin="0.5,0.5" />
+    <Body width="150" height="170" density="35" />
+    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect">
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+        <Button text="生生相惜">
+          <StatusEffect type="OnUse" target="This">
+            <sound file="%ModDir%/ogg/核弹启动.ogg"  range="1000.0"  volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" delay="5" target="This">
+            <Explosion range="4500" structuredamage="60000" itemdamage="100000" ballastfloradamage="10000" force="900.0" severlimbsprobability="5" debris="true" decal="explosion" decalsize="3" camerashake="10000" camerashakerange="50000" flashrange="10000" flashduration="10.0" screencolor="255,60,60,255" screencolorrange="5000" screencolorduration="10.0" penetration="0.8">
+              <Affliction identifier="explosiondamage" strength="1000" />
+              <Affliction identifier="burn" strength="1000" />
+              <Affliction identifier="radiationsickness" strength="100" />
+              <Affliction identifier="bleeding" strength="400" probability="0.05" dividebylimbcount="false" />
+              <Affliction identifier="stun" strength="300" />
+            </Explosion>
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+       <Throwable characterusable="false" slots="Any,RightHand,LeftHand" canbecombined="true" removeoncombined="true" throwforce="3.5" aimpos="35,-10" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" disabledeltatime="true"/>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionMedium1.ogg" range="8000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium2.ogg" range="8000" />
+        <sound file="Content/Items/Weapons/ExplosionMedium3.ogg" range="8000" />
+        <Explosion range="4500" structuredamage="6000" itemdamage="100000" ballastfloradamage="10000" force="900.0" severlimbsprobability="5" debris="true" decal="explosion" decalsize="3" camerashake="10000" camerashakerange="50000" flashrange="10000" flashduration="10.0" screencolor="255,60,60,255" screencolorrange="5000" screencolorduration="10.0" penetration="0.8">
+              <Affliction identifier="explosiondamage" strength="1000" />
+              <Affliction identifier="burn" strength="1000" />
+              <Affliction identifier="radiationsickness" strength="100" />
+              <Affliction identifier="bleeding" strength="400" probability="0.05" dividebylimbcount="false" />
+              <Affliction identifier="stun" strength="300" />
+            </Explosion>
+        <Remove />
+      </StatusEffect>
+      <StatusEffect type="OnBroken" target="This">
+        <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="6000" />
+      </StatusEffect>
+    </Throwable>
+  </Item><![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
   <CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
@@ -263,41 +312,4 @@
     <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
     <SkillRequirementHint identifier="medical" level="35" />
   </CellruinToxi>
-	   ]]>
-	
-  <Item name="动力电池" identifier="Powerbattery" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable，TLbattery" scale="0.5" cargocontaineridentifier="metalcrate" description="集团开发的大容量高电压的压缩电池，不适配小功耗物品" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="batterycellrecharger" maxcondition="80" />
-    <PreferredContainer primary="stunbaton,underwaterscooter,handheldsonar,sonarbeacon,flashlight,portablepump,poweredcontainer" spawnprobability="1.0" mincondition="25" />
-    <PreferredContainer secondary="divingcab" amount="3" spawnprobability="1" notcampaign="true" />
-    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1" />
-    <PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" minamount="1" maxamount="2" spawnprobability="0.05" />
-    <PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" />
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-    <Price baseprice="5000" minavailable="7">
-      <Price storeidentifier="merchantoutpost" multiplier="1.1" maxavailable="3" />
-      <Price storeidentifier="merchantresearch" multiplier="1.2" maxavailable="3" />
-      <Price storeidentifier="merchantmilitary" multiplier="1.1" maxavailable="3" />
-      <Price storeidentifier="merchantmine" minavailable="6" maxavailable="3" />
-      <Price storeidentifier="merchantengineering" multiplier="1.2" maxavailable="3" />
-      <Price storeidentifier="TLarmory" multiplier="1.1" maxavailable="5" />
-    </Price>
-    <Deconstruct time="10">
-      <Item identifier="zinc" />
-      <Item identifier="lithium" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="60">
-      <RequiredSkill identifier="electrical" level="40" />
-      <RequiredItem identifier="zinc" amount="5" />
-      <RequiredItem identifier="lithium" amount="2" />
-      <RequiredItem identifier="fulgurium" amount="2" />
-    </Fabricate>
-    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="210" fabricationlimitmin="0" fabricationlimitmax="3" quality="0" />
-    <InventoryIcon texture="Powerbattery2.png" sourcerect="0,0,655,655" origin="0.5,0.5" />
-    <Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" />
-    <Body width="40" height="80" density="30" />
-    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" />
-    <Quality>
-      <QualityStat stattype="Condition" value="0.1" />
-    </Quality>
-  </Item>
-</Items>
+	   ]]><Item name="动力电池" identifier="Powerbattery" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable，TLbattery" scale="0.5" cargocontaineridentifier="metalcrate" description="集团开发的大容量高电压的压缩电池，不适配小功耗物品" impactsoundtag="impact_metal_light"><PreferredContainer primary="batterycellrecharger" maxcondition="80" /><PreferredContainer primary="stunbaton,underwaterscooter,handheldsonar,sonarbeacon,flashlight,portablepump,poweredcontainer" spawnprobability="1.0" mincondition="25" /><PreferredContainer secondary="divingcab" amount="3" spawnprobability="1" notcampaign="true" /><PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1" /><PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" minamount="1" maxamount="2" spawnprobability="0.05" /><PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" /><Upgrade gameversion="0.10.0.0" scale="0.5" /><Price baseprice="5000" minavailable="7"><Price storeidentifier="merchantoutpost" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantresearch" multiplier="1.2" maxavailable="3" /><Price storeidentifier="merchantmilitary" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantmine" minavailable="6" maxavailable="3" /><Price storeidentifier="merchantengineering" multiplier="1.2" maxavailable="3" /><Price storeidentifier="TLarmory" multiplier="1.1" maxavailable="5" /></Price><Deconstruct time="10"><Item identifier="zinc" /><Item identifier="lithium" /></Deconstruct><Fabricate suitablefabricators="fabricator" requiredtime="60"><RequiredSkill identifier="electrical" level="40" /><RequiredItem identifier="zinc" amount="5" /><RequiredItem identifier="lithium" amount="2" /><RequiredItem identifier="fulgurium" amount="2" /></Fabricate><Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="210" fabricationlimitmin="0" fabricationlimitmax="3" quality="0" /><InventoryIcon texture="Powerbattery2.png" sourcerect="0,0,655,655" origin="0.5,0.5" /><Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" /><Body width="40" height="80" density="30" /><Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" /><Quality><QualityStat stattype="Condition" value="0.1" /></Quality></Item></Items>

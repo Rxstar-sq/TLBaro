@@ -310,7 +310,7 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <Item name="380MM无装药" identifier="leo2" description="380MM炮弹，内部装药区很空" tags="railgunequipment,380MMammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+  <Item name="380MM无装药" identifier="leo2" description="380MM炮弹，内部装药区很空，看起来可以塞进去一些很大的东西？" tags="railgunequipment,380MMammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
     <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
     <!--Ensure that Thalamus always has some railgun shells to use-->
@@ -367,9 +367,9 @@
         <Remove />
       </StatusEffect>
     </Projectile>
-    <ItemContainer hideitems="true" capacity="1" maxstacksize="1" canbeselected="false">
+    <ItemContainer hideitems="true" capacity="3" maxstacksize="2" canbeselected="false">
       <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
-      <Containable items="smallitem" />
+      <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" />
     </ItemContainer>
   </Item>
 </Items>
