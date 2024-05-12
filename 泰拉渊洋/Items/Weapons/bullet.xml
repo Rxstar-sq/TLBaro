@@ -10,9 +10,9 @@
     <Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
       <Attack structuredamage="6" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.265">
-        <Affliction identifier="gunshotwound" strength="18" />
-        <Affliction identifier="gunshotwound" strength="2" probability="0.05" />
-        <Affliction identifier="gunshotwound" strength="2" probability="0.1" />
+        <Affliction identifier="gunshotwound" strength="25" />
+        <Affliction identifier="gunshotwound" strength="8" probability="0.05" />
+        <Affliction identifier="gunshotwound" strength="8" probability="0.1" />
         <Affliction identifier="bleeding" strength="15" />
         <Affliction identifier="stun" strength="0.1" probability="0.4" />
         <Affliction identifier="stun" strength="0.2" probability="0.3" />
@@ -36,8 +36,8 @@
     <Projectile characterusable="false" hitscan="true" launchimpulse="30.0" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
       <Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="0.1" severlimbsprobability="0.3">
-        <Affliction identifier="gunshotwound" strength="14" />
-        <Affliction identifier="gunshotwound" strength="8" probability="0.15" />
+        <Affliction identifier="gunshotwound" strength="24" />
+        <Affliction identifier="gunshotwound" strength="10" probability="0.15" />
         <Affliction identifier="alcellruin" strength="2" />
         <Affliction identifier="alcellruin" strength="4" probability="0.1" />
         <Affliction identifier="stun" strength="0.1" probability="0.4" />
@@ -63,11 +63,11 @@
       <Attack structuredamage="1" targetforce="1" itemdamage="6" severlimbsprobability="0.5" penetration="0.6">
         <!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
         <Affliction identifier="bleeding" strength="5" />
-        <Affliction identifier="lacerations" strength="20" />
+        <Affliction identifier="lacerations" strength="30" />
         <!--2%几率打出双倍伤害-->
-        <Affliction identifier="lacerations" strength="20" probability="0.05" />
+        <Affliction identifier="lacerations" strength="30" probability="0.05" />
         <!--2%几率打出三倍倍伤害-->
-        <Affliction identifier="lacerations" strength="40" probability="0.02" />
+        <Affliction identifier="lacerations" strength="60" probability="0.02" />
         <Affliction identifier="bleeding" strength="5" probability="0.1" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
