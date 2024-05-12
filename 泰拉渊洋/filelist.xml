@@ -10,7 +10,6 @@
 	<Item file="%ModDir%/Items/items.xml" />
 	<Item file="%ModDir%/Items/Bossitem.xml" />
 	<Item file="%ModDir%/Items/sundries.xml" />
-	<Item file="%ModDir%/Clothing/clothings.xml" />
 	<Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
 	<UIStyle file="%ModDir%/UI/style.xml" />
 	<Sounds file="%ModDir%/Music/music.xml" />
@@ -24,7 +23,11 @@
 	<Item file="%ModDir%/Items/weapons/bullet.xml" />
 	<Item file="%ModDir%/Items/weapons/magazine.xml" />
 	<Item file="%ModDir%/Items/weapons/turrets.xml" />
-
+	
+	<!--衣物/护甲-->
+	<Item file="%ModDir%/Clothing/clothings.xml" />
+	<Item file="%ModDir%/Clothing/Armor.xml" />
+	
 	<!--生物-->
 	<Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
 	<Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />

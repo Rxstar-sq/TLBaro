@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="防弹衣" fallbacknameidentifier="abodyarmor" identifier="epiratebodyarmor" category="Equipment" tags="smallitem,clothing,separatists" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
+  <Item name="防弹衣"  identifier="bodyarmor1" category="Equipment" tags="smallitem,clothing,separatists" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
     <Price baseprice="480" sold="false">
       <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="2" sold="true">
         <Reputation faction="separatists" min="30" />
@@ -18,16 +18,17 @@
       <Item identifier="ballisticfiber" />
       <Item identifier="ballisticfiber" />
     </Deconstruct>
-    <InventoryIcon texture="Content/Items/InventoryIconAtlas2.png" sourcerect="320,640,64,64" origin="0.5,0.5" />
-    <Sprite texture="防弹衣上.png" sourcerect="14,45,108,184" depth="0.6" origin="0.5,0.4" />
+    <Sprite texture="Armor1.png" sourcerect="183,21,79,134" depth="0.6" origin="0.5,0.4" />
     <Body radius="45" height="35" density="30" />
     <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
       <damagemodifier afflictiontypes="burn" armorsector="0.0,360.0" damagemultiplier="0.9" />
       <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds,damage" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="damage" armorsector="0.0,360.0" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true"></damagemodifier>
+      <damagemodifier afflictionidentifiers="damage" armorsector="0.0,360.0" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true"/>
       <SkillModifier skillidentifier="weapons" skillvalue="5" />
-      <sprite name="Pirate Armor Wearable" texture="防弹衣上.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" ignorelimbscale="true" scale="0.7" inheritsourcerect="false" sourcerect="14,45,108,184" origin="0.5,0.5" />
+	  <sprite name="bodyarmor1 1 Torso" texture="Armor1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+	  <sprite name="bodyarmor1 1 Left Upper Arm" texture="Armor1.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+	  <sprite name="Mbodyarmor1 1 Right Upper Arm" texture="Armor1.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
     </Wearable>
   </Item>
 </Items>
