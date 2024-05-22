@@ -146,16 +146,12 @@
   </Item>
   <Item name="纳米凝胶" identifier="nanogel" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对木卫二遗迹材料的研究，泰拉集团与幻星工业合作制作出了这种珍贵的具有生物性质的纳米材料" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab" />
-    <Price baseprice="180" buyingpricemultiplier="1" minleveldifficulty="0">
+    <Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="20">
       <Price storeidentifier="TLarmory" multiplier="1" minavailable="5" sold="true" />
       <Price storeidentifier="merchantcity" multiplier="2.25" />
       <Price storeidentifier="merchantresearch" multiplier="1.6" />
       <Price storeidentifier="merchantmilitary" multiplier="1.8" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
-      <RequiredItem identifier="alienblood" amount="2" />
-      <RequiredItem identifier="fpgacircuit" amount="1" />
-    </Fabricate>
     <Deconstruct time="10"></Deconstruct>
     <Sprite name="纳米凝胶" texture="icon.png" depth="0.3" sourcerect="596,421,45,106" origin="0.5,0.5" />
     <Body radius="60" width="65" density="50" />
@@ -181,7 +177,7 @@
     <Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="0">
       <Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
     </Price>
-    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="2">
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="1">
       <RequiredSkill identifier="medical" level="15" />
       <RequiredItem identifier="antibleeding2" />
       <RequiredItem identifier="nanogel" />
