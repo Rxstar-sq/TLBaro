@@ -60,7 +60,7 @@
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true" maxtargetstohit="3">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
-      <Attack structuredamage="1" targetforce="1" itemdamage="6" severlimbsprobability="0.5" penetration="0.6">
+      <Attack structuredamage="1" targetforce="1" itemdamage="6" severlimbsprobability="0.8" penetration="0.9">
         <!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
         <Affliction identifier="bleeding" strength="5" />
         <Affliction identifier="lacerations" strength="30" />
