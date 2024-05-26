@@ -143,7 +143,7 @@
         <Use />
       </StatusEffect>
       <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
-      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredSkill identifier="weapons" level="45" />
     </RangedWeapon>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="TL_ammo" />
@@ -157,7 +157,7 @@
     <Quality>
       <QualityStat stattype="FirepowerMultiplier" value="0.1" />
     </Quality>
-    <SkillRequirementHint identifier="weapons" level="30" />
+    <SkillRequirementHint identifier="weapons" level="45" />
   </Item>
   <!--TL15步枪改-->
   <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的提升杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
@@ -182,8 +182,8 @@
     <Body width="235" height="55" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
-      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.38" setvalue="true" />
-      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.15" setvalue="true" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.35" setvalue="true" />
     </Holdable>
     <RangedWeapon weapondamagemodifier="1.5" reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
@@ -242,7 +242,7 @@
         <Use />
       </StatusEffect>
       <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
-      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredSkill identifier="weapons" level="50" />
     </RangedWeapon>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="TL_ammo" />
@@ -256,10 +256,10 @@
     <Quality>
       <QualityStat stattype="FirepowerMultiplier" value="0.2" />
     </Quality>
-    <SkillRequirementHint identifier="weapons" level="30" />
+    <SkillRequirementHint identifier="weapons" level="50" />
   </Item>
   <!--特殊武器-->
-  <Item name="灭刃" description="泰拉科技工程研究的特珠武器,发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="灭刃" description="泰拉科技工程研究的特珠武器,除了一般的弹匣外还可以安装专用的灭刃弹匣。安装后发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="720" minleveldifficulty="30">
       <Price storeidentifier="merchantcity" multiplier="1.25" />
@@ -283,8 +283,8 @@
     <!--装备时减速-->
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
-      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.4" setvalue="true" />
-      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.1" setvalue="true" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.55" setvalue="true" />
+      <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.5" setvalue="true" />
       <!--半自动-->
       <StatusEffect type="OnUse" target="This" ReloadTimer="1" setvalue="true">
         <Conditional HasTag="eq mr_used" />
@@ -355,7 +355,7 @@
     </RangedWeapon>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-4" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <!-- itempos是用修改弹匣的位置，左边数字用来调整弹匣左右，负数为左，其次相反，右边数字为上下，负数为上，正数为下-->
-      <Containable items="mr_magazine" />
+      <Containable items="mr_magazine, TL_magazine,TL_magazine_cr" />
       <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
         <Containable items="flashlight" hide="false" itempos="37,2.5" setactive="true" />
@@ -365,6 +365,7 @@
     <Quality>
       <QualityStat stattype="FirepowerMultiplier" value="0.1" />
     </Quality>
+    <SkillRequirementHint identifier="weapons" level="55" />
   </Item>
   <Item name="M2勃朗宁重机枪" identifier="machineturret" category="weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" health="800" Scale="0.2" damagedbyprojectiles="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
     <PreferredContainer primary="weaponholder" spawnprobability="0.2" />
