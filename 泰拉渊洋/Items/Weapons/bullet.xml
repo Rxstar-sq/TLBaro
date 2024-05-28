@@ -94,7 +94,7 @@
         <Affliction identifier="lacerations" strength="35" probability="0.05" />
         <!--2%几率打出三倍伤害-->
         <Affliction identifier="lacerations" strength="70" probability="0.02" />
-        <!-额外几率打出流血-->
+        <!--额外几率打出流血-->
         <Affliction identifier="bleeding" strength="55" probability="0.5" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
