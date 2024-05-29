@@ -3,7 +3,6 @@
 	<Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
 	<LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
 	<OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
-	<Wreck file="%ModDir%/Sub/TL研究所收容失效.sub" />
 	<Afflictions file="%ModDir%/Afflictions/Afflictions.xml" />
 	<Text file="%ModDir%/Text.xml" />
 	<Submarine file="%ModDir%/Sub/测试地.sub" />
@@ -17,6 +16,7 @@
 	<!--舰船-->
 	<Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
 	<Submarine file="%ModDir%/Sub/A型护卫舰.sub" />
+	<Submarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版2.0）.sub" />
 
 	<!--武器，子弹，弹夹-->
 	<Item file="%ModDir%/Items/weapons/weapons.xml" />

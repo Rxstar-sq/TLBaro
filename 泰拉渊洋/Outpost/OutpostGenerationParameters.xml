@@ -437,9 +437,9 @@
 		</npcs>
   </OutpostConfig>
 	<OutpostConfig
-	  identifier="TLAbandoned"
+	  identifier="TLEnergyTowers"
 	  totalmodulecount="1" minhallwaylength="0"
-	  allowedlocationtypes="TLAbandoned"
+	  allowedlocationtypes="TLEnergyTowers"
 	  spawncrewinsideoutpost="false"
 	  alwaysdestructible="true"
 	  alwaysrewireable="true"

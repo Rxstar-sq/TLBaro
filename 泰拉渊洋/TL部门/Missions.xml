@@ -41,17 +41,19 @@
     <message header="MAN！" text="安保部：烛光中求生的勇士，你值得敬爱" />
   </MonsterMission>
 	 
-	 <PirateMission name="放弃船，或者放弃希望(护卫舰）" type="Pirate"  identifier="TLhaidao"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
+	 <PirateMission name="放弃船，或者放弃希望(新型锤头鲨护卫舰）" type="Pirate"  identifier="TLhaidao"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
 		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
 		 <Reputation identifier="TLhui" amount="5" />
 		 <SubmarineTypes>
-			 <Submarine path="%ModDir%/Sub/A型护卫舰.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版2.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
 		 <Characters>
 			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
-			 <Character typeidentifier="separatistsecurity" minamount="5" maxamount="7" />
-			 <Character typeidentifier="separatistmechanic" minamount="5" maxamount="7" />
-			 <Character typeidentifier="separatistengineer" minamount="5" maxamount="7" />
+			 <Character typeidentifier="separatistsecurity" minamount="3" maxamount="6" />
+			 <Character typeidentifier="separatistmechanic" minamount="3" maxamount="6" />
+			 <Character typeidentifier="separatistengineer" minamount="3" maxamount="6" />
+			 <Character typeidentifier="THnpc1" minamount="5" maxamount="7" />
+			 <Character typeidentifier="THnpc1" minamount="5" maxamount="7" />
 		 </Characters>
 		 <CharacterTypes>
 			 <CharacterType typeidentifier="separatistcaptain">
@@ -136,8 +138,8 @@
   <OutpostDestroyMission
 	  name="能源塔回收"
 	  description="请去清理集团能源塔，会有集团的人协助你们，记得多带点皮虫净"
-    identifier="TLAbandoned"
-    tags="TLabandonedoutpost"
+    identifier="TLEnergyTowers"
+    tags="TLEnergyTowersoutpost"
     type="AbandonedOutpost"
     achievementidentifier="huskcultrescuesubra"
     reward="0"
@@ -150,8 +152,8 @@
     BlockLocationTypeChanges="true">
     <Reputation identifier="TLhui" amount="4" />
     <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48"/>
-    <LocationType identifier="TLAbandoned" />
-    <LocationTypeChange from="TLAbandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+    <LocationType identifier="TLEnergyTowers" />
+    <LocationTypeChange from="TLEnergyTowers" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
     <Characters>
 		<Character identifier="husk" min="50" max="60"  />
 		<Character identifier="husk" min="40" max="60"  />

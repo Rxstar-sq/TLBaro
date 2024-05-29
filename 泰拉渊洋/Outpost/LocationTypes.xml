@@ -15,11 +15,11 @@
 		</Store>
 	</TL>
 
-	<TLAbandoned
-	  identifier="TLAbandoned"
+	<TLEnergyTowers
+	  identifier="TLEnergyTowers"
 	  nameidentifiers="alien"
-	 commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0"
-	  missiontags="TLabandonedoutpost"
+	  commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0"
+	  missiontags="TLEnergyTowersoutpost"
 	  hideentitysubcategories="abandonedhuman,abandonedmonster"
 	  outpostteam="None"
 	  AllowAsBiomeGate="false">
@@ -29,5 +29,5 @@
 		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost2.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
 		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost3.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
 		<Portrait texture="Content/Map/LocationPortraits/HabitationOutpost4.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
-	</TLAbandoned>
+	</TLEnergyTowers>
 </locationtypes>
