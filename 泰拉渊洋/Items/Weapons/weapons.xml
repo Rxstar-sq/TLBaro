@@ -334,7 +334,7 @@
 				</StatusEffect>
 				-->
       <!--后座与屏幕抖动-->
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="50.0" force="0.3" camerashake="4" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
       </StatusEffect>
       <!--使用时消耗已填装弹匣-->
