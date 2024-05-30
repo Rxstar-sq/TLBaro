@@ -261,7 +261,7 @@
   <!--特殊武器-->
   <Item name="灭刃" description="泰拉科技工程研究的特珠武器,除了一般的弹匣外还可以安装专用的灭刃弹匣。安装后发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
-    <Price baseprice="720" minleveldifficulty="30">
+    <Price baseprice="2720" minleveldifficulty="30">
       <Price storeidentifier="merchantcity" multiplier="1.25" />
       <Price storeidentifier="merchantmilitary" multiplier="1.2" />
       <Price storeidentifier="TLarmory" multiplier="0.7" sold="true" />
@@ -269,12 +269,13 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="false">
       <RequiredSkill identifier="weapons" level="55" />
       <RequiredItem identifier="physicorium" amount="1" />
-      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
-      <RequiredItem identifier="silicon" amount="1" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+      <RequiredItem identifier="steel" amount="5" />
+      <RequiredItem identifier="silicon" amount="6" />    
     </Fabricate>
     <Deconstruct time="35">
-      <Item identifier="silicon" amount="1" />
-      <Item identifier="titaniumaluminiumalloy" amount="1" />
+      <Item identifier="silicon" amount="3" />
+      <Item identifier="titaniumaluminiumalloy" amount="2" />
     </Deconstruct>
     <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
     <Body width="235" height="55" density="25" />
