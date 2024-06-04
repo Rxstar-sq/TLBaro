@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <!--幻化器示例-->
-  <Item name="HES" subcategory="hesclo" identifier="tsm_at" hideinmenus="true" cargocontaineridentifier="tsm_metalcrate" tags="smallitem,mobileradio,sonar" description="阿糖的耳机，可以幻化成阿糖" variantof="autoinjectorheadset">
+  <Item name="HES" identifier="var_hes" hideinmenus="true" cargocontaineridentifier="tsm_metalcrate" tags="smallitem,mobileradio,sonar" description=" " variantof="autoinjectorheadset">
     <InventoryIcon texture="%ModDir%/Clothing/Lerentin_heads.png" sourcerect="444,17,84,133" origin="0.5,0.5" />
     <Sprite name="Headset" texture="Content/Items/Jobgear/headgears.png" depth="0.6" sourcerect="28,321,49,62" origin="0.5,0.5" />
     <WifiComponent range="50000.0" LinkToChat="true" MinChatMessageInterval="0.0">

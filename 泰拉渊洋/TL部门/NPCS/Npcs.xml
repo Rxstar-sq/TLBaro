@@ -3,7 +3,7 @@
 <Override>
 	<!--通用NPC-->
 	<npcset identifier="THnpc">
-		<npc identifier="THnpc1" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="6">
+		<npc identifier="THnpc1" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="9">
 			<Character name="第三者" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -60,7 +60,7 @@
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	
-		<npc identifier="TLnpc4" job="securityofficer" spawnpointtags="Airlock" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="8">
+		<npc identifier="TLnpc4" job="securityofficer" spawnpointtags="Airlock" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="9">
 			<Character name="泰拉战斗部-末雨" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />

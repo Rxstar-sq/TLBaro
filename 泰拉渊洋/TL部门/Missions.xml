@@ -137,7 +137,7 @@
  
   <OutpostDestroyMission
 	  name="能源塔回收"
-	  description="请去清理集团能源塔，会有集团的人协助你们，记得多带点皮虫净"
+	  description="请去清理集团能源塔，请记住你的任务是清理一切有生力量，记得多带点皮虫净"
     identifier="TLEnergyTowers"
     tags="TLEnergyTowersoutpost"
     type="AbandonedOutpost"
@@ -157,8 +157,8 @@
     <Characters>
 		<Character identifier="husk" min="50" max="60"  />
 		<Character identifier="husk" min="40" max="60"  />
-		<Character identifier="TLnpc1" from="TLnpc" asfaraspossible="true" requirerescue="false"/>
-		<Character identifier="TLnpc4" from="TLnpc" asfaraspossible="true" requirerescue="false"/>
+		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
+		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
     </Characters>
     <TriggerEvent state="0" delay="5" eventidentifier="waytoascensionfoundsubra" campaignonly="true"/>
     <Metadata identifier="waytoascension" value="8"/>
