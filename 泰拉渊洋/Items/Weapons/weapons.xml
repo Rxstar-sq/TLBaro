@@ -178,20 +178,20 @@
       <Item identifier="physicorium" amount="1" />
       <Item identifier="TL14" />
     </Deconstruct>
-    <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
+    <Sprite name="TL15" texture="weapons.png" sourcerect="0,155,256,69" depth="0.55" origin="0.5,0.5" />
     <Body width="235" height="55" density="25" />
     <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="45,-20" aimpos="59,-5" handle1="-50,-10" handle2="26,10" holdangle="-30">
       <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.8" setvalue="true" />
       <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" />
       <StatusEffect type="OnUse" target="Character" SpeedMultiplier="0.35" setvalue="true" />
     </Holdable>
-    <RangedWeapon weapondamagemodifier="1.5" reload="0.17" holdtrigger="true" barrelpos="100,23" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon weapondamagemodifier="1.5" reload="0.17" holdtrigger="true" barrelpos="100,18" spread="3" unskilledspread="8" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="1.6,1.6" colormultiplier="255,200,200,200" />
-      <Sound file="%ModDir%/ogg/连发1.ogg" type="OnUse" range="3000" />
-      <Sound file="%ModDir%/ogg/连发2.ogg" type="OnUse" range="3000" selectionmode="Random" />
-      <Sound file="%ModDir%/ogg/连发3.ogg" type="OnUse" range="3000" />
+      <Sound file="%ModDir%/ogg/TL15.1.ogg" type="OnUse" range="3000" />
+      <Sound file="%ModDir%/ogg/TL15.2.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="%ModDir%/ogg/TL15.3.ogg" type="OnUse" range="3000" />
       <!--散步-->
       <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and">
         <Conditional skillrequirement="true" weapons="lt 75" />
@@ -229,7 +229,7 @@
         <Sound file="%ModDir%/ogg/outammo.ogg" range="2000" loop="false" />
       </StatusEffect>
       <!--后座与屏幕抖动-->
-      <StatusEffect type="OnUse">
+      <StatusEffect type="OnUse" target="This">
         <Explosion range="80.0" force="0.3" camerashake="5" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" />
       </StatusEffect>
       <!--留空用来加弹壳音效-->
@@ -244,7 +244,7 @@
       <RequiredItems items="TL_ammo" type="Contained" msg="ItemMsgAmmoRequired" />
       <RequiredSkill identifier="weapons" level="50" />
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="-13,-15" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <Containable items="TL_ammo" />
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
       <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
@@ -271,7 +271,7 @@
       <RequiredItem identifier="physicorium" amount="1" />
       <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
       <RequiredItem identifier="steel" amount="5" />
-      <RequiredItem identifier="silicon" amount="6" />    
+      <RequiredItem identifier="silicon" amount="6" />
     </Fabricate>
     <Deconstruct time="35">
       <Item identifier="silicon" amount="3" />
@@ -385,7 +385,7 @@
     </Deconstruct>
     <Sprite texture="Turret.png" sourcerect="60,236,1014,580" depth="0.6" origin="0.5,0.5" />
     <Body width="100" height="450" density="200" />
-    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="160,-20" holdpos="45,-30" handle1="-450,120" handle2="-450,120" holdangle="0" blocksplayers="true" msg="ItemMsgPickUpSelect" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="160,-20" holdpos="45,-30" handle1="-250,0" handle2="-450,0" holdangle="0" blocksplayers="true" msg="ItemMsgPickUpSelect" />
     <RangedWeapon reload="0.1" holdtrigger="true" barrelpos="507,30" spread="6" unskilledspread="50" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.22">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
