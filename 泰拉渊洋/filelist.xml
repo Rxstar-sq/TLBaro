@@ -57,3 +57,4 @@
 
 	<!--特殊-->
 	<OutpostModule file="%ModDir%/Sub/能源采集塔.sub" />
+</contentpackage>
