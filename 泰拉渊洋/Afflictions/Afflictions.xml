@@ -26,4 +26,25 @@
       <icon texture="Content/UI/MainIconsAtlas.png" sourcerect="0,512,128,128" color="195,136,60,255" origin="0,0" />
     </Affliction>
 
+	<!--芯片-->
+	<Affliction name="攻击增强" identifier="tl_Attackadd" description="" isbuff="true" type="grip" limbspecific="false" indicatorlimb="Head" showiconthreshold="1000" showicontoothersthreshold="40" showinhealthscannerthreshold="20" karmachangeonapplied="0" maxstrength="1" affectmachines="false">
+	  <Effect minstrength="0" maxstrength="1" strengthchange="-1" resistancefor="stun" minresistance="0.2" maxresistance="0.3">
+	    <StatValue stattype="AttackMultiplier" value="100.0" />
+	  </Effect>
+	</Affliction>
+	<Affliction name="快速射击" identifier="tl_Fastshot" description="" isbuff="true" type="grip" limbspecific="false" indicatorlimb="Head" showiconthreshold="1000" showicontoothersthreshold="40" showinhealthscannerthreshold="20" karmachangeonapplied="0" maxstrength="1" affectmachines="false">
+	  <Effect minstrength="0" maxstrength="1" strengthchange="-1" resistancefor="stun" minresistance="0.2" maxresistance="0.3">
+	    <StatValue stattype="RangedAttackSpeed" value="-100.0" />
+	  </Effect>
+	</Affliction>
+	<Affliction name="作战经验" identifier="tl_Exfight" description="" isbuff="true" type="grip" limbspecific="false" indicatorlimb="Head" showiconthreshold="1000" showicontoothersthreshold="40" showinhealthscannerthreshold="20" karmachangeonapplied="0" maxstrength="1" affectmachines="false">
+	  <Effect minstrength="0" maxstrength="1" strengthchange="-1" resistancefor="stun" minresistance="0.2" maxresistance="0.3">
+	    <StatValue stattype="WeaponsSkillBonus" value="100.0" />
+	  </Effect>
+	</Affliction>
+	<Affliction name="精准射击" identifier="tl_Precise" description="" isbuff="true" type="grip" limbspecific="false" indicatorlimb="Head" showiconthreshold="1000" showicontoothersthreshold="40" showinhealthscannerthreshold="20" karmachangeonapplied="0" maxstrength="1" affectmachines="false">
+	  <Effect minstrength="0" maxstrength="1" strengthchange="-1" resistancefor="stun" minresistance="0.2" maxresistance="0.3">
+	    <StatValue stattype="RangedSpreadReduction" value="100.0" />
+	  </Effect>
+	</Affliction>
 </Afflictions>

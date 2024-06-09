@@ -260,7 +260,61 @@
         <sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="6000" />
       </StatusEffect>
     </Throwable>
-  </Item><![CDATA[
+  </Item>
+	<!--芯片系列（贴图，数值等待）-->
+	<Item name="神经增强芯片——攻击加强" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Attack" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
+		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+		</Price>
+		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+			<StatusEffect tags="medical" target="Character">
+				<Affliction identifier="tl_Attackadd" amount="100" />
+			</StatusEffect>
+		</Holdable>
+		<Body width="35" height="35" density="60" />
+	</Item>
+	<Item name="神经增强芯片——快速射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Fastshot" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
+		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+		</Price>
+		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+			<StatusEffect tags="medical" target="Character">
+				<Affliction identifier="tl_Fastshot" amount="100" />
+			</StatusEffect>
+		</Holdable>
+		<Body width="35" height="35" density="60" />
+	</Item>
+	<Item name="神经增强芯片——作战经验" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Exfight" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
+		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+		</Price>
+		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+			<StatusEffect tags="medical" target="Character">
+				<Affliction identifier="tl_Exfight" amount="100" />
+			</StatusEffect>
+		</Holdable>
+		<Body width="35" height="35" density="60" />
+	</Item>
+	<Item name="神经增强芯片——精准射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Precise" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
+		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+		</Price>
+		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
+		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+			<StatusEffect tags="medical" target="Character">
+				<Affliction identifier="tl_Precise" amount="100" />
+			</StatusEffect>
+		</Holdable>
+		<Body width="35" height="35" density="60" />
+	</Item>
+	<![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
   <CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
@@ -308,4 +362,5 @@
     <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
     <SkillRequirementHint identifier="medical" level="35" />
   </CellruinToxi>
-	   ]]><Item name="动力电池" identifier="Powerbattery" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable，TLbattery" scale="0.5" cargocontaineridentifier="metalcrate" description="集团开发的大容量高电压的压缩电池，不适配小功耗物品" impactsoundtag="impact_metal_light"><PreferredContainer primary="batterycellrecharger" maxcondition="80" /><PreferredContainer primary="stunbaton,underwaterscooter,handheldsonar,sonarbeacon,flashlight,portablepump,poweredcontainer" spawnprobability="1.0" mincondition="25" /><PreferredContainer secondary="divingcab" amount="3" spawnprobability="1" notcampaign="true" /><PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1" /><PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" minamount="1" maxamount="2" spawnprobability="0.05" /><PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" /><Upgrade gameversion="0.10.0.0" scale="0.5" /><Price baseprice="5000" minavailable="7"><Price storeidentifier="merchantoutpost" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantresearch" multiplier="1.2" maxavailable="3" /><Price storeidentifier="merchantmilitary" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantmine" minavailable="6" maxavailable="3" /><Price storeidentifier="merchantengineering" multiplier="1.2" maxavailable="3" /><Price storeidentifier="TLarmory" multiplier="1.1" maxavailable="5" /></Price><Deconstruct time="10"><Item identifier="zinc" /><Item identifier="lithium" /></Deconstruct><Fabricate suitablefabricators="fabricator" requiredtime="60"><RequiredSkill identifier="electrical" level="40" /><RequiredItem identifier="zinc" amount="5" /><RequiredItem identifier="lithium" amount="2" /><RequiredItem identifier="fulgurium" amount="2" /></Fabricate><Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="210" fabricationlimitmin="0" fabricationlimitmax="3" quality="0" /><InventoryIcon texture="Powerbattery2.png" sourcerect="0,0,655,655" origin="0.5,0.5" /><Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" /><Body width="40" height="80" density="30" /><Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" /><Quality><QualityStat stattype="Condition" value="0.1" /></Quality></Item></Items>
+	   ]]>
+	    <Item name="动力电池" identifier="Powerbattery" category="Equipment,Electrical" maxstacksize="8" tags="smallitem,loadable，TLbattery" scale="0.5" cargocontaineridentifier="metalcrate" description="集团开发的大容量高电压的压缩电池，不适配小功耗物品" impactsoundtag="impact_metal_light"><PreferredContainer primary="batterycellrecharger" maxcondition="80" /><PreferredContainer primary="stunbaton,underwaterscooter,handheldsonar,sonarbeacon,flashlight,portablepump,poweredcontainer" spawnprobability="1.0" mincondition="25" /><PreferredContainer secondary="divingcab" amount="3" spawnprobability="1" notcampaign="true" /><PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab,outpostengcab" minamount="1" maxamount="2" spawnprobability="0.1" /><PreferredContainer secondary="abandonedstoragecab,piratestoragecab,wreckstoragecab" minamount="1" maxamount="2" spawnprobability="0.05" /><PreferredContainer secondary="outposttrashcan" amount="1" spawnprobability="0.1" /><Upgrade gameversion="0.10.0.0" scale="0.5" /><Price baseprice="5000" minavailable="7"><Price storeidentifier="merchantoutpost" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantresearch" multiplier="1.2" maxavailable="3" /><Price storeidentifier="merchantmilitary" multiplier="1.1" maxavailable="3" /><Price storeidentifier="merchantmine" minavailable="6" maxavailable="3" /><Price storeidentifier="merchantengineering" multiplier="1.2" maxavailable="3" /><Price storeidentifier="TLarmory" multiplier="1.1" maxavailable="5" /></Price><Deconstruct time="10"><Item identifier="zinc" /><Item identifier="lithium" /></Deconstruct><Fabricate suitablefabricators="fabricator" requiredtime="60"><RequiredSkill identifier="electrical" level="40" /><RequiredItem identifier="zinc" amount="5" /><RequiredItem identifier="lithium" amount="2" /><RequiredItem identifier="fulgurium" amount="2" /></Fabricate><Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="210" fabricationlimitmin="0" fabricationlimitmax="3" quality="0" /><InventoryIcon texture="Powerbattery2.png" sourcerect="0,0,655,655" origin="0.5,0.5" /><Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" /><Body width="40" height="80" density="30" /><Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" /><Quality><QualityStat stattype="Condition" value="0.1" /></Quality></Item></Items>

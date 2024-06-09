@@ -155,8 +155,8 @@
     <LocationType identifier="TLEnergyTowers" />
     <LocationTypeChange from="TLEnergyTowers" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
     <Characters>
-		<Character identifier="husk" min="50" max="60"  />
-		<Character identifier="husk" min="40" max="60"  />
+		<Character identifier="HuskPro" min="40" max="60"  />
+		<Character identifier="HuskPro" min="40" max="60"  />
 		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
 		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
     </Characters>
