@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
   <!--正常防弹衣-->
-  <Item name="防弹衣"  identifier="bodyarmor1" category="Equipment" tags="smallitem,clothing,separatists" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
+  <Item name="防弹衣" identifier="bodyarmor1" category="Equipment" tags="smallitem,clothing,separatists" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
     <Price baseprice="480" sold="false">
       <Price storeidentifier="merchantoutpost" minavailable="0" maxavailable="2" sold="true">
         <Reputation faction="separatists" min="30" />
@@ -25,14 +25,14 @@
       <damagemodifier afflictiontypes="burn" armorsector="0.0,360.0" damagemultiplier="0.9" />
       <damagemodifier afflictionidentifiers="blunttrauma,lacerations,gunshotwound,bitewounds,damage" armorsector="0.0,360.0" damagemultiplier="0.3" damagesound="LimbArmor" deflectprojectiles="true" />
       <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="0.15" damagesound="LimbArmor" deflectprojectiles="true" />
-      <damagemodifier afflictionidentifiers="damage" armorsector="0.0,360.0" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true"/>
+      <damagemodifier afflictionidentifiers="damage" armorsector="0.0,360.0" damagemultiplier="0.85" damagesound="LimbArmor" deflectprojectiles="true" />
       <SkillModifier skillidentifier="weapons" skillvalue="5" />
-	  <sprite name="bodyarmor1 1 Torso" texture="Armor1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-	  <sprite name="bodyarmor1 1 Left Upper Arm" texture="Armor1.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-	  <sprite name="Mbodyarmor1 1 Right Upper Arm" texture="Armor1.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="bodyarmor1 1 Torso" texture="Armor1.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="bodyarmor1 1 Left Upper Arm" texture="Armor1.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Mbodyarmor1 1 Right Upper Arm" texture="Armor1.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
     </Wearable>
   </Item>
-    <!--外骨骼（骨架类）-->
+  <!--外骨骼（骨架类）-->
   <Item name="泰拉集团初代外骨骼" HideConditionBar="true" identifier="waiguge1" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="集团开发的第一代测试外骨骼，内置强大的生命维持系统，安装电池可提升移动速度" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
@@ -300,5 +300,44 @@
       </Button>
     </CustomInterface>
     <aitarget maxsightrange="1500" />
+  </Item>
+  <Item name="特殊作战服01式" identifier="sp01" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description=" " scale="0.5" impactsoundtag="impact_soft">
+    <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
+    <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" minavailable="2" />
+      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
+      <Price storeidentifier="merchantresearch" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" minavailable="2" />
+      <Price storeidentifier="merchantmine" minavailable="2" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="organicfiber" />
+    </Deconstruct>
+    <InventoryIcon name="sp01Icon" texture="stand.png" sourcerect="510,3,151,394" origin="0.5,0.5" />
+    <Sprite texture="stand.png" sourcerect="6,5,396,248" depth="0.6" origin="0.5,0.5" />
+    <Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,InnerClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="01 Head" texture="head.png" limb="Head" sourcerect="3,132,145,154" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.45" hideotherwearables="true" hidewearablesoftype=""  origin="0.5,0.5" />
+      <sprite name="Maid's Uniform 1 Torso" texture="特殊作战服01式.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Hand" texture="特殊作战服01式.png" limb="RightHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Hand" texture="特殊作战服01式.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Lower Arm" texture="特殊作战服01式.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Lower Arm" texture="特殊作战服01式.png" limb="RightForearm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Upper Arm" texture="特殊作战服01式.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Upper Arm" texture="特殊作战服01式.png" limb="RightArm" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Waist" texture="特殊作战服01式.png" limb="Waist" hidelimb="false" inheritorigin="true" inherittexturescale="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Thigh" texture="特殊作战服01式.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Thigh" texture="特殊作战服01式.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Leg" texture="特殊作战服01式.png" limb="RightLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Leg" texture="特殊作战服01式.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Right Shoe" texture="特殊作战服01式.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Maid's Uniform 1 Left Shoe" texture="特殊作战服01式.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
+    </Wearable>
+    <ItemContainer capacity="3">
+      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+    </ItemContainer>
   </Item>
 </Items>

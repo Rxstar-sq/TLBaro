@@ -11,7 +11,7 @@
       </StatusEffect>
     </WifiComponent>
     <Wearable>
-      <sprite name="AT Head" texture="at_head.png" limb="Head" sourcerect="0,0,160,160" inheritsourcerect="false" alphaclipotherwearables="false" hidelimb="true" hidewearablesoftype="moustache,beard,hair,faceattachment,husk,herpes" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="false" Scale="1" hideotherwearables="false" inheritorigin="false" origin="0.47048324,0.48" />
+      <sprite name="AT Head" texture="head.png" limb="Head" sourcerect="0,0,128,136" inheritsourcerect="false" alphaclipotherwearables="false" hidelimb="true" hidewearablesoftype="moustache,beard,hair,faceattachment,husk,herpes" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="false" Scale="1" hideotherwearables="false" inheritorigin="false" origin="0.47048324,0.48" />
       <sprite name="AT Torso" texture="AT.png" limb="Torso" sourcerect="144,0,112,160" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.49,0.545" />
       <sprite name="AT Right Hand" texture="AT.png" limb="RightHand" sourcerect="256,151,64,57" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.36,0.53" />
       <sprite name="AT Left Hand" texture="AT.png" limb="LeftHand" sourcerect="320,151,64,57" inheritsourcerect="false" hidelimb="true" inherittexturescale="true" inheritlimbdepth="true" inheritorigin="false" origin="0.36,0.52" />
@@ -153,7 +153,6 @@
     <ItemContainer capacity="4">
       <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
     </ItemContainer>
-
   </Item>
   <Item name="初音未来" identifier="clothing4" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description="一件古早但很精致的cos服，格格不入的设计风格似乎不应该出现在木卫二这种地方。据说是幻星第五星席的女儿曾经最喜欢的cos服……" scale="0.5" impactsoundtag="impact_soft">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
