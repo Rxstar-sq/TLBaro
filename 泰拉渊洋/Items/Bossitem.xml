@@ -147,4 +147,38 @@
           </StatusEffect>
         </Projectile>
       </Item>
+    <!--迷船的登陆仓-->
+	<Item name="" identifier="LostLanding" category="Misc" scale="0.7" sonarsize="6" hideinmenus="true">
+		<Sprite texture="%ModDir%/Characters/Lost1/carrier.png" sourcerect="641,638,335,198" depth="0.55" />
+		<Body width="335" height="198" density="20" />
+		<Projectile characterusable="false" launchimpulse="300" maxtargetstohit="3" sticktocharacters="false" sticktoitems="false" sticktodoors="false" sticktostructures="true" friendlyfire="false" damagedoors="true">
+			<Attack structuredamage="500" itemdamage="500" severlimbsprobability="2.0" penetration="0.5">
+				<Affliction identifier="lacerations" strength="15" />
+				<Affliction identifier="bleeding" strength="10" />
+				<Affliction identifier="stun" strength="1" />
+			</Attack>
+			<StatusEffect type="OnNotContained" target="This" stackable="false" delay="3" disabledeltatime="true">
+				<SpawnCharacter speciesname="LostLand" count="1" spread="1" />
+			</StatusEffect>
+			<StatusEffect type="OnNotContained" target="This" stackable="false" delay="10" disabledeltatime="true">
+				<Remove />
+				<Explosion range="300.0" ballastfloradamage="80" structuredamage="20" levelwalldamage="120" itemdamage="100" force="5.0" severlimbsprobability="0.4" decal="explosion" decalsize="0.3">
+					<Affliction identifier="burn" strength="50" />
+					<Affliction identifier="bleeding" strength="70" probability="0.05" />
+					<Affliction identifier="stun" strength="5" />
+				</Explosion>
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure" />
+				<ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="2000" scalemin="0.1" scalemax="0.2" />
+				<Explosion ignorecover="true" onlyinside="true" range="600" force="10" playtinnitus="false" showeffects="false" applyfireeffects="false">
+					<Affliction identifier="stun" strength="1" />
+				</Explosion>
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure" />
+				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+			</StatusEffect>
+		</Projectile>
+	</Item>
 </Items>

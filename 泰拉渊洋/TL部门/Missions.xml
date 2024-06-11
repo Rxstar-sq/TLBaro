@@ -4,8 +4,8 @@
 		<Reputation identifier="location" amount="5" />
 		<Reputation identifier="huskcult" amount="3" />
 		<Reputation identifier="TLhui" amount="3" />
-		<monster character="CarrierEXs" min="20" max="25" />
-		<monster character="CarrierEX2s" min="20" max="30" />
+		<monster character="Lost1" min="25" max="30" />
+		<monster character="Lost2" min="15" max="20" />
 		<Icon texture="%ModDir%/TL部门/Sprite/mizhi.png" sourcerect="0,0,1024,1024" />
 		<message header="花与..." text="在鲜花簇拥中离去吧" />
 	</MonsterMission>

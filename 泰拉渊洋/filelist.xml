@@ -16,7 +16,7 @@
 	<!--舰船-->
 	<Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
 	<Submarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版2.0）.sub" />
-  <Submarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
+ 	<Submarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
   
 	<!--武器，子弹，弹夹-->
 	<Item file="%ModDir%/Items/weapons/weapons.xml" />
@@ -33,7 +33,10 @@
 	<Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
 	<Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
 	<Character file="%ModDir%/Characters/Leopard2a6/Leopard2a6.xml" />
-  <Character file="%ModDir%/Characters/HuskPro/HuskPro.xml" />
+    <Character file="%ModDir%/Characters/HuskPro/HuskPro.xml" />
+	<Character file="%ModDir%/Characters/Lost1/Lost1.xml" />
+	<Character file="%ModDir%/Characters/Lost2/Lost2.xml" />
+	<Character file="%ModDir%/Characters/LostLand/LostLand.xml" />
   
 	<!--NPC+事件+任务-->
 	<NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
