@@ -291,7 +291,7 @@
     <Sprite name="MainMenuVignette" texture="%ModDir%/UI/MainMenuVignette.png" sourcerect="0,0,1752,2160" origin="0.5,0.5"/>
   </MainMenuVignette>  
   <MainMenuBackground color="255,255,255,255">
-	  <Sprite texture="%ModDir%/UI/TLbei2.png" sourcerect="0,0,2160,1080" premultiplyalpha="false"/>
+	  <Sprite texture="%ModDir%/UI/TLbei2.png" sourcerect="0,0,2160,1080" premultiplyalpha="true"/>
   </MainMenuBackground>
   <GUIButtonLarge color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" disabledcolor="125,125,125,255" pressedcolor="230,230,230,255">
     <Sprite name="GUIButtonLarge.None" texture="Content/UI/UIAtlasGeneral.png" state="None" sourcerect="6,216,164,45" slice="11,221,165,256" origin="0.5,0.5"/>

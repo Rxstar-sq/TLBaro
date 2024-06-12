@@ -34,7 +34,6 @@
       <Price storeidentifier="merchantmilitary" sold="false" />
       <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantclown" minavailable="3" maxavailable="5">
-        <Reputation faction="clowns" min="30" />
       </Price>
     </Price>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
@@ -55,7 +54,6 @@
       <Price storeidentifier="merchantmilitary" sold="false" />
       <Price storeidentifier="merchantmine" sold="false" />
       <Price storeidentifier="merchantclown" minavailable="3" maxavailable="5">
-        <Reputation faction="clowns" min="30" />
       </Price>
     </Price>
     <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="769,385,64,64" depth="0.55" origin="0.5,0.5" />
@@ -217,6 +215,43 @@
       <StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
       <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludebroken="false" excludefullcondition="true"></Containable>
     </ItemContainer>
+  </Item>
+  <Item name="手持万用宝" description="和潜艇系统互联互通，这里有你想知道的一切" identifier="handheldstatusmonitorPro" category="Equipment" Tags="smallitem,sonar,provocative" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="divingcab"/>
+    <Price baseprice="1400" sold="false">
+		<Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="1" />
+    </Price>
+    <Deconstruct time="15">
+      <Item identifier="copper" />
+      <Item identifier="plastic" amount="2" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="130,183,61,52" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="64,3,36,28" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="22" density="15" />
+	<AiTarget soundrange="50000" sonarlabel="entityname.sonarbeacon" sight="500" staticsight="true"/>
+    <Holdable slots="Any,RightHand,LeftHand" holdangle="30" handle1="-10,0" msg="ItemMsgPickUpSelect" >
+	  <CustomInterface canbeselected="false" drawhudwhenequipped="true" allowuioverlap="true">
+		  <GuiFrame relativesize="0.1,0.10" anchor="BottomLeft" relativeoffset="0.0043,0.252" style="ItemUI" />
+		  <TickBox text="状态系统开关">
+			  <StatusEffect type="OnUse" TargetItemComponent="MiniMap" target="This" IsOn="false" drawhudwhenequipped="true" setvalue="true" />
+			  <StatusEffect type="OnSecondaryUse" TargetItemComponent="MiniMap" target="This" IsOn="true" currentmode="Passive" drawhudwhenequipped="false" setvalue="true" />
+		  </TickBox>
+		  <TickBox text="互通互联开关">
+			  <StatusEffect type="OnUse" TargetItemComponent="RemoteController" target="This" IsOn="false" drawhudwhenequipped="true" setvalue="true" />
+			  <StatusEffect type="OnSecondaryUse" TargetItemComponent="RemoteController" target="This" IsOn="true" currentmode="Passive" drawhudwhenequipped="false" setvalue="true" />
+		  </TickBox>
+	  </CustomInterface>
+	</Holdable>
+    <MiniMap enableitemfinder="true" enablehullcondition="true" enableelectricalview="true" drawhudwhenequipped="true" displaybordersize="-0.1" characterusable="false" allowuioverlap="true">
+      <GuiFrame relativesize="0.4,0.4" anchor="CenterLeft" relativeoffset="0.006,-0.01" style="ItemUI" />
+    </MiniMap>
+	  <RemoteController target="navterminal" onlyinownsub="true" msg="ItemMsgInteractSelect" AllowInGameEditing="false" drawhudwhenequipped="true" powerconsumption="10000" >
+	  </RemoteController>
   </Item>
   <!--TMK-->
   <Item name="打印机" identifier="moneymaker" tags="moneymaker" category="Machine" linkable="true" allowedlinks="deconstructor,locker" description="集团的3D打印机，可以打印一些奇奇怪怪的小东西" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">

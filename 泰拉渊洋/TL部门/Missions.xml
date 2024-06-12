@@ -52,8 +52,7 @@
 			 <Character typeidentifier="separatistsecurity" minamount="3" maxamount="6" />
 			 <Character typeidentifier="separatistmechanic" minamount="3" maxamount="6" />
 			 <Character typeidentifier="separatistengineer" minamount="3" maxamount="6" />
-			 <Character typeidentifier="THnpc1" minamount="5" maxamount="7" />
-			 <Character typeidentifier="THnpc1" minamount="5" maxamount="7" />
+			 <Character typeidentifier="THnpc1" from="THnpc" minamount="2" maxamount="3" />
 		 </Characters>
 		 <CharacterTypes>
 			 <CharacterType typeidentifier="separatistcaptain">

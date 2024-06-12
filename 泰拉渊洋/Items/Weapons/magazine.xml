@@ -320,7 +320,7 @@
     <Body width="29" height="50" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <Containable items="M2_ammo_ord" />
-      <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+      <StatusEffect type="OnUse" target="This" condition="-0.8" disabledeltatime="true">
         <SpawnItem identifiers="M2_ammo_ord" spawnposition="ThisInventory" />
       </StatusEffect>
     </ItemContainer>
@@ -360,7 +360,7 @@
     <Body width="29" height="50" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="hmground" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <Containable items="M2_ammo_ap" />
-      <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
+      <StatusEffect type="OnUse" target="This" condition="-0.7" disabledeltatime="true">
         <SpawnItem identifiers="M2_ammo_ap" spawnposition="ThisInventory" />
       </StatusEffect>
     </ItemContainer>
