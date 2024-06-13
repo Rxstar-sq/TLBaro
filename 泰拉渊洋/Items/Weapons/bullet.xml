@@ -337,6 +337,28 @@
       </StatusEffect>
     </Projectile>
   </Item>
+  <Item name="AKE常规子弹" identifier="5.45×39mmFlechetteAmmo" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+    <Sprite texture="bullet.png" sourcerect="32,345,40,13" depth="0.55" origin="0.5,0.5" />
+    <Body width="8" height="5" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" hitscan="true" removeonhit="true">
+      <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,255" scalemultiplier="1,1" />
+      <Attack structuredamage="8" targetforce="8" itemdamage="6" severlimbsprobability="0.2" penetration="0.2">
+        <Affliction identifier="gunshotwound" strength="30" />
+        <Affliction identifier="bleeding" strength="60" />
+        <Affliction identifier="stun" strength="0.5" />
+        <Affliction identifier="stun" strength="0.8" probability="0.3" />
+      </Attack>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="3,3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="UseTarget">
+        <Conditional entitytype="eq Structure" />
+        <Conditional hastag="eq door" />
+        <ParticleEmitter particle="spark" copyentityangle="true" anglemin="-20" anglemax="20" particleamount="3" velocitymin="-10" velocitymax="-200" scalemin="1" scalemax="1.5" />
+      </StatusEffect>
+    </Projectile>
+  </Item>
   <Item name="380MM无装药" identifier="leo2" description="380MM炮弹，内部装药区很空，看起来可以塞进去一些很大的东西？" tags="railgunequipment,380MMammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
     <PreferredContainer primary="railgunammoloader" amount="5" mincondition="1" />
     <PreferredContainer primary="railgunammocontainer" amount="6" mincondition="1" />
@@ -380,10 +402,10 @@
         <Explosion range="800" ballastfloradamage="100" structuredamage="200" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
           <Affliction identifier="explosiondamage" strength="700" />
           <Affliction identifier="stun" strength="50" />
-		  <Affliction identifier="internaldamage" strength="400" />
-		  <Affliction identifier="organdamage" strength="400" />
-		  <Affliction identifier="bleeding" strength="100" />
-		</Explosion>
+          <Affliction identifier="internaldamage" strength="400" />
+          <Affliction identifier="organdamage" strength="400" />
+          <Affliction identifier="bleeding" strength="100" />
+        </Explosion>
       </StatusEffect>
       <!-- Trigger explosions on contained items -->
       <StatusEffect type="OnBroken" target="Contained">

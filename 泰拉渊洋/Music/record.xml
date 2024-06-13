@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Items>
+	<Item name="唱片机" identifier="RecordPlayer" subcategory="渊洋唱片" description="过去留存的证明" category="Misc" Tags="smallitem,Touhou_Jukebox" scale="0.15" impactsoundtag="impact_metal_heavy" HideConditionBar="true">
+		<Price baseprice="500">
+			<Price storeidentifier="merchantoutpost" minavailable="1" />
+			<Price storeidentifier="merchantcity" minavailable="1" />
+			<Price storeidentifier="merchantresearch" multiplier="1" />
+			<Price storeidentifier="merchantmilitary" multiplier="1" />
+			<Price storeidentifier="merchantmine" multiplier="1" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="plastic" />
+			<Item identifier="steel" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="5">
+			<RequiredItem identifier="plastic" amount="1" />
+			<RequiredItem identifier="steel" amount="1" />
+		</Fabricate>
+		<DecorativeSprite texture="Content/Items/Fabricators/FabricatorsAndDeconstructors.png" scale="5" depth="0.65" offset="-25,0" sourcerect="944,395,74,74" origin="0.5,0.5" rotationspeed="-200">
+			<AnimationConditional Voltage="gt 0.1" targetitemcomponent="LightComponent"/>
+		</DecorativeSprite>
+		<Sprite texture="唱片机.png" sourcerect="0,0,647,640" depth="0.70" origin="0.5,0.5" />
+		<Body width="650" height="650" density="15" />
+		<Holdable selectkey="Select" pickkey="Use" slots="Any,RightHand,LeftHand" holdpos="-20,-100" handle1="-20,-50" holdangle="0" aimable="false" PickingTime="1.0" msg="ItemMsgDetach" />
+		<ItemContainer capacity="1" itempos="-20,0" canbeselected="true" hideitems="false" allowuioverlap="false" allowdraganddrop="true">
+			<GuiFrame relativesize="0.3,0.3" anchor="Center" size="268,200" style="ItemUI" />
+			<Containable items="TLrecord" />
+			<StatusEffect type="OnContaining" target="This" Voltage="0.2" setvalue="true" />
+		</ItemContainer>
+	</Item>
+	<Item name="唱片收纳箱" identifier="TLmusic_Box" subcategory="渊洋唱片" tags="container" category="Misc" linkable="true" pickdistance="150" waterproof="true" scale="0.5">
+		<Price baseprice="100">
+			<Price storeidentifier="merchantoutpost" minavailable="1" />
+			<Price storeidentifier="merchantcity" minavailable="1" />
+			<Price storeidentifier="merchantresearch" multiplier="1" />
+			<Price storeidentifier="merchantmilitary" multiplier="1" />
+			<Price storeidentifier="merchantmine" multiplier="1" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="plastic" />
+			<Item identifier="steel" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="5">
+			<RequiredItem identifier="plastic" amount="1" />
+			<RequiredItem identifier="steel" amount="1" />
+		</Fabricate>
+		<Sprite texture="Content/Items/Tools/tools.png" sourcerect="314,1,94,74" origin="0.5,0.5" depth="0.6" />
+		<Body width="90" height="60" density="20" />
+		<Holdable selectkey="Select" pickkey="Use" slots="RightHand+LeftHand" PickingTime="5.0" aimpos="65,-10" handle1="0,0" attachable="true" aimable="false">
+			<StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" setvalue="true" />
+		</Holdable>
+		<ItemContainer autofill="False" capacity="44" slotsperrow="11" canbeselected="true" hideitems="true">
+			<Containable identifiers="TLrecord" />
+			<GuiFrame relativesize="0.45,0.6" anchor="Center" style="ItemUI" />
+		</ItemContainer>
+	</Item>
+	<!--唱片-->
+	<Item name="塔bgm" identifier="towerbgm" description="" subcategory="渊洋唱片" category="Misc" tags="smallitem,TLrecord" cargocontaineridentifier="metalcrate" impactsoundtag="impact_soft" scale="0.60">
+		<Sprite texture="唱片.png" sheetelementsize="128,128" sheetindex="0,0" depth="0.6" origin="0.5,0.5" />
+		<Body width="128" height="128" density="10" />
+		<Holdable slots="Any,RightHand,LeftHand" holdpos="0,0" holdangle="0" handle1="0,0" msg="ItemMsgPickUpSelect" />
+		<ItemComponent characterusable="false">
+			<StatusEffect type="Always" target="This" interval="0.5" duration="0.6" comparison="Or">
+				<Conditional hastag="eq tsm_soundplayer" targetcontainer="true" />
+				<Conditional hastag="eq Touhou_Jukebox" targetcontainer="true" />
+				<sound file="%ModDir%/ogg/塔bgm.ogg" range="5000" loop="true" volume="1.2" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" Voltage="1.0" target="This">
+				<sound file="%ModDir%/ogg/塔bgm.ogg" range="5000" loop="true" volume="1.2" />
+			</StatusEffect>
+		</ItemComponent>
+	</Item>
+</Items>
+
+
+	

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <!--制式装备-->
+  <!--TL装备-->
   <Item name="TL-13常规型制式霰弹枪" description="泰拉集团的制式装备，使用简单，制造方便，没有战斗经验也能快速上手" identifier="TL13" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" amount="1" spawnprobability="1" notcampaign="true" />
     <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.5" />
@@ -368,6 +368,7 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="55" />
   </Item>
+  <!--常规武器-->
   <Item name="M2勃朗宁重机枪" identifier="machineturret" category="weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith" health="800" Scale="0.2" damagedbyprojectiles="true" impactsoundtag="impact_metal_light" allowasextracargo="true">
     <PreferredContainer primary="weaponholder" spawnprobability="0.2" />
     <PreferredContainer primary="secarmcab" minamount="1" maxamount="3" spawnprobability="1" />
@@ -429,6 +430,66 @@
         <Containable items="flashlight" hide="false" itempos="30,1" setactive="true" />
       </SubContainer>
     </ItemContainer>
+    <SkillRequirementHint identifier="weapons" level="50" />
+  </Item>
+  <Item name="AKE突击步枪" identifier="AKEAssaultRifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" minamount="1" maxamount="1" spawnprobability="0.5" />
+    <PreferredContainer secondary="armcab" minamount="1" maxamount="2" spawnprobability="0.8" />
+    <PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="3" maxamount="7" spawnprobability="0.5" />
+    <PreferredContainer secondary="wrecksecarmcab,wreckarmcab" minamount="1" maxamount="2" spawnprobability="0.3" />
+    <PreferredContainer primary="secarmcab,armcab" />
+    <Price baseprice="1000" soldeverywhere="false">
+      <Price storeidentifier="merchantoutpost" multiplier="0.8" minavailable="5" sold="true" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="1" maxavailable="3" sold="true" />
+      <Price storeidentifier="merchantresearch" multiplier="1" minavailable="1" sold="true" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="6" sold="true" />
+      <Price storeidentifier="merchantarmory" multiplier="1.1" minavailable="10" maxavailable="20" sold="true" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="15" sold="true" />
+	  <Price storeidentifier="TLarmory" multiplier="0.9" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Deconstruct time="30">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="50">
+      <RequiredSkill identifier="weapons" level="55" />
+      <Item identifier="steel" amount="2" />
+      <Item identifier="plastic" amount="2" />
+    </Fabricate>
+    <Sprite texture="weapons.png" sourcerect="1,324,257,62" depth="0.55" origin="0.5,0.5" />
+    <Body width="242" height="50" density="50" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="30,-10" aimpos="60,5" handle1="-50,-15" handle2="150,30" holdangle="-35" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="0.15" weapondamagemodifier="1.5" penetration="0.25" holdtrigger="true" barrelpos="121,10" spread="4" unskilledspread="12" combatPriority="90" drawhudwhenequipped="true" crosshairscale="0.15">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="5.0,5.0" colormultiplier="255,200,200,255" />
+      <Sound file="Content/Items/Weapons/ShotgunShot1.ogg" type="OnUse" range="3000" selectionmode="Random" />
+      <Sound file="Content/Items/Weapons/ShotgunShot2.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/ShotgunShot3.ogg" type="OnUse" range="3000" />
+      <Sound file="Content/Items/Weapons/ShotgunShot4.ogg" type="OnUse" range="3000" />
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="105" anglemax="165" velocitymin="80" velocitymax="280" CopyEntityAngle="true" />
+        <Explosion range="150.0" force="1.5" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="15.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Contained">
+        <Use />
+      </StatusEffect>
+      <RequiredItems items="5.45×39mmFlechetteAmmo" type="Contained" msg="ItemMsgAmmoRequired" />
+      <RequiredSkill identifier="weapons" level="50" />
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+      <Containable items="5.45×39mmFlechetteAmmo" hide="false" itempos="0,-5" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/UI/StatusMonitorUI.png" sourcerect="320,448,64,64" origin="0.5,0.5" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="flashlight" hide="false" itempos="22,-1" setactive="true" />
+      </SubContainer>
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="6000" fadeouttime="8" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.10" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
     <SkillRequirementHint identifier="weapons" level="50" />
   </Item>
   <!--投掷物-->

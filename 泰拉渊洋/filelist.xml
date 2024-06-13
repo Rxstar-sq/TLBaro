@@ -61,4 +61,5 @@
 	<!--特殊-->
 	<OutpostModule file="%ModDir%/Sub/能源采集塔.sub" />
 	<Item file="%ModDir%/Items/Sonar.xml" />
+	<Item file="%ModDir%/Music/record.xml" />
 </contentpackage>
