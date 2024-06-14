@@ -218,8 +218,8 @@
   </Item>
   <Item name="手持万用宝" description="和潜艇系统互联互通，这里有你想知道的一切" identifier="handheldstatusmonitorPro" category="Equipment" Tags="smallitem,sonar,provocative" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="divingcab"/>
-    <Price baseprice="1400" sold="false">
-		<Price storeidentifier="TLarmory" multiplier="1.2" minavailable="0" maxavailable="1" />
+    <Price baseprice="1000" sold="true">
+      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="3" sold="true" />
     </Price>
     <Deconstruct time="15">
       <Item identifier="copper" />

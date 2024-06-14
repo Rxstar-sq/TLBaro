@@ -80,7 +80,7 @@
   <UIThermalGlow texture="Content/UI/UIAtlasGeneral.png" sourcerect="631,894,128,128" origin="0.5,0.5" tile="false" compress="false"/>´
   <FocusIndicator texture="Content/UI/FocusIndicator.png" sourcerect="0,0,448,224" rows="2" columns="4"/>
   <SavingIndicator texture="Content/UI/saving.png" rows="4" columns="4"/>
-  <GenericThrobber texture="Content/UI/generic_throbber.png" rows="4" columns="4"/>
+  <GenericThrobber texture="%ModDir%/UI/generic_throbber.png" rows="4" columns="4"/>
   <WalletPortraitBG texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="935,873,48,18" origin="0.5,0.5" slice="945,873,973,891"/>
   <CrewWalletIconSmall texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="932,742,34,32" origin="0.5,0.5" maintainaspectratio="true"/>
   <Font file="Content/Fonts/Exo2-SemiBold.otf">
@@ -202,40 +202,40 @@
     <Sprite texture="Content/UI/OuterGlow.png" size="0.0, 0.0" sourcerect="0, 0, 256, 256" slice="96,96,160,160" compress="false"/>
   </OuterGlow>
   <GUIFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5" compress="false"/>
+    <Sprite name="GUIFrame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5" compress="false"/>
   </GUIFrame>
   <GUIFrameLarge color="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrameLarge" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,363,363" slice="402,32,722,349" origin="0.5,0.5" compress="false"/>
+    <Sprite name="GUIFrameLarge" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,363,363" slice="402,32,722,349" origin="0.5,0.5" compress="false"/>
   </GUIFrameLarge>
   <ItemUI color="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="ItemUI" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="7,7,360,361" slice="33,38,340,340" origin="0.5,0.5" compress="false"/>
+    <Sprite name="ItemUI" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="7,7,360,361" slice="33,38,340,340" origin="0.5,0.5" compress="false"/>
   </ItemUI>
   <CircuitBoxFrame color="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="CircuitBoxFrame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="580,798,106,78" slice="606,818,662,848" origin="0.5,0.5" compress="false"/>
+    <Sprite name="CircuitBoxFrame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="580,798,106,78" slice="606,818,662,848" origin="0.5,0.5" compress="false"/>
   </CircuitBoxFrame>
   <CircuitBoxTop color="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="CircuitBoxTop" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="580,769,106,29" slice="591,779,675,790" origin="0.5,0.5" compress="false"/>
+    <Sprite name="CircuitBoxTop" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="580,769,106,29" slice="591,779,675,790" origin="0.5,0.5" compress="false"/>
   </CircuitBoxTop>
   <GUIFrameTop color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrameTop" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,175,363,193" slice="402,177,722,349" origin="0.5,0.5"/>
+    <Sprite name="GUIFrameTop" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,175,363,193" slice="402,177,722,349" origin="0.5,0.5"/>
   </GUIFrameTop>
   <GUIFrameBottom color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrameBottom" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,363,159" slice="402,32,722,148" origin="0.5,0.5"/>
+    <Sprite name="GUIFrameBottom" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,363,159" slice="402,32,722,148" origin="0.5,0.5"/>
   </GUIFrameBottom>
   <GUIFrameLeft color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrameLeft" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="550,5,194,363" slice="551,32,722,349" origin="0.5,0.5"/>
+    <Sprite name="GUIFrameLeft" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="550,5,194,363" slice="551,32,722,349" origin="0.5,0.5"/>
   </GUIFrameLeft>
   <GUIFrameRight color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="GUIFrameRight" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,175,363" slice="402,32,554,349" origin="0.5,0.5"/>
+    <Sprite name="GUIFrameRight" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="380,5,175,363" slice="402,32,554,349" origin="0.5,0.5"/>
   </GUIFrameRight>
   <InnerFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="InnerFrame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+    <Sprite name="InnerFrame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
   </InnerFrame>
   <InnerFrameRed color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="InnerFrameRed" texture="Content/UI/UIAtlasDevices.png" size="0.0, 0.0" sourcerect="350,104,153,154" slice="355,109,498,253" origin="0.5,0.5" compress="false"/>
+    <Sprite name="InnerFrameRed" texture="%ModDir%/UI/UIAtlasDevices.png" size="0.0, 0.0" sourcerect="350,104,153,154" slice="355,109,498,253" origin="0.5,0.5" compress="false"/>
   </InnerFrameRed>
   <InnerFrameDark color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-    <Sprite name="InnerFrameDark" texture="Content/UI/UIAtlasDevices.png" size="0.0, 0.0" sourcerect="190,100,153,156" slice="198,109,335,250" origin="0.5,0.5"/>
+    <Sprite name="InnerFrameDark" texture="%ModDir%/UI/UIAtlasDevices.png" size="0.0, 0.0" sourcerect="190,100,153,156" slice="198,109,335,250" origin="0.5,0.5"/>
   </InnerFrameDark>
   <GUIButton color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" disabledcolor="125,125,125,255" pressedcolor="230,230,230,255">
     <Sprite name="GUIButton.None" texture="Content/UI/UIAtlasGeneral.png" state="None" sourcerect="6,216,164,45" slice="11,221,165,256" origin="0.5,0.5"/>
@@ -442,7 +442,7 @@
     <Sprite name="GUITextBlock.Selected" texture="Content/UI/UIAtlasGeneral.png" state="Selected" sourcerect="198,154,191,51" slice="203,159,384,200" origin="0.5,0.5"/>
   </GUITextBlock>
   <GUIToolTip textcolor="228,217,167,255" color="255,255,255,255" hovercolor="0.3, 0.3, 0.3, 1.0" selectedcolor="1.0, 0.6, 0.0, 1.0" padding="5.0, 0.0, 5.0, 0.0">
-    <Sprite name="GUIToolTip" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+    <Sprite name="GUIToolTip" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
   </GUIToolTip>
   <GUIListBox color="169,212,187,255" textcolor="228,217,167,255" outlinecolor="0,0,0,0" padding="5,5,5,5">
     <GUIFrame color="169,212,187,255" hovercolor="255,255,255,242" disabledcolor="127,127,127,127" selectedcolor="169,212,187,204" textcolor="228,217,167,255">
@@ -724,37 +724,37 @@
   <GUIMessageBox.Default color="0,0,0,204" hovercolor="0,0,0,204" selectedcolor="0,0,0,204" pressedcolor="0,0,0,204" textcolor="0,0,0,0">
     <Sprite texture="Content/UI/InnerShadow.png" sourcerect="0,0,512,512" slice="170,170,342,342"/>
     <GUIFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" textcolor="0,0,0,255">
-      <Sprite name="GUIMessageBox.Default" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.Default" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.Default>
   <GUIMessageBox.Warning color="0,0,0,204" hovercolor="0,0,0,204" selectedcolor="0,0,0,204" pressedcolor="0,0,0,204" textcolor="0,0,0,0">
     <Sprite texture="Content/UI/InnerShadow.png" sourcerect="0,0,512,512" slice="170,170,342,342"/>
     <GUIFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" textcolor="0,0,0,255">
-      <Sprite name="GUIMessageBox.Default" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.Default" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.Warning>
   <GUIMessageBox.Vote color="0,0,0,0" hovercolor="0,0,0,0" selectedcolor="0,0,0,0" pressedcolor="0,0,0,0" textcolor="0,0,0,0">
     <GUIFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" textcolor="0,0,0,255">
-      <Sprite name="GUIMessageBox.Default" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.Default" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="376,368,376,371" slice="398,390,727,707" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.Vote>
   <GUIMessageBox.InGame color="0,0,0,0" hovercolor="0,0,0,0" selectedcolor="0,0,0,0" pressedcolor="0,0,0,0" textcolor="0,0,0,0">
     <GUIFrame color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="228,217,167,255">
-      <Sprite name="GUIMessageBox.InGame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.InGame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.InGame>
   <GUIMessageBox.Hint color="0,0,0,0" hovercolor="0,0,0,0" selectedcolor="0,0,0,0" pressedcolor="0,0,0,0" textcolor="0,0,0,0">
     <GUIFrame color="255,255,255,242" hovercolor="255,255,255,242" selectedcolor="255,255,255,242" pressedcolor="255,255,255,242" textcolor="0,0,0,255">
-      <Sprite name="GUIMessageBox.Hint" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.Hint" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.Hint>
   <GUIMessageBox.Tutorial color="0,0,0,0" hovercolor="0,0,0,0" selectedcolor="0,0,0,0" pressedcolor="0,0,0,0" textcolor="0,0,0,0">
     <GUIFrame color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="228,217,167,255">
-      <Sprite name="GUIMessageBox.InGame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+      <Sprite name="GUIMessageBox.InGame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
     </GUIFrame>
   </GUIMessageBox.Tutorial>
   <DialogBox color="255,255,255,229" hovercolor="255,255,255,229" selectedcolor="255,255,255,229" textcolor="228,217,167,255">
-    <Sprite name="DialogBox" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="375,769,191,191" slice="416,810,524,919" origin="0.5,0.5" compress="false"/>
+    <Sprite name="DialogBox" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="375,769,191,191" slice="416,810,524,919" origin="0.5,0.5" compress="false"/>
   </DialogBox>
   <GUIProgressBar color="255,255,255,255" padding="3,3,3,3">
     <GUIFrame color="255,255,255,255">
@@ -777,7 +777,7 @@
     <GUITextBlock textcolor="0,0,0,0"/>
   </GUIBackgroundBlocker>
   <SerializableEntityEditor padding="10.0, 0.0, 0.0, 10.0" color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="0,0,0,255">
-    <Sprite name="SerializableEntityEditor" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+    <Sprite name="SerializableEntityEditor" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
   </SerializableEntityEditor>
   <ChatBox color="255,255,255,255" hovercolor="255,255,255,242" disabledcolor="127,127,127,127" selectedcolor="169,212,187,204" textcolor="228,217,167,255">
     <Sprite name="ChatBox" texture="Content/UI/UIAtlasGeneral.png" state="None" tile="false" sourcerect="785,694,239,308" origin="0.5,0.5"/>
@@ -915,9 +915,9 @@
     </GUIButtonHorizontal>
   </OnOffSlider>
   <IndicatorButton color="204,204,204,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.5" spritefadetime="0.5" colortransition="easein">
-    <Sprite name="IndicatorButton_None" texture="Content/UI/UIAtlasDevices.png" state="None" sourcerect="672,0,170,65" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
-    <Sprite name="IndicatorButton_Selected" texture="Content/UI/UIAtlasDevices.png" state="Selected" sourcerect="672,68,170,65" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
-    <Sprite name="IndicatorButton_SelectedGlow" texture="Content/UI/UIAtlasDevices.png" state="Selected" tile="false" sourcerect="843,68,177,72"/>
+    <Sprite name="IndicatorButton_None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" sourcerect="672,0,170,65" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
+    <Sprite name="IndicatorButton_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" sourcerect="672,68,170,65" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
+    <Sprite name="IndicatorButton_SelectedGlow" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" tile="false" sourcerect="843,68,177,72"/>
     <GUITextBlock textcolor="0,0,0,230" disabledtextcolor="0,0,0,230" hovertextcolor="120,120,120,230" selectedtextcolor="20,20,20,230" padding="10.0,0.0,10.0,0.0"/>
   </IndicatorButton>
   <OnOffLever>
@@ -936,44 +936,44 @@
   </OnOffLever>
   <DeviceSlider>
     <GUIFrameHorizontal color="255,255,255,255" disabledcolor="180,180,180,255" textcolor="255,255,255,255" padding="10,2,10,2" colorfadetime="1" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="0,213,123,47" slice="19,234,103,238" origin="0.5,0.5"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="0,213,123,47" slice="19,234,103,238" origin="0.5,0.5"/>
     </GUIFrameHorizontal>
     <GUIFrameVertical color="255,255,255,255" disabledcolor="180,180,180,255" textcolor="255,255,255,255" padding="2,10,2,10" colorfadetime="1" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="0,261,47,124" slice="21,280,25,363" origin="0.5,0.5"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="0,261,47,124" slice="21,280,25,363" origin="0.5,0.5"/>
     </GUIFrameVertical>
     <GUIButtonHorizontal color="204,204,204,255" disabledcolor="180,180,180,255" hovercolor="255,255,255,255" selectedcolor="204,204,204,255" pressedcolor="0,0,0,255" colorfadetime="0.75" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="125,216,44,41" state="None" origin="0.5,0.5" tile="false"/>
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="125,165,44,41" state="Hover" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="125,216,44,41" state="None" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="125,165,44,41" state="Hover" origin="0.5,0.5" tile="false"/>
       <GUITextBlock textcolor="153,166,179,255" padding="10.0, 0.0, 10.0, 0.0"/>
     </GUIButtonHorizontal>
     <GUIButtonVertical color="204,204,204,255" disabledcolor="180,180,180,255" hovercolor="255,255,255,255" selectedcolor="204,204,204,255" pressedcolor="0,0,0,255" colorfadetime="0.75" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="47,262,41,44" state="None" origin="0.5,0.5" tile="false"/>
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="47,311,41,44" state="Hover" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="47,262,41,44" state="None" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="47,311,41,44" state="Hover" origin="0.5,0.5" tile="false"/>
       <GUITextBlock textcolor="153,166,179,255" padding="10.0, 0.0, 10.0, 0.0"/>
     </GUIButtonVertical>
   </DeviceSlider>
   <DeviceSliderSeeThrough>
     <GUIFrameHorizontal color="255,255,255,255" disabledcolor="180,180,180,255" textcolor="255,255,255,255" padding="10,2,10,2" colorfadetime="1" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="0,162,123,47" slice="19,183,103,187" origin="0.5,0.5"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="0,162,123,47" slice="19,183,103,187" origin="0.5,0.5"/>
     </GUIFrameHorizontal>
     <GUIButtonHorizontal color="204,204,204,255" disabledcolor="180,180,180,255" hovercolor="255,255,255,255" selectedcolor="204,204,204,255" pressedcolor="0,0,0,255" colorfadetime="0.75" colortransition="easein">
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="125,216,44,41" state="None" origin="0.5,0.5" tile="false"/>
-      <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="125,165,44,41" state="Hover" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="125,216,44,41" state="None" origin="0.5,0.5" tile="false"/>
+      <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="125,165,44,41" state="Hover" origin="0.5,0.5" tile="false"/>
       <GUITextBlock textcolor="153,166,179,255" padding="10.0, 0.0, 10.0, 0.0"/>
     </GUIButtonHorizontal>
   </DeviceSliderSeeThrough>
   <DeviceButton color="230,230,230,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" disabledcolor="125,125,125,255" pressedcolor="255,255,255,255">
-    <Sprite name="DeviceButton.None" texture="Content/UI/UIAtlasDevices.png" state="None" sourcerect="160,480,124,74" slice="174,492,270,539" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" sourcerect="160,642,124,74" slice="174,654,270,702" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Selected" texture="Content/UI/UIAtlasDevices.png" state="Selected" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Pressed" texture="Content/UI/UIAtlasDevices.png" state="Pressed" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" sourcerect="160,480,124,74" slice="174,492,270,539" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" sourcerect="160,642,124,74" slice="174,654,270,702" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Selected" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Pressed" texture="%ModDir%/UI/UIAtlasDevices.png" state="Pressed" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
     <GUITextBlock textcolor="16,34,33,255" padding="10.0, 0.0, 10.0, 0.0" font="subheading"/>
   </DeviceButton>
   <DeviceButtonFixedSize color="230,230,230,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" disabledcolor="125,125,125,255" pressedcolor="255,255,255,255">
-    <Sprite name="DeviceButton.None" texture="Content/UI/UIAtlasDevices.png" state="None" sourcerect="160,480,124,74" slice="174,492,270,539" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" sourcerect="160,642,124,74" slice="174,654,270,702" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Selected" texture="Content/UI/UIAtlasDevices.png" state="Selected" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
-    <Sprite name="DeviceButton.Pressed" texture="Content/UI/UIAtlasDevices.png" state="Pressed" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" sourcerect="160,480,124,74" slice="174,492,270,539" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" sourcerect="160,642,124,74" slice="174,654,270,702" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Selected" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
+    <Sprite name="DeviceButton.Pressed" texture="%ModDir%/UI/UIAtlasDevices.png" state="Pressed" sourcerect="160,561,124,74" slice="174,573,270,621" origin="0.5,0.5"/>
     <GUITextBlock textcolor="16,34,33,255" padding="10.0, 0.0, 10.0, 0.0" font="subheading"/>
     <Size maxresolution="1024,768" height="40"/>
     <Size maxresolution="1280,800" height="48"/>
@@ -983,30 +983,30 @@
     <Size height="4.6vh"/>
   </DeviceButtonFixedSize>
   <ConnectionPanel color="255,255,255,248" hovercolor="255,255,255,230" selectedcolor="255,255,255,230">
-    <Sprite name="ConnectionPanel" texture="Content/UI/UIAtlasFrames.png" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+    <Sprite name="ConnectionPanel" texture="%ModDir%/UI/UIAtlasFrames.png" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
   </ConnectionPanel>
   <ConnectionPanelFront color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelFront" texture="Content/UI/UIAtlasFrames.png" tile="true" sourcerect="1,369,374,370" slice="13,388,361,723" origin="0.5,0.5"/>
+    <Sprite name="ConnectionPanelFront" texture="%ModDir%/UI/UIAtlasFrames.png" tile="true" sourcerect="1,369,374,370" slice="13,388,361,723" origin="0.5,0.5"/>
   </ConnectionPanelFront>
   <ConnectionPanelConnector color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelConnector" texture="Content/UI/UIAtlasDevices.png" sourcerect="69,3,45,85" origin="0.5,0.27" tile="false"/>
+    <Sprite name="ConnectionPanelConnector" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="69,3,45,85" origin="0.5,0.27" tile="false"/>
   </ConnectionPanelConnector>
   <ConnectionPanelWire color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelWire" texture="Content/UI/UIAtlasDevices.png" sourcerect="125,6,15,73" tile="false" origin="0.5,0.5"/>
+    <Sprite name="ConnectionPanelWire" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="125,6,15,73" tile="false" origin="0.5,0.5"/>
   </ConnectionPanelWire>
   <ConnectionPanelConnection color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelConnection_None" texture="Content/UI/UIAtlasDevices.png" state="None" sourcerect="1,1,56,55" origin="0.5,0.5" tile="false"/>
-    <Sprite name="ConnectionPanelConnection_Highlight" texture="Content/UI/UIAtlasDevices.png" state="Hover" sourcerect="1,72,80,83" origin="0.5,0.5" tile="false"/>
-    <Sprite name="ConnectionPanelConnection_Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" sourcerect="1,1,56,55" origin="0.5,0.5" tile="false"/>
+    <Sprite name="ConnectionPanelConnection_None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" sourcerect="1,1,56,55" origin="0.5,0.5" tile="false"/>
+    <Sprite name="ConnectionPanelConnection_Highlight" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" sourcerect="1,72,80,83" origin="0.5,0.5" tile="false"/>
+    <Sprite name="ConnectionPanelConnection_Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" sourcerect="1,1,56,55" origin="0.5,0.5" tile="false"/>
   </ConnectionPanelConnection>
   <ConnectionPanelScrew color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelScrew_None" texture="Content/UI/UIAtlasDevices.png" sourcerect="88,92,45,45" origin="0.5,0.5" tile="false"/>
+    <Sprite name="ConnectionPanelScrew_None" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="88,92,45,45" origin="0.5,0.5" tile="false"/>
   </ConnectionPanelScrew>
   <ConnectionPanelLabel color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255">
-    <Sprite name="ConnectionPanelWire" texture="Content/UI/UIAtlasDevices.png" sourcerect="578,459,154,35" tile="false" slice="583,464,727,489"/>
+    <Sprite name="ConnectionPanelWire" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="578,459,154,35" tile="false" slice="583,464,727,489"/>
   </ConnectionPanelLabel>
   <MiniMapRoom color="255,255,255,255" textcolor="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" outlinecolor="0,0,0,0">
-    <Sprite texture="Content/UI/UIAtlasDevices.png" sourcerect="1,641,32,32" slice="8,648,25,665"/>
+    <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="1,641,32,32" slice="8,648,25,665"/>
   </MiniMapRoom>
   <Paper color="255,255,255,242" textcolor="0,0,0,255">
     <Sprite name="Paper" texture="Content/UI/Paper.png" size="0.0, 0.0" sourcerect="0,0,512,512" slice="110,130,411,464" origin="0.5,0.5" compress="true"/>
@@ -1021,13 +1021,13 @@
     <Sprite name="scribble2" texture="Content/Items/Misc/scribble2.png" sourcerect="0,0,752,1024" maintainaspectratio="true" tile="false" origin="0.5,0.5" compress="true"/>
   </Scribble2>
   <ScanLines color="255,255,255,255" textcolor="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" outlinecolor="0,0,0,0">
-    <Sprite texture="Content/UI/UIAtlasDevices.png" tile="true" sourcerect="521,105,128,128"/>
+    <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" tile="true" sourcerect="521,105,128,128"/>
   </ScanLines>
   <ScanLinesSeamless color="255,255,255,255" textcolor="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" outlinecolor="0,0,0,0">
-    <Sprite texture="Content/UI/UIAtlasDevices.png" tile="true" sourcerect="522,105,126,128"/>
+    <Sprite texture="%ModDir%/UI/UIAtlasDevices.png" tile="true" sourcerect="522,105,126,128"/>
   </ScanLinesSeamless>
   <TextFrame padding="40.0, 40.0, 40.0, 40.0" color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="228,217,167,255">
-    <Sprite name="TextFrame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
+    <Sprite name="TextFrame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="751,1,187,189" slice="759,10,927,178" origin="0.5,0.5"/>
   </TextFrame>
   <HorizontalLine color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="0,0,0,255">
     <Sprite name="HorizontalLine" texture="Content/UI/UIAtlasGeneral.png" sourcerect="10,478,327,2" tile="false" origin="0.5,0.5"/>
@@ -1038,57 +1038,57 @@
     <Size width="2"/>
   </VerticalLine>
   <IndicatorLightRed color="204,204,204,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.5" spritefadetime="0.5" colortransition="easein" fallbackstate="toggle">
-    <Sprite name="IndicatorLightRed_None" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
-    <Sprite name="IndicatorLightRed_Selected" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="265,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightRed_None" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
+    <Sprite name="IndicatorLightRed_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="265,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="easein"/>
     <GUITextBlock textcolor="228,217,167,255" hovercolor="76,76,76,127" selectedcolor="255,153,0,76" padding="10.0, 0.0, 10.0, 0.0"/>
   </IndicatorLightRed>
   <IndicatorLightYellow color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.5" spritefadetime="0.5" colortransition="easein" fallbackstate="toggle">
-    <Sprite name="IndicatorLightYellow_None" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
-    <Sprite name="IndicatorLightYellow_Selected" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="360,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightYellow_None" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
+    <Sprite name="IndicatorLightYellow_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="360,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="easein"/>
     <GUITextBlock textcolor="228,217,167,255" hovercolor="76,76,76,127" selectedcolor="255,153,0,76" padding="10.0, 0.0, 10.0, 0.0"/>
   </IndicatorLightYellow>
   <IndicatorLightGreen color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.5" spritefadetime="0.5" colortransition="easein" fallbackstate="toggle">
-    <Sprite name="IndicatorLightGreen_None" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
-    <Sprite name="IndicatorLightGreen_Selected" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="455,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightGreen_None" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="None" sourcerect="170,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true" transition="easein"/>
+    <Sprite name="IndicatorLightGreen_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="455,0,95,95" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="easein"/>
     <GUITextBlock textcolor="228,217,167,255" hovercolor="76,76,76,127" selectedcolor="255,153,0,76" padding="10.0, 0.0, 10.0, 0.0"/>
   </IndicatorLightGreen>
   <IndicatorLightPower color="204,204,204,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.75" spritefadetime="0.75" colortransition="easeout" fallbackstate="toggle">
-    <Sprite name="IndicatorLightPower_None" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" lights="None" sourcerect="557,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightPower_None" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" lights="None" sourcerect="557,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="exponential"/>
-    <Sprite name="IndicatorLightPower_Selected" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="614,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightPower_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="614,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="exponential"/>
     <GUITextBlock textcolor="228,217,167,255" hovercolor="76,76,76,127" selectedcolor="255,153,0,76" padding="10.0, 0.0, 10.0, 0.0"/>
   </IndicatorLightPower>
   <IndicatorLightRedSmall color="204,204,204,255" selectedcolor="255,255,255,255" textcolor="255,255,255,255" colorfadetime="0.5" spritefadetime="0.5" colortransition="easein" fallbackstate="toggle">
-    <Sprite name="IndicatorLightRedSmall_None" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" lights="None" sourcerect="557,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightRedSmall_None" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" lights="None" sourcerect="557,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="easein"/>
-    <Sprite name="IndicatorLightRedSmall_Selected" texture="Content/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="614,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="IndicatorLightRedSmall_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" maintainaspectratio="true" state="Selected" sourcerect="614,5,57,57" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="easein"/>
     <GUITextBlock textcolor="228,217,167,255" hovercolor="76,76,76,127" selectedcolor="255,153,0,76" padding="10.0, 0.0, 10.0, 0.0"/>
   </IndicatorLightRedSmall>
   <SwitchVertical color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="220,220,220,255" disabledcolor="180,180,180,255" colorfadetime="0.75" spritefadetime="0" colortransition="easein"
                   fallbackstate="toggle">
-    <Sprite name="SwitchVertical_None" texture="Content/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="2,386,44,124" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchVertical_Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="610,288,44,124" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchVertical_Selected" texture="Content/UI/UIAtlasDevices.png" state="Selected" maintainaspectratio="true" sourcerect="46,386,44,124" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchVertical_HoverSelected" texture="Content/UI/UIAtlasDevices.png" state="HoverSelected" maintainaspectratio="true" sourcerect="654,288,44,124" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchVertical_None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="2,386,44,124" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchVertical_Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="610,288,44,124" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchVertical_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" maintainaspectratio="true" sourcerect="46,386,44,124" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchVertical_HoverSelected" texture="%ModDir%/UI/UIAtlasDevices.png" state="HoverSelected" maintainaspectratio="true" sourcerect="654,288,44,124" tile="false" origin="0.5,0.5"/>
   </SwitchVertical>
   <SwitchHorizontal color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="220,220,220,255" disabledcolor="120,120,120,255" colorfadetime="0.75" spritefadetime="0" colortransition="easein"
                     fallbackstate="toggle">
-    <Sprite name="SwitchHorizontal_None" texture="Content/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="3,567,81,45" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchHorizontal_Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="612,652,81,45" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchHorizontal_Selected" texture="Content/UI/UIAtlasDevices.png" state="Selected" maintainaspectratio="true" sourcerect="3,515,81,45" tile="false" origin="0.5,0.5"/>
-    <Sprite name="SwitchHorizontal_HoverSelected" texture="Content/UI/UIAtlasDevices.png" state="HoverSelected" maintainaspectratio="true" sourcerect="612,600,81,45" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchHorizontal_None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="3,567,81,45" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchHorizontal_Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="612,652,81,45" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchHorizontal_Selected" texture="%ModDir%/UI/UIAtlasDevices.png" state="Selected" maintainaspectratio="true" sourcerect="3,515,81,45" tile="false" origin="0.5,0.5"/>
+    <Sprite name="SwitchHorizontal_HoverSelected" texture="%ModDir%/UI/UIAtlasDevices.png" state="HoverSelected" maintainaspectratio="true" sourcerect="612,600,81,45" tile="false" origin="0.5,0.5"/>
   </SwitchHorizontal>
   <DeviceProgressBar color="255,255,255,255" padding="0,0,0,0">
     <GUIFrame color="255,255,255,255">
-      <Sprite name="DeviceProgressBarFrame" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="120,404,134,67" slice="150,436,224,439" origin="0.5,0.5"/>
+      <Sprite name="DeviceProgressBarFrame" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="120,404,134,67" slice="150,436,224,439" origin="0.5,0.5"/>
     </GUIFrame>
     <Slider color="255,255,255,255">
-      <Sprite name="DeviceProgressBarSlider" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="256,404,134,67" slice="286,436,360,439" origin="0.5,0.5"/>
+      <Sprite name="DeviceProgressBarSlider" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="256,404,134,67" slice="286,436,360,439" origin="0.5,0.5"/>
     </Slider>
   </DeviceProgressBar>
   <OutlineFrame color="255,255,255,128">
@@ -1096,10 +1096,10 @@
   </OutlineFrame>
   <DigitalFrameLight color="255,255,255,255">
     <GUITextBlock textcolor="51, 59, 46,255" disabledtextcolor="125,125,125,125" padding="5.0, 0.0, 5.0, 0.0"/>
-    <Sprite name="DigitalFrameLight" texture="Content/UI/UIAtlasDevices.png" sourcerect="672,148,168,66" slice="677,153,835,209" tile="true" origin="0.5,0.5"/>
+    <Sprite name="DigitalFrameLight" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="672,148,168,66" slice="677,153,835,209" tile="true" origin="0.5,0.5"/>
   </DigitalFrameLight>
   <DigitalFrameDark color="255,255,255,255">
-    <Sprite name="DigitalFrameDark" texture="Content/UI/UIAtlasDevices.png" sourcerect="672,219,168,66" slice="677,224,835,280" tile="true" origin="0.5,0.5"/>
+    <Sprite name="DigitalFrameDark" texture="%ModDir%/UI/UIAtlasDevices.png" sourcerect="672,219,168,66" slice="677,224,835,280" tile="true" origin="0.5,0.5"/>
   </DigitalFrameDark><!-- In-game HUD -->
   <InfoAreaPortraitBG>
     <Sprite name="InfoAreaPortraitBG" texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="251,269,142,97" origin="0.5,0.5" compress="false"/>
@@ -1139,9 +1139,9 @@
     <Sprite name="EquipmentIndicatorHeadphones" texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="450,200,12,9" origin="0.5,0.5"/>
   </EquipmentIndicatorHeadphones>
   <PowerButton color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" pressedcolor="220,220,220,255" disabledcolor="120,120,120,255" colorfadetime="0.75" spritefadetime="0.25" colortransition="easein">
-    <Sprite name="PowerButton_None" texture="Content/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="90,266,130,130" tile="false" origin="0.5,0.5" crossfadein="false" crossfadeout="false"/>
-    <Sprite name="PowerButton_Hover" texture="Content/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="859,164,130,130" tile="false" origin="0.5,0.5" crossfadein="false" crossfadeout="false"/>
-    <Sprite name="PowerButton_Pressed" texture="Content/UI/UIAtlasDevices.png" state="Pressed" maintainaspectratio="true" sourcerect="222,266,130,130" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
+    <Sprite name="PowerButton_None" texture="%ModDir%/UI/UIAtlasDevices.png" state="None" maintainaspectratio="true" sourcerect="90,266,130,130" tile="false" origin="0.5,0.5" crossfadein="false" crossfadeout="false"/>
+    <Sprite name="PowerButton_Hover" texture="%ModDir%/UI/UIAtlasDevices.png" state="Hover" maintainaspectratio="true" sourcerect="859,164,130,130" tile="false" origin="0.5,0.5" crossfadein="false" crossfadeout="false"/>
+    <Sprite name="PowerButton_Pressed" texture="%ModDir%/UI/UIAtlasDevices.png" state="Pressed" maintainaspectratio="true" sourcerect="222,266,130,130" tile="false" origin="0.5,0.5" crossfadein="true" crossfadeout="true"
             transition="smooth"/>
     <GUITextBlock textcolor="255,255,255,204" padding="0.0, 0.0, 0.0, 0.0"/>
   </PowerButton>
@@ -1149,16 +1149,16 @@
     <Sprite name="PowerButtonFrame" texture="Content/UI/UIAtlasGeneral.png" sourcerect="391,554,126,126" slice="401,559,497,564" tile="true" origin="0.5,0.5"/>
   </PowerButtonFrame>
   <DockingButtonUp color="204,204,204,204" hovercolor="255,255,255,255" selectedcolor="204,204,204,204" pressedcolor="100,100,100,255" disabledcolor="125,125,125,125" colorfadetime="0.75" colortransition="easein">
-    <Sprite name="DockingButtonUp" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="352,556,149,52" origin="0.5,0.5" maintainaspectratio="true"/>
+    <Sprite name="DockingButtonUp" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="352,556,149,52" origin="0.5,0.5" maintainaspectratio="true"/>
   </DockingButtonUp>
   <DockingButtonDown color="204,204,204,204" hovercolor="255,255,255,255" selectedcolor="204,204,204,204" pressedcolor="100,100,100,255" disabledcolor="125,125,125,125" colorfadetime="0.75" colortransition="easein">
-    <Sprite name="DockingButtonDown" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="352,739,149,52" origin="0.5,0.5" maintainaspectratio="true"/>
+    <Sprite name="DockingButtonDown" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="352,739,149,52" origin="0.5,0.5" maintainaspectratio="true"/>
   </DockingButtonDown>
   <DockingButtonLeft color="204,204,204,204" hovercolor="255,255,255,255" selectedcolor="204,204,204,204" pressedcolor="100,100,100,255" disabledcolor="125,125,125,125" colorfadetime="0.75" colortransition="easein">
-    <Sprite name="DockingButtonLeft" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="300,599,52,149" origin="0.5,0.5" maintainaspectratio="true"/>
+    <Sprite name="DockingButtonLeft" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="300,599,52,149" origin="0.5,0.5" maintainaspectratio="true"/>
   </DockingButtonLeft>
   <DockingButtonRight color="204,204,204,204" hovercolor="255,255,255,255" selectedcolor="204,204,204,204" pressedcolor="100,100,100,255" disabledcolor="125,125,125,125" colorfadetime="0.75" colortransition="easein">
-    <Sprite name="DockingButtonRight" texture="Content/UI/UIAtlasDevices.png" tile="false" sourcerect="501,599,52,149" origin="0.5,0.5" maintainaspectratio="true"/>
+    <Sprite name="DockingButtonRight" texture="%ModDir%/UI/UIAtlasDevices.png" tile="false" sourcerect="501,599,52,149" origin="0.5,0.5" maintainaspectratio="true"/>
   </DockingButtonRight>
   <ChatToggleButton color="255,255,255,255" hovercolor="255,255,255,255" selectedcolor="255,255,255,255" disabledcolor="125,125,125,255" pressedcolor="255,255,255,255">
     <Sprite name="GUIButton.None" texture="Content/UI/InventoryUIAtlas.png" tile="false" state="None" sourcerect="8,425,111,66" origin="0.5,0.5"/>
@@ -1270,7 +1270,7 @@
     </UpgradeIndicatorOn>
   </UpgradeIndicator>
   <UpgradeUIFrame color="255,255,255,242" hovercolor="200,200,200,242" selectedcolor="243,162,50,121" pressedcolor="255,255,255,242" disabledcolor="125,125,125,255" textcolor="0,0,0,255">
-    <Sprite name="UpgradeUIFrame" texture="Content/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="375,769,191,191" slice="416,810,524,919" origin="0.5,0.5" compress="false"/>
+    <Sprite name="UpgradeUIFrame" texture="%ModDir%/UI/UIAtlasFrames.png" size="0.0, 0.0" sourcerect="375,769,191,191" slice="416,810,524,919" origin="0.5,0.5" compress="false"/>
   </UpgradeUIFrame>
   <SubmarineIcon color="228,217,167,255" hovercolor="228,217,167,255" selectedcolor="228,217,167,255">
     <Sprite name="SubmarineIcon" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="128,256,128,128" origin="0.5,0.5" tile="false" maintainaspectratio="true"/>
