@@ -80,7 +80,7 @@
   <UIThermalGlow texture="Content/UI/UIAtlasGeneral.png" sourcerect="631,894,128,128" origin="0.5,0.5" tile="false" compress="false"/>´
   <FocusIndicator texture="Content/UI/FocusIndicator.png" sourcerect="0,0,448,224" rows="2" columns="4"/>
   <SavingIndicator texture="Content/UI/saving.png" rows="4" columns="4"/>
-  <GenericThrobber texture="%ModDir%/UI/generic_throbber.png" rows="4" columns="4"/>
+  <GenericThrobber texture="%ModDir%/UI/generic_throbber.png" rows="3" columns="3"/>
   <WalletPortraitBG texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="935,873,48,18" origin="0.5,0.5" slice="945,873,973,891"/>
   <CrewWalletIconSmall texture="Content/UI/InventoryUIAtlas.png" tile="false" sourcerect="932,742,34,32" origin="0.5,0.5" maintainaspectratio="true"/>
   <Font file="Content/Fonts/Exo2-SemiBold.otf">
