@@ -311,7 +311,7 @@
     </CustomInterface>
     <aitarget maxsightrange="1500" />
   </Item>
-  <Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项生存能力。头盔上内置的生物扫描系统和瞄准辅助系统可以在敌我识别的同时增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
+  <Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect,sp_exo" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项生存能力。头盔上内置的生物扫描系统和瞄准辅助系统可以在敌我识别的同时增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="14312" minleveldifficulty="45">
