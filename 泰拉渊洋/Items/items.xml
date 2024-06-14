@@ -80,6 +80,7 @@
         <Affliction identifier="bleeding" strength="90" />
         <Affliction identifier="stun" strength="10" />
         <Affliction identifier="burn" strength="100" />
+        <Affliction identifier="explosiondamage" strength="200" />
         <StatusEffect type="OnUse" target="UseTarget">
           <Conditional entitytype="eq Character" />
           <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
@@ -157,7 +158,7 @@
     <Body radius="60" width="65" density="50" />
     <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
   </Item>
-  <Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活。万幸，因为特殊外壳的存在，除了工业级别的机器以正确顺序启动外无法用外力力打开这种凝胶的容器。" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="mineralcab" secondary="storagecab" />
     <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
       <RequiredItem identifier="nanogel" amount="1" />

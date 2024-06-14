@@ -311,7 +311,7 @@
     </CustomInterface>
     <aitarget maxsightrange="1500" />
   </Item>
-  <Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项能力。头盔上还内置了生物扫描系统和瞄准辅助系统用以增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
+  <Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项生存能力。头盔上内置的生物扫描系统和瞄准辅助系统可以在敌我识别的同时增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
     <Price baseprice="14312" minleveldifficulty="45">
@@ -353,18 +353,175 @@
       <sprite name="Maid's Uniform 1 Left Leg" texture="特殊作战服01式.png" limb="LeftLeg" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Right Shoe" texture="特殊作战服01式.png" limb="RightFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
       <sprite name="Maid's Uniform 1 Left Shoe" texture="特殊作战服01式.png" limb="LeftFoot" hidelimb="true" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" />
-      <!--远程增强-->
-      <StatValue stattype="MeleeAttackMultiplier" value="0.15" />
+     
+      <!--电池消耗-->
+      <StatusEffect type="OnWearing" target="Contained,Character" Condition="-0.1" interval="1" disabledeltatime="true" comparison="Or" targetslot="0">
+        <Conditional IsDead="false" />
+        <RequiredItem items="Powerbattery" targetslot="0" type="Contained" />
+      </StatusEffect>
       
+      <!-- 氧气基础消耗 -->
+      <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-10.0" UseHullOxygen="true" />
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="100000.0" SpeedMultiplier="1.1" PropulsionSpeedMultiplier="1.1" setvalue="true" disabledeltatime="true">
+        <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true" />
+        <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true" />
+      </StatusEffect>
+
+      <!--电动制氧-->
+      <StatusEffect type="OnWearing" target="Contained,Character" OxygenAvailable="10000.0" comparison="Or" targetslot="0">
+        <RequiredItem items="Powerbattery" targetslot="0" type="Contained" />
+        <Conditional IsDead="false" />
+      </StatusEffect>
+
+      <!--装备电池后的增益效果-->
+      <StatusEffect type="OnWearing" target="This,Character" interval="0.9">
+        <!--远程增强-->
+        <StatValue stattype="RangedAttackMultiplier" value="0.15" />
+        <!--机动增强-->
+        <StatValue stattype="MovementSpeed" value="0.2" />
+        <!--敌我识别-->
+        <StatValue stattype="TeamAttackMultiplier" value="-1" />
+        <!--瞄准辅助-->
+        <StatValue stattype="RangedSpreadReduction" value="0.3" />
+        <!--给予最大武器操作-->
+        <StatValue stattype="WeaponsSkillOverride" value="100" />、
+        <!--防水流-->
+        <StatValue stattype="FlowResistance" value="60" />
+        <!--吊命-->
+        <Affliction identifier="miracleworker" amount="10" />
+        <Conditional Voltage="gt 0.5" />
+      </StatusEffect>
       <!--抗性-->
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
-      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
-
-
-      
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="blunttrauma,gunshotwound,bitewounds,lacerations,explosiondamage" damagemultiplier="0.05" damagesound="LimbArmor" deflectprojectiles="true"  />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding,concussion" damagemultiplier="0.15" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="stun" damagemultiplier="0.05" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="radiationsickness,burn" damagemultiplier="0" damagesound="LimbArmor" deflectprojectiles="true"/>
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="acidburn" damagemultiplier="0.7" damagesound="" />
+      <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="huskinfection" damagemultiplier="0" probabilitymultiplier="0.1" damagesound="LimbArmor" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="emp" damagemultiplier="0" damagesound="" deflectprojectiles="true" />
+      <damagemodifier armorsector="0.0,360.0" afflictiontypes="alcellruin" damagemultiplier="0.7" damagesound="" deflectprojectiles="true" />
+      <!--助推器-->
+      <StatusEffect type="OnWearing" target="This" disabledeltatime="true" checkconditionalalways="true" comparison="And">
+        <Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
+        <Conditional IsOn="true" />
+        <Conditional InWater="true" />
+        <Conditional Voltage="gt 0.5" />
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.5" />
+        <sound file="Content/Items/Diving/ScooterLoop.ogg" range="300.0" loop="true" />
+      </StatusEffect>
+      <!--警报判定-->
+      <StatusEffect type="OnWearing" target="Contained,Character" comparison="And">
+        <RequiredItem items="Powerbattery" type="Contained" />
+        <Conditional condition="lt 5.0" />
+        <Sound file="Content/Items/WarningBeepSlow.ogg" range="250" loop="true" />
+      </StatusEffect>
+      <StatusEffect type="OnWearing" target="Contained" playsoundonrequireditemfailure="true">
+        <RequiredItem items="Powerbattery" type="Contained" matchonempty="true" />
+        <Conditional condition="lte 0.0" />
+        <Sound file="Content/Items/WarningBeep.ogg" range="250" loop="true" />
+      </StatusEffect>
+      <!--药物治疗效果-->
+      <!--使用生理盐水-->
+      <StatusEffect type="OnWearing" target="Character,Contained" condition="-10" targetslot="1">
+        <ReduceAffliction type="bloodloss" amount="2.5" />
+        <RequiredItem items="antibloodloss1" type="Contained" targetslot="1" />
+        <Conditional bloodloss="gt 5.0" />
+      </StatusEffect>
+      <!--使用林格溶液-->
+      <StatusEffect type="OnWearing" target="Character,Contained" condition="-5" targetslot="1">
+        <Affliction identifier="bloodpressure" amount="10" />
+        <ReduceAffliction type="bloodloss" amount="4.25" />
+        <RequiredItem items="ringerssolution" type="Contained" targetslot="1" />
+        <Conditional bloodloss="gt 5.0" />
+      </StatusEffect>
+      <!--使用血袋-->
+      <StatusEffect type="OnWearing" target="Character,Contained" condition="-5" targetslot="1">
+        <ReduceAffliction type="bloodloss" amount="6" />
+        <RequiredItem items="antibloodloss2" type="Contained" targetslot="1" />
+        <Conditional bloodloss="gt 5.0" />
+      </StatusEffect>
+      <!--使用异星血浆-->
+      <StatusEffect type="OnWearing" target="Character,Contained" condition="-5" targetslot="1">
+        <Affliction identifier="psychosis" amount="2.25" />
+        <ReduceAffliction type="bloodloss" amount="6" />
+        <RequiredItem items="alienblood" type="Contained" targetslot="1" />
+        <Conditional bloodloss="gt 5.0" />
+      </StatusEffect>
+      <!--使用吗啡-->
+      <StatusEffect type="OnWearing" target="Character,Contained" comparison="or" condition="-10" targetslot="2">
+        <ReduceAffliction type="damage" amount="5" />
+        <ReduceAffliction type="burn" amount="0.1" />
+        <Affliction identifier="oxygenlow" amount="2" />
+        <Affliction identifier="opiateaddiction" amount="0.5" />
+        <Affliction identifier="opiateoverdose" amount="1.0" />
+        <ReduceAffliction identifier="opiatewithdrawal" amount="3.0" />
+        <RequiredItem items="antidama1" type="Contained" targetslot="2" />
+        <Conditional internaldamage="gt 0.0" />
+        <Conditional blunttrauma="gt 0.0" />
+        <Conditional lacerations="gt 0.0" />
+        <Conditional bitewounds="gt 0.0" />
+        <Conditional gunshotwound="gt 0.0" />
+        <Conditional organdamage="gt 0.0" />
+        <Conditional explosiondamage="gt 0.0" />
+        <Conditional concussion="gt 0.0" />
+      </StatusEffect>
+      <!--使用芬太尼-->
+      <StatusEffect type="OnWearing" target="Character,Contained" comparison="or" condition="-20" targetslot="2">
+        <ReduceAffliction type="damage" amount="15" />
+        <ReduceAffliction type="burn" amount="1" />
+        <Affliction identifier="oxygenlow" amount="6" />
+        <Affliction identifier="opiateaddiction" amount="1.5" />
+        <Affliction identifier="opiateoverdose" amount="4.5" />
+        <ReduceAffliction identifier="opiatewithdrawal" amount="20" />
+        <RequiredItem items="antidama2" type="Contained" targetslot="2" />
+        <Conditional internaldamage="gt 0.0" />
+        <Conditional blunttrauma="gt 0.0" />
+        <Conditional lacerations="gt 0.0" />
+        <Conditional bitewounds="gt 0.0" />
+        <Conditional gunshotwound="gt 0.0" />
+        <Conditional organdamage="gt 0.0" />
+        <Conditional explosiondamage="gt 0.0" />
+        <Conditional concussion="gt 0.0" />
+      </StatusEffect>
+      <!--使用神效剂-->
+      <StatusEffect type="OnWearing" target="Character,Contained" comparison="or" condition="-5" targetslot="2">
+        <Affliction identifier="burn" amount="0.02" />
+        <ReduceAffliction type="damage" amount="3" />
+        <ReduceAffliction identifier="oxygenlow" amount="3" />
+        <ReduceAffliction identifier="bloodloss" amount="2" />
+        <RequiredItem items="deusizine" type="Contained" targetslot="2" />
+        <Conditional internaldamage="gt 0.0" />
+        <Conditional blunttrauma="gt 0.0" />
+        <Conditional lacerations="gt 0.0" />
+        <Conditional bitewounds="gt 0.0" />
+        <Conditional gunshotwound="gt 0.0" />
+        <Conditional organdamage="gt 0.0" />
+        <Conditional explosiondamage="gt 0.0" />
+        <Conditional concussion="gt 0.0" />
+        <Conditional bloodloss="gt 5.0" />
+        <Conditional oxygenlow="gt 50.0" />
+      </StatusEffect>
     </Wearable>
     <ItemContainer capacity="3">
-      <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="192,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="1" texture="Content/Items/InventoryIconAtlas.png" sourcerect="64,448,64,64" origin="0.5,0.45" />
+      <SlotIcon slotindex="2" texture="Content/Items/InventoryIconAtlas.png" sourcerect="256,448,64,64" origin="0.5,0.45" />
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="Powerbattery">
+          <StatusEffect type="OnContaining" target="This,Character" Voltage="1.0" setvalue="true">
+            <Conditional IsDead="false" />
+          </StatusEffect>
+        </Containable>
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="antibloodloss1,antibloodloss2,alienblood,ringerssolution" />
+      </SubContainer>
+      <SubContainer capacity="1" maxstacksize="1">
+        <Containable items="antidama1,antidama2,deusizine" />
+      </SubContainer>
+      <SubContainer capacity="9">
+        <Containable items="smallitem" />
+      </SubContainer>
     </ItemContainer>
   </Item>
 </Items>
