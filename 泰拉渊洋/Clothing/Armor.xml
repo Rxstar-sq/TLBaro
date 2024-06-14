@@ -362,7 +362,7 @@
       
       <!-- 氧气基础消耗 -->
       <StatusEffect type="OnWearing" target="Character" OxygenAvailable="-10.0" UseHullOxygen="true" />
-      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="100000.0" SpeedMultiplier="1.1" PropulsionSpeedMultiplier="1.1" setvalue="true" disabledeltatime="true">
+      <StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="100000.0" SpeedMultiplier="1" PropulsionSpeedMultiplier="1.1" setvalue="true" disabledeltatime="true">
         <Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true" />
         <Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true" />
       </StatusEffect>
