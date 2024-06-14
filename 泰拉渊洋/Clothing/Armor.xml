@@ -357,10 +357,11 @@
       <StatValue stattype="MeleeAttackMultiplier" value="0.15" />
       
       <!--抗性-->
-      
-      
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="gunshotwound" damagemultiplier="0.9" />
       <damagemodifier armorsector="0.0,360.0" afflictionidentifiers="bleeding" damagemultiplier="0.95" />
+
+
+      
     </Wearable>
     <ItemContainer capacity="3">
       <Containable items="smallitem" excludeditems="toolbelt,toolbox,bandolier,cargoscooter" />
