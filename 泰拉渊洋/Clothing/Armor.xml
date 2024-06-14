@@ -311,18 +311,21 @@
     </CustomInterface>
     <aitarget maxsightrange="1500" />
   </Item>
-  <Item name="特殊作战服01式" identifier="sp01" category="Equipment" tags="smallitem,clothing" fireproof="false" cargocontaineridentifier="metalcrate" description=" " scale="0.5" impactsoundtag="impact_soft">
+  <Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项能力。头盔上还内置了生物扫描系统和瞄准辅助系统用以增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
     <PreferredContainer primary="crewcab" amount="1" spawnprobability="0.1" notcampaign="true" />
     <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
-    <Price baseprice="150">
-      <Price storeidentifier="merchantoutpost" minavailable="2" />
-      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
-      <Price storeidentifier="merchantresearch" minavailable="2" />
-      <Price storeidentifier="merchantmilitary" minavailable="2" />
-      <Price storeidentifier="merchantmine" minavailable="2" />
+    <Price baseprice="14312" minleveldifficulty="45">
+      <Price storeidentifier="merchantoutpost" multiplier="2" />
+      <Price storeidentifier="merchantcity" multiplier="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.5"/>
+      <Price storeidentifier="merchantmilitary" multiplier="2" />
+      <Price storeidentifier="merchantmine" multiplier="2" />
+      <Price storeidentifier="TLarmory" maxavailable="2" minavailable="1" />
     </Price>
     <Deconstruct time="10">
+      <Item identifier="nanogel" />
       <Item identifier="organicfiber" />
+      <Item identifier="ballisticfiber" />
     </Deconstruct>
     <InventoryIcon name="sp01Icon" texture="stand.png" sourcerect="510,3,151,394" origin="0.5,0.5" />
     <Sprite texture="stand.png" sourcerect="6,5,396,248" depth="0.6" origin="0.5,0.5" />
