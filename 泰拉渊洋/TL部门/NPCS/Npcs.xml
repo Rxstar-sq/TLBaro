@@ -32,7 +32,7 @@
 		</npc>
 	</npcset>
 	<npcset identifier="TLnpc">
-		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Passive" preferredoutpostmoduletypes="adminmodule" healthmultiplier="15">
+		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="15">
 			<Character name="泰拉战斗部-吸管" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />

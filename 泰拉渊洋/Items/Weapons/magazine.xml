@@ -406,7 +406,7 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
-  <!--AK-->
+  <!--AKE-->
   <Item name="AKE突击步枪弹匣" identifier="AKEAssaultRifleMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" minamount="2" maxamount="6" spawnprobability="0.4" />
     <PreferredContainer secondary="armcab" minamount="2" maxamount="6" spawnprobability="0.8" />
@@ -426,18 +426,15 @@
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapon" level="15" />
-      <Item identifier="steel" amount="2" />
+      <Item identifier="steel" amount="1" />
       <Item identifier="copper" amount="2" />
       <Item identifier="zinc" />
-      <Item identifier="magnesium" />
       <Item identifier="plastic" amount="2" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
       <RequiredSkill identifier="weapon" level="15" />
-      <Item identifier="steel" />
-      <Item identifier="copper" amount="2" />
+      <Item identifier="copper" amount="1" />
       <Item identifier="zinc" />
-      <Item identifier="magnesium" />
       <RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
     <Sprite name="AKE突击步枪弹匣" texture="weapons.png" depth="0.54" sourcerect="19,385,44,51" origin="0.5,0.5" />
@@ -471,19 +468,18 @@
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
       <RequiredSkill identifier="weapon" level="30" />
-      <Item identifier="steel" amount="6" />
-      <Item identifier="copper" amount="8" />
-      <Item identifier="zinc" amount="4" />
-      <Item identifier="magnesium" amount="4" />
+      <Item identifier="steel" amount="2" />
+      <Item identifier="copper" amount="4" />
+      <Item identifier="zinc" amount="2" />
+      <Item identifier="magnesium" amount="2" />
       <Item identifier="plastic" amount="4" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="20">
       <RequiredSkill identifier="weapon" level="30" />
-      <Item identifier="steel" amount="4" />
-      <Item identifier="copper" amount="8" />
-      <Item identifier="zinc" amount="4" />
-      <Item identifier="magnesium" amount="4" />
-      <RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <Item identifier="copper" amount="2" />
+      <Item identifier="zinc" amount="2" />
+      <Item identifier="magnesium" amount="1" />
+      <RequiredItem identifier="AKEAssaultRifleDrumMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
     <Sprite name="AKE突击步枪弹鼓" texture="weapons.png" depth="0.54" sourcerect="76,386,26,49" origin="0.5,0.5" />
     <Body width="23" height="45" density="30" />

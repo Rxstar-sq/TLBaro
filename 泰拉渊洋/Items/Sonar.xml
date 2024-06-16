@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-	  <Item name="泰拉新科技导航" identifier="navterminal2" tags="command,navterminal,primarynavterminal" linkable="true" allowedlinks="statusmonitor" scale="0.5" category="Machine,Electrical" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
+	  <Item name="泰拉新科技导航" subcategory="泰拉新科技" identifier="navterminal2" tags="command,navterminal,primarynavterminal" linkable="true" allowedlinks="statusmonitor" scale="0.5" category="Machine,Electrical" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
 		  <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="128,960,64,64" origin="0.5,0.45" />
 		  <Upgrade gameversion="0.10.0.0" scale="*0.5" />
 		  <Upgrade gameversion="0.14.4.0" positiony="+30" />
@@ -102,7 +102,7 @@
 			  </StatusEffect>
 		  </Repairable>
 	  </Item>
-	  <Item name="泰拉新科技小艇导航" identifier="shuttlenavterminal2" tags="command,navterminal,secondarynavterminal" linkable="true" allowedlinks="statusmonitor" category="Machine,Electrical" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
+	  <Item name="泰拉新科技小艇导航" subcategory="泰拉新科技" identifier="shuttlenavterminal2" tags="command,navterminal,secondarynavterminal" linkable="true" allowedlinks="statusmonitor" category="Machine,Electrical" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
 		  <UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="128,960,64,64" origin="0.5,0.45" />
 		  <Sprite texture="Content/Items/Command/CommandDevices.png" depth="0.8" sourcerect="400,0,288,240" origin="0.5,0.5" />
 		  <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="400,256,288,240" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
@@ -192,7 +192,7 @@
 		  </Repairable>
 		  <Upgrade gameversion="0.10.0.0" scale="0.5" />
 	  </Item>
-	  <Item name="泰拉新科技声纳" identifier="sonarmonitor2" tags="command,sonarmonitor" linkable="true" allowedlinks="statusmonitor" scale="0.5" category="Machine,Electrical" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
+	  <Item name="泰拉新科技声纳" subcategory="泰拉新科技" identifier="sonarmonitor2" tags="command,sonarmonitor" linkable="true" allowedlinks="statusmonitor" scale="0.5" category="Machine,Electrical" damagedbyexplosions="true" explosiondamagemultiplier="0.2" GrabWhenSelected="true">
 		  <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="128,960,64,64" origin="0.5,0.45" />
 		  <Upgrade gameversion="0.10.0.0" scale="0.5" />
 		  <Upgrade gameversion="0.14.4.0" positiony="+53" />
@@ -256,7 +256,7 @@
 			  </StatusEffect>
 		  </Repairable>
 	  </Item>
-	<Item name="泰拉新科技潜望镜" description="存在bug，开火会直接离开炮位，建议用在摄像机等物件" identifier="periscope2" tags="periscope" category="Machine,Weapon" type="Controller" disableitemusagewhenselected="true" scale="0.5" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
+	<Item name="泰拉新科技潜望镜" subcategory="泰拉新科技" description="存在bug，开火会直接离开炮位，建议用在摄像机等物件" identifier="periscope2" tags="periscope" category="Machine,Weapon" type="Controller" disableitemusagewhenselected="true" scale="0.5" isshootable="true" requireaimtouse="false" requireaimtosecondaryuse="false">
 		<SwappableItem canbebought="false" origin="67,0"/>
 		<Sprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.1" sourcerect="2,210,134,203" origin="0.5,0.5" />
 		<CustomInterface canbeselected="true" allowuioverlap="true">
@@ -279,4 +279,5 @@
 			<output name="signal_out2" displayname="connection.signaloutx~[num]=2" />
 		</ConnectionPanel>
 	</Item>
+	
 </Items>
