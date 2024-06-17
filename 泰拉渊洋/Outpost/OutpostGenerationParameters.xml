@@ -444,7 +444,7 @@
 	  alwaysdestructible="true"
 	  alwaysrewireable="true"
 	  allowstealing="true">
-		<modulecount flag="Airlock" count="1"/>
+		<modulecount flag="TL_Airlock" count="1"/>
 	</OutpostConfig>
 	
 	
