@@ -30,6 +30,60 @@
 				<Item identifier="TL13ammo_cr" amount="8" />
 			</ItemSet>
 		</npc>
+	<npc identifier="THnpc2" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="6">
+			<Character name="叛逃者" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
+				<job name="securityofficer" identifier="securityofficer">
+					<skill identifier="electrical" level="100" />
+					<skill identifier="mechanical" level="100" />
+					<skill identifier="weapons" level="100" />
+					<skill identifier="medical" level="100" />
+					<skill identifier="helm" level="100" />
+				</job>
+			</Character>
+			<ItemSet commonness="1">
+				<Item identifier="idcardplus1" equip="true" />
+				<Item identifier="maidclothes1" equip="true" />
+				<Item identifier="bodyarmor" equip="true" />
+				<Item identifier="TL13" equip="true">
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+				</Item>
+				<Item identifier="TL13ammo_ap" amount="8" />
+			</ItemSet>
+		</npc>
+		<npc identifier="THnpc3" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="5">
+			<Character name="泰拉常规战斗人员" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
+				<job name="securityofficer" identifier="securityofficer">
+					<skill identifier="electrical" level="100" />
+					<skill identifier="mechanical" level="100" />
+					<skill identifier="weapons" level="100" />
+					<skill identifier="medical" level="100" />
+					<skill identifier="helm" level="100" />
+				</job>
+			</Character>
+			<ItemSet commonness="1">
+				<Item identifier="idcardplus1" equip="true" />
+				<Item identifier="maidclothes1" equip="true" />
+				<Item identifier="bodyarmor" equip="true" />
+				<Item identifier="TL13" equip="true">
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+					<Item identifier="TL13ammo_ap" />
+				</Item>
+				<Item identifier="TL13ammo_ap" amount="8" />
+			</ItemSet>
+		</npc>
 	</npcset>
 	<npcset identifier="TLnpc">
 		<npc identifier="TLnpc1" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="15">

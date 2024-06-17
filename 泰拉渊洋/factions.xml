@@ -1,9 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Override>
   <Factions>
-    <Faction identifier="TLhui" initialreputation="-20" minreputation="-150" maxreputation="200">
+    <Faction identifier="TLhui" initialreputation="-20" minreputation="-100" controlledoutpostpercentage="60" opposingfaction="coalition" maxreputation="100">
       <Icon texture="%ModDir%/UI/TL.png" sourcerect="0,0,172,195" />
       <Portrait name="TLhui" texture="%ModDir%/UI/TLbei.jpg" sourcerect="0,0,535,300" />
+	  <Hireable npcsetidentifier="THnpc" npcidentifier="THnpc3" minreputation="-15" />
+	  <Hireable npcsetidentifier="TLnpc" npcidentifier="TLnpc4" minreputation="0" />
+	  <Hireable npcsetidentifier="TLnpc" npcidentifier="TLnpc1" minreputation="10" />
+	  <AutomaticMission leveltype="LocationConnection" missiontag="TLattack" minreputation="-100" maxreputation="-30" MaxDistanceFromFactionOutpost="3" DisallowBetweenOtherFactionOutposts="true" minprobability="0.2" maxprobability="0.01"/>
     </Faction>
   </Factions>
 </Override>
