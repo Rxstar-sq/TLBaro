@@ -45,7 +45,7 @@
 		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
 		 <Reputation identifier="TLhui" amount="5" />
 		 <SubmarineTypes>
-			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版2.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
 		 <Characters>
 			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
@@ -158,7 +158,7 @@
     <Metadata identifier="waytoascension" value="8"/>
     <message header="任务成功" text="成功清理能源塔，是时候离开了"/>
   </OutpostDestroyMission>
-  
+
 	 <!--特殊-->
 	 <PirateMission
 	   name="清理垃圾"
@@ -176,7 +176,7 @@
 	   addedmissiondifficultyperplayer="8">
 		 <Reputation identifier="coalition" amount="10" amountforopposingfaction="-10" />
 		 <SubmarineTypes>
-			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版2.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
 		 <Characters>
 			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
