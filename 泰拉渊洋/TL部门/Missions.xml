@@ -158,7 +158,6 @@
     <Metadata identifier="waytoascension" value="8"/>
     <message header="任务成功" text="成功清理能源塔，是时候离开了"/>
   </OutpostDestroyMission>
-
 	 <!--特殊-->
 	 <PirateMission
 	   name="清理垃圾"

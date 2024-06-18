@@ -4,9 +4,9 @@
 		  <UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="128,960,64,64" origin="0.5,0.45" />
 		  <Upgrade gameversion="0.10.0.0" scale="*0.5" />
 		  <Upgrade gameversion="0.14.4.0" positiony="+30" />
-		  <Sprite texture="Content/Items/Command/CommandDevices.png" depth="0.8" sourcerect="0,0,384,304" origin="0.5,0.5" />
-		  <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="0,320,384,304" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
-		  <BrokenSprite texture="Content/Items/Command/CommandDevices.png" sourcerect="0,640,384,304" depth="0.8" maxcondition="0" origin="0.5,0.5" />
+		  <Sprite texture="CommandDevices.png" depth="0.8" sourcerect="0,0,384,304" origin="0.5,0.5" />
+		  <BrokenSprite texture="CommandDevices.png" sourcerect="0,320,384,304" depth="0.8" maxcondition="80" fadein="true" origin="0.5,0.5" />
+		  <BrokenSprite texture="CommandDevices.png" sourcerect="0,640,384,304" depth="0.8" maxcondition="0" origin="0.5,0.5" />
 		  <Steering minvoltage="0.5" canbeselected="true" powerconsumption="10" linkuitocomponent="Sonar" msg="ItemMsgInteractSelect" allowuioverlap="true" hudlayer="-1">
 			  <GuiFrame relativesize="0.55,0.59" anchor="Center" style="OuterGlow" color="0,0,0,0.8" relativeoffset="0.1,-0.05" draggable="false" />
 			  <StatusEffect type="InWater" target="This" condition="-0.5" />

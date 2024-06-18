@@ -30,7 +30,7 @@
 				<Item identifier="TL13ammo_cr" amount="8" />
 			</ItemSet>
 		</npc>
-	<npc identifier="THnpc2" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="6">
+	<npc identifier="THnpc2" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="3">
 			<Character name="叛逃者" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />

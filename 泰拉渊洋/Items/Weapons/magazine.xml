@@ -246,7 +246,7 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <!--灭刃弹匣-->
-  <Item name="灭刃撕裂弹匣" identifier="mr_magazine" maxstacksize="32" maxstacksizecharacterinventory="4" scale="0.5" category="Weapon" health="35" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_mr_magazine,TL_mr_ammo,TL_mrzd" impactsoundtag="impact_metal_light">
+  <Item name="灭刃电磁撕裂弹匣" identifier="mr_magazine" maxstacksize="32" maxstacksizecharacterinventory="4" scale="0.5" category="Weapon" health="35" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_mr_magazine,TL_mr_ammo,TL_mrzd" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="灭刃" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="300" minleveldifficulty="30">
@@ -276,8 +276,8 @@
       <Item identifier="steel" />
     </Deconstruct>
     <!--灭刃撕裂弹匣 -->
-    <Sprite texture="weapons.png" sourcerect="335,67,30,35" depth="0.55" origin="0.5,0.5" />
-    <Body width="30" height="35" density="25" />
+    <Sprite name="灭刃弹夹" texture="weapons.png" sourcerect="313,443,47,68" depth="0.55" origin="0.5,0.5" />
+    <Body width="50" height="70" density="25" />
     <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="kill_tear" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
       <Containable items="mr_zd" />
       <StatusEffect type="OnUse" target="This" condition="-1" disabledeltatime="true">
@@ -306,7 +306,7 @@
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="moneymaker" requiredtime="35" displayname="recycleitem">
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -346,7 +346,7 @@
       <RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
       <RequiredItem identifier="steel" />
     </Fabricate>
-    <Fabricate suitablefabricators="moneymaker" requiredtime="35" displayname="recycleitem">
+    <Fabricate suitablefabricators="fabricator" requiredtime="35" displayname="recycleitem">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="magnesium" />
       <RequiredItem identifier="titaniumaluminiumalloy" />
@@ -425,14 +425,14 @@
       <Item identifier="plastic" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="weapon" level="15" />
+      <RequiredSkill identifier="weapons" level="15" />
       <Item identifier="steel" amount="1" />
       <Item identifier="copper" amount="2" />
       <Item identifier="zinc" />
       <Item identifier="plastic" amount="2" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
-      <RequiredSkill identifier="weapon" level="15" />
+      <RequiredSkill identifier="weapons" level="15" />
       <Item identifier="copper" amount="1" />
       <Item identifier="zinc" />
       <RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
@@ -467,7 +467,7 @@
       <Item identifier="steel" amount="2" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="weapon" level="30" />
+      <RequiredSkill identifier="weapons" level="30" />
       <Item identifier="steel" amount="2" />
       <Item identifier="copper" amount="4" />
       <Item identifier="zinc" amount="2" />
@@ -475,7 +475,7 @@
       <Item identifier="plastic" amount="4" />
     </Fabricate>
     <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="20">
-      <RequiredSkill identifier="weapon" level="30" />
+      <RequiredSkill identifier="weapons" level="30" />
       <Item identifier="copper" amount="2" />
       <Item identifier="zinc" amount="2" />
       <Item identifier="magnesium" amount="1" />

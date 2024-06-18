@@ -185,41 +185,95 @@
       </SubContainer>
     </ItemContainer>
   </Item>
-  <Item name="垃圾处理器" identifier="Delete" category="Diving" description="记得回收垃圾哦" tags="container" scale="0.7">
-    <Sprite name="垃圾处理器" texture="icon.png" sourcerect="406,16,80,103" depth="0.84" origin="0.5,0.5" />
-    <!--TODO: add light textures for powered-on state?-->
-    <Body width="60" height="70" density="25" />
-    <Holdable slots="Any,RightHand,LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpSelect" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
-      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
-        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
-        <Button text="删除">
-          <StatusEffect type="OnUse" target="Contained">
-            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
-            <Remove />
-          </StatusEffect>
-        </Button>
-      </CustomInterface>
-    </Holdable>
-    <Price baseprice="1500">
-      <Price storeidentifier="merchantoutpost" minavailable="2" />
-      <Price storeidentifier="merchantcity" multiplier="0.9" minavailable="2" />
-      <Price storeidentifier="merchantresearch" minavailable="2" />
-      <Price storeidentifier="merchantmilitary" minavailable="2" />
-      <Price storeidentifier="merchantmine" minavailable="2" />
-      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="3" sold="true" />
-    </Price>
-    <ItemContainer hideitems="true" drawinventory="true" capacity="3" maxstacksize="16" slotsperrow="3" itempos="27,-42" iteminterval="22.5,0" itemrotation="0" canbeselected="true" containedspritedepth="0.83">
-      <SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
-      <SlotIcon slotindex="1" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
-      <SlotIcon slotindex="2" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
-      <StatusEffect type="OnFire" target="This" tags="onfire" duration="1" stackable="false" />
-      <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludebroken="false" excludefullcondition="true"></Containable>
-    </ItemContainer>
-  </Item>
+	<Item name="垃圾深水炸弹" identifier="Trashbombs" description="可以装载垃圾丢出船外的东西，但也是炸弹哦" tags="depthchargeammo" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
+		<PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+		<Price baseprice="120" minavailable="1">
+			<Price storeidentifier="merchantoutpost" multiplier="1.4" />
+			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+			<Price storeidentifier="merchantresearch" multiplier="1.25" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+			<Price storeidentifier="merchantmine" multiplier="1.25" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="plastic" />
+			<Item identifier="uex" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
+			<RequiredSkill identifier="weapons" level="25" />
+			<RequiredItem identifier="plastic" amount="2" />
+			<RequiredItem identifier="uex" />
+		</Fabricate>
+		<Sprite name="垃圾处理器" texture="icon.png" sourcerect="406,16,80,103" depth="0.55" origin="0.5,0.5" />
+		<Body width="80" height="100" density="20" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" />
+		<Projectile characterusable="false" launchimpulse="5.0">
+			<!-- Make destructible when launched -->
+			<StatusEffect type="OnUse" target="This" Indestructible="false"/>
+			<StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100"/>
+			<!-- Effects when taking damage-->
+			<StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+				<particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+				<Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This">
+				<sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+				<sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+			</StatusEffect>
+			<!-- Trigger explosions on contained items -->
+			<StatusEffect type="OnBroken" target="Contained" >
+				<sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+				<sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+				<Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+					<Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true"/>
+					<Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false"/>
+					<Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false"/>
+					<Affliction identifier="stun" strength="7" />
+				</Explosion>
+				<Use />
+			</StatusEffect>
+			<!-- Remove the item after exploding -->
+			<StatusEffect type="OnBroken" target="This" delay="0.01">
+				<Remove />
+			</StatusEffect>
+		</Projectile>
+		<ItemContainer hideitems="true" capacity="20" maxstacksize="10" canbeselected="false">
+			<SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="3" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="4" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="6" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="7" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="8" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="9" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="10" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="11" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="12" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="13" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="14" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="15" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="16" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="17" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="18" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="19" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+			<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" />
+		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="ExplosionRadius" value="0.1"/>
+			<QualityStat stattype="ExplosionDamage" value="0.1"/>
+		</Quality>
+	</Item>
   <Item name="手持万用宝" description="和潜艇系统互联互通，这里有你想知道的一切" identifier="handheldstatusmonitorPro" category="Equipment" Tags="smallitem,sonar,provocative" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="divingcab"/>
-    <Price baseprice="1000" sold="true">
-      <Price storeidentifier="TLarmory" multiplier="1.1" minavailable="0" maxavailable="3" sold="true" />
+    <Price baseprice="1000" >
+		<Price storeidentifier="merchantoutpost" multiplier="1.4" />
+		<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+		<Price storeidentifier="merchantresearch" multiplier="1.25" />
+		<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+		<Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="TLarmory"  minavailable="0" maxavailable="3" sold="true" />
     </Price>
     <Deconstruct time="15">
       <Item identifier="copper" />

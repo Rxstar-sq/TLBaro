@@ -159,7 +159,6 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="45" />
   </Item>
-  <!--TL15步枪改-->
   <Item name="TL-15突击步枪步枪·改" identifier="TL15" description="对泰拉集团TL-14步枪的增进改良版本，重新设计了内部结构使其射击更加精确。也能更好的提升杀伤力。" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2000" minleveldifficulty="15">
@@ -258,8 +257,7 @@
     </Quality>
     <SkillRequirementHint identifier="weapons" level="50" />
   </Item>
-  <!--特殊武器-->
-  <Item name="灭刃" description="泰拉科技工程研究的特珠武器,除了一般的弹匣外还可以安装专用的灭刃弹匣。安装后发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="灭刃" description="泰拉工程部研究的特珠武器,可以安装专用的灭刃弹匣。安装后发射的并非是子弹而是细小的刃片,这种特殊的飞刃可以轻易撕开肉体造成大出血" identifier="TL_MR" category="Weapon" cargocontaineridentifier="metalcrate" allowasextracargo="true" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" secondary="armcab,weaponholder" />
     <Price baseprice="2720" minleveldifficulty="30">
       <Price storeidentifier="merchantcity" multiplier="1.25" />
@@ -277,7 +275,7 @@
       <Item identifier="silicon" amount="3" />
       <Item identifier="titaniumaluminiumalloy" amount="2" />
     </Deconstruct>
-    <Sprite texture="weapons.png" sourcerect="275,0,236,54" depth="0.55" origin="0.5,0.5" />
+    <Sprite texture="weapons.png" sourcerect="259,136,251,82" depth="0.55" origin="0.5,0.5" />
     <Body width="235" height="55" density="25" />
     <!--handle1是调整右手的左右，左边数字为负数便是后退，正为前进，右边数字正数为上，负数为下，与handle2所调整的左手同理 -->
     <!-- aimpos左边数字是用于调整枪械贴图的左右，负数向后，正数向前，右边数字是上下，同理 -->
@@ -291,7 +289,7 @@
         <Conditional HasTag="eq mr_used" />
       </StatusEffect>
     </Holdable>
-    <RangedWeapon reload="0.6" weapondamagemodifier="1.6" penetration="0.6" holdtrigger="true" barrelpos="120,34" spread="5" unskilledspread="35" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
+    <RangedWeapon reload="0.6" weapondamagemodifier="1.6" penetration="0.6" holdtrigger="true" barrelpos="120,20" spread="5" unskilledspread="35" combatPriority="85" drawhudwhenequipped="true" crosshairscale="0.2">
       <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
       <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
       <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,4.0" colormultiplier="255,200,200,100" />
@@ -354,10 +352,11 @@
         <Conditional ReloadTimer="gt 0.16" />
       </StatusEffect>
     </RangedWeapon>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="false" itempos="1,-4" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="1,-4" containedstateindicatorslot="0" containedstateindicatorstyle="bullet" containedspritedepth="0.56">
       <!-- itempos是用修改弹匣的位置，左边数字用来调整弹匣左右，负数为左，其次相反，右边数字为上下，负数为上，正数为下-->
-      <Containable items="mr_magazine, TL_magazine,TL_magazine_cr" />
-      <SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
+      <Containable items="mr_magazine" />
+      <SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="231,0,77,115" origin="0.5,0.5" />
+		<SlotIcon slotindex="1" texture="Content/UI/CampaignUIAtlas2.png" sourcerect="896,536,128,64" origin="0.45,0.5" />
       <SubContainer capacity="1" maxstacksize="1">
         <Containable items="flashlight" hide="false" itempos="37,2.5" setactive="true" />
       </SubContainer>
@@ -445,7 +444,7 @@
       <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="6" sold="true" />
       <Price storeidentifier="merchantarmory" multiplier="1.1" minavailable="10" maxavailable="20" sold="true" />
       <Price storeidentifier="merchantmilitary" multiplier="1.1" minavailable="15" sold="true" />
-	  <Price storeidentifier="TLarmory" multiplier="0.9" minavailable="0" maxavailable="3" sold="true" />
+      <Price storeidentifier="TLarmory" multiplier="0.9" minavailable="0" maxavailable="3" sold="true" />
     </Price>
     <Deconstruct time="30">
       <Item identifier="steel" />
@@ -634,6 +633,222 @@
     </Throwable>
     <Quality>
       <QualityStat stattype="ExplosionRadius" value="0.1" />
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
+  </Item>
+  <!--特殊-->
+  <Item name="彼岸花" description="地狱之花，生于忘川，盛于忘川" identifier="redspider" tags="smallitem,railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.01" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.01" />
+    <Fabricate suitablefabricators="moneymaker" requiredtime="600">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem identifier="thorium" amount="10" />
+      <RequiredItem identifier="lithium" amount="10" />
+      <RequiredItem identifier="ic4block" amount="10" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="5" />
+      <RequiredItem identifier="fpgacircuit" amount="8" />
+    </Fabricate>
+    <InventoryIcon name="彼岸花icon" texture="items.png" sourcerect="190,0,64,64" origin="0.5,0.5" />
+    <Sprite name="彼岸花" texture="items.png" sourcerect="2,2,153,174" depth="0.55" origin="0.5,0.5" />
+    <Body width="150" height="170" density="35" />
+    <Holdable slots="Any,RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect">
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+        <Button text="生生相惜">
+          <StatusEffect type="OnUse" target="This">
+            <sound file="%ModDir%/ogg/核弹启动.ogg" range="1000.0" volume="0.5" />
+          </StatusEffect>
+          <StatusEffect type="OnUse" delay="5" target="This">
+            <Explosion range="45000" structuredamage="60000" itemdamage="100000" ballastfloradamage="10000" force="900.0" severlimbsprobability="5" debris="true" decal="explosion" decalsize="3" camerashake="10000" camerashakerange="50000" flashrange="10000" flashduration="10.0" screencolor="255,60,60,255" screencolorrange="5000" screencolorduration="10.0" penetration="0.1">
+              <Affliction identifier="explosiondamage" strength="100000" />
+              <Affliction identifier="burn" strength="100000" />
+              <Affliction identifier="radiationsickness" strength="10000" />
+              <Affliction identifier="bleeding" strength="40000" probability="0.05" dividebylimbcount="false" />
+              <Affliction identifier="stun" strength="30000" />
+              <Affliction identifier="explosiondamage" strength="1000" />
+              <Affliction identifier="emp" strength="1500" multiplybymaxvitality="true" />
+            </Explosion>
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+    <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+      <Attack structuredamage="75" itemdamage="75" severlimbsprobability="2" penetration="0.8">
+        <Affliction identifier="lacerations" strength="250" />
+        <Affliction identifier="bleeding" strength="50" />
+        <Affliction identifier="stun" strength="15" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        <Explosion range="45000" structuredamage="60000" itemdamage="100000" ballastfloradamage="10000" force="900.0" severlimbsprobability="5" debris="true" decal="explosion" decalsize="3" camerashake="10000" camerashakerange="50000" flashrange="10000" flashduration="10.0" screencolor="255,60,60,255" screencolorrange="5000" screencolorduration="10.0" penetration="0.1">
+          <Affliction identifier="explosiondamage" strength="100000" />
+          <Affliction identifier="burn" strength="100000" />
+          <Affliction identifier="radiationsickness" strength="10000" />
+          <Affliction identifier="bleeding" strength="40000" probability="0.05" dividebylimbcount="false" />
+          <Affliction identifier="stun" strength="30000" />
+          <Affliction identifier="explosiondamage" strength="1000" />
+          <Affliction identifier="emp" strength="1500" multiplybymaxvitality="true" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Trigger explosions on contained items -->
+      <StatusEffect type="OnBroken" target="Contained">
+        <Use />
+      </StatusEffect>
+      <!-- Remove the item after exploding -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <Quality>
+      <QualityStat stattype="ExplosionDamage" value="0.1" />
+    </Quality>
+  </Item>
+  <!--耶德里斯-->
+  <item name="耶德里斯控制芯片" identifier="ab1" category="Material" maxstacksize="1" Tags="smallitem" canbepicked="true" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="storagecab" spawnprobability="0.01" />
+    <Price baseprice="25000">
+      <Price locationtype="outpost" multiplier="1.5" sold="true" />
+      <Price locationtype="city" multiplier="0.8" sold="true" />
+      <Price locationtype="research" multiplier="1" sold="false" />
+      <Price locationtype="military" multiplier="1.3" sold="false" />
+      <Price locationtype="mine" multiplier="1" sold="false" />
+      <Price locationtype="TL" multiplier="0.6" sold="true" />
+    </Price>
+    <Fabricate suitablefabricators="moneymaker" requiredtime="50">
+      <RequiredSkill identifier="mechanical" level="100" />
+      <RequiredItem identifier="physicorium" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+      <RequiredItem identifier="lithium" amount="2" />
+      <RequiredItem identifier="fpgacircuit" amount="2" />
+    </Fabricate>
+    <InventoryIcon texture="%ModDir%/Items/icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Sprite texture="%ModDir%/Items/icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
+    <Body width="170" height="70" density="50" />
+    <Holdable canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Holdable>
+  </item>
+  <Item name="耶德里斯爆弹主体" description="已经被集团公开的技术，拥有EMP战斗部及破片战斗部，但很明显缺少一个重要部件" identifier="ab2" tags="railgunequipment,railgunammo" showcontentsintooltip="true" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <!--Ensure that Thalamus always has some railgun shells to use-->
+    <PreferredContainer secondary="wreckrailgunloader" minamount="1" maxamount="4" />
+    <PreferredContainer secondary="wreckrailgunammocontainer" amount="1" spawnprobability="0.5" />
+    <Price baseprice="15000">
+      <Price storeidentifier="merchantoutpost" multiplier="1.5" minavailable="3" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="10" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="30">
+      <RequiredSkill identifier="weapons" level="100" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="c4block" amount="2" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="2" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Weapons/bullet.png" sourcerect="189,17,215,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="215" height="30" density="30" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+      <Attack structuredamage="100" itemdamage="100" severlimbsprobability="5" penetration="0.6" targetforce="1000">
+        <Affliction identifier="explosiondamage" strength="250" />
+        <Affliction identifier="bleeding" strength="50" />
+        <Affliction identifier="stun" strength="15" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        <Explosion range="1500.0" ballastfloradamage="100" structuredamage="50" itemdamage="200" force="10.0" severlimbsprobability="0.5" decal="explosion" decalsize="0.3" penetration="0.5">
+          <Affliction identifier="explosiondamage" strength="600" />
+          <Affliction identifier="stun" strength="70" />
+          <Affliction identifier="burn" strength="1000" />
+          <Affliction identifier="explosiondamage" strength="1000" />
+          <Affliction identifier="emp" strength="500" multiplybymaxvitality="true" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Trigger explosions on contained items -->
+      <StatusEffect type="OnBroken" target="Contained">
+        <Use />
+      </StatusEffect>
+      <!-- Remove the item after exploding -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+  </Item>
+  <Item name="耶德里斯" identifier="Abernethy" description="汇流处的水妖" tags="railgunequipment,railgunammo,gunsmith" showcontentsintooltip="true" category="Misc" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy">
+    <PreferredContainer primary="railgunammocontainer" spawnprobability="0.0001" />
+    <Price baseprice="55000">
+      <Price storeidentifier="merchantoutpost" multiplier="1.4" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="TLarmory" multiplier="0.65" minavailable="0" maxavailable="1" sold="true">
+        <Reputation faction="TLhui" min="5" />
+      </Price>
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="65">
+      <RequiredSkill identifier="weapons" level="100" />
+      <RequiredItem identifier="ab1" />
+      <RequiredItem identifier="ab2" />
+    </Fabricate>
+    <Sprite texture="%ModDir%/Items/Weapons/bullet.png" sourcerect="189,17,215,33" depth="0.55" origin="0.5,0.5" />
+    <Body width="215" height="30" density="35" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" msg="ItemMsgPickUpSelect" />
+    <Projectile characterusable="false" launchimpulse="0" maxtargetstohit="1" damagedoors="true">
+      <Attack structuredamage="75" itemdamage="75" severlimbsprobability="2" penetration="0.8">
+        <Affliction identifier="lacerations" strength="250" />
+        <Affliction identifier="bleeding" strength="50" />
+        <Affliction identifier="stun" strength="15" />
+      </Attack>
+      <StatusEffect type="OnActive" target="This">
+        <ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="5" velocitymin="0" velocitymax="50" scalemin="1" scalemax="3" />
+      </StatusEffect>
+      <StatusEffect type="OnImpact" target="This" allowwhenbroken="true" Condition="-100.0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" selectionmode="Random" range="50000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" selectionmode="Random" range="50000" />
+        <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="50" velocitymin="100" velocitymax="2000" scalemin="1.0" scalemax="1.0" />
+        <Explosion range="5000.0" structuredamage="15000" itemdamage="15000" ballastfloradamage="1000" force="50.0" severlimbsprobability="2" decal="explosion" decalsize="1.0" camerashake="800" camerashakerange="80000" flashrange="15000" flashduration="5.0" screencolor="255,255,255,255" screencolorrange="5000" screencolorduration="10.0" penetration="0.4">
+          <Affliction identifier="burn" strength="3000" />
+          <Affliction identifier="radiationsickness" strength="6000" />
+          <Affliction identifier="explosiondamage" strength="6000" />
+          <Affliction identifier="stun" strength="50" />
+          <Affliction identifier="emp" strength="1000" multiplybymaxvitality="true" />
+        </Explosion>
+      </StatusEffect>
+      <!-- Trigger explosions on contained items -->
+      <StatusEffect type="OnBroken" target="Contained">
+        <Use />
+      </StatusEffect>
+      <!-- Remove the item after exploding -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </Projectile>
+    <ItemContainer hideitems="true" capacity="6" maxstacksize="1" canbeselected="false">
+      <GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+      <Containable items="smallitem" />
+    </ItemContainer>
+    <Quality>
       <QualityStat stattype="ExplosionDamage" value="0.1" />
     </Quality>
   </Item>

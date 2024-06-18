@@ -312,8 +312,50 @@
       <Containable items="chaingunbolt_bao" />
     </ItemContainer>
   </Item>
+  <Item name="EMP弹药箱" identifier="chaingunammobox_EMP" description="用于瘫痪敌军电子设备或炮塔的特殊电磁弹种，连射炮和电磁抢都可兼容" scale="0.5" tags="coilgunequipment,coilgunammo,TL1130ammobox,chaingunammobox_j,chaingunequipment,1130,chaingunammo,ammobox" category="Weapon" linkable="true" impactsoundtag="impact_metal_heavy" cargocontaineridentifier="">
+    <PreferredContainer primary="chaingunammosource" amount="1" mincondition="1" />
+    <PreferredContainer primary="ammoboxcontainer" mincondition="1" />
+    <Price baseprice="500" minavailable="1" displaynonempty="true">
+      <Price storeidentifier="merchantoutpost" multiplier="1.3" />
+      <Price storeidentifier="merchantcity" multiplier="1.2" sold="false" />
+      <Price storeidentifier="merchantresearch" sold="false" multiplier="1.3" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
+      <Price storeidentifier="merchantmine" sold="false" multiplier="1.2" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="aluminium" />
+    </Deconstruct>
+	  
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="weapons" level="40" />
+      <RequiredItem tag="munition_core" amount="2" description="fabricationdescription.munition_core" />
+      <RequiredItem identifier="aluminium" />
+	  <RequiredItem identifier="uex" amount="2"/>
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="35" />
+      <RequiredItem tag="munition_core" amount="3" description="fabricationdescription.munition_core" />
+      <RequiredItem tag="TL1130ammobox" mincondition="0.0" maxcondition="0.1" usecondition="false" description="fabricationdescription.1130box" header="fabricationheader.1130box" />
+	  <RequiredItem identifier="uex" amount="2"/>
+    </Fabricate>
+	  
+    <!--<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="320,128,64,64" />-->
+	<Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.54" sourcerect="524,832,95,78" origin="0.5,0.5" />
+    <Body width="90" height="72" density="50" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-80" handle1="-40,30" handle2="40,30" aimable="false" msg="ItemMsgPickUpSelect" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" canbecombined="true" ShowConditionInContainedStateIndicator="true" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <StatusEffect type="OnUse" target="This" disabledeltatime="true">
+        <SpawnItem identifiers="chaingunboltshredderEMP" spawnposition="ThisInventory" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" condition="-0.35" disabledeltatime="true">
+        <RequiredItem items="chaingunboltshredderEMP" type="Contained" />
+      </StatusEffect>
+      <Containable items="chaingunboltshredderEMP" />
+    </ItemContainer>
+  </Item>
   <!--俾斯麦380-->
-  <Item name="380MM主炮" description="" identifier="Bismarck" Tags="turret" category="Machine,Weapon" interactthroughwalls="true" Scale="0.7" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="800" linkable="true" allowedlinks="380railgunloader">
+  <Item name="380MM主炮" description="" identifier="Bismarck" Tags="turret" category="Machine,Weapon" interactthroughwalls="true" Scale="0.7" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="1000" linkable="true" allowedlinks="380railgunloader">
     <Sprite texture="380.png" depth="0.01" sourcerect="11,4,587,235" canflipy="false" origin="0.5,0.5" />
     <MinimapIcon name="Command_Weapons_FlakCannon" texture="Content/UI/CommandUIBackground.png" sourcerect="512,768,128,128" />
     <SwappableItem price="7500" replacementonuninstall="largeturrethardpoint" origin="256,438" swapidentifier="largeturret">
@@ -432,4 +474,84 @@
       </SubContainer>
     </ItemContainer>
   </Item>
+    <!--可控深水炸弹-->
+	<Item name="可控深水炸弹发射器" description="可改变方向的投弹器" identifier="Con_depthchargetube" Tags="turret" category="Machine,Weapon" interactthroughwalls="true" Scale="0.5" interactdistance="10" spritecolor="1.0,1.0,1.0,1.0" focusonselected="true" offsetonselected="900" linkable="true" allowedlinks="coilgunequipment">
+		<Sprite texture="%ModDir%/Items/weapons/1130.png" depth="0.01" sourcerect="0,0,256,256" canflipy="false" origin="0.5,0.5" />
+		<MinimapIcon name="Command_Weapons_Chaingun" texture="Content/UI/CommandUIAtlas.png" sourcerect="384,896,128,128" />
+		<SwappableItem price="6000" replacementonuninstall="turrethardpoint" origin="128,215" swapidentifier="basicturret">
+			<SchematicSprite texture="Content/UI/WeaponUI.png" sourcerect="512,0,256,389" />
+			<SwapConnectedItem tag="periscope" swapto="periscope" />
+			<SwapConnectedItem tag="turretammosource" swapto="chaingunloader2" />
+		</SwappableItem>
+		<UpgradePreviewSprite scale="2.5" texture="Content/UI/WeaponUI.png" sourcerect="387,810,106,65" origin="0.5,0.5" />
+		<StaticBody width="80" radius="80" />
+		<Turret launchimpulse="100" spinningbarreldistance="45.0" firingrotationspeedmodifier="0.6" usefiringoffsetformuzzleflash="true" maxchargetime="1.0" canbeselected="false" firingoffset="-10,-370" characterusable="false" linkable="true" barrelpos="128,88" rotationlimits="180,360" powerconsumption="1000.0" showchargeindicator="true" showprojectileindicator="true" recoildistance="50" reload="6" springstiffnesslowskill="2" springstiffnesshighskill="50" springdampinglowskill="0.5" springdampinghighskill="10" rotationspeedlowskill="1" rotationspeedhighskill="5" MaxAngleOffset="30" AICurrentTargetPriorityMultiplier="1.1">
+			<WeaponIndicator texture="Content/UI/WeaponUI.png" sourcerect="575,914,66,32" origin="0.227, 0.531" />
+			<sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+			<sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+			<sound file="%ModDir%/ogg/380.ogg" range="10000" type="OnUse" volume="2.0" />
+			<RailSprite texture="%ModDir%/Items/weapons/1130.png" depth="0.011" sourcerect="256,0,212,512" origin="0.425,0.875" />
+			<BarrelSprite texture="Content/Items/Weapons/TurretsAndDepthCharges.png" depth="0.02" sourcerect="259,1,85,149" origin="0.5,2.3" />
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,0,256,256" />
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,0,256,256" />
+			<MoveSound file="Content/Items/Weapons/RailgunLoop.ogg" />
+			<StartMoveSound file="Content/Items/Weapons/RailgunStart.ogg" />
+			<EndMoveSound file="Content/Items/Weapons/RailgunStop.ogg" />
+			<RequiredSkill identifier="weapons" level="50" />
+			<LightComponent Flicker="0.0" range="2500" directional="true" IsOn="true" drawbehindsubs="true" ignorecontinuoustoggle="true" InheritParentIsActive="false">
+				<LightTexture texture="%ModDir%/UI/lightcone.png" origin="0.0,0.5" size="1.0,1.0" />
+			</LightComponent>
+			<ParticleEmitter particle="muzzleflashchaingun" particleamount="1" velocitymin="0" velocitymax="0" distancemin="-50" distancemax="-50" />
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" scalemin="2" scalemax="3" />
+			<ParticleEmitter particle="swirlysmoke" particleamount="10" velocitymin="0" velocitymax="0" scalemin="2" scalemax="3" distancemin="-100" distancemax="50" />
+			<StatusEffect type="OnUse" target="This">
+				<Explosion range="1500.0" structuredamage="0" force="0.0" camerashake="8" flames="false" smoke="false" sparks="false" underwaterbubble="false" />
+			</StatusEffect>
+		</Turret>
+		<aitarget maxsightrange="3000" maxsoundrange="8000" fadeouttime="5" />
+		<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+			<GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+			<RequiredItem items="screwdriver" type="Equipped" />
+			<input name="power_in" displayname="connection.powerin" />
+			<input name="position_in" displayname="connection.turretaimingin" />
+			<input name="trigger_in" displayname="connection.turrettriggerin" />
+			<input name="toggle_light" displayname="connection.togglelight" />
+			<input name="set_light" displayname="connection.setlight" />
+		</ConnectionPanel>
+		<SkillRequirementHint identifier="weapons" level="70" />
+	</Item>
+	<Item name="可控深水炸弹装弹器" identifier="Con_depthchargeloader" tags="railgunequipment,railgunammosource,turretammosource,railgunammoloader" category="Machine,Weapon" linkable="true" allowedlinks="Con_depthchargetube" scale="0.5" damagedbyexplosions="true" explosiondamagemultiplier="0.2">
+		<SwappableItem canbebought="false" origin="110,353" spawnwithid="railgunshell,railgunshell,railgunshell,railgunshell,railgunshell" />
+		<Sprite name="Railgun Loader Front" texture="Loaders.png" depth="0.78" sourcerect="711,260,297,472" origin="0.5,0.5" />
+		<BrokenSprite texture="Content/Items/Weapons/Loaders.png" sourcerect="163,563,153,351" origin="0.5,0.5" offset="35,4" depth="0.77" fadein="true" maxcondition="99" />
+		<UpgradePreviewSprite texture="Content/UI/WeaponUI.png" sourcerect="208,968,32,46" origin="0.5,0.5" />
+		<DecorativeSprite name="Railgun Loader Frame Front" texture="Loaders.png" depth="0.8" sourcerect="31,569,117,200" origin="0.5,0.5" offset="0,-30" />
+		<ItemContainer hideitems="false" drawinventory="true" capacity="8" slotsperrow="6" itempos="58,-255" iteminterval="65,0" itemrotation="90" canbeselected="true" msg="ItemMsgInteractSelect" containedspritedepths="0.79,0.791,0.792,0.793,0.794,0.795">
+			<GuiFrame relativesize="0.25,0.2" anchor="Center" style="ItemUI" />
+			<SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+			<SlotIcon slotindex="3" texture="%ModDir%/UI/iconUI.png" sourcerect="97,0,100,65" origin="0.5,0.5" />
+			<Containable items="depthchargeammo" />
+		</ItemContainer>
+		<Repairable selectkey="Action" header="mechanicalrepairsheader" deteriorationspeed="20" mindeteriorationdelay="5" maxdeteriorationdelay="15" MinDeteriorationCondition="0" RepairThreshold="50" fixDurationHighSkill="5" fixDurationLowSkill="25" msg="ItemMsgRepairWrench" hudpriority="10">
+			<StatusEffect type="InWater" target="This" condition="-0.25" />
+			<GuiFrame relativesize="0.2,0.16" minsize="400,180" maxsize="480,280" anchor="Center" relativeoffset="-0.1,0.27" style="ItemUI" />
+			<RequiredSkill identifier="mechanical" level="55" />
+			<RequiredItem items="wrench" type="Equipped" />
+			<ParticleEmitter particle="damagebubbles" particlespersecond="2" scalemin="0.5" scalemax="1.5" anglemax="360" velocitymin="-10" velocitymax="10" mincondition="0.0" maxcondition="50.0" />
+			<ParticleEmitter particle="smoke" particlespersecond="2" scalemin="1" scalemax="2.5" anglemax="360" velocitymin="-50" velocitymax="50" mincondition="15.0" maxcondition="50.0" />
+			<ParticleEmitter particle="heavysmoke" particlespersecond="2" scalemin="1.0" scalemax="2.5" anglemax="360" distancemax="60" mincondition="0.0" maxcondition="15.0" />
+			<StatusEffect type="OnFailure" target="Character" targetlimbs="LeftHand,RightHand" AllowWhenBroken="true">
+				<Sound file="Content/Items/MechanicalRepairFail.ogg" range="1000" />
+				<Affliction identifier="lacerations" strength="5" />
+				<Affliction identifier="stun" strength="4" />
+			</StatusEffect>
+		</Repairable>
+		<ConnectionPanel selectkey="Action" canbeselected="true" msg="ItemMsgRewireScrewdriver" hudpriority="10">
+			<GuiFrame relativesize="0.2,0.32" minsize="400,350" maxsize="480,420" anchor="Center" style="ConnectionPanel" />
+			<RequiredItem items="screwdriver" type="Equipped" />
+			<output name="condition_out" displayname="connection.conditionout" />
+		</ConnectionPanel>
+	</Item>
 </Items>

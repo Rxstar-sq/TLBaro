@@ -88,8 +88,8 @@
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
       <Attack structuredamage="1" targetforce="1" itemdamage="6" severlimbsprobability="0.8" penetration="0.9">
         <!--5%概率打出双倍伤害，2%几率打出三倍倍伤害，0.1%概率打出4倍伤害-->
-        <Affliction identifier="bleeding" strength="5" />
-        <Affliction identifier="lacerations" strength="35" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="lacerations" strength="50" />
         <!--5%几率打出双倍伤害-->
         <Affliction identifier="lacerations" strength="35" probability="0.05" />
         <!--2%几率打出三倍伤害-->
@@ -114,7 +114,7 @@
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="0" spread="9.5" removeonhit="true" damagedoors="true">
       <Attack targetimpulse="400" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
-        <Affliction identifier="lacerations" strength="15" />
+        <Affliction identifier="lacerations" strength="1.5" />
         <Affliction identifier="bleeding" strength="1" />
         <Affliction identifier="stun" strength="0.125" />
         <Affliction identifier="stun" strength="0.125" probability="0.5" />
@@ -255,6 +255,39 @@
       </StatusEffect>
     </Projectile>
   </Item>
+	<Item name="近防炮子弹EMP" identifier="chaingunboltshredderEMP" category="Misc" scale="0.3" sonarsize="2" hideinmenus="true">
+		<Sprite texture="1130.png" sourcerect="768,697,220,24" depth="0.55" origin="0.5,0.5" />
+		<Body width="200" height="20" density="10" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
+		<Projectile characterusable="false" launchimpulse="400" spread="1.5" removeonhit="true" damagedoors="true">
+			<Attack structuredamage="25" itemdamage="18" severlimbsprobability="0.5" penetration="0.75">
+				<Affliction identifier="lacerations" strength="2" />
+				<Affliction identifier="bleeding" strength="2" />
+				<Affliction identifier="stun" strength="0.01" />
+			</Attack>
+			<StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+				<Remove />
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
+				<Explosion range="200.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
+					<Affliction identifier="burn" strength="5" />
+					<Affliction identifier="stun" strength="1" />
+					<Affliction identifier="explosiondamage" strength="5" />
+					<Affliction identifier="emp" strength="5" multiplybymaxvitality="true" />
+				</Explosion>
+				<sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="3000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="3000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="3000" />
+				<Remove />
+			</StatusEffect>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure" />
+				<Conditional hastag="eq door" />
+				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
+			</StatusEffect>
+		</Projectile>
+	</Item>
+  <!--通用-->
   <Item name="M2常规子弹" identifier="M2_ammo_ord" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
     <Sprite texture="Turret.png" sourcerect="15,993,55,9" depth="0.55" origin="0.5,0.5" />
     <Body width="35" height="6" density="30" />
