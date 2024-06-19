@@ -275,7 +275,7 @@
 		<aitarget maxsightrange="1500" />
 	</Item>
 	<!--特殊-->
-	<Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect,sp_exo" scale="0.53" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项生存能力。头盔上内置的生物扫描系统和瞄准辅助系统可以在敌我识别的同时增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
+	<Item name="特殊作战服01式" identifier="sp01" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect,sp_exo" scale="0.45" waterproof="true" fireproof="true" description="幻星工业与泰拉集团在联盟不知情的情况下暗中联合研发的试作型全领域特殊作战服。混合了异星技术的材料在具有坚韧护甲的同时还提供了强悍的动力。内置的辅助增强系统可以明显增加使用者的各项生存能力。头盔上内置的生物扫描系统和瞄准辅助系统可以在敌我识别的同时增强使用者的战斗能力。" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
 		<Price baseprice="14312" minleveldifficulty="45">
 			<Price storeidentifier="merchantoutpost" multiplier="2" />
 			<Price storeidentifier="merchantcity" multiplier="2" />
@@ -292,8 +292,8 @@
 		<InventoryIcon name="sp01Icon" texture="stand.png" sourcerect="510,3,151,394" origin="0.5,0.5" />
 		<Sprite texture="stand.png" sourcerect="6,5,396,248" depth="0.6" origin="0.5,0.5" />
 		<Body width="100" height="50" density="15" friction="0.8" restitution="0.01" />
-		<Wearable slots="InnerClothes+Head" msg="ItemMsgPickUpSelect">
-			<sprite name="01 Head" texture="head.png" limb="Head" sourcerect="3,132,145,154" hidelimb="true" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.45" hideotherwearables="true" hidewearablesoftype=""  origin="0.5,0.5" />
+		<Wearable slots="OuterClothes+Head" msg="ItemMsgPickUpSelect">
+			<sprite name="01 Head" texture="head.png" limb="Head" sourcerect="3,132,145,154" hidelimb="false" inheritlimbdepth="true" inheritscale="true" ignorelimbscale="true" scale="0.45" hideotherwearables="true" hidewearablesoftype=""  origin="0.5,0.5" />
 			<sprite name="Maid's Uniform 1 Torso" texture="特殊作战服01式.png" limb="Torso" hidelimb="false" inherittexturescale="true" inheritorigin="true" inheritsourcerect="true" >
 				<LightComponent LightColor="250,224,165,255" range="500" powerconsumption="10" IsOn="true">
 					<StatusEffect type="OnWearing" target="This,Character" Interval="0.1" setvalue="true" comparison="And">
@@ -323,7 +323,7 @@
 			</StatusEffect>
 
 			<!-- 氧气基础消耗 -->
-			<StatusEffect type="OnWearing" target="Character" OxygenAvailable="-100.0" UseHullOxygen="true" />
+			<StatusEffect type="OnWearing" target="Character" UseHullOxygen="true" />
 			<StatusEffect type="OnWearing" target="Character" HideFace="true" ObstructVision="true" PressureProtection="100000.0" SpeedMultiplier="1" PropulsionSpeedMultiplier="1.1" setvalue="true" disabledeltatime="true">
 				<Sound file="Content/Items/Diving/DivingSuitLoop1.ogg" range="250" loop="true" />
 				<Sound file="Content/Items/Diving/DivingSuitLoop2.ogg" range="250" loop="true" />
@@ -342,7 +342,7 @@
 				<!--机动增强-->
 				<StatValue stattype="MovementSpeed" value="0.2" />
 				<!--敌我识别-->
-				<StatValue stattype="TeamAttackMultiplier" value="-1" />
+				<StatValue stattype="TeamAttackMultiplier" value="-100" />
 				<!--瞄准辅助-->
 				<StatValue stattype="RangedSpreadReduction" value="0.3" />
 				<!--给予最大武器操作-->
@@ -353,7 +353,7 @@
 				<Affliction identifier="miracleworker" amount="10" />
 				<Conditional Voltage="gt 0.5" />
 			</StatusEffect>
-			`     <!--热成像与健康扫描-->
+			  <!--热成像与健康扫描-->
 			<StatusHUD overlaycolor="176,0,0,120" range="3000" thermalgoggles="true" showdeadcharacters="false" showtexts="false">
 				<StatusEffect type="OnWearing" target="This,Character" drawhudwhenequipped="true" setvalue="true" comparison="And">
 					<Conditional HasStatusTag="eq active" />
@@ -387,8 +387,6 @@
 			<damagemodifier armorsector="0.0,360.0" afflictiontypes="alcellruin" damagemultiplier="0.7" damagesound="" deflectprojectiles="true" />
 			<!--助推器-->
 			<StatusEffect type="OnWearing" target="This" disabledeltatime="true" checkconditionalalways="true" comparison="And">
-				<Conditional targetitemcomponent="MotionSensor" MotionDetected="eq true" />
-				<Conditional IsOn="true" />
 				<Conditional InWater="true" />
 				<Conditional Voltage="gt 0.5" />
 				<ParticleEmitter particle="bubbles" anglemin="0" anglemax="360" particleamount="1" velocitymin="0" velocitymax="50" scalemin="0.2" scalemax="0.5" />
@@ -412,13 +410,13 @@
 				<RequiredItem items="antibloodloss1" type="Contained" targetslot="1" />
 				<Conditional bloodloss="gt 5.0" />
 			</StatusEffect>
-			<!--使用林格溶液-->
+			<!--使用林格溶液
 			<StatusEffect type="OnWearing" target="Character,Contained" condition="-5" targetslot="1">
 				<Affliction identifier="bloodpressure" amount="10" />
 				<ReduceAffliction type="bloodloss" amount="4.25" />
 				<RequiredItem items="ringerssolution" type="Contained" targetslot="1" />
 				<Conditional bloodloss="gt 5.0" />
-			</StatusEffect>
+			</StatusEffect>-->
 			<!--使用血袋-->
 			<StatusEffect type="OnWearing" target="Character,Contained" condition="-5" targetslot="1">
 				<ReduceAffliction type="bloodloss" amount="6" />
@@ -504,7 +502,7 @@
 			<SubContainer capacity="1" maxstacksize="1">
 				<Containable items="antidama1,antidama2,deusizine" />
 			</SubContainer>
-			<SubContainer capacity="9">
+			<SubContainer capacity="6">
 				<Containable items="smallitem" />
 			</SubContainer>
 		</ItemContainer>
