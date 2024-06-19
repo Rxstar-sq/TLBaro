@@ -308,6 +308,35 @@
 			<QualityStat stattype="Condition" value="0.1"/>
 		</Quality>
 	</Item>
+	<!--豹豹的不知道什么东西-->
+	<Item name="外挂式辅疗仪" identifier="naoji1" scale="0.5" category="Equipment, Medical" tags="smallitem,mobileradio" description="集团推出的一款医护用具，可在应急情况下保住你的命" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="crewcab" secondary="divingcab" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="180">
+			<RequiredSkill identifier="electrical" level="40" />
+		</Fabricate>
+		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
+		<Body radius="20" height="20" density="15" />
+		<!---->
+		<Wearable limbtype="Any" slots="Any,OuterClothes" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+			<StatusEffect type="OnWearing" target="Character" duration="0.1">
+				<ReduceAffliction type="bleeding" amount="1" />
+				<ReduceAffliction type="burn" amount="1" />
+				<ReduceAffliction identifier="blunttrauma" amount="1" />
+				<Affliction identifier="lacerations" amount="1" />
+				<Affliction identifier="gunshotwound" amount="1" />
+				<ReduceAffliction identifier="bitewounds" amount="1" />
+				<ReduceAffliction identifier="lacerations" amount="1" />
+			</StatusEffect>
+		</Wearable>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+			<Containable items="mobilebattery">
+				<StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+				<StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And" />
+			</Containable>
+		</ItemContainer>
+	</Item>
+
 	<![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
