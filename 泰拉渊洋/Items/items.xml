@@ -1,343 +1,515 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-	<Item name="TL背包" identifier="TLbag" HideConditionBar="true" category="Equipment" tags="mediumitem,mobilecontainer,tool,TLbag" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof="true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
-		<Deconstruct time="4">
-			<Item identifier="organicfiber" amount="1" />
-			<Item identifier="plastic" amount="1" />
-		</Deconstruct>
-		<InventoryIcon texture="icon.png" sourcerect="816,13,172,205" origin="0.5,0.5" />
-		<Sprite texture="icon.png" depth="0.6" sourcerect="817,15,169,202" origin="0.5,0.6" />
-		<Body width="95" height="115" density="15" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
-			<CustomInterface canbeselected="false" drawhudwhenequipped="true">
-				<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
-				<StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
-					<Conditional condition="gt 50" />
-				</StatusEffect>
-				<Button text="折叠">
-					<StatusEffect type="OnUse" target="This">
-						<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
-						<SpawnItem identifier="TLbagzhe" count="1" spawnposition="This" />
-						<Remove />
-					</StatusEffect>
-				</Button>
-			</CustomInterface>
-		</Holdable>
-		<Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
-			<sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="816,11,172,207" origin="0.725,0.55" scale="0.35" />
-		</Wearable>
-		<ItemContainer capacity="40" maxstacksize="16" depth="0.5">
-			<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers="TLbag">
-				<StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10" />
-			</Containable>
-		</ItemContainer>
-	</Item>
-	<Item name="TL背包(折叠）" identifier="TLbagzhe" category="Equipment" tags="mediumitem,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof="true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
-		<Deconstruct time="4">
-			<Item identifier="organicfiber" amount="1" />
-			<Item identifier="plastic" amount="1" />
-		</Deconstruct>
-		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
-		</Price>
-		<Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5" />
-		<InventoryIcon texture="icon.png" sourcerect="816,10,172,208" origin="0.5,0.5" />
-		<Sprite texture="Content/Items/Jobgear/MiscJobGear.png" depth="0.6" sourcerect="243,71,130,74" origin="0.5,0.6" />
-		<Body width="95" height="50" density="15" />
-		<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
-			<CustomInterface canbeselected="false" drawhudwhenequipped="true">
-				<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
-				<Button text="打开">
-					<StatusEffect type="OnUse" target="This">
-						<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
-						<SpawnItem identifier="TLbag" count="1" spawnposition="This" />
-						<Remove />
-					</StatusEffect>
-				</Button>
-			</CustomInterface>
-		</Holdable>
-	</Item>
-	<Item name="690战术核板砖" identifier="690" category="Weapon" Tags="mediumitem,mountableweapon,weapon,gunsmith" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="secarmcab" secondary="armcab" />
-		<Price baseprice="3500" sold="false">
-			<Price storeidentifier="merchantoutpost" multiplier="1.25" />
-			<Price storeidentifier="merchantcity" multiplier="1.25" />
-			<Price storeidentifier="merchantresearch" multiplier="1.25" />
-			<Price storeidentifier="merchantmilitary" multiplier="0.9" />
-			<Price storeidentifier="merchantmine" multiplier="1.25" />
-			<Price storeidentifier="TLarmory" multiplier="0.9" minavailable="0" maxavailable="3" />
-		</Price>
-		<Deconstruct time="10">
-			<Item identifier="FuelRod" />
-		</Deconstruct>
-		<Sprite texture="icon.png" sourcerect="553,48,100,40" depth="0.55" origin="0.5,0.5" />
-		<Body width="100" height="20" density="25" />
-		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
-			<Attack targetimpulse="1500" severlimbsprobability="1" itemdamage="100" structuredamage="10000">
-				<Affliction identifier="lacerations" strength="90" />
-				<Affliction identifier="internaldamage" strength="100" />
-				<Affliction identifier="blunttrauma" strength="100" />
-				<Affliction identifier="bleeding" strength="90" />
-				<Affliction identifier="stun" strength="10" />
-				<Affliction identifier="burn" strength="100" />
-				<StatusEffect type="OnUse" target="UseTarget">
-					<Conditional entitytype="eq Character" />
-					<Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
-					<Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
-					<Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
-					<Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
-					<Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
-					<Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
-				</StatusEffect>
-			</Attack>
-		</MeleeWeapon>
-		<Quality>
-			<QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
-		</Quality>
-		<aitarget sightrange="500" soundrange="250" fadeouttime="1" />
-	</Item>
-	<Item name="华强的砍刀" identifier="huaqiang" category="Weapon" description="违禁品昂，别瞎碰" Tags="mediumitem,mountableweapon,weapon,gunsmith" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="secarmcab" secondary="armcab" />
-		<Deconstruct time="10">
-			<Item identifier="FuelRod" />
-		</Deconstruct>
-		<Fabricate suitablefabricators="moneymaker" requiredtime="75" requiresrecipe="false">
-			<RequiredSkill identifier="mechanical" level="65" />
-			<RequiredItem identifier="fpgacircuit" />
-			<RequiredItem identifier="lead" amount="4" />
-			<RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
-		</Fabricate>
-		<Sprite texture="icon.png" sourcerect="28,444,122,26" depth="0.55" origin="0.5,0.5" />
-		<Body width="110" height="15" density="25" />
-		<MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
-			<Attack targetimpulse="1500" severlimbsprobability="9" itemdamage="100" structuredamage="250">
-				<Affliction identifier="kill" strength="100" />
-				<Affliction identifier="lacerations" strength="100" />
-				<Affliction identifier="internaldamage" strength="100" />
-				<Affliction identifier="blunttrauma" strength="100" />
-				<Affliction identifier="bleeding" strength="100" />
-				<StatusEffect type="OnUse" target="UseTarget">
-					<Conditional entitytype="eq Character" />
-					<Sound file="%ModDir%/ogg/撒日朗.ogg" selectionmode="random" range="2000" />
-					<Sound file="%ModDir%/ogg/故意找茬.ogg" range="2000" />
-				</StatusEffect>
-			</Attack>
-		</MeleeWeapon>
-		<Quality>
-			<QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
-		</Quality>
-		<aitarget sightrange="500" soundrange="250" fadeouttime="1" />
-	</Item>
-	<Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
-		<Price baseprice="3500" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.1" />
-		</Price>
-		<Upgrade gameversion="0.9.3.0" scale="0.35" />
-		<PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
-		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,256,64,64" origin="0.5,0.5" />
-		<Sprite name="Security Vest Item" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
-		<Body width="85" height="90" density="25" />
-		<Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
-			<sprite name="Security Vest Wearable" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
-			<damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
-			<sprite name="shellshield" texture="Content/Items/CreatureLoot/CreatureLoot.png" sourcerect="363,0,100,165" limb="Torso" depthlimb="head" hidelimb="false" inherittexturescale="true" inheritorigin="false" inheritsourcerect="false" origin="0.5,0.65" />
-			<StatusEffect type="Always" target="This" condition="1" />
-		</Wearable>
-	</Item>
-	<Item name="纳米凝胶" identifier="nanogel" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对木卫二遗迹材料的研究，泰拉集团与幻星工业合作制作出了这种珍贵的具有生物性质的纳米材料" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="mineralcab" secondary="storagecab" />
-		<Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="20">
-			<Price storeidentifier="TLarmory" multiplier="1" minavailable="5" sold="true" />
-			<Price storeidentifier="merchantcity" multiplier="2.25" />
-			<Price storeidentifier="merchantresearch" multiplier="1.6" />
-			<Price storeidentifier="merchantmilitary" multiplier="1.8" />
-		</Price>
-		<Deconstruct time="10"></Deconstruct>
-		<Sprite name="纳米凝胶" texture="icon.png" depth="0.3" sourcerect="596,421,45,106" origin="0.5,0.5" />
-		<Body radius="60" width="65" density="50" />
-		<Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
-	</Item>
-	<Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="mineralcab" secondary="storagecab" />
-		<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
-			<RequiredItem identifier="nanogel" amount="1" />
-			<RequiredItem identifier="alienblood" amount="2" />
-			<RequiredItem identifier="fpgacircuit" amount="1" />
-		</Fabricate>
-		<Deconstruct time="10">
-			<Item identifier="alienblood" amount="1" />
-		</Deconstruct>
-		<!--等待贴图-->
-		<Sprite name="破坏纳米凝胶" texture="icon.png" depth="0.3" sourcerect="482,413,53,117" origin="0.5,0.5" />
-		<Body radius="60" width="65" density="50" />
-		<Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
-	</Item>
-	<!-- 药品 -->
-	<REalcellruin name="细胞神经生长因子" identifier="REalcellruin" category="Medical" Tags="smallitem,medical" maxstacksize="18" maxstacksizecharacterinventory="6" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="昂贵的细胞再生药品，由集团研发部供货，其他商人那里都是假货哦" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
-		<Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="0">
-			<Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
-		</Price>
-		<Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="1">
-			<RequiredSkill identifier="medical" level="15" />
-			<RequiredItem identifier="antibleeding2" />
-			<RequiredItem identifier="nanogel" />
-			<RequiredItem identifier="stabilozine" />
-		</Fabricate>
-		<Deconstruct time="3" />
-		<SuitableTreatment type="alcellruin" suitability="50" />
-		<InventoryIcon texture="icon.png" sourcerect="187,20,25,43" origin="0.5,0.5" />
-		<Sprite texture="icon.png" sourcerect="188,21,25,43" depth="0.6" origin="0.5,0.5" />
-		<Body width="25" height="40" density="10.05" />
-		<MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
-			<RequiredSkill identifier="medical" level="45" />
-			<StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
-				<Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
-				<Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
-			</StatusEffect>
-			<StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
-				<ReduceAffliction type="alcellruin" amount="25" />
-			</StatusEffect>
-			<StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
-				<ReduceAffliction type="alcellruin" amount="15" />
-			</StatusEffect>
-			<!-- Remove the item when fully used -->
-			<StatusEffect type="OnBroken" target="This">
-				<Remove />
-			</StatusEffect>
-		</MeleeWeapon>
-		<SkillRequirementHint identifier="medical" level="45" />
-	</REalcellruin>
-	<!--芯片系列（贴图，数值等待）-->
-	<Item name="神经增强芯片——攻击加强" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Attack" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
-		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
-		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
-		</Price>
-		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
-		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
-			<StatusEffect tags="medical" target="Character">
-				<Affliction identifier="tl_Attackadd" amount="100" />
-			</StatusEffect>
-		</Holdable>
-		<Body width="35" height="35" density="60" />
-	</Item>
-	<Item name="神经增强芯片——快速射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Fastshot" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
-		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
-		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
-		</Price>
-		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
-		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
-			<StatusEffect tags="medical" target="Character">
-				<Affliction identifier="tl_Fastshot" amount="100" />
-			</StatusEffect>
-		</Holdable>
-		<Body width="35" height="35" density="60" />
-	</Item>
-	<Item name="神经增强芯片——作战经验" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Exfight" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
-		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
-		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
-		</Price>
-		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
-		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
-			<StatusEffect tags="medical" target="Character">
-				<Affliction identifier="tl_Exfight" amount="100" />
-			</StatusEffect>
-		</Holdable>
-		<Body width="35" height="35" density="60" />
-	</Item>
-	<Item name="神经增强芯片——精准射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Precise" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
-		<InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5"/>
-		<Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
-			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
-		</Price>
-		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
-		<Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
-			<StatusEffect tags="medical" target="Character">
-				<Affliction identifier="tl_Precise" amount="100" />
-			</StatusEffect>
-		</Holdable>
-		<Body width="35" height="35" density="60" />
-	</Item>
-	<Item name="动力电池" identifier="Powerbattery" Category="Fuel" Tags="smallitem,TLbattery,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5">
-		<PreferredContainer primary="reactorcab"/>
-		<PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1"/>
-		<PreferredContainer secondary="wreckreactorcab,abandonedreactorcab,piratereactorcab" minamount="1" maxamount="2" spawnprobability="0.5"/>
-		<PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.2"/>
-		<PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.05"/>
-		<Price baseprice="1500" displaynonempty="true" minavailable="2">
-			<Price storeidentifier="merchantoutpost" />
-			<Price storeidentifier="merchantcity" minavailable="3" />
-			<Price storeidentifier="merchantresearch" />
-			<Price storeidentifier="merchantmilitary" />
-			<Price storeidentifier="merchantmine" />
-			<Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="5" />
-			<Price storeidentifier="merchanttutorial" multiplier="0.5" minavailable="3" />
-		</Price>
-		<Deconstruct time="10">
-			<Item identifier="steel" amount="5" />
-			<Item identifier="uranium" mincondition="0.95"/>
-		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator" requiredtime="15">
-			<RequiredSkill identifier="electrical" level="25" />
-			<RequiredItem identifier="uranium" />
-			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="lead" />
-		</Fabricate>
-		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
-			<RequiredSkill identifier="electrical" level="15" />
-			<RequiredItem identifier="uranium" />
-			<RequiredItem identifier="fuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false"/>
-		</Fabricate>
-		<Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" />
-		<Body width="40" height="80" density="30" />
-		<Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect" >
-			<!--Status effect to cause radiation whenever handling fuel rods. Disabled for now because effect doesn't stop when no longer in contact with fuel rods.-->
-			<!--<StatusEffect type="Always" target="Character">
+  <Item name="TL背包" identifier="TLbag" HideConditionBar="true" category="Equipment" tags="mediumitem,mobilecontainer,tool,TLbag" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof="true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+    <Deconstruct time="4">
+      <Item identifier="organicfiber" amount="1" />
+      <Item identifier="plastic" amount="1" />
+    </Deconstruct>
+    <InventoryIcon texture="icon.png" sourcerect="816,13,172,205" origin="0.5,0.5" />
+    <Sprite texture="icon.png" depth="0.6" sourcerect="817,15,169,202" origin="0.5,0.6" />
+    <Body width="95" height="115" density="15" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+        <StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
+          <Conditional condition="gt 50" />
+        </StatusEffect>
+        <Button text="折叠">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnItem identifier="TLbagzhe" count="1" spawnposition="This" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+    <Wearable limbtype="Torso" slots="Bag" msg="ItemMsgEquipSelect" canbeselected="false" canbepicked="true" pickkey="Select" displaycontainedstatus="true">
+      <sprite name="Backpack Wearable" texture="icon.png" limb="Torso" hidelimb="false" inheritlimbdepth="true" inherittexturescale="false" hideotherwearables="false" sourcerect="816,11,172,207" origin="0.725,0.55" scale="0.35" />
+    </Wearable>
+    <ItemContainer capacity="40" maxstacksize="16" depth="0.5">
+      <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" excludedidentifiers="TLbag">
+        <StatusEffect type="OnContaining" target="This" drawhudwhenequipped="false" condition="-10" />
+      </Containable>
+    </ItemContainer>
+  </Item>
+  <Item name="TL背包(折叠）" identifier="TLbagzhe" category="Equipment" tags="mediumitem,tool" cargocontaineridentifier="metalcrate" showcontentsintooltip="true" Scale="0.5" waterprof="true" fireproof="true" description="TL大背包，万物皆可装" impactsoundtag="impact_soft">
+    <Deconstruct time="4">
+      <Item identifier="organicfiber" amount="1" />
+      <Item identifier="plastic" amount="1" />
+    </Deconstruct>
+    <Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Fabricate suitablefabricators="vendingmachine" requiredtime="1" requiredmoney="3500" fabricationlimitmin="1" fabricationlimitmax="5" />
+    <InventoryIcon texture="icon.png" sourcerect="816,10,172,208" origin="0.5,0.5" />
+    <Sprite texture="Content/Items/Jobgear/MiscJobGear.png" depth="0.6" sourcerect="243,71,130,74" origin="0.5,0.6" />
+    <Body width="95" height="50" density="15" />
+    <Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
+      <CustomInterface canbeselected="false" drawhudwhenequipped="true">
+        <GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+        <Button text="打开">
+          <StatusEffect type="OnUse" target="This">
+            <Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+            <SpawnItem identifier="TLbag" count="1" spawnposition="This" />
+            <Remove />
+          </StatusEffect>
+        </Button>
+      </CustomInterface>
+    </Holdable>
+  </Item>
+  <Item name="690战术核板砖" identifier="690" category="Weapon" Tags="mediumitem,mountableweapon,weapon,gunsmith" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <Price baseprice="3500" sold="false">
+      <Price storeidentifier="merchantoutpost" multiplier="1.25" />
+      <Price storeidentifier="merchantcity" multiplier="1.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" />
+      <Price storeidentifier="merchantmine" multiplier="1.25" />
+      <Price storeidentifier="TLarmory" multiplier="0.9" minavailable="0" maxavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="FuelRod" />
+    </Deconstruct>
+    <Sprite texture="icon.png" sourcerect="553,48,100,40" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="20" density="25" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="1500" severlimbsprobability="1" itemdamage="100" structuredamage="10000">
+        <Affliction identifier="lacerations" strength="90" />
+        <Affliction identifier="internaldamage" strength="100" />
+        <Affliction identifier="blunttrauma" strength="100" />
+        <Affliction identifier="bleeding" strength="90" />
+        <Affliction identifier="stun" strength="10" />
+        <Affliction identifier="burn" strength="100" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="Content/Sounds/Damage/LimbSlash1.ogg" selectionmode="random" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash2.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash3.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash4.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash5.ogg" range="500" />
+          <Sound file="Content/Sounds/Damage/LimbSlash6.ogg" range="500" />
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+  <Item name="华强的砍刀" identifier="huaqiang" category="Weapon" description="违禁品昂，别瞎碰" Tags="mediumitem,mountableweapon,weapon,gunsmith" scale="0.5" allowasextracargo="true" requireaimtouse="true" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" secondary="armcab" />
+    <Deconstruct time="10">
+      <Item identifier="FuelRod" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="moneymaker" requiredtime="75" requiresrecipe="false">
+      <RequiredSkill identifier="mechanical" level="65" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="lead" amount="4" />
+      <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
+    </Fabricate>
+    <Sprite texture="icon.png" sourcerect="28,444,122,26" depth="0.55" origin="0.5,0.5" />
+    <Body width="110" height="15" density="25" />
+    <MeleeWeapon slots="Any,RightHand,LeftHand" aimpos="50,0" handle1="-22,2" handle2="-32,5" holdangle="30" aimangle="10" reload="0.5" range="180" combatPriority="40" msg="ItemMsgPickUpSelect">
+      <Attack targetimpulse="1500" severlimbsprobability="9" itemdamage="100" structuredamage="250">
+        <Affliction identifier="kill" strength="100" />
+        <Affliction identifier="lacerations" strength="100" />
+        <Affliction identifier="internaldamage" strength="100" />
+        <Affliction identifier="blunttrauma" strength="100" />
+        <Affliction identifier="bleeding" strength="100" />
+        <StatusEffect type="OnUse" target="UseTarget">
+          <Conditional entitytype="eq Character" />
+          <Sound file="%ModDir%/ogg/撒日朗.ogg" selectionmode="random" range="2000" />
+          <Sound file="%ModDir%/ogg/故意找茬.ogg" range="2000" />
+        </StatusEffect>
+      </Attack>
+    </MeleeWeapon>
+    <Quality>
+      <QualityStat stattype="StrikingPowerMultiplier" value="0.1" />
+    </Quality>
+    <aitarget sightrange="500" soundrange="250" fadeouttime="1" />
+  </Item>
+  <Item name="自动修复护甲" identifier="luaarmor" category="Equipment" tags="smallitem,clothing" scale="0.35" cargocontaineridentifier="metalcrate" description="" impactsoundtag="impact_soft">
+    <Price baseprice="3500" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.1" />
+    </Price>
+    <Upgrade gameversion="0.9.3.0" scale="0.35" />
+    <PreferredContainer primary="secarmcab" amount="3" notcampaign="true" />
+    <InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="960,256,64,64" origin="0.5,0.5" />
+    <Sprite name="Security Vest Item" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" sourcerect="14,45,103,180" depth="0.6" origin="0.5,0.35" />
+    <Body width="85" height="90" density="25" />
+    <Wearable slots="Any,OuterClothes" msg="ItemMsgPickUpSelect">
+      <sprite name="Security Vest Wearable" texture="Content/Items/Jobgear/Mechanic/safetyharness.png" limb="Torso" hidelimb="false" inheritscale="true" scale="0.65" inheritorigin="false" origin="0.5,0.5" inheritsourcerect="false" sourcerect="14,45,103,180" />
+      <damagemodifier afflictiontypes="bleeding" armorsector="0.0,360.0" damagemultiplier="1" damagesound="LimbArmor" deflectprojectiles="true" />
+      <sprite name="shellshield" texture="Content/Items/CreatureLoot/CreatureLoot.png" sourcerect="363,0,100,165" limb="Torso" depthlimb="head" hidelimb="false" inherittexturescale="true" inheritorigin="false" inheritsourcerect="false" origin="0.5,0.65" />
+      <StatusEffect type="Always" target="This" condition="1" />
+    </Wearable>
+  </Item>
+  <Item name="纳米凝胶" identifier="nanogel" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对木卫二遗迹材料的研究，泰拉集团与幻星工业合作制作出了这种珍贵的具有生物性质的纳米材料" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="mineralcab" secondary="storagecab" />
+    <Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="20">
+      <Price storeidentifier="TLarmory" multiplier="1" minavailable="5" sold="true" />
+      <Price storeidentifier="merchantcity" multiplier="2.25" />
+      <Price storeidentifier="merchantresearch" multiplier="1.6" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.8" />
+    </Price>
+    <Deconstruct time="10"></Deconstruct>
+    <Sprite name="纳米凝胶" texture="icon.png" depth="0.3" sourcerect="577,412,100,124" origin="0.5,0.5" />
+    <Body radius="60" width="65" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+  </Item>
+  <Item name="破坏性纳米凝胶" identifier="nanogel_cr" category="Material" Tags="smallitem" maxstacksize="8" canbepicked="true" description="通过对凝胶的再编程与二次处理，使这类凝胶具有了危险性，会导致生物的细胞永久失活" cargocontaineridentifier="metalcrate" scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="mineralcab" secondary="storagecab" />
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" requiresrecipe="false">
+      <RequiredItem identifier="nanogel" amount="1" />
+      <RequiredItem identifier="alienblood" amount="2" />
+      <RequiredItem identifier="fpgacircuit" amount="1" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="alienblood" amount="1" />
+    </Deconstruct>
+    <!--等待贴图-->
+    <Sprite name="破坏纳米凝胶" texture="icon.png" depth="0.3" sourcerect="467,411,95,121" origin="0.5,0.5" />
+    <Body radius="60" width="65" density="50" />
+    <Holdable slots="Any,RightHand,LeftHand" msg="ItemMsgUsePlasmaCutter" handle1="0,0" pickingtime="5.0" attachable="true" reattachable="false" />
+  </Item>
+  <!-- 药品 -->
+  <REalcellruin name="细胞神经生长因子" identifier="REalcellruin" category="Medical" Tags="smallitem,medical" maxstacksize="18" maxstacksizecharacterinventory="6" useinhealthinterface="true" cargocontaineridentifier="mediccrate" description="昂贵的细胞再生药品，由集团研发部供货，其他商人那里都是假货哦" scale="0.5" impactsoundtag="impact_soft" RequireAimToUse="True">
+    <Price baseprice="1800" buyingpricemultiplier="1" minleveldifficulty="0">
+      <Price storeidentifier="TLarmory" minavailable="0" maxavailable="3" />
+    </Price>
+    <Fabricate suitablefabricators="medicalfabricator" requiredtime="15" amount="1">
+      <RequiredSkill identifier="medical" level="15" />
+      <RequiredItem identifier="antibleeding2" />
+      <RequiredItem identifier="nanogel" />
+      <RequiredItem identifier="stabilozine" />
+    </Fabricate>
+    <Deconstruct time="3" />
+    <SuitableTreatment type="alcellruin" suitability="50" />
+    <InventoryIcon texture="icon.png" sourcerect="187,20,25,43" origin="0.5,0.5" />
+    <Sprite texture="icon.png" sourcerect="188,21,25,43" depth="0.6" origin="0.5,0.5" />
+    <Body width="25" height="40" density="10.05" />
+    <MeleeWeapon canBeCombined="true" removeOnCombined="true" slots="Any,RightHand,LeftHand" aimpos="40,5" handle1="0,0" holdangle="10" reload="1.0" msg="ItemMsgPickUpSelect" HitOnlyCharacters="true">
+      <RequiredSkill identifier="medical" level="45" />
+      <StatusEffect type="OnUse" target="This" Condition="-100.0" setvalue="true">
+        <Sound file="Content/Items/Medical/Bandage1.ogg" range="500" />
+        <Sound file="Content/Items/Medical/Bandage2.ogg" range="500" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnSuccess" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="25" />
+      </StatusEffect>
+      <StatusEffect tags="medical" type="OnFailure" target="UseTarget" duration="2">
+        <ReduceAffliction type="alcellruin" amount="15" />
+      </StatusEffect>
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnBroken" target="This">
+        <Remove />
+      </StatusEffect>
+    </MeleeWeapon>
+    <SkillRequirementHint identifier="medical" level="45" />
+  </REalcellruin>
+  <!--芯片系列（贴图，数值等待）-->
+  <Item name="神经增强芯片——攻击加强" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Attack" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5" />
+    <Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="medical" target="Character">
+        <Affliction identifier="tl_Attackadd" amount="100" />
+      </StatusEffect>
+    </Holdable>
+    <Body width="35" height="35" density="60" />
+  </Item>
+  <Item name="神经增强芯片——快速射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Fastshot" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5" />
+    <Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="medical" target="Character">
+        <Affliction identifier="tl_Fastshot" amount="100" />
+      </StatusEffect>
+    </Holdable>
+    <Body width="35" height="35" density="60" />
+  </Item>
+  <Item name="神经增强芯片——作战经验" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Exfight" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5" />
+    <Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="medical" target="Character">
+        <Affliction identifier="tl_Exfight" amount="100" />
+      </StatusEffect>
+    </Holdable>
+    <Body width="35" height="35" density="60" />
+  </Item>
+  <Item name="神经增强芯片——精准射击" description="目前使用手电筒槽位，后续会修改" identifier="nervegrowchip_Precise" category="Equipment" cargocontaineridentifier="metalcrate" tags="smallitem,weapon,flashlight" scale="0.5" impactsoundtag="impact_metal_light">
+    <InventoryIcon texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" origin="0.5,0.5" />
+    <Price baseprice="2500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+      <Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+    </Price>
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
+    <Holdable slots="Any,RightHand,LeftHand" controlpose="true" holdpos="0,-60" aimpos="0,12" handle1="40,-16" handle2="100,-10" holdangle="0" msg="ItemMsgPickUpSelect">
+      <StatusEffect tags="medical" target="Character">
+        <Affliction identifier="tl_Precise" amount="100" />
+      </StatusEffect>
+    </Holdable>
+    <Body width="35" height="35" density="60" />
+  </Item>
+  <Item name="动力电池" identifier="Powerbattery" Category="Fuel" Tags="smallitem,TLbattery,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5">
+    <PreferredContainer primary="reactorcab" />
+    <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
+    <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab,piratereactorcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+    <PreferredContainer secondary="beaconengcab" amount="1" spawnprobability="0.2" />
+    <PreferredContainer secondary="abandonedengcab,pirateengcab,wreckengcab" amount="1" spawnprobability="0.05" />
+    <Price baseprice="35000" displaynonempty="true" minavailable="2">
+      <Price storeidentifier="merchantoutpost" />
+      <Price storeidentifier="merchantcity" minavailable="3" />
+      <Price storeidentifier="merchantresearch" />
+      <Price storeidentifier="merchantmilitary" />
+      <Price storeidentifier="merchantmine" />
+      <Price storeidentifier="merchantengineering" multiplier="0.9" minavailable="5" />
+      <Price storeidentifier="merchanttutorial" multiplier="0.8" minavailable="3" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" amount="5" />
+      <Item identifier="uranium" mincondition="0.95" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="electrical" level="25" />
+      <RequiredItem identifier="uranium" />
+      <RequiredItem identifier="steel" />
+      <RequiredItem identifier="lead" />
+    </Fabricate>
+    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
+      <RequiredSkill identifier="electrical" level="15" />
+      <RequiredItem identifier="uranium" />
+      <RequiredItem identifier="fuelrod" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+    </Fabricate>
+    <Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" />
+    <Body width="40" height="80" density="30" />
+    <Holdable handle1="0,0" slots="Any,RightHand,LeftHand" msg="ItemMsgPickUpSelect">
+      <!--Status effect to cause radiation whenever handling fuel rods. Disabled for now because effect doesn't stop when no longer in contact with fuel rods.-->
+      <!--<StatusEffect type="Always" target="Character">
         <Affliction identifier="radiationsickness" strength="0.25" />
       </StatusEffect>-->
-		</Holdable>
-		<ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="nucleargunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
-			<Containable items="nucleargunbolt" />
-			<StatusEffect type="OnUse" target="This" condition="-25.0" disabledeltatime="true">
-				<SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
-			</StatusEffect>
-		</ItemContainer>
-		<Quality>
-			<QualityStat stattype="Condition" value="0.1"/>
-		</Quality>
-	</Item>
-	<!--豹豹的不知道什么东西-->
-	<Item name="外挂式辅疗仪" identifier="naoji1" scale="0.5" category="Equipment, Medical" tags="smallitem,mobileradio" description="集团推出的一款医护用具，可在应急情况下保住你的命" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="crewcab" secondary="divingcab" />
-		<Fabricate suitablefabricators="fabricator" requiredtime="180">
-			<RequiredSkill identifier="electrical" level="40" />
-		</Fabricate>
-		<Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5"/>
-		<Body radius="20" height="20" density="15" />
-		<!---->
-		<Wearable limbtype="Any" slots="Any,OuterClothes" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
-			<StatusEffect type="OnWearing" target="Character" duration="0.1">
-				<ReduceAffliction type="bleeding" amount="1" />
-				<ReduceAffliction type="burn" amount="1" />
-				<ReduceAffliction identifier="blunttrauma" amount="1" />
-				<Affliction identifier="lacerations" amount="1" />
-				<Affliction identifier="gunshotwound" amount="1" />
-				<ReduceAffliction identifier="bitewounds" amount="1" />
-				<ReduceAffliction identifier="lacerations" amount="1" />
-			</StatusEffect>
-		</Wearable>
-		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
-			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
-			<Containable items="mobilebattery">
-				<StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
-				<StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And" />
-			</Containable>
-		</ItemContainer>
-	</Item>
-
-	<![CDATA[
+    </Holdable>
+    <ItemContainer hideitems="true" capacity="1" itemrotation="90" drawinventory="false" canbeselected="false" SpawnWithId="nucleargunbolt" removecontaineditemsondeconstruct="true" showcontainedstateindicator="false">
+      <Containable items="nucleargunbolt" />
+      <StatusEffect type="OnUse" target="This" condition="-25.0" disabledeltatime="true">
+        <SpawnItem identifiers="nucleargunbolt" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <Quality>
+      <QualityStat stattype="Condition" value="0.1" />
+    </Quality>
+  </Item>
+  <Item name="外挂式辅疗仪" identifier="naoji1" scale="0.5" category="Equipment, Medical" tags="smallitem,mobileradio" description="集团推出的一款医护用具，可在应急情况下保住你的命" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="crewcab" secondary="divingcab" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="180">
+      <RequiredSkill identifier="electrical" level="40" />
+    </Fabricate>
+    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
+    <Body radius="20" height="20" density="15" />
+    <!---->
+    <Wearable limbtype="Any" slots="Any,OuterClothes" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
+      <StatusEffect type="OnWearing" target="Character" duration="0.1">
+        <ReduceAffliction type="bleeding" amount="1" />
+        <ReduceAffliction type="burn" amount="1" />
+        <ReduceAffliction identifier="blunttrauma" amount="1" />
+        <Affliction identifier="lacerations" amount="1" />
+        <Affliction identifier="gunshotwound" amount="1" />
+        <ReduceAffliction identifier="bitewounds" amount="1" />
+        <ReduceAffliction identifier="lacerations" amount="1" />
+      </StatusEffect>
+    </Wearable>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery">
+        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
+        <StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And" />
+      </Containable>
+    </ItemContainer>
+  </Item>
+  <Item name="高级电动焊接器・一阶段" identifier="weldingtoolPRO1" category="Equipment" Tags="smallitem,weldingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="engcab" amount="1" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="supplycab" amount="1" spawnprobability="0.2" notcampaign="true" />
+    <PreferredContainer primary="outpostsupplycab" amount="1" spawnprobability="0.5" />
+    <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+    <PreferredContainer primary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Price baseprice="400">
+      <Price storeidentifier="merchantoutpost" minavailable="3" />
+      <Price storeidentifier="merchantcity" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+    </Price>
+    <Sprite texture="icon.png" sourcerect="175,425,175,86" depth="0.55" origin="0.5,0.5" />
+    <!-- the item takes 10 seconds to break down in a deconstructor and turns into steel and plastic -->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="steel" amount="3" />
+      <RequiredItem identifier="plastic" amount="4" />
+    </Fabricate>
+    <!-- physics body -->
+    <Body width="150" height="60" density="25" />
+    <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-62,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" />
+    <RepairTool firedamage="10.0" structurefixamount="8" range="300" barrelpos="35,12" particles="weld" repairmultiple="true" repairthroughwalls="false" combatpriority="10" levelwallfixamount="-0.425" targetforce="10">
+      <!-- the item must contain a welding fuel tank for it to work -->
+      <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <ParticleEmitter particle="weld" particlespersecond="50" copyentityangle="true" scalemin="1.5" scalemax="2" />
+      <ParticleEmitterHitStructure particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" scalemin="1" scalemax="1.5" />
+      <ParticleEmitterHitStructure particle="GlowDot" particlespersecond="60" emitinterval="0.7" particleamount="10" scalemin="0.9" scalemax="1.0" anglemin="0" anglemax="360" velocitymin="10" velocitymax="50" />
+      <ParticleEmitterHitStructure particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="0" velocitymax="50" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="10" velocitymax="100" />
+      <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+      <sound file="Content/Items/Tools/WeldingLoop.ogg" type="OnUse" range="500.0" loop="true" />
+      <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+      <StatusEffect type="OnUse" targettype="Contained" targets="mobilebattery" Condition="-1.2" />
+      <!-- welding a door, it will get stuck after a while -->
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="5.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-3.0">
+        <Conditional HasTag="neq weldable" />
+      </StatusEffect>
+      <!-- do burn damage to characters -->
+      <StatusEffect type="OnSuccess" targettype="Limb">
+        <Affliction identifier="burn" amount="2.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="150.0" force="3" applyfireeffects="false">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="150.0" force="6" applyfireeffects="false">
+          <Affliction identifier="burn" strength="50" />
+          <Affliction identifier="stun" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <!-- the tool can fix structures, i.e. walls and windows -->
+      <Fixable identifier="structure" />
+      <NonFixable identifier="thalamus,ice" />
+      <LightComponent LightColor="255,229,178,100" Range="150" Flicker="0.5">
+        <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+      </LightComponent>
+    </RepairTool>
+    <!-- one welding fuel or oxygen tank can be contained inside the welding tool -->
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="8,-35" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+    <Quality>
+      <QualityStat stattype="RepairToolStructureRepairMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Upgrade gameversion="0.14.0.0">
+      <RepairTool>
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+      </RepairTool>
+    </Upgrade>
+    <Upgrade gameversion="0.15.4.0">
+      <ItemContainer itempos="8,-35" />
+    </Upgrade>
+    <SkillRequirementHint identifier="mechanical" level="50" />
+  </Item>
+  <Item name="高级电动切割器・一阶段" identifier="plasmacutterPRO1" category="Equipment" Tags="smallitem,cuttingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+    <PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab,wreckdivingcab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="divingcab" secondary="engcab" />
+    <Price baseprice="150">
+      <Price storeidentifier="merchantoutpost" minavailable="3" />
+      <Price storeidentifier="merchantcity" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+    </Price>
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="20">
+      <RequiredSkill identifier="mechanical" level="30" />
+      <RequiredItem identifier="steel" amount="2" />
+      <RequiredItem identifier="plastic" amount="2" />
+    </Fabricate>
+    <Sprite texture="icon.png" sourcerect="842,730,159,87" depth="0.55" origin="0.5,0.5" />
+    <Body radius="40" width="60" density="25" />
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-60,-21" handle2="-21,-20" msg="ItemMsgPickUpSelect" />
+    <RepairTool firedamage="20" structurefixamount="-8" range="300" barrelpos="55,10" combatpriority="10" repairmultiple="true" repairthroughwalls="false" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-10" targetforce="20">
+      <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgOxygenTankRequired" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <StatusEffect type="OnUse" targettype="Contained" targets="mobilebattery" Condition="-1.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="-20.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" Condition="-15.0" />
+      <StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.005">
+        <Affliction identifier="burn" amount="4.0" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="250.0" force="5" applyfireeffects="false">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="250.0" ballastfloradamage="100" force="6" applyfireeffects="true" ignorefireeffectsfortags="incendiumfueltank">
+          <Affliction identifier="burn" strength="100" />
+          <Affliction identifier="stun" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <ParticleEmitter particle="plasma" particlespersecond="50" copyentityangle="true" scalemin="1.5" scalemax="2" />
+      <ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+      <ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+      <ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+      <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+      <sound file="Content/Items/Tools/PlasmaCutterLoop.ogg" type="OnUse" range="750.0" loop="true" />
+      <Fixable identifier="structure" />
+      <LightComponent LightColor="204,178,255,100" range="150" Flicker="0.5">
+        <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+      </LightComponent>
+    </RepairTool>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="0,-39" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+		<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+    <Quality>
+      <QualityStat stattype="RepairToolStructureDamageMultiplier" value="0.1" />
+      <QualityStat stattype="RepairToolDeattachTimeMultiplier" value="0.1" />
+    </Quality>
+    <SkillRequirementHint identifier="mechanical" level="50" />
+  </Item><![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
   <CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">
@@ -385,5 +557,4 @@
     <Projectile characterusable="false" launchimpulse="18.0" sticktocharacters="true" launchrotation="-90" inheritStatusEffectsFrom="MeleeWeapon" inheritrequiredskillsfrom="MeleeWeapon" />
     <SkillRequirementHint identifier="medical" level="35" />
   </CellruinToxi>
-	   ]]>
-</Items>
+	   ]]></Items>

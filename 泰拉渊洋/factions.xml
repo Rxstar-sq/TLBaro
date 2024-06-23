@@ -7,7 +7,7 @@
 	  <Hireable npcsetidentifier="THnpc" npcidentifier="THnpc3" minreputation="-15" />
 	  <Hireable npcsetidentifier="TLnpc" npcidentifier="TLnpc4" minreputation="0" />
 	  <Hireable npcsetidentifier="TLnpc" npcidentifier="TLnpc1" minreputation="10" />
-	  <AutomaticMission leveltype="LocationConnection" missiontag="TLattack" minreputation="-100" maxreputation="-30" MaxDistanceFromFactionOutpost="3" DisallowBetweenOtherFactionOutposts="true" minprobability="0.2" maxprobability="0.01"/>
+	  <AutomaticMission leveltype="LocationConnection" missiontag="TLattack" minreputation="-100" maxreputation="-40" MaxDistanceFromFactionOutpost="3" DisallowBetweenOtherFactionOutposts="true" minprobability="0.2" maxprobability="0.01"/>
     </Faction>
   </Factions>
 </Override>

@@ -614,4 +614,44 @@
       <RequiredItem identifier="titaniumaluminiumalloy" amount="3" />
     </Fabricate>
   </Item>
+	<Item name="修复激光盒" identifier="HullFixammo1" scale="0.5" tags="ammobox,crate" description="Heavy non-rechargable capacitor which supplies the isolated power modulation needed to drive an acoustic laser system. The casing includes large heatsinks to accommodate the unit's tendancy to heat up during extended use." category="Equipment,Weapon" linkable="false" impactsoundtag="impact_metal_heavy">
+		<PreferredContainer primary="ammocontainer" />
+		<Price baseprice="190" soldeverywhere="false">
+			<Price storeidentifier="merchantoutpost" multiplier="1.25" minavailable="3" />
+			<Price storeidentifier="merchantcity" multiplier="1.0" minavailable="4" />
+			<Price storeidentifier="merchantresearch" multiplier="1.2" minavailable="2" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.8" sold="false" />
+			<Price storeidentifier="merchantmine" multiplier="1.5" minavailable="2" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="steel" />
+			<Item identifier="zinc" />
+			<Item identifier="potassium" mincondition="0.8" />
+			<Item identifier="lithium" mincondition="0.8" />
+			<Item identifier="antibloodloss1" mincondition="0.8" />
+			<!-- Deconstructing yields degraded components -->
+			<Item identifier="potassium" maxcondition="0.8" outcondition="0.5" />
+			<Item identifier="lithium" maxcondition="0.8" outcondition="0.5" />
+			<Item identifier="chlorine" maxcondition="0.8" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
+			<RequiredSkill identifier="electrical" level="25" />
+			<RequiredItem identifier="steel" />
+			<RequiredItem identifier="zinc" />
+			<RequiredItem identifier="potassium" />
+			<RequiredItem identifier="lithium" />
+			<RequiredItem identifier="antibloodloss1" />
+		</Fabricate>
+		<Sprite texture="weapons.png" depth="0.54" sourcerect="153,437,152,75" origin="0.5,0.5" />
+		<Body width="112" height="65" density="50" />
+		<ContainedSprite allowedcontainertags="coilgunammocontainer,crateshelf,ammoboxcontainer" allowedcontaineridentifiers="crateshelf,coilgunammoshelf" texture="%ModDir%/Items/Containers/ekgunnery_containers.png" depth="0.54" sourcerect="936,123,112,80" origin="0.5,0.5" />
+		<Holdable slots="RightHand+LeftHand" holdpos="50,-30" handle1="-15,15" handle2="-15,15" aimable="false" msg="ItemMsgPickUpSelect" canBeCombined="false" />
+		<ItemContainer autofill="False" hideitems="true" capacity="1" removecontaineditemsondeconstruct="true" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true">
+			<ContainedStateIndicator texture="Content/UI/ContainerIndicators.png" sourcerect="16,64,120,24" />
+			<StatusEffect type="OnUse" target="This" condition="-0.15" disabledeltatime="true">
+				<SpawnItem identifiers="HullFixammo" spawnposition="ThisInventory" />
+			</StatusEffect>
+			<Containable identifiers="HullFixammo" />
+		</ItemContainer>
+	</Item>
 </Items>

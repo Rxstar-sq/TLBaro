@@ -14,9 +14,10 @@
 	<Sounds file="%ModDir%/Music/music.xml" />
 
 	<!--舰船-->
-	<Submarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
-	<Submarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" />
- 	<Submarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
+	<EnemySubmarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
+	<EnemySubmarine file="%ModDir%/Sub/泰拉旧型攻击舰.sub" />
+    <EnemySubmarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
+    <EnemySubmarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" />
   
 	<!--武器，子弹，弹夹-->
 	<Item file="%ModDir%/Items/weapons/weapons.xml" />

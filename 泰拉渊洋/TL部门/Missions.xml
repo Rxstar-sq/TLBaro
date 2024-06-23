@@ -175,7 +175,7 @@
 	   addedmissiondifficultyperplayer="8">
 		 <Reputation identifier="coalition" amount="10" amountforopposingfaction="-10" />
 		 <SubmarineTypes>
-			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+			 <Submarine path="%ModDir%/Sub/泰拉旧型攻击舰.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
 		 <Characters>
 			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
@@ -185,21 +185,21 @@
 		 </Characters>
 		 <CharacterTypes>
 			 <CharacterType typeidentifier="separatistcaptain">
-				 <Character identifier="THnpc2" from="THnpc"  iscommander="true" />
+				 <Character identifier="THnpc4" from="THnpc"  iscommander="true" />
 			 </CharacterType>
 			 <CharacterType typeidentifier="separatistsecurity">
-				 <Character identifier="THnpc2" from="THnpc" />
+				 <Character identifier="THnpc4" from="THnpc" />
 			 </CharacterType>
 			 <CharacterType typeidentifier="separatistmechanic">
-				 <Character identifier="THnpc2" from="THnpc" />
-				 <Character identifier="THnpc2" from="THnpc" />
+				 <Character identifier="THnpc4" from="THnpc" />
+				 <Character identifier="THnpc4" from="THnpc" />
 			 </CharacterType>
 			 <CharacterType typeidentifier="separatistengineer">
-				 <Character identifier="THnpc2" from="THnpc" />
-				 <Character identifier="THnpc2" from="THnpc" />
+				 <Character identifier="THnpc4" from="THnpc" />
+				 <Character identifier="THnpc4" from="THnpc" />
 			 </CharacterType>
 		 </CharacterTypes>
-		 <Icon texture="Content/UI/MissionIcons.png" sourcerect="0,768,256,256" color="243,146,55"/>
+		 <Icon texture="%ModDir%/TL部门/Sprite/laji.png" sourcerect="0,0,1024,1024"/>
 		 <message header="missionheader0.separatistattack1" text="missionmessage0.separatistattack1"/>
 	 </PirateMission>
  </Missions>
