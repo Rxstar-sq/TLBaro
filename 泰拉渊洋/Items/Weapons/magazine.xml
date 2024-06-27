@@ -245,7 +245,7 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
-    <Item name="泰拉集团裂甲弹匣" description="适配泰拉集团大部分武器的通用弹匣。发射步枪裂甲弹，特殊的多段结构使得这种子弹具有极强的碎甲能力。非常适合对付高护甲的目标。" identifier="TL_magazine_lj" category="Weapon" health="50" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
+    <Item name="泰拉集团裂甲弹匣" description="适配泰拉集团大部分武器的通用弹匣。发射步枪裂甲弹，特殊的多段结构使得这种子弹具有极强的碎甲能力。非常适合对付高护甲的目标。" identifier="TL_magazine_lj" category="Weapon" health="50" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_ljzd" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
     <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
     <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
@@ -588,10 +588,14 @@
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
         <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
-    </Holdable>
+      <StatusEffect type="OnUse" target="This" Condition="-20" comparison="and">
+        <RequiredItems items="TL_ljzd" type="Contained" />
+        <Conditional IsFullCondition="flase" targetcontaineditem="true" />
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
+      </StatusEffect>    </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
-      <Containable items="TL_zd,TL_bjzd,TL_mrzd" />
+      <Containable items="TL_zd,TL_ljzd,TL_bjzd,TL_mrzd" />
     </ItemContainer>
     <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
     <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
