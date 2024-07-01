@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true" Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor1" scale="0.15" cargocontaineridentifier="metalcrate">
+  <Item name="万能钥匙" identifier="idcardplus" description="可以进出木卫二上大部分区域" category="Hidden" hideinmenus="true" Tags="smallitem,idcard,admincabinet,wrecksecarmcab,abandonedsecarmcab,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,level1" scale="0.15" cargocontaineridentifier="metalcrate">
     <InventoryIcon texture="icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
     <Sprite texture="icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
     <Body width="16" height="12" density="20" />
@@ -24,6 +24,30 @@
       <GuiFrame relativesize="0.35,0.35" anchor="Center" style="ItemUI" />
     </Terminal>
   </Item>
+	<Item name="豹二A6召唤器" identifier="leopard6" description="..." category="logic"  Tags="smallitem" scale="0.25" cargocontaineridentifier="metalcrate">
+		<InventoryIcon texture="icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
+		<Sprite texture="icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
+		<Body width="16" height="12" density="20" />
+		<PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
+		<PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05" />
+		<Price baseprice="500" minavailable="4" maxavailable="16" mincondition="0.9" maxcondition="1.0" usecondition="false" sold="false">
+			<Price storeidentifier="TLarmory" multiplier="1.5" minavailable="0" maxavailable="3" sold="true" />
+		</Price>
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-70" handle1="-5,0" handle2="10,-20" holdangle="0" msg="ItemMsgPickUpUse" canbeselected="false" canbepicked="true" pickkey="Select" allowswappingwhenpicked="false">
+			<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+				<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+				<StatusEffect type="Always" target="This" drawhudwhenequipped="true" condition="9">
+					<Conditional condition="gt 50" />
+				</StatusEffect>
+				<Button text="召唤">
+					<StatusEffect type="OnUse" target="This">
+						<SpawnCharacter speciesname="Leopard2a6" totalmaxcount="1" />
+						<Remove />
+					</StatusEffect>
+				</Button>
+			</CustomInterface>
+		</Holdable>
+	</Item>
   <Item name="奇怪的小喇叭(失重状态）" identifier="shenyingge" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="有明显失重感">
     <PreferredContainer primary="crewcab" spawnprobability="0.05" notcampaign="true" />
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.05" />
@@ -402,7 +426,7 @@
           <StatusEffect type="OnUse" target="This">
             <Remove />
           </StatusEffect>
-          <StatusEffect type="OnUse">
+          <StatusEffect type="OnUse" target="character">
             <LuaHook name="examples.givemoney" />
           </StatusEffect>
         </Button>

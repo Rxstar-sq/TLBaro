@@ -345,8 +345,9 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
+<!--常规弹药-->
   <!--M2-->
-  <Item name="M2常规弹药" identifier="M2ammo" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
+  <Item name="M2常规弹药" identifier="M2ammo" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo,general" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="500" sold="true" minleveldifficulty="65" displaynonempty="true">
@@ -386,7 +387,7 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
-  <Item name="M2穿甲弹药" identifier="M2ammo_ap" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
+  <Item name="M2穿甲弹药" identifier="M2ammo_ap" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo,general" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="1000" sold="true" minleveldifficulty="65" displaynonempty="true">
@@ -426,7 +427,7 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
-  <Item name="M2崩解弹药" identifier="M2ammo_bj" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo" impactsoundtag="impact_metal_light">
+  <Item name="M2崩解弹药" identifier="M2ammo_bj" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo,general" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="2500" sold="true" minleveldifficulty="65" displaynonempty="true">
@@ -466,7 +467,7 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <!--AKE-->
-  <Item name="AKE突击步枪弹匣" identifier="AKEAssaultRifleMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo" impactsoundtag="impact_metal_light">
+  <Item name="AKE突击步枪弹匣" identifier="AKEAssaultRifleMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo,general" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="secarmcab" minamount="2" maxamount="6" spawnprobability="0.4" />
     <PreferredContainer secondary="armcab" minamount="2" maxamount="6" spawnprobability="0.8" />
     <PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="8" maxamount="16" spawnprobability="0.6" />
@@ -507,50 +508,47 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
     <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="AKE突击步枪弹鼓" identifier="AKEAssaultRifleDrumMagazine" maxstacksize="2" maxstacksizecharacterinventory="1" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="mediumitem,5.45×39mmFlechetteAmmo" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="secarmcab" minamount="1" maxamount="2" spawnprobability="0.3" />
-    <PreferredContainer secondary="armcab" minamount="1" maxamount="2" spawnprobability="0.6" />
-    <PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="2" maxamount="4" spawnprobability="0.4" />
-    <PreferredContainer secondary="wrecksecarmcab,wreckarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
-    <PreferredContainer primary="secarmcab,armcab" />
-    <Price baseprice="1100" soldeverywhere="false">
-      <Price storeidentifier="merchantoutpost" multiplier="0.9" minavailable="0" sold="true" />
-      <Price storeidentifier="merchantcity" multiplier="1.3" minavailable="5" maxavailable="10" sold="true" />
-      <Price storeidentifier="merchantresearch" multiplier="1.1" minavailable="0" sold="true" />
-      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="0" sold="true" />
-      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="5" maxavailable="10" sold="true" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.8" minavailable="5" sold="true" />
-    </Price>
-    <Deconstruct time="8">
-      <Item identifier="plastic" amount="3" />
-      <Item identifier="steel" amount="2" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="35">
-      <RequiredSkill identifier="weapons" level="30" />
-      <Item identifier="steel" amount="2" />
-      <Item identifier="copper" amount="4" />
-      <Item identifier="zinc" amount="2" />
-      <Item identifier="magnesium" amount="2" />
-      <Item identifier="plastic" amount="4" />
-    </Fabricate>
-    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="20">
-      <RequiredSkill identifier="weapons" level="30" />
-      <Item identifier="copper" amount="2" />
-      <Item identifier="zinc" amount="2" />
-      <Item identifier="magnesium" amount="1" />
-      <RequiredItem identifier="AKEAssaultRifleDrumMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
-    </Fabricate>
-    <Sprite name="AKE突击步枪弹鼓" texture="weapons.png" depth="0.54" sourcerect="76,386,26,49" origin="0.5,0.5" />
-    <Body width="23" height="45" density="30" />
-    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.45×39mmFlechetteAmmo" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-      <Containable items="5.45×39mmFlechetteAmmo" />
-      <StatusEffect type="OnUse" target="This" condition="-1.0" disabledeltatime="true">
-        <SpawnItem identifiers="5.45×39mmFlechetteAmmo" spawnposition="ThisInventory" />
-      </StatusEffect>
-    </ItemContainer>
-    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
-  </Item>
+	<Item name="AKE突击步枪弹鼓" identifier="AKEAssaultRifleDrumMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo,general" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" minamount="2" maxamount="6" spawnprobability="0.4" />
+		<PreferredContainer secondary="armcab" minamount="2" maxamount="6" spawnprobability="0.8" />
+		<PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="8" maxamount="16" spawnprobability="0.6" />
+		<PreferredContainer secondary="wrecksecarmcab,wreckarmcab" minamount="2" maxamount="4" spawnprobability="0.2" />
+		<PreferredContainer primary="secarmcab,armcab" />
+		<Price baseprice="300" soldeverywhere="false">
+			<Price storeidentifier="merchantoutpost" multiplier="0.8" minavailable="8" sold="true" />
+			<Price storeidentifier="merchantcity" multiplier="1.2" minavailable="12" maxavailable="20" sold="true" />
+			<Price storeidentifier="merchantresearch" multiplier="1" minavailable="5" sold="true" />
+			<Price storeidentifier="merchantmine" multiplier="0.8" minavailable="5" sold="true" />
+			<Price storeidentifier="merchantarmory" multiplier="0.7" minavailable="20" maxavailable="40" sold="true" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.7" minavailable="30" sold="true" />
+		</Price>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
+			<RequiredSkill identifier="weapons" level="15" />
+			<Item identifier="steel" amount="1" />
+			<Item identifier="copper" amount="2" />
+			<Item identifier="zinc" />
+			<Item identifier="plastic" amount="2" />
+		</Fabricate>
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="15" />
+			<Item identifier="copper" amount="1" />
+			<Item identifier="zinc" />
+			<RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+		</Fabricate>
+		<Sprite name="AKE突击步枪弹匣" texture="weapons.png" depth="0.54" sourcerect="19,385,44,51" origin="0.5,0.5" />
+		<Body width="23" height="45" density="30" />
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.45×39mmFlechetteAmmo" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="5.45×39mmFlechetteAmmo" />
+			<StatusEffect type="OnUse" target="This" condition="-2.0" disabledeltatime="true">
+				<SpawnItem identifiers="5.45×39mmFlechetteAmmo" spawnposition="ThisInventory" />
+			</StatusEffect>
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+		<Upgrade gameversion="0.10.0.0" scale="0.5" />
+	</Item>
   <!--弹药箱仔细想想放在这里比较合适-->
   <!--泰拉通用弹药箱-->
   <Item name="泰拉通用弹药箱" description="泰拉集团研发的智能弹药箱，能够自动识别弹匣上的标识符而填入对应的子弹。&#xD;&#xA;[放入弹匣,右键+左键压弹.]" identifier="TL_ammobox" health="600" category="Equipment" tags="mediumitem,ammobox,TL_ammobox" scale="0.5" pickdistance="150" impactsoundtag="impact_metal_heavy" maxstacksize="1">
@@ -595,7 +593,7 @@
       </StatusEffect>    </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
-      <Containable items="TL_zd,TL_ljzd,TL_bjzd,TL_mrzd" />
+      <Containable items="TL_zd,TL_ljzd,TL_bjzd,TL_mrzd,general" />
     </ItemContainer>
     <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
     <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
@@ -649,7 +647,7 @@
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
       <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="256,448,64,64" origin="0.5,0.5" />
-      <Containable items="TL_zd,TL_bjzd,TL_mrzd" />
+      <Containable items="TL_zd,TL_bjzd,TL_mrzd,general" />
     </ItemContainer>
     <PreferredContainer primary="secarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />
     <PreferredContainer secondary="wreckarmcab" minamount="0" maxamount="1" spawnprobability="0.01" />

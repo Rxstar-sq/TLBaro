@@ -19,6 +19,7 @@
   StepLiftOffset="0.5"
   StepLiftFrequency="2"
   BackwardsMovementMultiplier="0.75"
+  AnimationType="Run"
   MovementSpeed="2.4799986"
   CycleSpeed="1"
   HeadAngle="NaN"
@@ -26,6 +27,5 @@
   HeadTorque="50"
   TorsoTorque="50"
   FootTorque="25"
-  AnimationType="Run"
   ArmIKStrength="1"
   HandIKStrength="1" />

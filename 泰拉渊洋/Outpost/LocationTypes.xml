@@ -26,4 +26,17 @@
 		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sheetelementsize="128,128" sheetindex="0,0"/>
 		<Portrait texture="%ModDir%/UI/走廊.png" sourcerect="0,0,1128,632" premultiplyalpha="false"/>
 	</TLEnergyTowers>
+
+	<TLshipyard
+	  identifier="TLshipyard"
+	  nameidentifiers="alien"
+	  commonnessperzone="1: 1, 2: 0.5, 3: 0.3, 4: 0, 5: 0, 6: 0"
+	  missiontags="TLshipyard"
+	  hideentitysubcategories="abandonedhuman,abandonedmonster"
+	  outpostteam="None"
+	  AllowAsBiomeGate="false">
+
+		<Symbol texture="%ModDir%/Map/MapAtlasDE.png" sheetelementsize="128,128" sheetindex="1,0"/>
+		<Portrait texture="%ModDir%/UI/造船厂.png" sourcerect="0,0,1024,1024" premultiplyalpha="false"/>
+	</TLshipyard>
 </locationtypes>

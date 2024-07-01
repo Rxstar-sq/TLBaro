@@ -2,32 +2,27 @@
 <Randomevents>
 <EventSprites>
 	<Sprite identifier="hes" texture="%ModDir%/TL部门/hes.png" sourcerect="0,0,640,640" origin="0.5,0.5" />
-	<Sprite identifier="TL" texture="%ModDir%/TL部门/TL.png" sourcerect="0,0,172,195" origin="0.5,0.5" />
+	<Sprite identifier="TL" texture="%ModDir%/TL部门/TL.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
+	<Sprite identifier="TL2" texture="%ModDir%/TL部门/TL2.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
 	<Sprite identifier="HX" texture="%ModDir%/TL部门/HX.png" sourcerect="0,0,912,921" origin="0.5,0.5" />
-	<Sprite identifier="hua" texture="%ModDir%/TL部门/Sprite/mizhi.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
-	<Sprite identifier="haidao" texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" origin="0.5,0.5" />
-	<Sprite identifier="baomi" texture="%ModDir%/TL部门/Sprite/baomi.png" sourcerect="0,0,1024.1024" origin="0.5,0.5" />
-	<Sprite identifier="zhu" texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
-	<Sprite identifier="yiliao" texture="%ModDir%/TL部门/Sprite/yiliao.png" sourcerect="0,0,1024,1024" />
 </EventSprites>
 <EventPrefabs>
 	<ScriptedEvent identifier="TL1" commonness="100">
 		<TagAction criteria="player" tag="player" />
 		<SpawnAction npcsetidentifier="TLnpc" npcidentifier="TLnpc1" targettag="TLnpc1" spawnlocation="Outpost" targetmoduletags="airlock" />
 		<TriggerAction target1tag="TLnpc1" target2tag="player" applytotarget2="triggerer_player" radius="200" waitforinteraction="true" />
-		<ConversationAction text="你好，我是TL战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." targettag="triggerer_player" eventsprite="TL"  >
-			<Option text="我们可以帮忙">
-				<ConversationAction text="在鲜花中离去吧"  targettag="triggerer_player" eventsprite="hua"/>
-					<MissionAction missionidentifier="hunting" />
-				<ConversationAction text="放弃船，或者放弃希望"  targettag="triggerer_player" eventsprite="haidao"/>
-					<MissionAction missiontag="TLhaidao" />
-				<ConversationAction text="任何一项成功的技术都充满荆棘，但我们只能赤脚踩过"  targettag="triggerer_player" eventsprite="baomi"/>
+		<ConversationAction text="你好，我是泰拉集团战斗部门负责人吸管，我这里有一些琐事处理不过来，如果你愿意帮忙那可太好了，当然报酬少不了你的..." targettag="triggerer_player" eventsprite="TL"  >
+			<Option text="我们很荣幸帮忙">
+				<ConversationAction  text="非常好，我会担任你们的远程指挥官，请保持连线畅通" targettag="triggerer_player" />
+				<MissionAction missionidentifier="hunting" />
+				<MissionAction missiontag="TLhaidao" />
 				<MissionAction missionidentifier="TLceshiji" />
-				<ConversationAction text="烛光中求生的勇士，你值得敬爱"  targettag="triggerer_player" eventsprite="zhu"/>
 				<MissionAction missionidentifier="TLhunting" />
 				<MissionAction missionidentifier="mudraptors" />
-				<ConversationAction text="你也不想在连止痛药都没有的情况下死去吧"  targettag="triggerer_player" eventsprite="yiliao"/>
-				<MissionAction missionidentifier="yiliao" />
+				<MissionAction missionidentifier="TLattack1" />
+				<MissionAction missionidentifier="TLrescue1" />
+				<!--联盟-->
+				<MissionAction missionidentifier="TLhaidao3" />
 			</Option>
 		</ConversationAction>
 		<NPCWaitAction npctag="TLnpc1" wait="true" />
@@ -41,7 +36,7 @@
 		<Label name="xiangqing" />
 		<NPCWaitAction npctag="TLnpc2" wait="true" />
 		<TriggerAction target1tag="TLnpc2" target2tag="player" applytotarget2="triggerer_player" radius="200" waitforinteraction="true" />
-		<ConversationAction targettag="triggerer_player" text="你好...？我是泰拉集团负责人，有什么事情吗？" eventsprite="hes">
+		<ConversationAction targettag="triggerer_player" text="你好...？我是泰拉集团总负责人，有什么事情吗？" eventsprite="TL2">
 			<Option text="介绍一下你们集团...？">
 				<ConversationAction targettag="triggerer_player" text="泰拉科技，木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，这破联盟站点我是一点不想来...垃圾堆一样...还想了解一些什么？" eventsprite="TL">
 					<Option text="集团研发部门">

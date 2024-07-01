@@ -63,6 +63,16 @@
 		<modulecount flag="Towers_Airlock" count="1"/>
 		<modulecount flag="Towers_EngineeringModule" count="1"/>
 	</OutpostConfig>
-	
+	<OutpostConfig
+  identifier="TLshipyard"
+  totalmodulecount="2" minhallwaylength="50"
+  allowedlocationtypes="TLshipyard"
+  spawncrewinsideoutpost="false"
+  alwaysdestructible="true"
+  alwaysrewireable="true"
+  allowstealing="true">
+		<modulecount flag="TLshipyard_Airlock" count="1"/>
+		<modulecount flag="TLshipyard_EngineeringModule" count="1"/>
+	</OutpostConfig>
 	
 </OutpostGenerationParameters>
