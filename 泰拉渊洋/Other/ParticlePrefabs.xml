@@ -3,7 +3,9 @@
     <Worm_Radi LifeTime="0.5" LifeTimeMin="0" StartDelayMin="0" StartDelayMax="0" AngularVelocityMin="0" AngularVelocityMax="0" StartRotationMin="0" StartRotationMax="360" RotateToDirection="False" Drag="0" WaterDrag="0" VelocityChange="0,5" VelocityChangeWater="0,0" CollisionRadius="1" UseCollision="True" DeleteOnCollision="False" Friction="0.5" Restitution="0.5" StartSizeMin="0.1,0.5" StartSizeMax="0.5,0.75" SizeChangeMin="-1,-0.5" SizeChangeMax="-2,-1" GrowTime="0.2" StartColor="255,150,0,255" MiddleColor="255,255,255,255" EndColor="255,100,0,100" UseMiddleColor="False" DrawTarget="Both" DrawOnTop="False" DrawAlways="False" BlendState="Additive" Priority="1" AnimDuration="1" LoopAnim="False">
         <sprite texture="%ModDir%/Characters/辐射蠕虫/攻击贴图.png" sourcerect="0,0,2048,2048" premultiplyalpha="false" origin="0.5,0.5" />
     </Worm_Radi>
-
+	<epicarsenal.mudraptorshockwave lifetime="0.3" startdelaymin="0" startdelaymax="0" angularvelocitymin="0" angularvelocitymax="0" startrotationmin="0" startrotationmax="0" rotatetodirection="False" drag="0" waterdrag="0" velocitychange="0,0" velocitychangewater="0,0" collisionradius="40" usecollision="True" deleteoncollision="False" friction="0.0" restitution="0.0" startsizemin="0.9,0.9" startsizemax="0.9,0.9" sizechangemin="3.5,4" sizechangemax="3.5,4" growtime="0" startcolor="255,255,255,100" endcolor="255,255,255,0" drawtarget="Both" blendstate="AlphaBlend" animduration="1" loopanim="True" drawontop="False" lifetimemin="0" middlecolor="255,255,255,255" usemiddlecolor="False" priority="0">
+		<sprite texture="%ModDir%/Items/Weapons/Weapons2.png" sourcerect="202,324,43,123" />
+	</epicarsenal.mudraptorshockwave>
 
 
 </prefabs>

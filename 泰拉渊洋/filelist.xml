@@ -24,6 +24,7 @@
 	<Item file="%ModDir%/Items/weapons/bullet.xml" />
 	<Item file="%ModDir%/Items/weapons/magazine.xml" />
 	<Item file="%ModDir%/Items/weapons/turrets.xml" />
+	<Item file="%ModDir%/Items/weapons/fittings/accessories.xml" />
 
 	<!--衣物/护甲-->
 	<Item file="%ModDir%/Clothing/clothings.xml" />
@@ -66,4 +67,6 @@
     <OutpostModule file="%ModDir%/Sub/泰拉造船厂.sub" />
 	<Item file="%ModDir%/Items/Sonar.xml" />
 	<Item file="%ModDir%/Music/record.xml" />
+	<Item file="%ModDir%/Items/weapons/other.xml" />
+	<Afflictions file="%ModDir%/Items/weapons/fittings/afflictions.xml" />
 </contentpackage>

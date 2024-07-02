@@ -1,0 +1,258 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Items>
+<!--配件-->
+  <!--瞄准镜-->
+  <Item name="全息瞄准镜" identifier="holographic_sight" subcategory="accessory" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="提供1倍镜的全息瞄具&#xD;&#xA;‖color:gui.orange‖（-25%散布，+10%移动速度）‖end‖" cargocontaineridentifier="metalcrate" scale="0.18" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="sight.png" sourcerect="15,7,73,59" />
+    <Sprite texture="sight.png" sourcerect="15,7,73,59" depth="0.65" origin="0.5,0.5" />
+    <Body width="30" height="50" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="holographic_sight" strength="2" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="2倍瞄准镜" identifier="2x_sight" subcategory="accessory" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="提供2倍放大的瞄具，可让射手更容易击中要害&#xD;&#xA;‖color:gui.orange‖（-40%散布，+5%伤害，-10%移速）‖end‖" cargocontaineridentifier="metalcrate" scale="0.18" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="sight.png" sourcerect="16,76,156,54" />
+    <Sprite texture="sight.png" sourcerect="16,76,156,54" depth="0.65" origin="0.5,0.5" />
+    <Body width="30" height="50" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="2x_sight" strength="2" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="2.5倍瞄准镜" identifier="2.5x_sight" subcategory="accessory" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="2.5倍镜可极大提高枪械精度，让射手更精确的命中要害&#xD;&#xA;‖color:gui.orange‖（-60%散布，+10%伤害，-15%移速）‖end‖" cargocontaineridentifier="metalcrate" scale="0.18" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="70" />
+      <RequiredItem identifier="fpgacircuit" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="sight.png" sourcerect="18,140,113,57" />
+    <Sprite texture="sight.png" sourcerect="18,140,113,57" depth="0.65" origin="0.5,0.5" />
+    <Body width="30" height="50" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="2.5x_sight" strength="2" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="3倍瞄准镜" identifier="3x_sight" subcategory="accessory" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="3倍镜提供最好的精度，使用这款瞄具可精准地爆头&#xD;&#xA;‖color:gui.orange‖（-80%散布，+20%伤害，-20%移速）‖end‖" cargocontaineridentifier="metalcrate" scale="0.18" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="100" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="sight.png" sourcerect="18,202,184,70" />
+    <Sprite texture="sight.png" sourcerect="18,202,184,70" depth="0.65" origin="0.5,0.5" />
+    <Body width="30" height="50" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="3x_sight" strength="2" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+  <Item name="红点瞄准镜" identifier="red_sight" subcategory="accessory" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="1倍红点瞄具，非常适合室内突击&#xD;&#xA;‖color:gui.orange‖（-10%散布，+30%移动速度）‖end‖" cargocontaineridentifier="metalcrate" scale="0.18" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="1" spawnprobability="0.05" />
+    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="fpgacircuit" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="5">
+      <Item identifier="fpgacircuit" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <InventoryIcon texture="sight.png" sourcerect="101,9,71,55" />
+    <Sprite texture="sight.png" sourcerect="101,9,71,55" depth="0.65" origin="0.5,0.5" />
+    <Body width="30" height="50" density="20" />
+    <Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <!-- Remove the item when fully used -->
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="red_sight" strength="2" />
+      </StatusEffect>
+    </Holdable>
+  </Item>
+	<!--手电-->
+	<Item name="战术手电筒" identifier="focusingflashlight" category="Weapon" maxstacksize="1" Tags="smallitem,flashlight" canbepicked="true" description="" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.12" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="30" />
+			<RequiredItem identifier="uranium" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="40,408,188,48" depth="0.65" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand,Head" holdpos="80,-50" aimpos="80,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="Always" targettype="This" Voltage="10.0" setvalue="true" />
+			<LightComponent LightColor="0.5,0.5,0.5,0.5" directional="true" Flicker="0" range="1500" powerconsumption="10" IsOn="true">
+				<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.5,1.5" />
+			</LightComponent>
+			<LightComponent LightColor="0.5,0.5,0.5,0.5" directional="true" range="1500" powerconsumption="10" IsOn="true" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0">
+				<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.5,1.5" />
+			</LightComponent>
+		</Holdable>
+		<Wearable slots="Any,Head" armorvalue="0" msg="ItemMsgPickUpSelect"></Wearable>
+	</Item>
+	<Item name="小型战术手电" identifier="focusingflashlight_p" category="Weapon" maxstacksize="1" Tags="smallitem,flashlight" canbepicked="true" description="" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.12" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="30" />
+			<RequiredItem identifier="uranium" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="48,575,112,51" depth="0.65" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand,Head" holdpos="80,-50" aimpos="80,0" handle1="-20,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="Always" targettype="This" Voltage="10.0" setvalue="true" />
+			<LightComponent LightColor="0.5,0.5,0.5,0.5" directional="true" Flicker="0" range="1500" powerconsumption="10" IsOn="true">
+				<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.5,1.5" />
+			</LightComponent>
+			<LightComponent LightColor="0.5,0.5,0.5,0.5" directional="true" range="1500" powerconsumption="10" IsOn="true" flicker="0" flickerspeed="0" pulsefrequency="0" pulseamount="0">
+				<LightTexture texture="Content/Lights/lightcone.png" origin="0.0, 0.5" size="1.5,1.5" />
+			</LightComponent>
+		</Holdable>
+	</Item>
+	<Item name="广域手电" identifier="spreadflashlight" category="Weapon" maxstacksize="1" Tags="smallitem,flashlight" canbepicked="true" description="" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.12" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="30" />
+			<RequiredItem identifier="uranium" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="43,469,162,84" depth="0.65" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand,Head" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="Always" targettype="This" Voltage="10.0" setvalue="true" />
+			<LightComponent lightcolor="1.0,1.0,1.0,0.3" range="1200.0" powerconsumption="0">
+				<LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+				<sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="784,528,64,96" />
+			</LightComponent>
+		</Holdable>
+		<Wearable slots="Any,Head" armorvalue="0" msg="ItemMsgPickUpSelect"></Wearable>
+	</Item>
+	<Item name="小型广域手电" identifier="spreadflashlight_p" category="Weapon" maxstacksize="1" Tags="smallitem,flashlight" canbepicked="true" description="" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.12" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="30" />
+			<RequiredItem identifier="uranium" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="47,630,112,60" depth="0.65" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand,Head" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="Always" targettype="This" Voltage="10.0" setvalue="true" />
+			<LightComponent lightcolor="1.0,1.0,1.0,0.3" range="1200.0" powerconsumption="0">
+				<LightTexture texture="Content/Lights/pointlight_bounce.png" origin="0.5,0.5" />
+				<sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="784,528,64,96" />
+			</LightComponent>
+		</Holdable>
+	</Item>
+	<!--握把-->
+	<Item name="垂直握把"  identifier="vertical_grip" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="垂直握把使得射手更牢抓固枪械，提高武器操作&#xD;&#xA;‖color:gui.orange‖（-30%眩晕，-50%水流影响，+15武器操作）‖end‖" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.1" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="60" />
+			<RequiredItem identifier="plastic" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="33,17,77,135" depth="0.6" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnActive" target="Character">
+				<Affliction identifier="vertical_grip" strength="2" />
+			</StatusEffect>
+		</Holdable>
+	</Item>
+	<Item name="直角握把" identifier="corner_grip" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="提供更舒适的持枪姿势&#xD;&#xA;‖color:gui.orange‖（+10%移动速度，+25武器操作）‖end‖" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.1" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="60" />
+			<RequiredItem identifier="plastic" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="40,164,244,104" depth="0.6" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnActive" target="Character">
+				<Affliction identifier="corner_grip" strength="2" />
+			</StatusEffect>
+		</Holdable>
+	</Item>
+	<!--枪管-->
+	<Item name="延申枪管" identifier="extended_barrel" category="Weapon" maxstacksize="1" Tags="smallitem" canbepicked="true" description="延长枪管配件可以增加射击精度，提高基础伤害，但为了不让其过热损坏，枪械的射速会下调，安装后会增加后坐力，需要更高的武器操作技能进行弥补&#xD;&#xA;‖color:gui.orange‖（-30%散布，+20%伤害，-15%射速，-15武器操作）‖end‖" cargocontaineridentifier="metalcrate" subcategory="accessory" scale="0.1" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="secarmcab" />
+		<PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" minamount="1" maxamount="2" spawnprobability="0.05" />
+		<Fabricate suitablefabricators="fabricator" requiredtime="10">
+			<RequiredSkill identifier="weapons" level="80" />
+			<RequiredItem identifier="physicorium" />
+		</Fabricate>
+		<Deconstruct time="5">
+			<Item identifier="physicorium" />
+		</Deconstruct>
+		<Sprite texture="accessory.png" sourcerect="39,340,259,43" depth="0.6" origin="0.5,0.5" />
+		<Body width="30" height="50" density="20" />
+		<Holdable slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnActive" target="Character">
+				<Affliction identifier="extended_barrel" strength="2" />
+			</StatusEffect>
+		</Holdable>
+	</Item>
+</Items>

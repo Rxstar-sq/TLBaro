@@ -260,7 +260,7 @@
     </Holdable>
     <Body width="35" height="35" density="60" />
   </Item>
-  <Item name="动力电池" identifier="Powerbattery" Category="Fuel" Tags="smallitem,TLbattery,reactorfuel" maxstacksize="8" cargocontaineridentifier="metalcrate" scale="0.5">
+  <Item name="动力电池" identifier="Powerbattery" Category="Fuel" Tags="smallitem,TLbattery,reactorfuel" maxstacksize="2" cargocontaineridentifier="metalcrate" scale="0.5">
     <PreferredContainer primary="reactorcab" />
     <PreferredContainer secondary="nucleargun" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer secondary="wreckreactorcab,abandonedreactorcab,piratereactorcab" minamount="1" maxamount="2" spawnprobability="0.5" />
@@ -281,9 +281,9 @@
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="electrical" level="100" />
-      <RequiredItem identifier="uranium" amount="4"/>
+      <RequiredItem identifier="uranium" amount="4" />
       <RequiredItem identifier="lead" amount="4" />
-	  <RequiredItem identifier="copper" amount="6"/>
+      <RequiredItem identifier="copper" amount="6" />
     </Fabricate>
     <Sprite texture="icon.png" sourcerect="291,20,48,80" depth="0.55" origin="0.5,0.5" />
     <Body width="40" height="80" density="30" />
@@ -303,31 +303,71 @@
       <QualityStat stattype="Condition" value="0.1" />
     </Quality>
   </Item>
-  <Item name="外挂式辅疗仪" identifier="naoji1" scale="0.5" category="Equipment, Medical" tags="smallitem,mobileradio" description="集团推出的一款医护用具，可在应急情况下保住你的命" cargocontaineridentifier="metalcrate" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="crewcab" secondary="divingcab" />
-    <Fabricate suitablefabricators="fabricator" requiredtime="180">
-      <RequiredSkill identifier="electrical" level="40" />
-    </Fabricate>
-    <Sprite texture="Content/Items/Electricity/signalcomp.png" sourcerect="225,32,35,35" depth="0.55" origin="0.5,0.5" />
-    <Body radius="20" height="20" density="15" />
-    <!---->
-    <Wearable limbtype="Any" slots="Any,OuterClothes" msg="ItemMsgPickUpSelect" displaycontainedstatus="true">
-      <StatusEffect type="OnWearing" target="Character" duration="0.1">
-        <ReduceAffliction type="bleeding" amount="1" />
-        <ReduceAffliction type="burn" amount="1" />
-        <ReduceAffliction identifier="blunttrauma" amount="1" />
-        <Affliction identifier="lacerations" amount="1" />
-        <Affliction identifier="gunshotwound" amount="1" />
-        <ReduceAffliction identifier="bitewounds" amount="1" />
-        <ReduceAffliction identifier="lacerations" amount="1" />
-      </StatusEffect>
+  <Item name="外挂式理疗仪" identifier="理疗仪" category="Diving,Equipment" tags="diving,deepdiving,deepdivinglarge,provocative,empprotect,sp_exo" scale="0.45" waterproof="true" fireproof="true" description="" isshootable="true" allowdroppingonswapwith="diving" impactsoundtag="impact_metal_heavy" botpriority="0.01">
+    <Price baseprice="500" minleveldifficulty="45">
+      <Price storeidentifier="merchantoutpost" multiplier="2" />
+      <Price storeidentifier="merchantcity" multiplier="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.5" />
+      <Price storeidentifier="merchantmilitary" multiplier="2" />
+      <Price storeidentifier="merchantmine" multiplier="2" />
+      <Price storeidentifier="TLarmory" maxavailable="2" minavailable="1" />
+    </Price>
+    <Sprite texture="icon.png" sourcerect="841,579,158,133" depth="0.55" origin="0.5,0.5" />
+    <Body width="100" height="100" density="15" friction="0.8" restitution="0.01" />
+    <Wearable slots="Any,OuterClothes" displaycontainedstatus="true" canbeselected="false" canbepicked="true" pickkey="Select" msg="ItemMsgPickUpSelect">
+      <!--疗-->
+      <sprite name="Regular Diving Suit Torso" texture="reg_DivingSuit.png" limb="Torso" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Hand" texture="reg_DivingSuit.png" limb="RightHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Hand" texture="reg_DivingSuit.png" limb="LeftHand" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Upper Arm" texture="reg_DivingSuit.png" limb="RightArm" depthlimb="RightForearm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Upper Arm" texture="reg_DivingSuit.png" limb="LeftArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Lower Arm" texture="reg_DivingSuit.png" limb="RightForearm" depthlimb="RightArm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Lower Arm" texture="reg_DivingSuit.png" limb="LeftForearm" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Waist" texture="reg_DivingSuit.png" limb="Waist" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Thigh" texture="reg_DivingSuit.png" limb="RightThigh" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Thigh" texture="reg_DivingSuit.png" limb="LeftThigh" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Leg" texture="reg_DivingSuit.png" limb="RightLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Leg" texture="reg_DivingSuit.png" limb="LeftLeg" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Left Shoe" texture="reg_DivingSuit.png" limb="LeftFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
+      <sprite name="Regular Diving Suit Right Shoe" texture="reg_DivingSuit.png" limb="RightFoot" sound="footstep_armor_heavy" hidelimb="false" inherittexturescale="true" hideotherwearables="false" inheritorigin="true" inheritsourcerect="true" />
     </Wearable>
-    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="battery">
-      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
-      <Containable items="mobilebattery">
-        <StatusEffect type="OnContaining" targettype="This" Voltage="1.0" setvalue="true" />
-        <StatusEffect type="OnWearing" target="Contained" Condition="-0.2" comparison="And" />
-      </Containable>
+    <ItemComponent>
+      <StatusEffect type="OnWearing" target="Character" comparison="or">
+        <Conditional internaldamage="gt 0.0" />
+        <Conditional blunttrauma="gt 0.0" />
+        <Conditional lacerations="gt 0.0" />
+        <Conditional bitewounds="gt 0.0" />
+        <Conditional gunshotwound="gt 0.0" />
+        <Conditional organdamage="gt 0.0" />
+        <Conditional explosiondamage="gt 0.0" />
+        <Conditional concussion="gt 0.0" />
+        <Conditional bloodloss="gt 0.0" />
+        <Conditional oxygenlow="gt 0.0" />
+        <RequiredItem items="mobilebattery" type="Contained" msg="ItemMsgBatteryCellRequired" />
+        <ReduceAffliction identifier="burn" amount="1" />
+        <ReduceAffliction type="damage" amount="1" />
+        <ReduceAffliction identifier="oxygenlow" amount="1" />
+        <ReduceAffliction identifier="bloodloss" amount="1" />
+      </StatusEffect>
+    </ItemComponent>
+    <ItemContainer capacity="0">
+      <SubContainer capacity="1" maxstacksize="1">
+        <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+        <Containable items="mobilebattery">
+          <StatusEffect type="OnWearing" target="Contained" targetslot="0" Condition="-1" comparison="or">
+            <Conditional TargetContainer="true" TargetGrandparent="true" internaldamage="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" blunttrauma="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" lacerations="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" bitewounds="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" gunshotwound="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" organdamage="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" explosiondamage="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" concussion="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" bloodloss="gt 0.0" />
+            <Conditional TargetContainer="true" TargetGrandparent="true" oxygenlow="gt 0.0" />
+          </StatusEffect>
+        </Containable>
+      </SubContainer>
     </ItemContainer>
   </Item>
   <Item name="高级电动焊接器・一阶段" identifier="weldingtoolPRO1" category="Equipment" Tags="smallitem,weldingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
@@ -495,7 +535,7 @@
       </LightComponent>
     </RepairTool>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="0,-39" containedspritedepth="0.56" containedstateindicatorstyle="tank">
-		<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
       <Containable items="mobilebattery" />
     </ItemContainer>
     <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
