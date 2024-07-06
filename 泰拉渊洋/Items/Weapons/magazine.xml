@@ -88,11 +88,10 @@
     </Projectile>
   </Item>
   <Item name="TL崩解弹" description="泰拉集团从幻星工业订购的特种化学子弹，弹头内的毒素可以轻易削减目标的抵抗能力。" identifier="TL13ammo_cr" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+    <!--
     <PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
-    <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
-    <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
-    <PreferredContainer secondary="wreckarmcab,wrecksecarmcab,abandonedarmcab,abandonedsecarmcab" minamount="1" maxamount="3" spawnprobability="0.2" />
-    <PreferredContainer secondary="secarmcab" />
+    <PreferredContainer primary="armcab" minamount="0" maxamount="0" spawnprobability="0" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" minamount="0" maxamount="0" spawnprobability="0" />
     <Price baseprice="600" minleveldifficulty="30">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
@@ -102,6 +101,7 @@
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
       <Price storeidentifier="TLarmory" multiplier="0.6" minavailable="20" sold="true" />
     </Price>
+    -->
     <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="4">
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2" />
