@@ -42,8 +42,8 @@ dropDown.OnSelected = function (guiComponent, object)
     print(object)
 end
 
-local customImageFrame = GUI.Frame(GUI.RectTransform(Point(300, 300), menuList.Content.RectTransform), "GUITextBox")
-customImageFrame.RectTransform.MinSize = Point(300,400)
+local customImageFrame = GUI.Frame(GUI.RectTransform(Point(512, 512), menuList.Content.RectTransform), "GUITextBox")
+customImageFrame.RectTransform.MinSize = Point(512,512)
 local customSprite = Sprite(modPath .. "/long.png")
 GUI.Image(GUI.RectTransform(Point(65, 65), customImageFrame.RectTransform, GUI.Anchor.Center), customSprite)
 

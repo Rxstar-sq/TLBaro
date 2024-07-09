@@ -27,12 +27,9 @@ end)
 Hook.Add("examples.givemoney", "examples.givemoney", function ()
  local MoneyAmount = 50000;
  local character
-    if SERVER then
-        character = client.Character
-    else
-        character = Character.Controlled
-    end
+    character = Character.Controlled
 
     if character == nil then return end
+    NetEntityEvent.Type.UpdateMoney
  character.GiveMoney(MoneyAmount);
 end)
