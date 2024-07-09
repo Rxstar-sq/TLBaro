@@ -108,7 +108,7 @@
     </Projectile>
   </Item>
   <!--协调者-->
-	<Item name="" identifier="5.56x45round" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+	<Item name="协调者" identifier="5.56x45round" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
 		<InventoryIcon texture="Content/Items/InventoryIconAtlas.png" sourcerect="896,960,64,64" origin="0.5,0.5" />
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="195,282,17,6" depth="0.55" origin="0.5,0.5" />
 		<Body width="40" height="14" density="30" />
@@ -116,9 +116,9 @@
 		<Projectile characterusable="false" hitscan="true" removeonhit="true">
 			<ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="97,255,107,175" scalemultiplier="1,0.6" />
 			<Attack structuredamage="0.5" targetforce="3" itemdamage="4" severlimbsprobability="0.05" penetration="0.2">
-				<Affliction identifier="gunshotwound" strength="20" />
+				<Affliction identifier="gunshotwound" strength="10" />
 				<Affliction identifier="gunshotwound" strength="5" probability="0.1" />
-				<Affliction identifier="bleeding" strength="10" />
+				<Affliction identifier="bleeding" strength="5" />
 				<Affliction identifier="bleeding" strength="10" probability="0.1" />
 				<Affliction identifier="stun" strength="0.2" probability="0.2" />
 			</Attack>
@@ -143,11 +143,11 @@
     <Body width="170" height="10" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="0" spread="9.5" removeonhit="true" damagedoors="true">
-      <Attack targetimpulse="400" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
-        <Affliction identifier="lacerations" strength="1.5" />
-        <Affliction identifier="bleeding" strength="1" />
+      <Attack targetimpulse="50" structuredamage="50" itemdamage="20" severlimbsprobability="7" penetration="50">
+        <Affliction identifier="lacerations" strength="5" />
+        <Affliction identifier="bleeding" strength="4" />
         <Affliction identifier="stun" strength="0.125" />
-        <Affliction identifier="stun" strength="0.125" probability="0.5" />
+        <Affliction identifier="stun" strength="0.225" probability="0.5" />
       </Attack>
       <StatusEffect type="OnActive" target="This">
         <ParticleEmitter particle="chainguntrail" copyentityangle="true" particlespersecond="50" initialdelay="0.05" colormultiplier="240,200,50" />
@@ -228,10 +228,10 @@
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
     <Projectile characterusable="false" launchimpulse="400" spread="1.5" removeonhit="true" damagedoors="true">
       <Attack structuredamage="25" itemdamage="18" severlimbsprobability="0.5" penetration="0.75">
-        <Affliction identifier="lacerations" strength="8" />
-        <Affliction identifier="bleeding" strength="5" />
-        <Affliction identifier="stun" strength="0.04" />
-        <Affliction identifier="stun" strength="0.03" probability="0.5" />
+        <Affliction identifier="lacerations" strength="10" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="stun" strength="0.05" />
+        <Affliction identifier="stun" strength="0.5" probability="0.5" />
       </Attack>
       <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
         <Remove />
@@ -252,14 +252,14 @@
     <Sprite texture="%ModDir%/Items/weapons/1130.png" sourcerect="873,626,115,46" depth="0.55" origin="0.5,0.5" />
     <Body width="110" height="50" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="400" spread="35" removeonhit="true" damagedoors="true">
+    <Projectile characterusable="false" launchimpulse="400" spread="35" removeonhit="false" damagedoors="true" interactthroughwall="true" maxtargetstohit="4">
       <Attack structuredamage="25" itemdamage="18" severlimbsprobability="0.5" penetration="0.75">
         <Affliction identifier="lacerations" strength="8" />
         <Affliction identifier="bleeding" strength="5" />
         <Affliction identifier="stun" strength="0.04" />
         <Affliction identifier="stun" strength="0.03" probability="0.5" />
       </Attack>
-      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="4">
         <Remove />
       </StatusEffect>
       <StatusEffect type="OnImpact" target="UseTarget">
@@ -267,9 +267,9 @@
         <ParticleEmitter particle="weldspark" copyentityangle="true" anglemin="-40" anglemax="40" particleamount="8" velocitymin="-300" velocitymax="-800" scalemin="1" scalemax="2" />
         <ParticleEmitter particle="shrapnel" copyentityangle="true" anglemin="0" anglemax="360" particleamount="5" velocitymin="100" velocitymax="500" scalemin="0.4" scalemax="0.5" />
       </StatusEffect>
-      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-        <Explosion range="200.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
-          <Affliction identifier="burn" strength="55" />
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true" delay="0.4">
+        <Explosion range="400.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
+          <Affliction identifier="burn" strength="70" />
           <Affliction identifier="stun" strength="1" />
           <Affliction identifier="explosiondamage" strength="5" />
         </Explosion>
@@ -289,17 +289,17 @@
     <Sprite texture="1130.png" sourcerect="768,697,220,24" depth="0.55" origin="0.5,0.5" />
     <Body width="200" height="20" density="10" />
     <Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-    <Projectile characterusable="false" launchimpulse="400" spread="1.5" removeonhit="true" damagedoors="true">
+    <Projectile characterusable="false" launchimpulse="400" spread="1.5" removeonhit="false" damagedoors="true" interactthroughwall="true" maxtargetstohit="4">
       <Attack structuredamage="25" itemdamage="18" severlimbsprobability="0.5" penetration="0.75">
         <Affliction identifier="lacerations" strength="2" />
         <Affliction identifier="bleeding" strength="2" />
         <Affliction identifier="stun" strength="0.01" />
       </Attack>
-      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="2">
+      <StatusEffect type="OnNotContained" target="This" stackable="false" delay="8">
         <Remove />
       </StatusEffect>
-      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true">
-        <Explosion range="200.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
+      <StatusEffect type="OnImpact" target="This" Condition="-100.0" disabledeltatime="true" delay="0.35">
+        <Explosion range="250.0" ballastfloradamage="50" structuredamage="20" levelwalldamage="50" itemdamage="250" force="10" severlimbsprobability="0.5">
           <Affliction identifier="burn" strength="5" />
           <Affliction identifier="stun" strength="1" />
           <Affliction identifier="explosiondamage" strength="5" />
@@ -325,7 +325,7 @@
     <Projectile characterusable="false" hitscan="true" removeonhit="true" spread="2">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,200,200,175" scalemultiplier="1,0.8" />
       <Attack structuredamage="4" targetforce="7.5" itemdamage="4" severlimbsprobability="0.2" penetration="0.4">
-        <Affliction identifier="gunshotwound" strength="26" />
+        <Affliction identifier="gunshotwound" strength="30" />
         <Affliction identifier="bleeding" strength="25" />
         <Affliction identifier="stun" strength="0.3" />
         <Affliction identifier="stun" strength="0.6" probability="0.01" />
@@ -400,17 +400,17 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <Item name="AKE常规子弹" identifier="5.45×39mmFlechetteAmmo" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
+  <Item name="AKE常规子弹" identifier="AKEammo" category="Weapon" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem" impactsoundtag="impact_metal_light" hideinmenus="true" scale="0.5">
     <Sprite texture="bullet.png" sourcerect="32,345,40,13" depth="0.55" origin="0.5,0.5" />
     <Body width="8" height="5" density="30" />
     <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
     <Projectile characterusable="false" hitscan="true" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,255" scalemultiplier="1,1" />
       <Attack structuredamage="8" targetforce="8" itemdamage="6" severlimbsprobability="0.2" penetration="0.2">
-        <Affliction identifier="gunshotwound" strength="30" />
-        <Affliction identifier="bleeding" strength="60" />
-        <Affliction identifier="stun" strength="0.5" />
-        <Affliction identifier="stun" strength="0.8" probability="0.3" />
+        <Affliction identifier="gunshotwound" strength="10" />
+        <Affliction identifier="bleeding" strength="20" />
+        <Affliction identifier="stun" strength="0.2" />
+        <Affliction identifier="stun" strength="0.4" probability="0.3" />
       </Attack>
       <StatusEffect type="OnImpact" target="UseTarget">
         <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="3,3" />
@@ -627,30 +627,31 @@
       <Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" />
     </ItemContainer>
   </Item>
-	<Item name="激光修复" identifier="HullFixammo" category="Misc,Weapon" scale="0.5" hideinmenus="true">
+	<Item name="" identifier="HullFixammo" nameidentifier="pulselaserbolt" category="Weapon" scale="0.5" sonarsize="2" hideinmenus="true" >
 		<Sprite texture="Content/Items/Weapons/weapons_new.png" sourcerect="143,414,113,9" depth="0.55" />
-		<Body width="160" height="10" density="15" />
+		<Body width="170" height="10" density="20" />
 		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,0" handle2="10,0" aimable="false" />
-		<Projectile characterusable="false" hitscan="true" removeonhit="true" spread="1">
-			<ParticleEmitter particle="ekgunnery_tracermininglaser" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,255,255,175" scalemultiplier="1,3" />
-			<Attack structuredamage="-10" itemdamage="1.5" levelwalldamage="0" severlimbsprobability="0" targetforce="2.5" penetration="0.4">
-				<Affliction identifier="bleeding" strength="0.6" />
-				<Affliction identifier="explosiondamage" strength="2.6" />
-				<Affliction identifier="internaldamage" strength="2.0" />
-				<Affliction identifier="organdamage" strength="1.6" />
-				<Affliction identifier="nausea" strength="1.2" />
+		<Projectile characterusable="false" hitscan="true" removeonhit="true" spread="10" staticspread="true" hitscancount="3" damagedoors="true" penetration="0.5">
+			<ParticleEmitter particle="tracerpulselaser" particleamount="1" velocitymin="0" velocitymax="0" />
+			<Attack structuredamage="5" targetforce="70" itemdamage="17" severlimbsprobability="1.0" penetration="0.4">
+				<Affliction identifier="explosiondamage" strength="30" />
+				<Affliction identifier="stun" strength="0.3" />
 			</Attack>
 			<StatusEffect type="OnImpact" target="UseTarget">
-				<ParticleEmitter particle="ekgunnery_impactmininglaser" anglemin="0" anglemax="360" particleamount="2" velocitymin="0" scalemin="0.5" scalemax="0.8" />
-				<ParticleEmitter particle="FlareBubbles" particleamount="1" anglemin="0" anglemax="360" velocitymin="0" velocitymax="250" />
+				<ParticleEmitter particle="muzzleflashpulselaser" anglemin="0" anglemax="360" particleamount="10" velocitymin="0" scalemin="0.5" scalemax="0.8" />
+				<ParticleEmitter particle="weldspark" particleamount="5" anglemin="0" anglemax="360" velocitymin="300" velocitymax="350" scalemin="1.5" scalemax="1.9" drawontop="true" colormultiplier="255,200,225,180" />
+				<ParticleEmitter particle="FlareBubbles" particleamount="3" anglemin="0" anglemax="360" velocitymin="0" velocitymax="50"/>
+				<Explosion range="100.0" ballastfloradamage="35" structuredamage="-50" itemdamage="0" force="7.0" flames="false" smoke="false" sparks="false" underwaterbubble="false" flashcolor="255,0,0,255" >
+					<Affliction identifier="burn" strength="70" />
+					<Affliction identifier="stun" strength="2" />
+				</Explosion>
 			</StatusEffect>
-			<StatusEffect type="OnImpact" target="NearbyItems" targettags="ore" range="150.0" stackable="false" DeattachTimer="0.1" />
-			<StatusEffect type="OnImpact">
-				<ParticleEmitter particle="bubbles" anglemin="-180" anglemax="180" particleamount="1" velocitymin="-50" velocitymax="-250" scalemin="0.5" scalemax="1" />
-				<!-- That bug where projectiles can't damage level walls if their structuredamage is 0 still affects hitscan, so use explosions as a workaroud for now -->
-				<Explosion range="100.0" levelwalldamage="3" force="0" severlimbsprobability="0" camerashake="0" camerashakerange="0" shockwave="false" smoke="false" flames="false" flash="false" sparks="false" underwaterbubble="false" ignorecover="true" playtinnitus="false" applyfireeffects="false"></Explosion>
+			<StatusEffect type="OnImpact" target="UseTarget">
+				<Conditional entitytype="eq Structure"/>
+				<Conditional hastag="eq door"/>
+				<ParticleEmitter particle="spark" copyentityangle="true" anglemin="-10" anglemax="10" particleamount="5" velocitymin="-10" velocitymax="-200" scalemin="0.5" scalemax="1" />
 			</StatusEffect>
-			<StatusEffect type="OnNotContained" target="This" stackable="false" delay="1">
+			<StatusEffect type="OnNotContained" target="This">
 				<Remove />
 			</StatusEffect>
 		</Projectile>

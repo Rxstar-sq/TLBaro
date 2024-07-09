@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-	<Item name="单手冲锋盾牌" identifier="HurugeeShield" category="Weapon,Equipment" tags="smallitem" health="120" cargocontaineridentifier="metalcrate" allowasextracargo="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbymonsters="true" damagedbyrepairtools="true" damagedbyexplosions="true" explosiondamagemultiplier="0.1" scale="0.4" impactsoundtag="impact_metal_heavy">
+	<Item name="单手冲锋盾牌" identifier="HurugeeShield" HideConditionBar="true" category="Weapon,Equipment" tags="smallitem" health="120" cargocontaineridentifier="metalcrate" allowasextracargo="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" damagedbymonsters="true" damagedbyrepairtools="true" damagedbyexplosions="true" explosiondamagemultiplier="0.1" scale="0.4" impactsoundtag="impact_metal_heavy">
 		<Price baseprice="1000" sold="false">
 			<Price storeidentifier="merchantoutpost" multiplier="0.8" />
 			<Price storeidentifier="merchantcity" multiplier="0.7" />
@@ -10,19 +10,14 @@
 		</Price>
 		<Sprite texture="weapons2.png" sourcerect="220,334,43,123" origin="0.5,0.5" depth="0.55" />
 		<Body width="80" height="200" density="10.1" />
-		<Deconstruct time="10">
-			<Item identifier="titanium" copycondition="true" outconditionmax="0.5" mincondition="0.1" />
-			<Item identifier="plastic" copycondition="true" outconditionmax="0.5" mincondition="0.1" />
-		</Deconstruct>
-		<Fabricate suitablefabricators="fabricator" requiredtime="10" amount="30">
+		<Fabricate suitablefabricators="fabricator" requiredtime="60" >
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredSkill identifier="mechanical" level="50" />
 			<RequiredItem identifier="steel" />
-			<RequiredItem identifier="ballisticfiber" />
-			<RequiredItem identifier="ballisticfiber" />
-			<RequiredItem identifier="ballisticfiber" />
+			<RequiredItem identifier="titanium" />
+			<RequiredItem identifier="ballisticfiber" amount="3"/>
 		</Fabricate>
-		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="15">
+		<Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="20">
 			<RequiredSkill identifier="weapons" level="50" />
 			<RequiredSkill identifier="mechanical" level="50" />
 			<RequiredItem identifier="steel" />
@@ -87,5 +82,80 @@
 			</StatusEffect>
 		</Projectile>
 	</Item>
-
+	<!--敌对武器-->
+	<Item name="协调者(敌对)1" identifier="协调者(敌对)1" subcategory="rifle" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.6" impactsoundtag="impact_metal_light" hideinmenus="true">
+		<Sprite texture="weapons2.png" sourcerect="0,371,150,51" depth="0.55" origin="0.5,0.5" />
+		<Body width="200" height="65" density="25" />
+		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" holdpos="40,-10" aimpos="45,0" handle1="-25,-15" handle2="80,20" holdangle="-35" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+		</Holdable>
+		<RangedWeapon reload="0.08" weapondamagemodifier="1" holdtrigger="true" barrelpos="105,3" spread="7" unskilledspread="14" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.4">
+			<Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+			<CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+			<ParticleEmitter particle="muzzleflash" particleamount="1" velocitymin="0" velocitymax="0" />
+			<Sound file="%ModDir%/ogg/协调者.ogg" type="OnUse" range="3000" />
+			<StatusEffect type="OnUse" target="This" Condition="-450" />
+			<StatusEffect type="NotInWater" target="This" Condition="5" />
+			<StatusEffect type="InWater" target="This" Condition="100" />
+			<StatusEffect type="OnBroken" target="This" Condition="3000" disabledeltatime="true" delay="6" stackable="false" />
+			<StatusEffect type="OnBroken" target="This">
+				<sound file="%ModDir%/ogg/协调者reload.ogg" type="OnUse" range="500.0" loop="false" volume="1" />
+			</StatusEffect>
+			<StatusEffect type="OnNotContained" target="This">
+				<Remove />
+			</StatusEffect>
+			<StatusEffect type="OnSpawn" target="This" targetitemcomponent="ItemContainer">
+				<SpawnItem identifier="协调者弹匣（敌对）" spawnposition="ThisInventory" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" target="This" >
+				<ParticleEmitter particle="casingfirearm" particleamount="1" anglemin="90" anglemax="150" velocitymin="50" velocitymax="250" CopyEntityAngle="true" />
+				<Explosion range="150.0" force="0.6" shockwave="false" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="10" />
+			</StatusEffect>
+			<!--"Use" contained magazine to spawn projectiles.-->
+			<StatusEffect type="OnUse" target="Contained">
+				<Use />
+			</StatusEffect>
+			<RequiredItems items="协调者弹匣（敌对）" type="Contained" msg="ItemMsgAmmoRequired" />
+			<RequiredSkill identifier="weapons" level="50" />
+		</RangedWeapon>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="false" containedstateindicatorslot="0" containedstateindicatorstyle="bullet">
+			<Containable items="协调者弹匣（敌对）" hide="false" itempos="2,-8" rotation="0" />
+			<SubContainer capacity="1" maxstacksize="1">
+				<Containable items="flashlight,focusingflashlight,spreadflashlight" hide="false" itempos="40,1" setactive="true" />
+			</SubContainer>
+			<SubContainer capacity="1" maxstacksize="1">
+				<Containable items="holographic_sight,red_sight,2x_sight" hide="false" itempos="-7,14" setactive="true" containedspritedepth="0.45" depth="0.55" />
+			</SubContainer>
+			<SubContainer capacity="1" maxstacksize="1">
+				<Containable items="vertical_grip,corner_grip" hide="false" itempos="26,-1.5" setactive="true" containedspritedepth="0.1" depth="0.1" />
+			</SubContainer>
+			<SubContainer capacity="1" maxstacksize="1">
+				<Containable items="extended_barrel" hide="false" itempos="52,6.5" setactive="true" containedspritedepth="0.1" depth="0.1" />
+			</SubContainer>
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="4000" fadeouttime="5" />
+		<Quality>
+			<QualityStat stattype="FirepowerMultiplier" value="0.05" />
+			<QualityStat stattype="Condition" value="0.1" />
+		</Quality>
+		<SkillRequirementHint identifier="weapons" level="50" />
+	</Item>
+	<Item name="协调者弹匣（敌对）" identifier="协调者弹匣（敌对）" subcategory="rifle_mag" maxstacksize="1" hideinmenus="true" maxstacksizecharacterinventory="1" scale="0.24" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45" impactsoundtag="impact_metal_light">
+		<Sprite texture="weapons2.png" depth="0.65" sourcerect="433,301,57,121" origin="0.5,0.5" />
+		<Body width="40" height="50" density="25" />
+		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.56x45round" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+			<Containable items="5.56x45round" />
+			<StatusEffect type="OnBroken" target="Parent" Condition="-3000"></StatusEffect>
+			<!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+			<StatusEffect type="OnUse" target="This" condition="-1.34" disabledeltatime="true">
+				<SpawnItem identifiers="5.56x45round" spawnposition="ThisInventory" />
+			</StatusEffect>
+		</ItemContainer>
+		<!--Magazines can be combined to raise condition.-->
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnActive" target="Character">
+				<Affliction identifier="expansion_mag" strength="2" />
+			</StatusEffect>
+		</Holdable>
+	</Item>
 </Items>

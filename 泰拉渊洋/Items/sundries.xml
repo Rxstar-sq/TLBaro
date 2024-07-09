@@ -5,6 +5,8 @@
     <Sprite texture="icon.png" depth="0.8" sourcerect="0,0,170,70" origin="0.5,0.5" />
     <Body width="16" height="12" density="20" />
     <IdCard slots="Any" msg="ItemMsgPickUpSelect" />
+	  <Deconstruct time="1">
+	  </Deconstruct>
   </Item>
   <Item name="万能钥匙（NPC）" identifier="idcardplus1" description="" nonplayerteaminteractable="True" category="Hidden" hideinmenus="true" Tags="smallitem,idcard,id_medic,id_captain,id_security,id_engineer,id_mechanic,wreck_id,idmedic,idcaptain,idsecurity,idengineer,idmechanic,tldoor" scale="0.15" cargocontaineridentifier="metalcrate">
     <InventoryIcon texture="icon.png" sourcerect="0,0,170,70" origin="0.5,0.5" />
@@ -218,12 +220,10 @@
     </Price>
     <Deconstruct time="10">
       <Item identifier="plastic" />
-      <Item identifier="uex" />
     </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="25" />
       <RequiredItem identifier="plastic" amount="2" />
-      <RequiredItem identifier="uex" />
     </Fabricate>
     <Sprite name="垃圾处理器" texture="icon.png" sourcerect="406,16,80,103" depth="0.55" origin="0.5,0.5" />
     <Body width="80" height="100" density="20" />
@@ -287,6 +287,94 @@
       <QualityStat stattype="ExplosionDamage" value="0.1" />
     </Quality>
   </Item>
+	<Item name="垃圾处理器" identifier="Garbagedisposal" description="删除容器中的物品" tags="smallitem" category="Weapon" sonarsize="5" scale="0.5" impactsoundtag="impact_metal_heavy" damagedbymonsters="true" damagedbyexplosions="true" damagedbyrepairtools="true" damagedbyprojectiles="true" damagedbymeleeweapons="true" indestructible="true" health="10" cargocontaineridentifier="">
+		<PreferredContainer primary="depthchargeloader" secondary="ammoboxcontainer" />
+		<Price baseprice="120" minavailable="1">
+			<Price storeidentifier="merchantoutpost" multiplier="1.4" />
+			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" />
+			<Price storeidentifier="merchantresearch" multiplier="1.25" />
+			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+			<Price storeidentifier="merchantmine" multiplier="1.25" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="20">
+			<RequiredSkill identifier="weapons" level="25" />
+			<RequiredItem identifier="plastic" amount="2" />
+		</Fabricate>
+		<Sprite name="垃圾处理器" texture="icon.png" sourcerect="406,16,80,103" depth="0.55" origin="0.5,0.5" />
+		<Body width="80" height="100" density="20" />
+		<Holdable slots="RightHand+LeftHand" holdpos="0,-50" handle1="-10,20" handle2="10,20" aimable="false" msg="ItemMsgPickUpSelect" >
+			<CustomInterface canbeselected="false" drawhudwhenequipped="true">
+				<GuiFrame relativesize="0.15,0.1" anchor="BottomCenter" absoluteoffset="0,140" style="ItemUI" />
+				<Button text="销毁">
+					<StatusEffect type="OnUse" target="Contained">
+						<Sound file="Content/Sounds/DropItem.ogg" type="OnUse" range="250" />
+						<Remove />
+					</StatusEffect>
+				</Button>
+			</CustomInterface>
+		</Holdable>
+		<Projectile characterusable="false" launchimpulse="5.0">
+			<!-- Make destructible when launched -->
+			<StatusEffect type="OnUse" target="This" Indestructible="false" />
+			<StatusEffect type="OnImpact" target="this" setvalue="true" condition="-100" />
+			<!-- Effects when taking damage-->
+			<StatusEffect type="OnDamaged" target="This" disabledeltatime="true" setvalue="true">
+				<particleemitter particle="shrapnel" drawontop="true" particleamount="5" velocitymin="100" velocitymax="500" anglemin="0" anglemax="360" distancemin="0" distancemax="20" scalemin="0.1" scalemax="0.35" />
+				<Sound file="Content/Sounds/Damage/HitArmor1.ogg" range="800" />
+			</StatusEffect>
+			<StatusEffect type="OnBroken" target="This">
+				<sound file="Content/Items/Weapons/ExplosionDebris4.ogg" range="5000" />
+				<sound file="Content/Items/Weapons/ExplosionDebris5.ogg" range="5000" />
+			</StatusEffect>
+			<!-- Trigger explosions on contained items -->
+			<StatusEffect type="OnBroken" target="Contained">
+				<sound file="Content/Items/Weapons/ExplosionLarge1.ogg" range="20000" />
+				<sound file="Content/Items/Weapons/ExplosionLarge2.ogg" range="20000" />
+				<Explosion range="700.0" ballastfloradamage="150" structuredamage="175" itemdamage="500" force="17.5" severlimbsprobability="0.5" debris="true" decal="explosion" decalsize="0.5" penetration="0.5">
+					<Affliction identifier="explosiondamage" strength="150" dividebylimbcount="true" />
+					<Affliction identifier="burn" strength="15" probability="0.2" dividebylimbcount="false" />
+					<Affliction identifier="bleeding" strength="40" probability="0.05" dividebylimbcount="false" />
+					<Affliction identifier="stun" strength="7" />
+				</Explosion>
+				<Use />
+			</StatusEffect>
+			<!-- Remove the item after exploding -->
+			<StatusEffect type="OnBroken" target="This" delay="0.01">
+				<Remove />
+			</StatusEffect>
+		</Projectile>
+		<ItemContainer hideitems="true" capacity="20" maxstacksize="10" canbeselected="false">
+			<SlotIcon slotindex="0" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="1" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="2" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="3" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="4" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="5" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="6" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="7" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="8" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="9" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="10" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="11" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="12" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="13" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="14" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="15" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="16" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="17" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="18" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<SlotIcon slotindex="19" texture="%ModDir%/UI/iconUI.png" sourcerect="0,0,64,77" origin="0.5,0.5" />
+			<GuiFrame relativesize="0.2,0.25" anchor="Center" minsize="140,170" maxsize="280,280" style="ItemUI" />
+			<Containable items="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate" />
+		</ItemContainer>
+		<Quality>
+			<QualityStat stattype="ExplosionRadius" value="0.1" />
+			<QualityStat stattype="ExplosionDamage" value="0.1" />
+		</Quality>
+	</Item>
   <Item name="手持万用宝" description="和潜艇系统互联互通，这里有你想知道的一切" identifier="handheldstatusmonitorPro" category="Equipment" Tags="smallitem,sonar,provocative" cargocontaineridentifier="metalcrate" allowasextracargo="true" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="divingcab" />
     <Price baseprice="1000">
@@ -378,7 +466,7 @@
     <ItemContainer capacity="5" canbeselected="true" hideitems="true" slotsperrow="5" uilabel="" allowuioverlap="true" />
     <ItemContainer capacity="1" canbeselected="true" hideitems="true" slotsperrow="1" uilabel="" allowuioverlap="true" />
   </Item>
-  <Item name="变色墨汁" identifier="bianse" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
+  <Item name="变色墨汁（尚未完成）" identifier="bianse" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
     <!--合成-->
     <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
@@ -394,7 +482,7 @@
     <Body width="50" height="20" density="20" />
     <Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" msg="ItemMsgPickUpSelect" />
   </Item>
-  <Item name="欧罗巴纸" identifier="OLBzhi" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
+  <Item name="欧罗巴纸（尚未完成）" identifier="OLBzhi" category="Misc" tags="smallitem,hornitem,clowns" scale="0.5" cargocontaineridentifier="metalcrate" description="很违规的东西，谁也不知道集团怎么从联盟那搞来的">
     <PreferredContainer secondary="wreckcrewcab,abandonedcrewcab,piratecrewcab" spawnprobability="0.06" />
     <!--合成-->
     <Fabricate suitablefabricators="moneymaker" requiredtime="60" requiresrecipe="true">
@@ -409,7 +497,7 @@
     <Body width="50" height="20" density="20" />
     <Holdable slots="Any,RightHand,LeftHand" aimpos="100,0" msg="ItemMsgPickUpSelect" />
   </Item>
-  <Item name="10000TMK" description="集团暗中“发行”的“货币”，这可不是“假币”，10000TMK可以换50000MK" identifier="TMKmoney" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="10000TMK（尚未完成）" description="集团暗中“发行”的“货币”，这可不是“假币”，10000TMK可以换50000MK" identifier="TMKmoney" category="Weapon" cargocontaineridentifier="metalcrate" tags="smallitem" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer secondary="outpostsecarmcab" amount="1" spawnprobability="0.05" />
     <PreferredContainer secondary="wrecksecarmcab,abandonedsecarmcab" amount="1" spawnprobability="0.04" />
     <!--合成-->

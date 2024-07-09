@@ -88,10 +88,6 @@
     </Projectile>
   </Item>
   <Item name="TL崩解弹" description="泰拉集团从幻星工业订购的特种化学子弹，弹头内的毒素可以轻易削减目标的抵抗能力。" identifier="TL13ammo_cr" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
-    <!--
-    <PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
-    <PreferredContainer primary="armcab" minamount="0" maxamount="0" spawnprobability="0" notcampaign="true" />
-    <PreferredContainer secondary="outpostsecarmcab" minamount="0" maxamount="0" spawnprobability="0" />
     <Price baseprice="600" minleveldifficulty="30">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
@@ -101,7 +97,6 @@
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="12" />
       <Price storeidentifier="TLarmory" multiplier="0.6" minavailable="20" sold="true" />
     </Price>
-    -->
     <Fabricate suitablefabricators="fabricator" requiredtime="20" amount="4">
       <RequiredSkill identifier="weapons" level="30" />
       <RequiredItem tag="munition_propulsion" description="fabricationdescription.munition_propulsion" amount="2" />
@@ -188,7 +183,12 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <Item name="泰拉集团崩解弹匣" description="适配泰拉集团大部分武器的通用弹匣。发射步枪崩解弹，子弹内部的破坏性纳米凝胶可以对命中目标造成细胞级别的永久损伤。" identifier="TL_magazine_cr" category="Weapon" health="60" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,TL14ammo,TL_magazine,TL_ammo,TL_bjzd" Scale="0.5" impactsoundtag="impact_metal_light">
-    <!--删除购买可能
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+    <PreferredContainer primary="secarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
     <Price baseprice="800" buyingpricemultiplier="1.3" minleveldifficulty="40">
       <Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="1" />
       <Price locationtype="city" multiplier="1" minavailable="1" maxavailable="2" />
@@ -197,7 +197,6 @@
       <Price locationtype="mine" multiplier="1.25" sold="false" />
       <Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
     </Price>
-    -->
     <!--需要武器等级20，材料为钛铝合金，钾，钛/钢筋，破坏性纳米凝胶-->
     <Fabricate suitablefabricators="fabricator" requiredtime="12" requiresrecipe="false">
       <RequiredSkill identifier="weapons" level="20" />
@@ -341,85 +340,85 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <!--幻星弹药-->
-	<Item name="协调者弹匣" identifier="协调者弹匣"  maxstacksize="32" maxstacksizecharacterinventory="8" scale="0.30" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45,HXammo" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
-		<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
-		<PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
-		<PreferredContainer secondary="secarmcab" />
-		<Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
-			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
-			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-			<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
-		</Price>
-		<Fabricate suitablefabricators="fabricator" requiredtime="10" amount="4">
-			<RequiredSkill identifier="weapons" level="30" />
-			<RequiredItem identifier="lead" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="plastic" />
-		</Fabricate>
-		<Deconstruct time="10">
-			<Item identifier="lead" mincondition="0.95" outcondition="0.25" />
-			<Item identifier="copper" mincondition="0.95" outcondition="0.25" />
-			<Item identifier="plastic" outcondition="0.25" />
-		</Deconstruct>
-		<Sprite texture="weapons2.png" depth="0.65" sourcerect="352,320,40,60" origin="0.5,0.5" />
-		<Body width="40" height="50" density="25" />
-		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.56x45round" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-			<Containable items="5.56x45round" />
-			<StatusEffect type="OnBroken" target="Parent" Condition="-3000"></StatusEffect>
-			<!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
-			<StatusEffect type="OnUse" target="This" condition="-3.22" disabledeltatime="true">
-				<SpawnItem identifiers="5.56x45round" spawnposition="ThisInventory" />
-			</StatusEffect>
-		</ItemContainer>
-		<!--Magazines can be combined to raise condition.-->
-		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-		<Upgrade gameversion="0.10.0.0" scale="0.5" />
-	</Item>
-	<Item name="协调者弹鼓" identifier="协调者弹鼓" subcategory="rifle_mag" maxstacksize="1" maxstacksizecharacterinventory="1" scale="0.24" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45" impactsoundtag="impact_metal_light">
-		<PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
-		<PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
-		<PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
-		<PreferredContainer secondary="secarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
-		<Price baseprice="450" displaynonempty="true" minleveldifficulty="15">
-			<Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
-			<Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
-			<Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
-		</Price>
-		<Fabricate suitablefabricators="fabricator" requiredtime="10" amount="1">
-			<RequiredSkill identifier="weapons" level="50" />
-			<RequiredItem identifier="lead" />
-			<RequiredItem identifier="lead" />
-			<RequiredItem identifier="lead" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="copper" />
-			<RequiredItem identifier="plastic" />
-			<RequiredItem identifier="plastic" />
-		</Fabricate>
-		<Deconstruct time="10">
-			<Item identifier="lead" mincondition="0.95" outcondition="1" />
-			<Item identifier="copper" mincondition="0.95" outcondition="1" />
-			<Item identifier="plastic" outcondition="1" />
-		</Deconstruct>
-		<Sprite texture="weapons2.png" depth="0.65" sourcerect="433,301,57,121" origin="0.5,0.5" />
-		<Body width="40" height="50" density="25" />
-		<ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.56x45round" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-			<Containable items="5.56x45round" />
-			<StatusEffect type="OnBroken" target="Parent" Condition="-3000"></StatusEffect>
-			<!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
-			<StatusEffect type="OnUse" target="This" condition="-1.34" disabledeltatime="true">
-				<SpawnItem identifiers="5.56x45round" spawnposition="ThisInventory" />
-			</StatusEffect>
-		</ItemContainer>
-		<!--Magazines can be combined to raise condition.-->
-		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
-			<StatusEffect type="OnActive" target="Character">
-				<Affliction identifier="expansion_mag" strength="2" />
-			</StatusEffect>
-		</Holdable>
-		<Upgrade gameversion="0.10.0.0" scale="0.5" />
-	</Item>
+  <Item name="协调者弹匣" identifier="协调者弹匣" maxstacksize="32" maxstacksizecharacterinventory="8" scale="0.30" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45,HXammo" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="2" spawnprobability="0.5" />
+    <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="2" spawnprobability="0.2" />
+    <PreferredContainer secondary="secarmcab" />
+    <Price baseprice="150" displaynonempty="true" minleveldifficulty="15">
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="4">
+      <RequiredSkill identifier="weapons" level="30" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="lead" mincondition="0.95" outcondition="0.25" />
+      <Item identifier="copper" mincondition="0.95" outcondition="0.25" />
+      <Item identifier="plastic" outcondition="0.25" />
+    </Deconstruct>
+    <Sprite texture="weapons2.png" depth="0.65" sourcerect="352,320,40,60" origin="0.5,0.5" />
+    <Body width="40" height="50" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.56x45round" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="5.56x45round" />
+      <StatusEffect type="OnBroken" target="Parent" Condition="-3000"></StatusEffect>
+      <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+      <StatusEffect type="OnUse" target="This" condition="-3.22" disabledeltatime="true">
+        <SpawnItem identifiers="5.56x45round" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <!--Magazines can be combined to raise condition.-->
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
+  <Item name="协调者弹鼓" identifier="协调者弹鼓" subcategory="rifle_mag" maxstacksize="1" maxstacksizecharacterinventory="1" scale="0.24" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="wrecksecarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <PreferredContainer secondary="secarmcab" minamount="1" maxamount="1" spawnprobability="0.1" />
+    <Price baseprice="450" displaynonempty="true" minleveldifficulty="15">
+      <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="2" sold="false" />
+      <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="4" />
+      <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="4" />
+    </Price>
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" amount="1">
+      <RequiredSkill identifier="weapons" level="50" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="lead" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="copper" />
+      <RequiredItem identifier="plastic" />
+      <RequiredItem identifier="plastic" />
+    </Fabricate>
+    <Deconstruct time="10">
+      <Item identifier="lead" mincondition="0.95" outcondition="1" />
+      <Item identifier="copper" mincondition="0.95" outcondition="1" />
+      <Item identifier="plastic" outcondition="1" />
+    </Deconstruct>
+    <Sprite texture="weapons2.png" depth="0.65" sourcerect="433,301,57,121" origin="0.5,0.5" />
+    <Body width="40" height="50" density="25" />
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.56x45round" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="5.56x45round" />
+      <StatusEffect type="OnBroken" target="Parent" Condition="-3000"></StatusEffect>
+      <!--Spawn an SMG round on use. Condition -4.8 -> 21 shots per magazine.-->
+      <StatusEffect type="OnUse" target="This" condition="-1.34" disabledeltatime="true">
+        <SpawnItem identifiers="5.56x45round" spawnposition="ThisInventory" />
+      </StatusEffect>
+    </ItemContainer>
+    <!--Magazines can be combined to raise condition.-->
+    <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect">
+      <StatusEffect type="OnActive" target="Character">
+        <Affliction identifier="expansion_mag" strength="2" />
+      </StatusEffect>
+    </Holdable>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+  </Item>
   <!--常规弹药-->
   <!--M2-->
   <Item name="M2常规弹药" identifier="M2ammo" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo,general" impactsoundtag="impact_metal_light">
@@ -503,7 +502,6 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <Item name="M2崩解弹药" identifier="M2ammo_bj" maxstacksize="8" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,M2ammo,general" impactsoundtag="impact_metal_light">
-    <!--删除刷新与购买
     <PreferredContainer primary="hmg" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="2500" sold="true" minleveldifficulty="65" displaynonempty="true">
@@ -514,7 +512,6 @@
       <Price storeidentifier="merchantarmory" sold="true" multiplier="0.9" minavailable="0" maxavailable="4" />
       <Price storeidentifier="merchantmine" multiplier="1.25" />
     </Price>
-    -->
     <Fabricate suitablefabricators="fabricator" requiredtime="60">
       <RequiredSkill identifier="weapons" level="45" />
       <RequiredItem identifier="magnesium" />
@@ -544,64 +541,69 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <!--AKE-->
-  <Item name="AKE突击步枪弹匣" identifier="AKEAssaultRifleMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo,general" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="secarmcab" minamount="2" maxamount="6" spawnprobability="0.4" />
-    <PreferredContainer secondary="armcab" minamount="2" maxamount="6" spawnprobability="0.8" />
-    <PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="8" maxamount="16" spawnprobability="0.6" />
-    <PreferredContainer secondary="wrecksecarmcab,wreckarmcab" minamount="2" maxamount="4" spawnprobability="0.2" />
-    <PreferredContainer primary="secarmcab,armcab" />
-    <Price baseprice="300" soldeverywhere="false">
-      <Price storeidentifier="merchantoutpost" multiplier="0.8" minavailable="8" sold="true" />
-      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="12" maxavailable="20" sold="true" />
-      <Price storeidentifier="merchantresearch" multiplier="1" minavailable="5" sold="true" />
-      <Price storeidentifier="merchantmine" multiplier="0.8" minavailable="5" sold="true" />
-      <Price storeidentifier="merchantarmory" multiplier="0.7" minavailable="20" maxavailable="40" sold="true" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.7" minavailable="30" sold="true" />
+  <Item name="AKE弹夹" description="AKE的弹夹，廉价，随处可见，但又是前期制式武器的不二之选" identifier="AKEMagazines" category="Weapon" health="70" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,general,AKEMagazines" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+    <PreferredContainer primary="secarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <Price baseprice="150" buyingpricemultiplier="1.3" minleveldifficulty="0">
+      <Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="1" />
+      <Price locationtype="city" multiplier="1" minavailable="1" maxavailable="2" />
+      <Price locationtype="research" multiplier="1.05" sold="false" />
+      <Price locationtype="military" multiplier="0.9" minavailable="2" maxavailable="4" />
+      <Price locationtype="mine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
     </Price>
-    <Deconstruct time="5">
-      <Item identifier="plastic" />
-    </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20">
-      <RequiredSkill identifier="weapons" level="15" />
+    <!--需要武器等级20，材料为铝，钾，铅/铜/钢筋-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="15">
+      <RequiredSkill identifier="weapons" level="25" />
       <Item identifier="steel" amount="1" />
       <Item identifier="copper" amount="2" />
       <Item identifier="zinc" />
       <Item identifier="plastic" amount="2" />
     </Fabricate>
-    <Fabricate suitablefabricators="fabricator" displayname="recycleitem" requiredtime="10">
-      <RequiredSkill identifier="weapons" level="15" />
-      <Item identifier="copper" amount="1" />
+    <!--可通过其他通用弹夹回收制作-->
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="false" displayname="recycleitem">
+      <RequiredSkill identifier="weapons" level="20" />
+      <RequiredItem tag="AKEMagazines" amount="1" mincondition="0.0" maxcondition="0.1" usecondition="false" header="fabricationheader.TLammoK" />
+      <Item identifier="copper" amount="2" />
       <Item identifier="zinc" />
-      <RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
-    <Sprite name="AKE突击步枪弹匣" texture="weapons.png" depth="0.54" sourcerect="19,385,44,51" origin="0.5,0.5" />
-    <Body width="23" height="45" density="30" />
-    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.45×39mmFlechetteAmmo" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-      <Containable items="5.45×39mmFlechetteAmmo" />
-      <StatusEffect type="OnUse" target="This" condition="-4.0" disabledeltatime="true">
-        <SpawnItem identifiers="5.45×39mmFlechetteAmmo" spawnposition="ThisInventory" />
+    <!--留空以用于其他可能的通用弹夹回收-->
+    <!---->
+    <!--分解获得铝-->
+    <Deconstruct time="8">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="weapons.png" sourcerect="14,386,51,50" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="40" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <!--发射普通子弹-->
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="AKEammo" />
+      <StatusEffect type="OnUse" target="This" condition="-4" disabledeltatime="true">
+        <SpawnItem identifiers="AKEammo" spawnposition="ThisInventory" />
       </StatusEffect>
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
-  <Item name="AKE突击步枪弹鼓" identifier="AKEAssaultRifleDrumMagazine" maxstacksize="6" maxstacksizecharacterinventory="2" scale="0.5" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,5.45×39mmFlechetteAmmo,general" impactsoundtag="impact_metal_light">
-    <PreferredContainer primary="secarmcab" minamount="2" maxamount="6" spawnprobability="0.4" />
-    <PreferredContainer secondary="armcab" minamount="2" maxamount="6" spawnprobability="0.8" />
-    <PreferredContainer primary="abandonedsecarmcab,abandonedarmcab" minamount="8" maxamount="16" spawnprobability="0.6" />
-    <PreferredContainer secondary="wrecksecarmcab,wreckarmcab" minamount="2" maxamount="4" spawnprobability="0.2" />
-    <PreferredContainer primary="secarmcab,armcab" />
-    <Price baseprice="300" soldeverywhere="false">
-      <Price storeidentifier="merchantoutpost" multiplier="0.8" minavailable="8" sold="true" />
-      <Price storeidentifier="merchantcity" multiplier="1.2" minavailable="12" maxavailable="20" sold="true" />
-      <Price storeidentifier="merchantresearch" multiplier="1" minavailable="5" sold="true" />
-      <Price storeidentifier="merchantmine" multiplier="0.8" minavailable="5" sold="true" />
-      <Price storeidentifier="merchantarmory" multiplier="0.7" minavailable="20" maxavailable="40" sold="true" />
-      <Price storeidentifier="merchantmilitary" multiplier="0.7" minavailable="30" sold="true" />
+  <Item name="AKE弹鼓" description="AKE的弹鼓，廉价，随处可见，但又是前期制式武器的不二之选" identifier="AKEMagazines2" category="Weapon" health="70" maxstacksize="32" maxstacksizecharacterinventory="4" cargocontaineridentifier="metalcrate" tags="smallitem,general,AKEMagazines" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="wreckarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wreckstoragecab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="weaponholder" spawnprobability="0.1" />
+    <PreferredContainer primary="secarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <PreferredContainer primary="abandonedsecarmcab" minamount="0" maxamount="3" spawnprobability="0.1" />
+    <Price baseprice="300" buyingpricemultiplier="1.3" minleveldifficulty="0">
+      <Price locationtype="outpost" multiplier="1.5" minavailable="0" maxavailable="1" />
+      <Price locationtype="city" multiplier="1" minavailable="1" maxavailable="2" />
+      <Price locationtype="research" multiplier="1.05" sold="false" />
+      <Price locationtype="military" multiplier="0.9" minavailable="2" maxavailable="4" />
+      <Price locationtype="mine" multiplier="1.25" sold="false" />
+      <Price storeidentifier="TLarmory" multiplier="0.8" minavailable="5" sold="true" />
     </Price>
-    <Deconstruct time="5">
-      <Item identifier="plastic" />
-    </Deconstruct>
     <Fabricate suitablefabricators="fabricator" requiredtime="20">
       <RequiredSkill identifier="weapons" level="15" />
       <Item identifier="steel" amount="1" />
@@ -613,18 +615,24 @@
       <RequiredSkill identifier="weapons" level="15" />
       <Item identifier="copper" amount="1" />
       <Item identifier="zinc" />
-      <RequiredItem identifier="AKEAssaultRifleMagazine" mincondition="0.0" maxcondition="0.1" usecondition="false" />
+      <RequiredItem identifier="AKEMagazines2" mincondition="0.0" maxcondition="0.1" usecondition="false" />
     </Fabricate>
-    <Sprite name="AKE突击步枪弹鼓" texture="weapons.png" depth="0.54" sourcerect="63,386,44,51" origin="0.5,0.5" />
-    <Body width="23" height="45" density="30" />
-    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="5.45×39mmFlechetteAmmo" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
-      <Containable items="5.45×39mmFlechetteAmmo" />
-      <StatusEffect type="OnUse" target="This" condition="-2.0" disabledeltatime="true">
-        <SpawnItem identifiers="5.45×39mmFlechetteAmmo" spawnposition="ThisInventory" />
+    <!--留空以用于其他可能的通用弹夹回收-->
+    <!---->
+    <Deconstruct time="8">
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Sprite texture="weapons.png" sourcerect="73,386,30,49" depth="0.55" origin="0.5,0.5" />
+    <Body width="30" height="40" density="30" />
+    <Pickable slots="Any" msg="ItemMsgPickUpSelect" />
+    <!--发射普通子弹-->
+    <ItemContainer hideitems="true" capacity="1" drawinventory="false" canbeselected="false" ShowConditionInContainedStateIndicator="true" SpawnWithId="TL_zd_normal" removecontaineditemsondeconstruct="true" containedstateindicatorstyle="bullet">
+      <Containable items="AKEammo" />
+      <StatusEffect type="OnUse" target="This" condition="-2" disabledeltatime="true">
+        <SpawnItem identifiers="AKEammo" spawnposition="ThisInventory" />
       </StatusEffect>
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
-    <Upgrade gameversion="0.10.0.0" scale="0.5" />
   </Item>
   <!--弹药箱仔细想想放在这里比较合适-->
   <!--泰拉通用弹药箱-->
@@ -665,6 +673,11 @@
       </StatusEffect>
       <StatusEffect type="OnUse" target="This" Condition="-20" comparison="and">
         <RequiredItems items="TL_ljzd" type="Contained" />
+        <Conditional IsFullCondition="flase" targetcontaineditem="true" />
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-10" comparison="and">
+        <RequiredItems items="general" type="Contained" />
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
         <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
@@ -721,6 +734,11 @@
         <RequiredItems items="TL_mrzd" type="Contained" />
         <Conditional IsFullCondition="flase" targetcontaineditem="true" />
         <sound file="%ModDir%/ogg/装填3（短）.ogg" type="OnUse" range="300" loop="true" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This" Condition="-10" comparison="and">
+        <RequiredItems items="general" type="Contained" />
+        <Conditional IsFullCondition="flase" targetcontaineditem="true" />
+        <sound file="%ModDir%/ogg/装填3.ogg" type="OnUse" range="300" loop="true" />
       </StatusEffect>
     </Holdable>
     <ItemContainer capacity="1" maxstacksize="1" hideitems="true" showcontainedstateindicator="false">
