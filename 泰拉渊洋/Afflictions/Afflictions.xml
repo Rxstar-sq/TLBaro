@@ -11,7 +11,21 @@
                 minvitalitydecrease="150"
                 maxvitalitydecrease="200"/>
 	  </kill>
-	  
+
+	  <last name="绝境逢生" isbuff="false" identifier="last" description="只要到达那个地方..." type="last" limbspecific="false" showinhealthscannerthreshold="1" showiconthreshold="1" showicontoothersthreshold="1" maxstrength="10" affectmachines="false" indicatorlimb="Torso">
+		  <icon texture="%ModDir%/Afflictions/last.png" sourcerect="0,0,1024,1024" origin="0,0" />
+		  <Effect minstrength="0" maxstrength="30" multiplybymaxvitality="true" strengthchange="-1"
+				minspeedmultiplier ="1" maxspeedmultiplier="1.5"
+				minvitalitydecrease="-20"  maxvitalitydecrease="-40">
+			  <StatValue stattype="MaximumHealthMultiplier" value="0.4" />
+		  </Effect>
+		  <PeriodicEffect mininterval="5" maxinterval="20">
+			  <StatusEffect target="Character" onlyinside="true">
+				  <Conditional IsLocalPlayer="True"/>
+				  <Sound file="%ModDir%/ogg/笑1.ogg" />
+			  </StatusEffect>
+		  </PeriodicEffect>
+	  </last>
       
     <Affliction name="吞噬" identifier="tl_consumed" target="human" description="你被异兽活炫啦" type="consumed" limbspecific="false" indicatorlimb="Torso" causeofdeathdescription="被吞噬" selfcauseofdeathdescription="你被异兽活炫啦" activationthreshold="0" showinhealthscannerthreshold="1" showiconthreshold="1" showicontoothersthreshold="1" maxstrength="1">
       <Effect minstrength="0.1" maxstrength="1" minvitalitydecrease="0" maxvitalitydecrease="2" multiplybymaxvitality="true" strengthchange="0.1">
