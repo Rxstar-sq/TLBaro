@@ -11,6 +11,8 @@
 	<fabricationheader.TLammoK>任意‖color:gui.orange‖泰拉空弹夹‖end‖</fabricationheader.TLammoK>
 	<fabricationheader.1130box>任意‖color:gui.orange‖泰拉空弹药箱‖end‖</fabricationheader.1130box>
 	<fabricationdescription.1130box>仅限泰拉渊洋本mod弹药箱</fabricationdescription.1130box>
+
+	<fabricationheader.HXammoK>任意‖color:gui.orange‖幻星空弹夹‖end‖</fabricationheader.TLammoK>
 	
 	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
 	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>
