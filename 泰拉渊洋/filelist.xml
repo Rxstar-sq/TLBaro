@@ -1,72 +1,60 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="泰拉渊洋" modversion="1.0.40" corepackage="False" steamworkshopid="3232587498" gameversion="1.4.6.0">
-	<Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
-	<LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
-	<OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
-	<Afflictions file="%ModDir%/Afflictions/Afflictions.xml" />
-	<Text file="%ModDir%/Text.xml" />
-	<Submarine file="%ModDir%/Sub/测试地.sub" />
-	<Item file="%ModDir%/Items/items.xml" />
-	<Item file="%ModDir%/Items/Bossitem.xml" />
-	<Item file="%ModDir%/Items/sundries.xml" />
-	<Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
-	<UIStyle file="%ModDir%/UI/style.xml" />
-	<Sounds file="%ModDir%/Music/music.xml" />
-
-	<!--舰船-->
-	<EnemySubmarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
-	<EnemySubmarine file="%ModDir%/Sub/泰拉旧型攻击舰.sub" />
-    <EnemySubmarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
-    <EnemySubmarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" />
-  
-	<!--武器，子弹，弹夹-->
-	<Item file="%ModDir%/Items/weapons/weapons.xml" />
-	<Item file="%ModDir%/Items/weapons/bullet.xml" />
-	<Item file="%ModDir%/Items/weapons/magazine.xml" />
-	<Item file="%ModDir%/Items/weapons/turrets.xml" />
-	<Item file="%ModDir%/Items/weapons/fittings/accessories.xml" />
-
-	<!--衣物/护甲-->
-	<Item file="%ModDir%/Clothing/clothings.xml" />
-	<Item file="%ModDir%/Clothing/Armor.xml" />
-
-	<!--生物-->
-	<Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
-	<Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
-	<Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
-	<Character file="%ModDir%/Characters/Leopard2a6/Leopard2a6.xml" />
-    <Character file="%ModDir%/Characters/HuskPro/HuskPro.xml" />
-	<Character file="%ModDir%/Characters/Lost1/Lost1.xml" />
-	<Character file="%ModDir%/Characters/Lost2/Lost2.xml" />
-	<Character file="%ModDir%/Characters/LostLand/LostLand.xml" />
-  
-	<!--NPC+事件+任务-->
-	<NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
-	<RandomEvents file="%ModDir%/TL部门/Events.xml" />
-	<Missions file="%ModDir%/TL部门/Missions.xml" />
-	<Factions file="%ModDir%/factions.xml" />
-
-	<!--JOB+天赋-->
-	<Jobs file="%ModDir%/TL部门/Job/job.xml"/>
-	<TalentTrees file="%ModDir%/TL部门/Job/TalentTrees.xml"/>
-	<Talents file="%ModDir%/TL部门/Job/TalentsAssistant.xml"/>
-
-	<!--常规前哨模块-->
-	<OutpostModule file="%ModDir%/Sub/EngineeringModuleTL02.sub" />
-	<OutpostModule file="%ModDir%/Sub/MedicalModuleTL02.sub" />
-	<OutpostModule file="%ModDir%/Sub/AdminModuleTL01L.sub" />
-	<OutpostModule file="%ModDir%/Sub/AdminModuleTL01R.sub" />
-	<OutpostModule file="%ModDir%/Sub/CrewModulTL01.sub" />
-	<OutpostModule file="%ModDir%/Sub/test_HallwayModuleVerticalTL.sub" />
-	<OutpostModule file="%ModDir%/Sub/DockingModuleTL1.sub" />
-
-	<!--特殊-->
-	<OutpostModule file="%ModDir%/Sub/能源采集塔.sub" />
-	<OutpostModule file="%ModDir%/Sub/能源塔走廊.sub" />
-	<OutpostModule file="%ModDir%/Sub/造船厂入口.sub" />
-    <OutpostModule file="%ModDir%/Sub/泰拉造船厂.sub" />
-	<Item file="%ModDir%/Items/Sonar.xml" />
-	<Item file="%ModDir%/Music/record.xml" />
-	<Item file="%ModDir%/Items/weapons/other.xml" />
-	<Afflictions file="%ModDir%/Items/weapons/fittings/afflictions.xml" />
+<contentpackage name="泰拉渊洋" modversion="1.0.51" corepackage="False" steamworkshopid="3232587498" gameversion="1.5.9.1">
+  <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
+  <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
+  <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
+  <Afflictions file="%ModDir%/Afflictions/Afflictions.xml" />
+  <Text file="%ModDir%/Text.xml" />
+  <Item file="%ModDir%/Items/items.xml" />
+  <Item file="%ModDir%/Items/Bossitem.xml" />
+  <Item file="%ModDir%/Items/sundries.xml" />
+  <Item file="%ModDir%/Items/Creatureloot/特殊掉落.xml" />
+  <UIStyle file="%ModDir%/UI/style.xml" />
+  <Sounds file="%ModDir%/Music/music.xml" />
+  <EnemySubmarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
+  <EnemySubmarine file="%ModDir%/Sub/泰拉旧型攻击舰.sub" />
+  <EnemySubmarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
+  <EnemySubmarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" />
+  <Item file="%ModDir%/Items/weapons/weapons.xml" />
+  <Item file="%ModDir%/Items/weapons/bullet.xml" />
+  <Item file="%ModDir%/Items/weapons/magazine.xml" />
+  <Item file="%ModDir%/Items/weapons/turrets.xml" />
+  <Item file="%ModDir%/Clothing/clothings.xml" />
+  <Item file="%ModDir%/Clothing/Armor.xml" />
+  <Character file="%ModDir%/Characters/Tl测试机/Tl测试机.xml" />
+  <Character file="%ModDir%/Characters/毒脓迅猛龙/毒脓迅猛龙.xml" />
+  <Character file="%ModDir%/Characters/辐射蠕虫/辐射蠕虫.xml" />
+  <Character file="%ModDir%/Characters/Leopard2a6/Leopard2a6.xml" />
+  <Character file="%ModDir%/Characters/HuskPro/HuskPro.xml" />
+  <Character file="%ModDir%/Characters/Lost1/Lost1.xml" />
+  <Character file="%ModDir%/Characters/Lost2/Lost2.xml" />
+  <Character file="%ModDir%/Characters/LostLand/LostLand.xml" />
+  <Character file="%ModDir%/Characters/行动小组(防守人员)/行动小组(防守人员).xml" />
+  <NPCSets file="%ModDir%/TL部门/NPCS/Npcs.xml" />
+  <RandomEvents file="%ModDir%/TL部门/Events.xml" />
+  <Missions file="%ModDir%/TL部门/Missions.xml" />
+  <Factions file="%ModDir%/factions.xml" />
+  <Jobs file="%ModDir%/TL部门/Job/job.xml" />
+  <TalentTrees file="%ModDir%/TL部门/Job/TalentTrees.xml" />
+  <Talents file="%ModDir%/TL部门/Job/TalentsAssistant.xml" />
+  <OutpostModule file="%ModDir%/Sub/EngineeringModuleTL02.sub" />
+  <OutpostModule file="%ModDir%/Sub/MedicalModuleTL02.sub" />
+  <OutpostModule file="%ModDir%/Sub/AdminModuleTL01L.sub" />
+  <OutpostModule file="%ModDir%/Sub/AdminModuleTL01R.sub" />
+  <OutpostModule file="%ModDir%/Sub/CrewModulTL01.sub" />
+  <OutpostModule file="%ModDir%/Sub/test_HallwayModuleVerticalTL.sub" />
+  <Item file="%ModDir%/Items/Sonar.xml" />
+  <Item file="%ModDir%/Music/record.xml" />
+  <OutpostModule file="%ModDir%/Sub/DockingModuleTL1.sub" />
+  <Item file="%ModDir%/Items/weapons/other.xml" />
+  <Item file="%ModDir%/Items/weapons/fittings/accessories.xml" />
+  <Afflictions file="%ModDir%/Items/weapons/fittings/afflictions.xml" />
+  <Submarine file="%ModDir%/Sub/失联研究所.sub" />
+  <OutpostModule file="%ModDir%/Sub/泰拉造船厂.sub" />
+  <OutpostModule file="%ModDir%/Sub/造船厂入口.sub" />
+  <OutpostModule file="%ModDir%/Sub/能源采集塔.sub" />
+  <EnemySubmarine file="%ModDir%/Sub/失联研究所.sub" />
+  <BeaconStation file="%ModDir%/Sub/失联研究所.sub" />
+  <OutpostModule file="%ModDir%/Sub/能源塔走廊.sub" />
+  <Submarine file="%ModDir%/Sub/测试地.sub" />
 </contentpackage>

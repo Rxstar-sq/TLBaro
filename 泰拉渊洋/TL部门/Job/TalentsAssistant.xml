@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Talents>
+	<!--常规1线-->
 	<Talent identifier="gedouke">
 		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="1,0"/>
 		<Description tag="talentdescription.gedouke">
@@ -96,25 +97,136 @@
 		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="5,0"/>
 		<AddedRecipe itemidentifier="moneymaker"/>
 	</Talent>
-	<Talent identifier="UNbianse">
-		<Description tag="talentdescription.UNbianse">
-			<Replace tag="[UNbianse]" value="变色墨汁" color="gui.orange"/>
+	<!--常规2线-->
+	<Talent identifier="affiliation2" abilityeffectsstackwithsametalent="false">
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,4" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.affiliation2">
+			<Replace tag="[amount]" value="60" color="gui.green"/>
+			<Replace tag="[amount2]" value="30" color="gui.green"/>
 		</Description>
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="6,0"/>
-		<AddedRecipe itemidentifier="bianse"/>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="ReputationGainMultiplier" value="0.6" />
+			</Abilities>
+		</AbilityGroupEffect>
+		<AbilityGroupEffect abilityeffecttype="OnGainMissionMoney">
+			<Conditions>
+				<AbilityConditionMission isaffiliated="true"/>
+			</Conditions>
+			<Abilities>
+				<CharacterAbilityModifyValue multiplyValue="1.3"/>
+			</Abilities>
+		</AbilityGroupEffect>
 	</Talent>
-	<Talent identifier="UNzhi">
-		<Description tag="talentdescription.UNzhi">
-			<Replace tag="[OLBzhi]" value="欧罗巴纸" color="gui.orange"/>
+	<Talent identifier="yingji">
+		<Icon texture="Content/UI/TalentsIcons3.png" sheetindex="3,4" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.yingji">
+			<Replace tag="[amount]" value="40" color="gui.green"/>
 		</Description>
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="7,0"/>
-		<AddedRecipe itemidentifier="bianse"/>
+		<AbilityGroupEffect abilityeffecttype="AfterSubmarineAttacked">
+			<Conditions>
+				<AbilityConditionEvasiveManeuvers/>
+			</Conditions>
+			<Abilities>
+				<CharacterAbilityApplyStatusEffects>
+					<StatusEffects>
+						<StatusEffect type="OnAbility" target="This" multiplyafflictionsbymaxvitality="true" disabledeltatime="true">
+							<Affliction identifier="emergencyresponse_selfbuff" amount="1.0"/>
+						</StatusEffect>
+					</StatusEffects>
+				</CharacterAbilityApplyStatusEffects>
+			</Abilities>
+		</AbilityGroupEffect>
 	</Talent>
-	<Talent identifier="TMK">
-		<Description tag="talentdescription.TMK">
-			<Replace tag="[TMK]" value="TMK" color="gui.orange"/>
+	<Talent identifier="scavenger2">
+		<Description tag="talentdescription.scavenger2">
+			<Replace tag="[amount]" value="50" color="gui.green"/>
+			<Replace tag="[amount2]" value="40" color="gui.green"/>
 		</Description>
-		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="0,1"/>
-		<AddedRecipe itemidentifier="bianse"/>
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="2,2" sheetelementsize="128,128"/>
+		<AbilityGroupEffect abilityeffecttype="OnOpenItemContainer">
+			<Conditions>
+				<AbilityConditionItemInSubmarine submarinetype="Player" invert="true"/>
+				<AbilityConditionItem tags="container"/>
+			</Conditions>
+			<Abilities>
+				<CharacterAbilityRegenerateLoot randomchance="0.5" randomChancePerItem="0.4" />
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<!--后勤-->
+	<Talent identifier="jineng">
+		<Icon texture="%ModDir%/TL部门/Job/TalentsPNG/TalentsIcons.png" sheetelementsize="128,128" sheetindex="1,0"/>
+		<Description tag="talentdescription.jineng">
+			<Replace tag="[jineng]" value="50" color="gui.green"/>
+		</Description>
+		<Description tag="talentdescription.additionalstattype">
+			<Replace tag="[amount]" value="10" color="gui.green"/>
+			<Replace tag="[stattype]" value="stattypenames.WeaponsSkillBonus" color="gui.orange"/>
+		</Description>
+		<AbilityGroupInterval>
+			<Abilities>
+				<CharacterAbilityModifyStat stattype="SkillGainSpeed" value="0.6"/>
+			</Abilities>
+		</AbilityGroupInterval>
+	</Talent>
+	<Talent identifier="gongyi">
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,0" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.gongyi">
+			<Replace tag="[amount]" value="1" color="gui.green"/>
+		</Description>
+		<AbilityGroupInterval interval="0.9">
+			<Abilities>
+				<CharacterAbilityApplyStatusEffects>
+					<StatusEffects>
+						<StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+							<Affliction identifier="loyalassistant" strength="1.0"/>
+						</StatusEffect>
+					</StatusEffects>
+				</CharacterAbilityApplyStatusEffects>
+			</Abilities>
+		</AbilityGroupInterval>
+	</Talent>
+	<Talent identifier="fanbei">
+		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="0,6" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.fanbei">
+			<Replace tag="[amount]" value="50%" color="gui.green"/>
+			<Replace tag="[amount2]" value="150%" color="gui.green"/>
+		</Description>
+		<!--切割机-->
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="RepairToolDeattachTimeMultiplier" value="1.5"/>
+			</Abilities>
+		</AbilityGroupEffect>
+		<!--解构矿石-->
+		<AbilityGroupEffect abilityeffecttype="OnItemDeconstructedMaterial">
+			<Conditions>
+				<AbilityConditionServerRandom randomchance="0.5"/>
+				<AbilityConditionItem tags="ore"/>
+			</Conditions>
+			<Abilities>
+				<CharacterAbilityModifyValue multiplyvalue="3"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="jiagong">
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="7,6" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.jiagong">
+			<Replace tag="[amount]" value="50" color="gui.green"/>
+			<Replace tag="[amount2]" value="200%" color="gui.green"/>
+		</Description>
+		<AbilityGroupInterval interval="60">
+			<Abilities>
+				<CharacterAbilityGiveItemStatToTags tags="fabricator" stattype="FabricationSpeed" value="2" />
+				<CharacterAbilityGiveItemStatToTags tags="deconstructor" stattype="DeconstructorSpeed" value="2" />
+			</Abilities>
+		</AbilityGroupInterval>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveItemStatToTags tags="fabricator" stattype="FabricationSpeed" value="2" />
+				<CharacterAbilityGiveItemStatToTags tags="deconstructor" stattype="DeconstructorSpeed" value="2" />
+			</Abilities>
+		</AbilityGroupEffect>
 	</Talent>
 </Talents>

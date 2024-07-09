@@ -8,13 +8,13 @@
 	<faction.HXhui.description>明面上隶属于联盟的科研援助性的工业集团，但考虑到其领导阶层和管理人员却都不属于木卫二联盟，以及联盟所有的人员安插行为都以失败告终。也许暗地里幻星也有着什么其他的秘密……</faction.HXhui.description>
 	<faction.HXhui.shortdescription>明面上隶属于联盟的科研援助性的工业集团，但考虑到其领导阶层和管理人员却都不属于木卫二联盟，以及联盟所有的人员安插行为都以失败告终。也许暗地里幻星也有着什么其他的秘密……</faction.HXhui.shortdescription>
 
-	<fabricationheader.TLammoK>任意泰拉空弹夹</fabricationheader.TLammoK>
-	<fabricationheader.1130box>任意泰拉空弹药箱</fabricationheader.1130box>
+	<fabricationheader.TLammoK>任意‖color:gui.orange‖泰拉空弹夹‖end‖</fabricationheader.TLammoK>
+	<fabricationheader.1130box>任意‖color:gui.orange‖泰拉空弹药箱‖end‖</fabricationheader.1130box>
 	<fabricationdescription.1130box>仅限泰拉渊洋本mod弹药箱</fabricationdescription.1130box>
 	
 	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
 	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>
-	<locationname.TLEnergyTowers>泰拉科技能源塔</locationname.TLEnergyTowers>
+	<locationname.TLEnergyTowers>泰拉科技能源塔&#xD;&#xA;泰拉科技有限公司，作为全球领先的综合性海洋产业集团，以其卓越的科技实力和无与伦比的创新能力而闻名。公司旗下的泰拉造船厂位于战略要地，拥有先进的设施和设备，集设计、研发、制造和维护于一体，堪称现代海洋工程的典范。该造船厂专注于建造各类高性能舰艇，包括潜艇款的战列舰、航空母舰、驱逐舰以及先进的无人水下航行器。其产品以其火力、耐用性、速度和极强的科技含量而备受赞誉，广泛应用于军事、科研和商业领域。泰拉渊洋的工程师团队不断探索创新，致力于开发尖端的海洋技术，如隐形材料、水下通信系统和自动化控制。（据传闻此造船厂有着公司的巨大秘密）</locationname.TLEnergyTowers>
 	<locationnameformat.TLEnergyTowers>泰拉科技遗弃设施</locationnameformat.TLEnergyTowers>
 	<locationname.TLshipyard>泰拉科技造船厂</locationname.TLshipyard>
 	<locationnameformat.TLshipyard>泰拉科技遗弃设施</locationnameformat.TLshipyard>
@@ -25,7 +25,8 @@
 	<jobname.TLsafe>集团特战队</jobname.TLsafe>
 	<jobdescription.TLsafe>集团特战队是接受过集团特殊改造和训练的特种部队，拥有超乎常人的战斗能力，绝对是最强的安全保障</jobdescription.TLsafe>
 	<charactername.TLarmory>泰拉集团工程部负责人--HES</charactername.TLarmory>
-
+	
+	<!--常规1线-->
 	<talentname.gedouke>集团格斗训练课程</talentname.gedouke>
 	<talentdescription.gedouke>经过集团训练课程获得[gedou]武器操控和[other]所有其他技能奖励。</talentdescription.gedouke>
 	<talentname.dianqi>集团电气训练课程</talentname.dianqi>
@@ -36,17 +37,33 @@
 	<talentdescription.yiliao>经过集团训练课程获得[yiliao]医疗技能和[other]所有其他技能奖励。</talentdescription.yiliao>
 	<talentname.jiashi>集团船长训练课程</talentname.jiashi>
 	<talentdescription.jiashi>经过集团训练课程获得[jiashi]船长技能和[other]所有其他技能奖励。</talentdescription.jiashi>
+	<!--常规2线-->
+	<talentname.affiliation2>集团关系网络</talentname.affiliation2>
+	<talentdescription.affiliation2>在派系中的声望增加速度提高[amount]%。&#xD;&#xA;为所属派系完成任务时，获得的分数增加[amount2]%。&#xD;&#xA;注：声望最高为所属派系</talentdescription.affiliation2>
+	<talentname.yingji>遇袭应急程序</talentname.yingji>
+	<talentdescription.yingji>每当你的潜艇受到怪物的伤害时，移动速度增加[amount]%</talentdescription.yingji>
+	<talentname.scavenger2>摸金校尉</talentname.scavenger2>
+	<talentdescription.scavenger2>搜索容器有[amount]%的概率找到额外[amount2]%的物资</talentdescription.scavenger2>
+	
 	<talentname.UNmoneymaker>开始走上不归路？</talentname.UNmoneymaker>
 	<talentdescription.UNmoneymaker>解锁[moneymaker]，看看可以做一些什么怪东西吧</talentdescription.UNmoneymaker>
-	<talentname.UNbianse>有点难搞哦...</talentname.UNbianse>
-	<talentdescription.UNbianse>解锁[UNbianse]，也不知道咋弄来的</talentdescription.UNbianse>
-	<talentname.UNzhi>就快成功了...！</talentname.UNzhi>
-	<talentdescription.UNzhi>解锁[OLBzhi]，就差一步了</talentdescription.UNzhi>
-	<talentname.TMK>TMK!!!</talentname.TMK>
-	<talentdescription.TMK>解锁[TMK]!!好日子开始了！</talentdescription.TMK>
-
-	<talenttree.TLsafe_specialization>不归路</talenttree.TLsafe_specialization>
-
+	
+	<!--后勤线-->
+	<talenttree.TLsafe_specialization>团队后盾</talenttree.TLsafe_specialization>
+	<talentname.jineng>严格学习</talentname.jineng>
+	<talentdescription.jineng>增加技能获取速度[jineng]%</talentdescription.jineng>
+	<talentname.gongyi>制作工艺改进</talentname.gongyi>
+	<talentdescription.gongyi>制作物品增加[amount]品质</talentdescription.gongyi>
+	<talentname.fanbei>后勤专精</talentname.fanbei>
+	<talentdescription.fanbei>每当您解构矿石时，您都有[amount]的机会获得三倍的产量。&#xD;&#xA;使用切割机将矿石分离速度提高[amount2]。</talentdescription.fanbei>
+	<talentname.jiagong>操作台系统重装</talentname.jiagong>
+	<talentdescription.jiagong>制作台和解构仪器的效率增加[amount2]</talentdescription.jiagong>
+	<!--医疗线-->
+	<talenttree.TLsafe_specialization2>奇迹行者</talenttree.TLsafe_specialization2>
+	
+	<!--战斗线-->
+	<talenttree.TLsafe_specialization3>战争故事</talenttree.TLsafe_specialization3>
+	
 	<afflictioncauseofdeath.kill>被华强劈开了</afflictioncauseofdeath.kill>
 	<afflictioncauseofdeathself.kill>被华强砍死惹</afflictioncauseofdeathself.kill>
 </infotexts>

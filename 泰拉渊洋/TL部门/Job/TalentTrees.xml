@@ -9,32 +9,30 @@
         <TalentOption identifier="yiliao"/>
         <TalentOption identifier="jiashi"/>
       </TalentOptions>
-      <TalentOptions requiredtalents="2" maxchosentalents="6">
-        <TalentOption identifier="emergencymaneuvers"/>
-        <TalentOption identifier="sailorwithnoname"/>
-        <TalentOption identifier="camaraderie"/>
-        <TalentOption identifier="downwiththeship"/>
-        <TalentOption identifier="gunsmith"/>
-        <TalentOption identifier="steadytune"/>
+      <TalentOptions requiredtalents="2" maxchosentalents="4">
+        <TalentOption identifier="UNmoneymaker"/>emergencymaneuvers
+        <TalentOption identifier="affiliation2"/>sailorwithnoname
+		<TalentOption identifier="yingji"/>camaraderie
+		<TalentOption identifier="scavenger2"/>downwiththeship
       </TalentOptions>
     </SubTree>
 	  <SubTree identifier="TLsafe_specialization" type="specialization"  blocks="">
 		  <TalentOptions>
-			  <TalentOption identifier="UNmoneymaker"/>
+			  <TalentOption identifier="jineng"/>
 		  </TalentOptions>
 		  <TalentOptions>
-			  <TalentOption identifier="UNbianse"/>
+			  <TalentOption identifier="gongyi"/>
 		  </TalentOptions>
 		  <TalentOptions>
-			  <TalentOption identifier="UNzhi"/>
+			  <TalentOption identifier="fanbei"/>
 		  </TalentOptions>
 		  <TalentOptions>
-			  <TalentOption identifier="TMK"/>
+			  <TalentOption identifier="jiagong"/>
 		  </TalentOptions>
 	  </SubTree>
-	  <SubTree identifier="skipper" type="specialization" requires="captain_primary" blocks="gunslinger,politician">
+	  <SubTree identifier="TLsafe_specialization2" type="specialization" requires="captain_primary" blocks="TLsafe_specialization,TLsafe_specialization3">
 	  </SubTree>
-	  <SubTree identifier="politician" type="specialization" requires="captain_primary" blocks="gunslinger,skipper">
+	  <SubTree identifier="TLsafe_specialization3" type="specialization" requires="captain_primary" blocks="TLsafe_specialization,TLsafe_specialization2">
 	  </SubTree>
   </TalentTree>
   

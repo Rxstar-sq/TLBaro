@@ -191,10 +191,12 @@
 	   type="Pirate"
 	   identifier="TLattack1"
 	   tags="TLattack"
-	   showinmenus="false"
-	   showstartmessage="false"
+	   
+	   showinmenus="true"
+	   showstartmessage="true"
 	   issideobjective="true"
 	   achievementidentifier="combatmissioncoalitionvsseparatists"
+	   
 	   difficulty="4"
 	   commonness="0"
 	   reward="0"
