@@ -595,4 +595,29 @@
       <Containable identifiers="smallitem,mediumitem,ammobox,coilgunammo,depthchargeammo,deepdiving,turretammosource,railgunammo,crate"></Containable>
     </ItemContainer>
   </Item>
+	<Item name="集团应急医疗操作手册" identifier="TLskillbookeuropanmedicine" description="集团出版人手一套的医疗说知识合集" category="Misc" Tags="smallitem,skillbook" maxstacksize="8" scale="0.5" impactsoundtag="impact_soft" cargocontaineridentifier="metalcrate">
+		<PreferredContainer primary="crewcab"/>
+		<Price baseprice="600" buyingpricemodifier="2.5" minleveldifficulty="40" >
+			<Price storeidentifier="merchantoutpost" />
+			<Price storeidentifier="merchantcity" maxavailable="1" />
+			<Price storeidentifier="merchantresearch" maxavailable="1" />
+			<Price storeidentifier="merchantmilitary" />
+			<Price storeidentifier="merchantmine" />
+			<Price storeidentifier="TLarmory" maxavailable="2" />
+		</Price>
+		<Deconstruct time="20">
+			<Item identifier="carbon" />
+		</Deconstruct>
+		<InventoryIcon texture="Content/Items/JobGear/TalentGear.png" sourcerect="1,368,40,56" origin="0.5,0.5" />
+		<Sprite texture="Content/Items/JobGear/TalentGear.png" sourcerect="2,75,32,38" depth="0.6" origin="0.5,0.5" />
+		<Body width="28" height="36" density="20" />
+		<Holdable slots="Any,RightHand+LeftHand" aimable="false" aimpos="40,-20" handle1="5,0" aimangle="260" swingamount="0,3" swingspeed="0.5" swingwhenaiming="true" msg="ItemMsgPickUpSelect">
+			<StatusEffect type="OnSecondaryUse" target="This" Condition="-10" />
+			<StatusEffect type="OnSecondaryUse" target="This,Character" disabledeltatime="true">
+				<Conditional Condition="lte 0" />
+				<GiveSkill skillidentifier="medical" amount="20" triggertalents="false" />
+				<RemoveItem />
+			</StatusEffect>
+		</Holdable>
+	</Item>
 </Items>

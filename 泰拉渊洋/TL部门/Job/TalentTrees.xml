@@ -31,6 +31,18 @@
 		  </TalentOptions>
 	  </SubTree>
 	  <SubTree identifier="TLsafe_specialization2" type="specialization" requires="captain_primary" blocks="TLsafe_specialization,TLsafe_specialization3">
+		  <TalentOptions>
+			  <TalentOption identifier="drsubmarinePRO"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="firemanscarry"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="miracleworker"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="drsubmarinePRO2"/>
+		  </TalentOptions>
 	  </SubTree>
 	  <SubTree identifier="TLsafe_specialization3" type="specialization" requires="captain_primary" blocks="TLsafe_specialization,TLsafe_specialization2">
 	  </SubTree>

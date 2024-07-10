@@ -229,4 +229,30 @@
 			</Abilities>
 		</AbilityGroupEffect>
 	</Talent>
+	<!--医疗-->
+	 <Talent identifier="drsubmarinePRO">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,6" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.drsubmarinePRO">
+      <Replace tag="[amount]" value="40" color="gui.green"/>
+    </Description>
+    <AbilityGroupEffect abilityeffecttype="None">
+      <Abilities>
+        <CharacterAbilityGiveStat stattype="MedicalItemApplyingMultiplier" value="0.4"/>
+      </Abilities>
+    </AbilityGroupEffect>
+  </Talent>
+  <Talent identifier="drsubmarinePRO2">
+    <Icon texture="Content/UI/TalentsIcons1.png" sheetindex="0,6" sheetelementsize="128,128"/>
+    <Description tag="talentdescription.drsubmarinePRO2">
+      <Replace tag="[amount]" value="1" color="gui.green"/>
+	  <Replace tag="[amount2]" value="3" color="gui.green"/>
+    </Description>
+	<AbilityGroupEffect abilityeffecttype="OnAnyMissionCompleted">
+      <Abilities>
+        <CharacterAbilityPutItem itemidentifier="antibloodloss2" amount="3"/>
+		<CharacterAbilityPutItem itemidentifier="TLskillbookeuropanmedicine" amount="1"/>
+		<CharacterAbilityPutItem itemidentifier="last" amount="1"/>
+      </Abilities>
+	</AbilityGroupEffect>
+  </Talent>
 </Talents>

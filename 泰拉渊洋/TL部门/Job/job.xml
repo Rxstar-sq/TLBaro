@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <jobs>
 	<Job identifier="TLsafe"
-	 maxnumber="3" minkarma="0"
+	 maxnumber="5" minkarma="0"
 	 uicolor="0.7,0.5,0.43"
-	 vitalitymodifier="10"
-	 pricemultiplier="2.5"
+	 vitalitymodifier="15"
+	 pricemultiplier="3"
 	 idlebehavior="Patrol">
 	<Jobicon>
 		<sprite texture="%ModDir%/TL部门/Job/safe.png" sourcerect="0,0,489,489" origin="0.5,0.5"/>
