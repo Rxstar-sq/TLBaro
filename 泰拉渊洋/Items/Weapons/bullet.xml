@@ -62,10 +62,11 @@
     <Projectile characterusable="false" hitscan="true" hitscancount="3" launchimpulse="30.0" removeonhit="true">
       <ParticleEmitter particle="tracerfirearm" particleamount="1" velocitymin="0" velocitymax="0" colormultiplier="255,150,150,175" scalemultiplier="1,0.6" />
       <Attack structuredamage="3" targetforce="8" itemdamage="20" penetration="1.0" severlimbsprobability="0.7">
-        <Affliction identifier="gunshotwound" strength="35" />
-        <Affliction identifier="gunshotwound" strength="40" probability="0.55" />
-        <Affliction identifier="gunshotwound" strength="65" probability="0.25" />
-        <Affliction identifier="bleeding" strength="32" />
+	<!--由于是3段伤害因此实际伤害可能为数值x3-->
+        <Affliction identifier="gunshotwound" strength="28" />
+        <Affliction identifier="gunshotwound" strength="20" probability="0.35" />
+        <Affliction identifier="gunshotwound" strength="45" probability="0.15" />
+        <Affliction identifier="bleeding" strength="12" />
         <Affliction identifier="stun" strength="0.1" probability="0.4" />
         <Affliction identifier="stun" strength="0.2" probability="0.3" />
       </Attack>
