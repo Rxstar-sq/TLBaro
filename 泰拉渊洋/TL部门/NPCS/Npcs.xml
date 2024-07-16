@@ -3,7 +3,7 @@
 <Override>
 	<!--通用NPC-->
 	<npcset identifier="THnpc">
-		<!--崩解-->
+		<!--能源塔，崩解-->
 		<npc identifier="THnpc1" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="9">
 			<Character name="第三者" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
@@ -31,7 +31,7 @@
 				<Item identifier="TL13ammo_cr" amount="8" />
 			</ItemSet>
 		</npc>
-		<!--箭形弹-->
+		<!--护卫舰，箭形弹-->
 	<npc identifier="THnpc2" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="3">
 			<Character name="叛逃者" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
@@ -59,7 +59,7 @@
 				<Item identifier="TL13ammo_ap" amount="8" />
 			</ItemSet>
 		</npc>
-		<!--普通-->
+		<!--运输，普通-->
 		<npc identifier="THnpc5" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="3">
 			<Character name="泰拉集团货运护航人员" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
@@ -88,7 +88,7 @@
 			</ItemSet>
 		</npc>
 		<!--其它-->
-		<npc identifier="THnpc3" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="5">
+		<npc identifier="THnpc3" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="4">
 			<Character name="泰拉常规战斗人员" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -115,7 +115,7 @@
 				<Item identifier="TL13ammo_ap" amount="8" />
 			</ItemSet>
 		</npc>
-		<npc identifier="THnpc4" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="5">
+		<npc identifier="THnpc4" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="6">
 			<Character name="泰拉特种战斗人员" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
 				<job name="securityofficer" identifier="securityofficer">
 					<skill identifier="electrical" level="100" />
@@ -129,17 +129,28 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="TL13" equip="true">
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
-					<Item identifier="TL13ammo_cr" />
+				<Item identifier="TL14" equip="true">
+					<Item identifier="TL_magazine_lj" />
 				</Item>
-				<Item identifier="TL13ammo_cr" amount="8" />
+			</ItemSet>
+		</npc>
+		<npc identifier="THnpc6" job="securityofficer" spawnpointtags="admin" behavior="Patrol" preferredoutpostmoduletypes="adminmodule" healthmultiplier="7">
+			<Character name="泰拉指挥官" speciesname="human" gender="female" race="Asian" headspriteid="8" hairindex="12" beardindex="0" moustacheindex="0" faceattachmentindex="0" personality="Fearful">
+				<job name="securityofficer" identifier="securityofficer">
+					<skill identifier="electrical" level="100" />
+					<skill identifier="mechanical" level="100" />
+					<skill identifier="weapons" level="100" />
+					<skill identifier="medical" level="100" />
+					<skill identifier="helm" level="100" />
+				</job>
+			</Character>
+			<ItemSet commonness="1">
+				<Item identifier="idcardplus1" equip="true" />
+				<Item identifier="maidclothes1" equip="true" />
+				<Item identifier="bodyarmor" equip="true" />
+				<Item identifier="TL15" equip="true">
+					<Item identifier="TL_magazine_lj" />
+				</Item>
 			</ItemSet>
 		</npc>
 	</npcset>
@@ -159,7 +170,7 @@
 				<Item identifier="idcardplus1" equip="true" />
 				<Item identifier="maidclothes1" equip="true" />
 				<Item identifier="bodyarmor" equip="true" />
-				<Item identifier="TL13" equip="true">
+				<Item identifier="TL23" equip="true">
 					<Item identifier="TL13ammo_cr" />
 					<Item identifier="TL13ammo_cr" />
 					<Item identifier="TL13ammo_cr" />
@@ -169,7 +180,6 @@
 					<Item identifier="TL13ammo_cr" />
 					<Item identifier="TL13ammo_cr" />
 				</Item>
-				<Item identifier="TL13ammo_cr" amount="16" />
 				<Item identifier="TLbag" equip="true" />
 			</ItemSet>
 		</npc>	

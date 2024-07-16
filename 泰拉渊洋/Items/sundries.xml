@@ -389,7 +389,7 @@
       <Item identifier="copper" />
       <Item identifier="plastic" amount="2" />
     </Deconstruct>
-    <Fabricate suitablefabricators="fabricator" requiredtime="20" requiresrecipe="true">
+    <Fabricate suitablefabricators="fabricator" requiredtime="20" >
       <RequiredSkill identifier="mechanical" level="30" />
       <RequiredItem identifier="fpgacircuit" />
       <RequiredItem identifier="plastic" />

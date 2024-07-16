@@ -524,6 +524,106 @@
     </Upgrade>
     <SkillRequirementHint identifier="mechanical" level="50" />
   </Item>
+	  <Item name="高级电动焊接器・二阶段" identifier="weldingtoolPRO2" category="Equipment" Tags="smallitem,weldingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+    <PreferredContainer primary="engcab" amount="1" spawnprobability="1" notcampaign="true" />
+    <PreferredContainer secondary="supplycab" amount="1" spawnprobability="0.2" notcampaign="true" />
+    <PreferredContainer primary="outpostsupplycab" amount="1" spawnprobability="0.5" />
+    <PreferredContainer primary="outpostcrewcabinet" amount="1" spawnprobability="0.1" />
+    <PreferredContainer primary="wrecksupplycab,beaconsupplycab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="wreckstoragecab,abandonedstoragecab,piratestoragecab" amount="1" spawnprobability="0.05" />
+    <PreferredContainer primary="wreckengcab,abandonedengcab,pirateengcab,outpostengcab,beaconengcab" amount="1" spawnprobability="0.1" />
+    <Price baseprice="400">
+      <Price storeidentifier="merchantoutpost" minavailable="3" />
+      <Price storeidentifier="merchantcity" minavailable="2" />
+      <Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+      <Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+      <Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+    </Price>
+    <Sprite texture="icon.png" sourcerect="175,425,175,86" depth="0.55" origin="0.5,0.5" />
+    <!-- the item takes 10 seconds to break down in a deconstructor and turns into steel and plastic -->
+    <Deconstruct time="10">
+      <Item identifier="steel" />
+      <Item identifier="plastic" />
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+      <RequiredSkill identifier="mechanical" level="100" />
+      <RequiredItem identifier="steel" amount="6" />
+      <RequiredItem identifier="plastic" amount="8" />
+		<RequiredItem identifier="weldingtoolPRO1" amount="1" />
+    </Fabricate>
+    <!-- physics body -->
+    <Body width="150" height="60" density="25" />
+    <!-- the character will hold the item 50 pixels in front of him, with his hands at the handle1 and handle2 positions -->
+    <Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-62,-16" handle2="-10,-6" msg="ItemMsgPickUpSelect" />
+    <RepairTool firedamage="10.0" structurefixamount="20" range="500" barrelpos="35,12" particles="weld" repairmultiple="true" repairthroughwalls="false" combatpriority="10" levelwallfixamount="-0.8" targetforce="10">
+      <!-- the item must contain a welding fuel tank for it to work -->
+      <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+      <RequiredSkill identifier="mechanical" level="50" />
+      <ParticleEmitter particle="weld" particlespersecond="50" copyentityangle="true" scalemin="2.7" scalemax="3.1" />
+      <ParticleEmitterHitStructure particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" scalemin="1" scalemax="1.5" />
+      <ParticleEmitterHitStructure particle="GlowDot" particlespersecond="60" emitinterval="0.7" particleamount="10" scalemin="0.9" scalemax="1.0" anglemin="0" anglemax="360" velocitymin="10" velocitymax="50" />
+      <ParticleEmitterHitStructure particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="0" velocitymax="50" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="weldspark" particlespersecond="200" anglemin="-40" anglemax="40" velocitymin="200" velocitymax="800" />
+      <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="MistSmoke" particlespersecond="20" anglemin="-10" anglemax="10" velocitymin="10" velocitymax="100" />
+      <ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+      <sound file="Content/Items/Tools/WeldingLoop.ogg" type="OnUse" range="500.0" loop="true" />
+      <!-- when using, the contained welding fuel tank will detoriate (= lose fuel) -->
+      <StatusEffect type="OnUse" targettype="Contained" targets="mobilebattery" Condition="-1.2" />
+      <!-- welding a door, it will get stuck after a while -->
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="5.0" />
+      <StatusEffect type="OnSuccess" targettype="UseTarget" targets="item" Condition="-3.0">
+        <Conditional HasTag="neq weldable" />
+      </StatusEffect>
+      <!-- do burn damage to characters -->
+      <StatusEffect type="OnSuccess" targettype="Limb">
+        <Affliction identifier="burn" amount="2.5" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="oxygentank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="150.0" force="3" applyfireeffects="false">
+          <Affliction identifier="burn" strength="25" />
+          <Affliction identifier="stun" strength="5" />
+        </Explosion>
+      </StatusEffect>
+      <StatusEffect type="OnUse" targettype="Contained" targets="oxygenitetank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+        <sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+        <sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+        <Explosion range="150.0" force="6" applyfireeffects="false">
+          <Affliction identifier="burn" strength="50" />
+          <Affliction identifier="stun" strength="10" />
+        </Explosion>
+      </StatusEffect>
+      <!-- the tool can fix structures, i.e. walls and windows -->
+      <Fixable identifier="structure" />
+      <NonFixable identifier="thalamus,ice" />
+      <LightComponent LightColor="255,229,178,100" Range="150" Flicker="0.5">
+        <sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+      </LightComponent>
+    </RepairTool>
+    <!-- one welding fuel or oxygen tank can be contained inside the welding tool -->
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="8,-35" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+      <SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+      <Containable items="mobilebattery" />
+    </ItemContainer>
+    <aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+    <Quality>
+      <QualityStat stattype="RepairToolStructureRepairMultiplier" value="0.1" />
+    </Quality>
+    <Upgrade gameversion="0.10.0.0" scale="0.5" />
+    <Upgrade gameversion="0.14.0.0">
+      <RepairTool>
+        <RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgWeldingFuelRequired" />
+      </RepairTool>
+    </Upgrade>
+    <Upgrade gameversion="0.15.4.0">
+      <ItemContainer itempos="8,-35" />
+    </Upgrade>
+    <SkillRequirementHint identifier="mechanical" level="50" />
+  </Item>
   <Item name="高级电动切割器・一阶段" identifier="plasmacutterPRO1" category="Equipment" Tags="smallitem,cuttingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
     <Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
     <PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
@@ -576,7 +676,7 @@
           <Affliction identifier="stun" strength="10" />
         </Explosion>
       </StatusEffect>
-      <ParticleEmitter particle="plasma" particlespersecond="50" copyentityangle="true" scalemin="1.5" scalemax="2" />
+      <ParticleEmitter particle="plasma" particlespersecond="50" copyentityangle="true" scalemin="3" scalemax="3.5" />
       <ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
       <ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
       <ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
@@ -599,7 +699,85 @@
       <QualityStat stattype="RepairToolDeattachTimeMultiplier" value="0.1" />
     </Quality>
     <SkillRequirementHint identifier="mechanical" level="50" />
-  </Item><![CDATA[
+  </Item>
+	<Item name="高级电动切割器・二阶段" identifier="plasmacutterPRO2" category="Equipment" Tags="smallitem,cuttingequipment,tool,mountableweapon" cargocontaineridentifier="metalcrate" description="" Scale="0.5" impactsoundtag="impact_metal_light">
+		<Preferredcontainer secondary="respawncontainer" amount="1" spawnprobability="1" notcampaign="true" />
+		<PreferredContainer secondary="outpostcrewcabinet" amount="1" spawnprobability="0.05" />
+		<PreferredContainer secondary="wreckstoragecab,abandonedstoragecab,piratestoragecab,wreckdivingcab" amount="1" spawnprobability="0.05" />
+		<PreferredContainer primary="divingcab" secondary="engcab" />
+		<Price baseprice="1500">
+			<Price storeidentifier="merchantoutpost" minavailable="3" />
+			<Price storeidentifier="merchantcity" minavailable="2" />
+			<Price storeidentifier="merchantresearch" multiplier="1.25" minavailable="2" />
+			<Price storeidentifier="merchantmilitary" multiplier="1.25" minavailable="2" />
+			<Price storeidentifier="merchantmine" multiplier="0.9" minavailable="10" />
+			<Price storeidentifier="merchantengineering" minavailable="5" multiplier="0.9" />
+		</Price>
+		<Deconstruct time="10">
+			<Item identifier="steel" />
+			<Item identifier="plastic" />
+		</Deconstruct>
+		<Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="true">
+			<RequiredSkill identifier="mechanical" level="100" />
+			<RequiredItem identifier="steel" amount="4" />
+			<RequiredItem identifier="plastic" amount="6" />
+			<RequiredItem identifier="plasmacutterPRO1" amount="1" />
+		</Fabricate>
+		<Sprite texture="icon.png" sourcerect="842,730,159,87" depth="0.55" origin="0.5,0.5" />
+		<Body radius="40" width="60" density="25" />
+		<Holdable slots="Any,RightHand+LeftHand" controlpose="true" aimpos="60,0" handle1="-60,-21" handle2="-21,-20" msg="ItemMsgPickUpSelect" />
+		<RepairTool firedamage="20" structurefixamount="-30" range="500" barrelpos="55,10" combatpriority="10" repairmultiple="true" repairthroughwalls="false" maxoverlappingwalldist="0.0" repairthroughholes="true" levelwallfixamount="-30" targetforce="30">
+			<RequiredItems items="mobilebattery" type="Contained" msg="ItemMsgOxygenTankRequired" />
+			<RequiredSkill identifier="mechanical" level="50" />
+			<StatusEffect type="OnUse" targettype="Contained" targets="mobilebattery" Condition="-1.0" />
+			<StatusEffect type="OnSuccess" targettype="UseTarget" targets="weldable" Stuck="-20.0" />
+			<StatusEffect type="OnSuccess" targettype="UseTarget" Condition="-15.0" />
+			<StatusEffect type="OnSuccess" targettype="Limb" severlimbsprobability="0.005">
+				<Affliction identifier="burn" amount="4.0" />
+			</StatusEffect>
+			<StatusEffect type="OnUse" targettype="Contained" targets="weldingfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+				<sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+				<Explosion range="250.0" force="5" applyfireeffects="false">
+					<Affliction identifier="burn" strength="25" />
+					<Affliction identifier="stun" strength="5" />
+				</Explosion>
+			</StatusEffect>
+			<StatusEffect type="OnUse" targettype="Contained" targets="incendiumfueltank" delay="1.0" stackable="false" Condition="0" setvalue="true">
+				<sound file="Content/Items/Weapons/ExplosionSmall1.ogg" range="2000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall2.ogg" range="2000" />
+				<sound file="Content/Items/Weapons/ExplosionSmall3.ogg" range="2000" />
+				<Explosion range="250.0" ballastfloradamage="100" force="6" applyfireeffects="true" ignorefireeffectsfortags="incendiumfueltank">
+					<Affliction identifier="burn" strength="100" />
+					<Affliction identifier="stun" strength="10" />
+				</Explosion>
+			</StatusEffect>
+			<ParticleEmitter particle="plasma" particlespersecond="50" copyentityangle="true" scalemin="1.5" scalemax="2" />
+			<ParticleEmitterHitStructure particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+			<ParticleEmitterHitStructure particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="20" />
+			<ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmaspark" particlespersecond="100" anglemin="-40" anglemax="40" velocitymin="100" velocitymax="800" />
+			<ParticleEmitterHitItem identifiers="door,hatch,ductblock" particle="plasmasmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="10" velocitymax="100" />
+			<ParticleEmitterHitItem identifiers="ore" particle="iceshards" particlespersecond="5" anglemin="-40" anglemax="40" velocitymin="10" velocitymax="300" scalemin="0.5" scalemax="1.0" />
+			<ParticleEmitterHitCharacter particle="fleshsmoke" particlespersecond="3" anglemin="-5" anglemax="5" velocitymin="0" velocitymax="50" />
+			<sound file="Content/Items/Tools/PlasmaCutterLoop.ogg" type="OnUse" range="750.0" loop="true" />
+			<Fixable identifier="structure" />
+			<LightComponent LightColor="204,178,255,100" range="150" Flicker="0.5">
+				<sprite texture="Content/Items/Electricity/lightsprite.png" origin="0.5,0.5" />
+			</LightComponent>
+		</RepairTool>
+		<ItemContainer capacity="1" maxstacksize="1" hideitems="true" itempos="0,-39" containedspritedepth="0.56" containedstateindicatorstyle="tank">
+			<SlotIcon slotindex="0" texture="Content/UI/StatusMonitorUI.png" sourcerect="128,448,64,64" origin="0.5,0.5" />
+			<Containable items="mobilebattery" />
+		</ItemContainer>
+		<aitarget sightrange="2000" soundrange="500" fadeouttime="3" />
+		<Quality>
+			<QualityStat stattype="RepairToolStructureDamageMultiplier" value="0.1" />
+			<QualityStat stattype="RepairToolDeattachTimeMultiplier" value="0.1" />
+		</Quality>
+		<SkillRequirementHint identifier="mechanical" level="50" />
+	</Item>
+	<![CDATA[
   <!--解离药剂-->
   <!--给予持续增长的细胞崩解效果-->
   <CellruinToxi name="解离药剂" identifier="CellruinToxi" category="Medical" maxstacksize="32" maxstacksizecharacterinventory="8" cargocontaineridentifier="chemicalcrate" Tags="smallitem,chem,poison,syringe" description="" useinhealthinterface="true" scale="0.5" impactsoundtag="impact_metal_light" RequireAimToUse="True">

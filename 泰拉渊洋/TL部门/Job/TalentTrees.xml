@@ -38,13 +38,25 @@
 			  <TalentOption identifier="firemanscarry"/>
 		  </TalentOptions>
 		  <TalentOptions>
-			  <TalentOption identifier="miracleworker"/>
+			  <TalentOption identifier="miracleworkerPRO"/>
 		  </TalentOptions>
 		  <TalentOptions>
 			  <TalentOption identifier="drsubmarinePRO2"/>
 		  </TalentOptions>
 	  </SubTree>
 	  <SubTree identifier="TLsafe_specialization3" type="specialization" requires="captain_primary" blocks="TLsafe_specialization,TLsafe_specialization2">
+		  <TalentOptions>
+			  <TalentOption identifier="swolePRO"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="physicalconditioningPRO"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="easyturtlePRO"/>
+		  </TalentOptions>
+		  <TalentOptions>
+			  <TalentOption identifier="bootcampPRO"/>
+		  </TalentOptions>
 	  </SubTree>
   </TalentTree>
   

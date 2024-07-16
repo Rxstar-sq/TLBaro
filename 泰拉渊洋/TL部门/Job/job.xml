@@ -57,8 +57,8 @@
 			<Item identifier="idcard" equip="true" showpreview="false" />
 			<Item identifier="headset" equip="true" showpreview="false"/>
 			<Item identifier="handcuffs"/>
-			<Item identifier="TL_magazine" />
-			<Item identifier="TL_magazine" />
+			<Item identifier="TL_magazine_normal" />
+			<Item identifier="TL_magazine_normal" />
 			<Item identifier="TL14">
 			</Item>
 		</ItemSet>

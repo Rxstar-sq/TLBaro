@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Items>
-  <Item name="TL常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL常规弹头" description="泰拉集团使用的标准霰弹枪子弹，适配绝大多数霰弹枪。" identifier="TL13ammo" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo,TL_ammo" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
     <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
     <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
@@ -42,7 +42,7 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <Item name="TL箭型弹" description="泰拉集团研制的另一款特化型霰弹枪子弹，钢制箭型弹头，拥有极强的穿甲和穿透能力" identifier="TL13ammo_ap" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL箭型弹" description="泰拉集团研制的另一款特化型霰弹枪子弹，钢制箭型弹头，拥有极强的穿甲和穿透能力" identifier="TL13ammo_ap" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo,TL_ammo" Scale="0.5" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="shotgun,autoshotgun,shotgununique" />
     <PreferredContainer primary="armcab" minamount="6" maxamount="12" spawnprobability="1" notcampaign="true" />
     <PreferredContainer secondary="outpostsecarmcab" minamount="1" maxamount="6" spawnprobability="0.5" />
@@ -87,7 +87,7 @@
       </StatusEffect>
     </Projectile>
   </Item>
-  <Item name="TL崩解弹" description="泰拉集团从幻星工业订购的特种化学子弹，弹头内的毒素可以轻易削减目标的抵抗能力。" identifier="TL13ammo_cr" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo" Scale="0.5" impactsoundtag="impact_metal_light">
+  <Item name="TL崩解弹" description="泰拉集团从幻星工业订购的特种化学子弹，弹头内的毒素可以轻易削减目标的抵抗能力。" identifier="TL13ammo_cr" category="Weapon" maxstacksize="16" maxstacksizecharacterinventory="12" interactthroughwalls="true" cargocontaineridentifier="metalcrate" tags="smallitem,shotgunammo,TL_shotgunammo,TL_ammo" Scale="0.5" impactsoundtag="impact_metal_light">
     <Price baseprice="600" minleveldifficulty="30">
       <Price storeidentifier="merchantoutpost" sold="false" multiplier="1.5" />
       <Price storeidentifier="merchantcity" multiplier="1.25" minavailable="4" sold="true" />
@@ -299,7 +299,7 @@
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
   <!--灭刃弹匣-->
-  <Item name="灭刃电磁撕裂弹匣" identifier="mr_magazine" maxstacksize="32" maxstacksizecharacterinventory="4" scale="0.5" category="Weapon" health="35" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_mr_magazine,TL_mr_ammo,TL_mrzd" impactsoundtag="impact_metal_light">
+  <Item name="灭刃电磁撕裂弹匣" identifier="mr_magazine" maxstacksize="32" maxstacksizecharacterinventory="4" scale="0.5" category="Weapon" health="35" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,TL_mr_magazine,TL_mr_ammo,TL_mrzd,TL_ammo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="灭刃" minamount="1" maxamount="1" spawnprobability="1" />
     <PreferredContainer primary="armcab" secondary="secarmcab" />
     <Price baseprice="300" minleveldifficulty="30">
@@ -339,6 +339,44 @@
     </ItemContainer>
     <Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
   </Item>
+	<!--重型反器材-->
+	<Item name="重型反器材弹匣" identifier="fqc_magazine" maxstacksize="32" maxstacksizecharacterinventory="4" scale="0.5" category="Weapon" health="35" allowasextracargo="true" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,fqc_magazine" impactsoundtag="impact_metal_light">
+		<PreferredContainer primary="重型反器材" minamount="1" maxamount="1" spawnprobability="1" />
+		<PreferredContainer primary="armcab" secondary="secarmcab" />
+		<Price baseprice="300" minleveldifficulty="30">
+			<Price storeidentifier="merchantcity" multiplier="1.25" />
+			<Price storeidentifier="merchantmilitary" sold="true" multiplier="1.2" minavailable="0" maxavailable="4" />
+			<Price storeidentifier="TLarmory" multiplier="0.6" sold="true" />
+		</Price>
+		<!--需要武器等级35，材料为钛/钢筋，镁，铝，铜/锌-->
+		<Fabricate suitablefabricators="fabricator" requiredtime="35" requiresrecipe="true">
+			<RequiredSkill identifier="weapons" level="40" />
+			<RequiredItem identifier="magnesium" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
+			<RequiredItem identifier="aluminium" />
+			<RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+		</Fabricate>
+		<!--可使用空弹匣回收-->
+		<Fabricate suitablefabricators="fabricator" requiredtime="15" displayname="recycleitem" requiresrecipe="true">
+			<RequiredSkill identifier="weapons" level="40" />
+			<RequiredItem identifier="magnesium" />
+			<RequiredItem tag="advmunition_tip" description="fabricationdescription.advmunition_tip" />
+			<RequiredItem identifier="aluminium" />
+			<RequiredItem tag="advmunition_jacket" description="fabricationdescription.advmunition_jacket" />
+			<RequiredItem identifier="mr_magazine" />
+		</Fabricate>
+		<!--分解获得钢筋-->
+		<Deconstruct time="10">
+			<Item identifier="steel" />
+		</Deconstruct>
+		<!--灭刃撕裂弹匣 -->
+		<Sprite name="灭刃弹夹" texture="weapons.png" sourcerect="313,443,47,68" depth="0.55" origin="0.5,0.5" />
+		<Body width="50" height="70" density="25" />
+		<ItemContainer capacity="5" maxstacksize="5" hideitems="true" containedstateindicatorstyle="bullet">
+			<Containable items="fqc_ammo" />
+		</ItemContainer>
+		<Holdable canBeCombined="true" slots="Any,RightHand,LeftHand" handle1="0,0" msg="ItemMsgPickUpSelect" />
+	</Item>
   <!--幻星弹药-->
   <Item name="协调者弹匣" identifier="协调者弹匣" maxstacksize="32" maxstacksizecharacterinventory="8" scale="0.30" category="Weapon" cargocontaineridentifier="metalcrate" linkable="true" tags="smallitem,deep_5.56x45,HXammo" impactsoundtag="impact_metal_light">
     <PreferredContainer primary="armcab" amount="1" spawnprobability="1" notcampaign="true" />

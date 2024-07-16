@@ -14,9 +14,9 @@
 		 <Reputation identifier="location" amount="3" />
 		 <Reputation identifier="huskcult" amount="3" />
 		 <Reputation identifier="TLhui" amount="2" />
-		 <monster character="毒脓迅猛龙" min="40" max="60" />
+		 <monster character="毒脓迅猛龙" min="40" max="55" />
 		 <Icon texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
-		 <message header="目标已击杀" text="吸管：轻而易举呢~来前哨站拿钱吧" />
+		 <message header="目标已击杀" text="轻而易举呢~来前哨站拿钱吧" />
 	 </MonsterMission>
 
 	 <MonsterMission name="保密行动" identifier="TLceshiji" description="很抱歉不能透露更多，但是行动非常危险...事后[reward]mk,你们可以去捡一部分战利品...但残骸要留给我们" type="Monster" tags="TL" difficulty="4" commonness="100" reward="30000" sonarlabel="初代失控机" maxsonarmarkerdistance="10000" successmessage="失控测试机已被清除" missionfailure="我们会铭记你们的付出，是时候派出集团攻击舰了">
@@ -25,7 +25,7 @@
 		 <Reputation identifier="TLhui" amount="6" />
 		 <monster character="Tl测试机" min="3" max="5" />
 		 <Icon texture="%ModDir%/TL部门/Sprite/baomi.png" sourcerect="0,0,1024.1024" />
-		 <message header="测试机已损毁" text="吸管：任何一项成功的技术都充满荆棘，但我们只能赤脚踩过" />
+		 <message header="测试机已损毁" text="任何一项成功的技术都充满荆棘，但我们只能赤脚踩过" />
 	 </MonsterMission>
  
   <MonsterMission name="烛光晚宴" identifier="TLhunting" type="Monster" tags="TL" description="别离的歌早已哼在嘴边  是你 为我 题词" commonness="100" reward="30000" sonarlabel="晚会嘉宾" maxsonarmarkerdistance="30000" successmessage="是的，主角是你" missionfailure="你没有参加晚宴的资格" spawntype="Abyss" difficulty="4">
@@ -38,12 +38,12 @@
     <monster character="doomwormSubspecies" min="1" max="2" />
     <monster character="CyborgwormSubspecies" min="1" max="2" />
     <Icon texture="%ModDir%/TL部门/Sprite/zhuguang.png" sourcerect="0,0,1024,1024" />
-    <message header="感谢你们又碾死了一些臭虫" text="吸管：烛光中求生的勇士，你值得敬爱" />
+    <message header="感谢你们又碾死了一些臭虫" text="烛光中求生的勇士，你值得敬爱" />
   </MonsterMission>
 	 
 	 <PirateMission name="放弃船，或者放弃希望(新型锤头鲨护卫舰）" type="Pirate"  identifier="TLhaidao"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="万分火急，有一艘护卫舰运载着集团的大杀器，选择了叛逃，千万不要让这个东西落入联盟手中，我不管你们用何种方式，务必把所有人杀光">
-		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
-		 <Reputation identifier="TLhui" amount="5" />
+		 <Reputation identifier="coalition" amount="-5" />
+		 <Reputation identifier="TLhui" amount="6" />
 		 <SubmarineTypes>
 			 <Submarine path="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
@@ -70,13 +70,13 @@
 			 </CharacterType>
 		 </CharacterTypes>
 		 <Icon texture="%ModDir%/TL部门/Sprite/haidao.png" sourcerect="0,0,1024,1024" />
-		 <message header="探测到彼岸花信号" text="吸管：该开始展示你们的实力了"/>
-		 <message header="任务完成" text="吸管：非常感谢，你们最好不要碰那东西，可以交给研究部来换一些东西"/>
+		 <message header="探测到彼岸花信号" text="该开始展示你们的实力了"/>
+		 <message header="任务完成" text="非常感谢，你们最好不要碰那东西，可以交给研究部来换一些东西"/>
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>
 
 	 <PirateMission name="放弃船，或者放弃希望" type="Pirate"  identifier="TLhaidao2"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="25000" description="如果你某天懂得了海盗，那你也成为了海盗。">
-		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-8" />
+		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-5" />
 		 <Reputation identifier="TLhui" amount="2" />
 		 <SubmarineTypes>
 			 <Submarine path="%ModDir%/Sub/鼬獾-海盗船版本.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
@@ -113,10 +113,10 @@
 		 <LocationType from="AnyOutpost" to="AnyOutpost" />
 	 </PirateMission>
 
-	 <PirateMission name="运输阻断-联盟使者" type="Pirate"  identifier="TLhaidao3"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="22000" description="该死的集团，处处和我们作对，根据探测器显示有一艘老掉牙的集团运输舰会通过前面的航路，给他们点颜色看看">
-		 <Reputation identifier="coalition" amount="5" amountforopposingfaction="-3" />
+	 <PirateMission name="运输阻断-联盟使者" type="Pirate"  identifier="TLhaidao3"  tags="TLhaidao"  difficulty="4"  commonness="100"  reward="22000" description="联盟联络员：该死的集团，处处和我们作对，根据探测器显示有一艘老掉牙的集团运输舰会通过前面的航路，给他们点颜色看看">
+		 <Reputation identifier="TLhui" amount="-5" amountforopposingfaction="2" />
 		 <SubmarineTypes>
-			 <Submarine path="%ModDir%/Sub/泰拉集团旧型运输舰.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
+			 <Submarine path="%ModDir%/Sub/泰拉集团摩洛克型运输舰.sub" faction="separatists" preferreddifficulty="70" alternatereward="10000"/>
 		 </SubmarineTypes>
 		 <Characters>
 			 <Character typeidentifier="separatistcaptain" minamount="1" maxamount="1"/>
@@ -155,35 +155,82 @@
 		 <message header="果然是一帮只会缩在实验室的家伙..." text="我会上报这些事情的，去站点领取奖励吧，就当没发生过" />
 	 </MonsterMission>
 
-  <OutpostDestroyMission
-	  name="能源塔回收"
-	  description="请去清理集团能源塔，请记住你的任务是清理一切有生力量，记得多带点皮虫净"
+ <AbandonedOutpostMission
+	name="能源塔回收"
+	description="请去清理集团能源塔，请记住你的任务是清理一切有生力量，记得多带点皮虫净"
     identifier="TLEnergyTowers"
     tags="TLEnergyTowersoutpost"
-    type="AbandonedOutpost"
+    type="OutpostDestroy"
     achievementidentifier="huskcultrescuesubra"
     reward="0"
     difficulty="4"
     commonness="100"
     allowretry="true"
-    hostageskilledmessage="subrakilled"
-    allowothermissionsinlevel="false"
-    unhideentitysubcategories="abandonedmonster"
-    BlockLocationTypeChanges="true">
-    <Reputation identifier="TLhui" amount="4" />
+	targetitem="reactor"
+    unhideentitysubcategories="abandonedmonster">
+    <Reputation identifier="TLhui" amount="0" />
     <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48"/>
     <LocationType identifier="TLEnergyTowers" />
     <LocationTypeChange from="TLEnergyTowers" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
     <Characters>
-		<Character identifier="HuskPro" min="40" max="50"  />
-		<Character identifier="HuskPro" min="40" max="50"  />
+		<Character identifier="HuskPro" min="38" max="40"  />
+		<Character identifier="HuskPro" min="38" max="40"  />
 		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
 		<Character identifier="THnpc1" from="THnpc" asfaraspossible="true" requirerescue="false"/>
     </Characters>
     <TriggerEvent state="0" delay="5" eventidentifier="waytoascensionfoundsubra" campaignonly="true"/>
     <Metadata identifier="waytoascension" value="8"/>
-    <message header="任务成功" text="成功清理能源塔，是时候离开了"/>
-  </OutpostDestroyMission>
+    <message header="任务成功" text="成功引爆能源塔，是时候离开了，除非你们还想再深入"/>
+  </AbandonedOutpostMission>
+
+ <AbandonedOutpostMission
+	name="风雪消霁"
+	description="想体验和集团正面交锋吗？他们在木卫二横行霸道惯了吗，是时候消消他们的焰气了"
+   identifier="TLAbandonedOutpostMission1"
+   tags="abandonedoutpost"
+   achievementidentifier="abandonedoutpostdestroyhumans"
+   type="OutpostDestroy"
+   reward="5000"
+   difficulty="4"
+   commonness="100"
+   allowretry="true"
+   targetitem="reactor"
+   unhideentitysubcategories="abandonedhuman"
+   maxleveldifficulty="65">
+	     <Reputation identifier="TLhui" amount="-20" />
+		 <Reputation identifier="coalition" amount="50" />
+		 <Icon texture="Content/UI/MissionIcons.png" sourcerect="512,256,256,256" color="214,50,48"/>
+		 <LocationType identifier="Abandoned" />
+		 <LocationTypeChange from="Abandoned" to="Outpost" requireddurationrange="2,3" cooldownafterchange="5" />
+		 <Characters>
+			 <Character requirekill="true" moduleflags="crewmodule" identifier="THnpc3" from="THnpc" />
+			 <Character requirekill="true" moduleflags="crewmodule" identifier="THnpc4" from="THnpc" />
+			 <Character requirekill="true" moduleflags="crewmodule" identifier="THnpc6" from="THnpc" />
+			 <Character requirekill="true" moduleflags="crewmodule" identifier="THnpc3" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="crewmodule" identifier="THnpc3" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="researchmodule" identifier="THnpc3" from="THnpc" />
+			 <Character requirekill="true" moduleflags="researchmodule" identifier="THnpc3" from="THnpc" asfaraspossible="true" />
+			 <Character requirekill="true" moduleflags="researchmodule" identifier="THnpc3" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="researchmodule" identifier="THnpc4" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="researchmodule" identifier="THnpc4" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="engineeringmodule" identifier="THnpc4" from="THnpc" />
+			 <Character requirekill="true" moduleflags="engineeringmodule" identifier="THnpc4" from="THnpc" />
+			 <Character requirekill="true" moduleflags="engineeringmodule" identifier="THnpc4" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="engineeringmodule" identifier="THnpc3" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="engineeringmodule" identifier="THnpc3" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="securitymodule" identifier="THnpc4" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="securitymodule" identifier="THnpc4" from="THnpc" asfaraspossible="true" />
+			 <Character requirekill="true" moduleflags="securitymodule" identifier="THnpc4" from="THnpc" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="securitymodule" identifier="THnpc4" from="THnpc" asfaraspossible="true" multiplayeronly="true" />
+			 <Character requirekill="true" moduleflags="securitymodule" identifier="THnpc6" from="THnpc" />
+			 <Character requirekill="true" moduleflags="banditleader" identifier="THnpc6" from="THnpc" />
+			 <Character requirekill="true" moduleflags="banditleader" identifier="TLnpc1" from="TLnpc" />
+			 <Character requirekill="true" rmoduleflags="securitymodule" identifier="THnpc4" from="THnpc" />
+			 <Character requirekill="true" moduleflags="banditleader" identifier="TLnpc1" from="TLnpc" asfaraspossible="true" multiplayeronly="true" />
+		 </Characters>
+		 <TriggerEvent state="0" delay="5" eventidentifier="heartofgold" campaignonly="true"/>
+		 <message header="" text=""/>
+	 </AbandonedOutpostMission>
 	 <!--特殊-->
 	 <PirateMission
 	   name="清理垃圾"

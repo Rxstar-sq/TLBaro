@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<contentpackage name="泰拉渊洋" modversion="1.0.51" corepackage="False" steamworkshopid="3232587498" gameversion="1.5.9.1">
+<contentpackage name="泰拉渊洋" modversion="1.0.53" corepackage="False" steamworkshopid="3232587498" gameversion="1.5.9.1">
   <Structure file="%ModDir%/Outpost/StructurePrefabs.xml" />
   <LocationTypes file="%ModDir%/Outpost/LocationTypes.xml" />
   <OutpostConfig file="%ModDir%/Outpost/OutpostGenerationParameters.xml" />
@@ -13,7 +13,7 @@
   <Sounds file="%ModDir%/Music/music.xml" />
   <EnemySubmarine file="%ModDir%/Sub/鼬獾-海盗船版本.sub" />
   <EnemySubmarine file="%ModDir%/Sub/泰拉旧型攻击舰.sub" />
-  <EnemySubmarine file="%ModDir%/Sub/泰拉集团旧型运输舰.sub" />
+  <EnemySubmarine file="%ModDir%/Sub/泰拉集团摩洛克型运输舰.sub" />
   <EnemySubmarine file="%ModDir%/Sub/泰拉科技 “锤头煞”级护卫舰（测试版3.0）.sub" />
   <Item file="%ModDir%/Items/weapons/weapons.xml" />
   <Item file="%ModDir%/Items/weapons/bullet.xml" />

@@ -175,6 +175,8 @@
 		<Description tag="talentdescription.gongyi">
 			<Replace tag="[amount]" value="1" color="gui.green"/>
 		</Description>
+		<AddedRecipe itemidentifier="plasmacutterPRO2"/>
+		<AddedRecipe itemidentifier="weldingtoolPRO2"/>
 		<AbilityGroupInterval interval="0.9">
 			<Abilities>
 				<CharacterAbilityApplyStatusEffects>
@@ -255,4 +257,82 @@
       </Abilities>
 	</AbilityGroupEffect>
   </Talent>
+	<Talent identifier="miracleworkerPRO">
+		<Icon texture="Content/UI/TalentsIcons3.png" sheetindex="7,2" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.miracleworkerPRO"/>
+		<AbilityGroupInterval interval="0.9">
+			<Abilities>
+				<CharacterAbilityApplyStatusEffectsToAllies maxdistance="600" allowself="true">
+					<StatusEffects>
+						<StatusEffect type="OnAbility" target="Character" disabledeltatime="true">
+							<Affliction identifier="miracleworker" amount="1.0"/>
+						</StatusEffect>
+					</StatusEffects>
+				</CharacterAbilityApplyStatusEffectsToAllies>
+			</Abilities>
+		</AbilityGroupInterval>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveResistance resistanceid="miracleworker" multiplier="0" />
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<!--战斗线-->
+	<Talent identifier="swolePRO">
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="6,2" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.swolePRO">
+			<Replace tag="[amount]" value="25" color="gui.green"/>
+			<Replace tag="[amount2]" value="40" color="gui.green"/>
+		</Description>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="MaximumHealthMultiplier" value="0.25"/>
+				<CharacterAbilityGiveStat stattype="MeleeAttackMultiplier" value="0.40"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="physicalconditioningPRO">
+		<Description tag="talentdescription.physicalconditioningPRO">
+			<Replace tag="[amount]" value="30" color="gui.green"/>
+			<Replace tag="[amount2]" value="90" color="gui.green"/>
+			<Replace tag="[amount3]" value="50" color="gui.green"/>
+		</Description>
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="1,2" sheetelementsize="128,128"/>
+		<AbilityGroupEffect abilityeffecttype="None">
+			<Abilities>
+				<CharacterAbilityGiveStat stattype="MovementSpeed" value="0.3"/>
+				<CharacterAbilityGiveResistance resistanceid="oxygenlow" multiplier="0.1"/>
+				<CharacterAbilityGiveStat stattype="SwimmingSpeed" value="0.5"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
+	<Talent identifier="easyturtlePRO">
+		<Icon texture="Content/UI/TalentsIcons2.png" sheetindex="4,4" sheetelementsize="128,128"/>
+		<Description tag="talentdescription.easyturtlePRO">
+			<Replace tag="[amount]" value="80" color="gui.green"/>
+		</Description>
+		<AbilityGroupInterval>
+			<Abilities>
+				<CharacterAbilityModifyResistance resistanceid="damage" multiplier="0.2"/>
+			</Abilities>
+		</AbilityGroupInterval>
+	</Talent>
+	<Talent identifier="bootcampPRO">
+		<Description tag="talentdescription.bootcampPRO">
+			<Replace tag="[amount]" value="60" color="gui.green"/>
+		</Description>
+		<AddedRecipe itemidentifier="TL23"/>
+		<AddedRecipe itemidentifier="TL15"/>
+		<AddedRecipe itemidentifier="TL_MR"/>
+		<AddedRecipe itemidentifier="mr_magazine"/>
+		<Icon texture="Content/UI/TalentsIcons1.png" sheetindex="3,3" sheetelementsize="128,128"/>
+		<AbilityGroupEffect abilityeffecttype="OnAttack">
+			<Conditions>
+				<AbilityConditionAttackData tags="TL_ammo"/>
+			</Conditions>
+			<Abilities>
+				<CharacterAbilityModifyAttackData addeddamagemultiplier="0.6"/>
+			</Abilities>
+		</AbilityGroupEffect>
+	</Talent>
 </Talents>

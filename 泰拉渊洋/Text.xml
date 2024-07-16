@@ -16,9 +16,9 @@
 	
 	<locationname.TL>泰拉科技常规前哨站</locationname.TL>
 	<locationnameformat.TL>泰拉科技常规站点--[name]分部</locationnameformat.TL>
-	<locationname.TLEnergyTowers>泰拉科技能源塔&#xD;&#xA;泰拉科技有限公司，作为全球领先的综合性海洋产业集团，以其卓越的科技实力和无与伦比的创新能力而闻名。公司旗下的泰拉造船厂位于战略要地，拥有先进的设施和设备，集设计、研发、制造和维护于一体，堪称现代海洋工程的典范。该造船厂专注于建造各类高性能舰艇，包括潜艇款的战列舰、航空母舰、驱逐舰以及先进的无人水下航行器。其产品以其火力、耐用性、速度和极强的科技含量而备受赞誉，广泛应用于军事、科研和商业领域。泰拉渊洋的工程师团队不断探索创新，致力于开发尖端的海洋技术，如隐形材料、水下通信系统和自动化控制。（据传闻此造船厂有着公司的巨大秘密）</locationname.TLEnergyTowers>
+	<locationname.TLEnergyTowers>泰拉科技能源塔</locationname.TLEnergyTowers>
 	<locationnameformat.TLEnergyTowers>泰拉科技遗弃设施</locationnameformat.TLEnergyTowers>
-	<locationname.TLshipyard>泰拉科技造船厂</locationname.TLshipyard>
+	<locationname.TLshipyard>泰拉科技造船厂&#xD;&#xA;公司旗下船厂位于战略要地，拥有先进的设施，集设计、研发、制造和维护于一体。&#xD;&#xA;该造船厂专注于建造各类高性能舰艇，其产品以其火力、耐用性、速度和极强的科技含量而备受赞誉，广泛应用于军事、科研和商业领域。&#xD;&#xA;致力于开发尖端的海洋技术，如隐形材料、水下通信系统和自动化控制。</locationname.TLshipyard>
 	<locationnameformat.TLshipyard>泰拉科技遗弃设施</locationnameformat.TLshipyard>
 	
 	<npctitle.TLarmory>泰拉科技外务商</npctitle.TLarmory>
@@ -55,17 +55,31 @@
 	<talentname.jineng>严格学习</talentname.jineng>
 	<talentdescription.jineng>增加技能获取速度[jineng]%</talentdescription.jineng>
 	<talentname.gongyi>制作工艺改进</talentname.gongyi>
-	<talentdescription.gongyi>制作物品增加[amount]品质</talentdescription.gongyi>
+	<talentdescription.gongyi>制作物品增加[amount]品质，并解锁阶段二工具</talentdescription.gongyi>
 	<talentname.fanbei>后勤专精</talentname.fanbei>
 	<talentdescription.fanbei>每当您解构矿石时，您都有[amount]的机会获得三倍的产量。&#xD;&#xA;使用切割机将矿石分离速度提高[amount2]。</talentdescription.fanbei>
 	<talentname.jiagong>操作台系统重装</talentname.jiagong>
 	<talentdescription.jiagong>制作台和解构仪器的效率增加[amount2]</talentdescription.jiagong>
 	<!--医疗线-->
 	<talenttree.TLsafe_specialization2>奇迹行者</talenttree.TLsafe_specialization2>
-	
+	<talentname.drsubmarinePRO>专业医师</talentname.drsubmarinePRO>
+	<talentdescription.drsubmarinePRO>你使用的药物效力增加[amount]%</talentdescription.drsubmarinePRO>
+	<talentname.miracleworkerPRO>奇迹行者</talentname.miracleworkerPRO>
+	<talentdescription.miracleworkerPRO>你不免疫奇迹进行中</talentdescription.miracleworkerPRO>
+	<talentname.drsubmarinePRO2>医疗部门主任</talentname.drsubmarinePRO2>
+	<talentdescription.drsubmarinePRO2>巡回结束你会获得[amount]个医学书，[amount2]个血袋，[amount]个黄昏晓</talentdescription.drsubmarinePRO2>
 	<!--战斗线-->
 	<talenttree.TLsafe_specialization3>战争故事</talenttree.TLsafe_specialization3>
-	
+	<talentname.swolePRO>伤痕</talentname.swolePRO>
+	<talentdescription.swolePRO>血量上限提升[amount]%，近战力量提升[amount2]%</talentdescription.swolePRO>
+	<talentname.physicalconditioningPRO>特殊训练</talentname.physicalconditioningPRO>
+	<talentdescription.physicalconditioningPRO>移动速度加快[amount]%，低氧抗性[amount2]%，游泳速度加快[amount3]</talentdescription.physicalconditioningPRO>
+	<talentname.easyturtlePRO>身体改造</talentname.easyturtlePRO>
+	<talentdescription.easyturtlePRO>伤害抗性为[amount]%</talentdescription.easyturtlePRO>
+	<talentname.bootcampPRO>泰拉特殊作战部队指挥官</talentname.bootcampPRO>
+	<talentdescription.bootcampPRO>使用泰拉子弹伤害提升[amount]%，并解锁二代武器装备</talentdescription.bootcampPRO>
+
 	<afflictioncauseofdeath.kill>被华强劈开了</afflictioncauseofdeath.kill>
 	<afflictioncauseofdeathself.kill>被华强砍死惹</afflictioncauseofdeathself.kill>
+
 </infotexts>

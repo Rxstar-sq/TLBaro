@@ -68,10 +68,11 @@
       <Price storeidentifier="merchantmilitary" multiplier="0.9" minavailable="3" />
       <Price storeidentifier="merchantarmory" multiplier="0.9" minavailable="3" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="10">
+    <Fabricate suitablefabricators="fabricator" requiredtime="10" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="80" />
       <RequiredItem identifier="titaniumaluminiumalloy" mincondition="6" usecondition="true" />
       <RequiredItem identifier="physicorium" mincondition="2" usecondition="true" />
+	  <RequiredItem identifier="TL13" />
     </Fabricate>
     <Deconstruct time="10">
       <Item identifier="physicorium" />
@@ -233,7 +234,7 @@
     <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="40" />
       <RequiredItem identifier="physicorium" amount="2" />
-      <RequiredItem identifier="TL14" amount="3" />
+      <RequiredItem identifier="TL14" amount="1" />
     </Fabricate>
     <Deconstruct time="35">
       <Item identifier="physicorium" amount="1" />
@@ -326,7 +327,7 @@
       <Price storeidentifier="merchantmilitary" multiplier="1.2" />
       <Price storeidentifier="TLarmory" multiplier="0.7" sold="true" />
     </Price>
-    <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="false">
+    <Fabricate suitablefabricators="fabricator" requiredtime="75" requiresrecipe="true">
       <RequiredSkill identifier="weapons" level="55" />
       <RequiredItem identifier="physicorium" amount="1" />
       <RequiredItem identifier="titaniumaluminiumalloy" amount="4" />
@@ -428,6 +429,64 @@
       <QualityStat stattype="FirepowerMultiplier" value="0.1" />
     </Quality>
     <SkillRequirementHint identifier="weapons" level="55" />
+  </Item>
+	  <Item name="重型反器材" identifier="重型反器材" description="" tags="mediumitem,weapon,gun,gunsmith,specialgun,mountableweapon,bulkyweapon,provocativetohumanai" Scale="0.5" category="Weapon"  impactsoundtag="weaponheavydrop">
+    <PreferredContainer primary="secarmcab" />
+    <PreferredContainer primary="wrecksecarmcab" minamount="0" maxamount="1" spawnprobability="0.003" minleveldifficulty="50" />
+    <Price baseprice="2400" sold="false"></Price>
+    <Deconstruct time="40">
+
+    </Deconstruct>
+    <Fabricate suitablefabricators="fabricator" requiredtime="60" requiresrecipe="false">
+        <RequiredSkill identifier="weapons" level="90" />
+	
+    </Fabricate>
+    <Sprite texture="weapons.png" sourcerect="259,136,251,82" depth="0.55" origin="0.5,0.5" />
+    <Body width="140" height="60" density="50" />
+    <Holdable slots="RightHand+LeftHand" controlpose="true" holdpos="90,-7" aimpos="95,1" handle1="-120,-22" handle2="50,5" holdangle="-35" msg="ItemMsgPickUpSelect" />
+    <RangedWeapon reload="1.35" reloadnoskill="2.5" reloadskillrequirement="90" barrelpos="225,9" spread="3" unskilledspread="35" combatPriority="80" drawhudwhenequipped="true" crosshairscale="0.2">
+      <Crosshair texture="Content/Items/Weapons/Crosshairs.png" sourcerect="0,256,256,256" />
+      <CrosshairPointer texture="Content/Items/Weapons/Crosshairs.png" sourcerect="256,256,256,256" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="16.0,8.0" colormultiplier="255,200,200,225" />
+      <ParticleEmitter particle="impactfirearm" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="4.0,16.0" colormultiplier="255,200,200,225" />
+      <ParticleEmitter particle="muzzleflashcoilgun" particleamount="1" velocitymin="0" velocitymax="0" scalemultiplier="0.45,0.45" colormultiplier="255,200,200,225" />
+      <Sound file="%ModDir%/ogg/灭刃.ogg" type="OnUse" range="4500" volume="1.5" selectionmode="all" />
+      <Sound file="%ModDir%/ogg/灭刃.ogg" type="OnUse" range="2000" volume="1.5" />
+      <StatusEffect type="OnUse" target="This">
+        <Explosion range="200.0" force="5" shockwave="true" smoke="false" flames="false" sparks="false" underwaterbubble="false" camerashake="175.0" />
+      </StatusEffect>
+      <StatusEffect type="OnActive" target="Character" SpeedMultiplier="0.75" disabledeltatime="true" />
+      <StatusEffect type="OnSecondaryUse" target="Character" SpeedMultiplier="0.6" setvalue="true" />
+      <RequiredItems msg="ItemmsgAmmoRequired" type="Contained" tags="fqc_magazine" />
+      <RequiredSkill identifier="weapons" level="100" />
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" targetlimbs="LeftHand,RightHand">
+        <Conditional skillrequirement="true" weapons="lt 115" />
+        <Conditional skillrequirement="true" weapons="gte 90" />
+        <Affliction identifier="stun" strength="0.25" probability="0.25" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" targetlimbs="LeftHand,RightHand">
+        <Conditional skillrequirement="true" weapons="lt 90" />
+        <Conditional skillrequirement="true" weapons="gte 75" />
+        <Affliction identifier="stun" strength="0.2" probability="0.5" />
+        <Affliction identifier="blunttrauma" strength="6" probability="0.25" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="Character" disabledeltatime="true" comparison="and" targetlimbs="LeftHand,RightHand">
+        <Conditional skillrequirement="true" weapons="lt 75" />
+        <Affliction identifier="stun" strength="0.5" />
+        <Affliction identifier="blunttrauma" strength="12" />
+      </StatusEffect>
+      <StatusEffect type="OnUse" target="This">
+        <ParticleEmitter particle="scp_spentcasingriflelarge" emitinterval="0.25" particleamount="1" particlespersecond="50" anglemin="70" anglemax="100" velocitymin="250" velocitymax="500" copyentityangle="true" scalemin="0.4" scalemax="0.4" />
+      </StatusEffect>
+    </RangedWeapon>
+    <ItemContainer capacity="1" maxstacksize="1" hideitems="true" containedstateindicatorstyle="bullet">
+      <Containable items="fqc_magazine" />
+    </ItemContainer>
+    <aitarget sightrange="5000" soundrange="12000" fadeouttime="7.5" />
+    <Quality>
+      <QualityStat stattype="FirepowerMultiplier" value="0.05" />
+    </Quality>
+    <SkillRequirementHint identifier="weapons" level="95" />
   </Item>
   <!--幻星系列-->
   <Item name="“协调者”步枪" identifier="协调者" description="幻星集团所开发的第一款武器，标准，通用。适合新手。" category="Weapon" cargocontaineridentifier="metalcrate" tags="mediumitem,weapon,gun,gunsmith,mountableweapon" Scale="0.6" impactsoundtag="impact_metal_light">
