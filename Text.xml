@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<infotexts language="Simplified Chinese" nowhitespace="true" translatedname="中文（简体）">
+  <faction.TLhui>泰拉科技集团</faction.TLhui>
+  <faction.TLhui.description>木卫二上新兴的科技公司，手握强大的科技力量，人数没有很多，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.description>
+  <faction.TLhui.shortdescription>中立的科技公司，拥有先进技术扶持的强势和人工智能决策的严谨，大多数设施和武装由人工智能控制，和联盟的关系有些僵硬，据不可靠消息他们在支持一些非法活动和分裂势力</faction.TLhui.shortdescription>
+  <faction.HXhui>幻星工业</faction.HXhui>
+  <faction.HXhui.description>明面上隶属于联盟的科研援助性的工业集团，但考虑到其领导阶层和管理人员却都不属于木卫二联盟，以及联盟所有的人员安插行为都以失败告终。也许暗地里幻星也有着什么其他的秘密……</faction.HXhui.description>
+  <faction.HXhui.shortdescription>明面上隶属于联盟的科研援助性的工业集团，但考虑到其领导阶层和管理人员却都不属于木卫二联盟，以及联盟所有的人员安插行为都以失败告终。也许暗地里幻星也有着什么其他的秘密……</faction.HXhui.shortdescription>
+  <fabricationheader.TLammoK>任意‖color:gui.orange‖泰拉空弹夹‖end‖</fabricationheader.TLammoK>
+  <fabricationheader.1130box>任意‖color:gui.orange‖泰拉空弹药箱‖end‖</fabricationheader.1130box>
+  <fabricationdescription.1130box>仅限泰拉渊洋本mod弹药箱</fabricationdescription.1130box>
+  <fabricationheader.HXammoK>任意‖color:gui.orange‖幻星空弹夹‖end‖</fabricationheader.HXammoK>
+  <locationname.TL>泰拉科技常规前哨站</locationname.TL>
+  <locationnameformat.TL>泰拉科技常规站点--[name]分部
+  没错，我们深入整颗星球
+  为您提供最佳的保障</locationnameformat.TL>
+  <locationname.TLEnergyTowers>泰拉科技能源塔</locationname.TLEnergyTowers>
+  <locationnameformat.TLEnergyTowers>泰拉科技遗弃设施</locationnameformat.TLEnergyTowers>
+  <locationname.TLshipyard>泰拉科技造船厂(未完成，无法进入）
+公司旗下的泰拉造船厂位于战略要地，拥有先进的设施和设备，集设计、研发、制造和维护于一体，堪称现代海洋工程的典范。
+该造船厂专注于建造各类高性能舰艇，其产品以其火力、耐用性、速度和极强的科技含量而备受赞誉，广泛应用于军事、科研和商业领域。
+致力于开发尖端的海洋技术，如隐形材料、水下通信系统和自动化控制。</locationname.TLshipyard>
+  <locationnameformat.TLshipyard>泰拉科技遗弃设施</locationnameformat.TLshipyard>
+	<locationnameformat.TLxue>同看雪后山</locationnameformat.TLxue>
+	<locationname.TLxue>彼岸花发源地，集团废案，已经荒废数年，但似乎里面仍有些东西在运行</locationname.TLxue>
+  <npctitle.TLarmory>泰拉科技外务商</npctitle.TLarmory>
+  <storename.TLarmory>泰拉科技工程部</storename.TLarmory>
+  <jobname.TLsafe>集团特战队</jobname.TLsafe>
+  <jobdescription.TLsafe>集团特战队是接受过集团特殊改造和训练的特种部队，拥有超乎常人的战斗能力，绝对是最强的安全保障</jobdescription.TLsafe>
+  <charactername.TLarmory>泰拉集团工程部负责人--HES</charactername.TLarmory>
+  <!--常规1线-->
+  <talentname.gedouke>集团格斗训练课程</talentname.gedouke>
+  <talentdescription.gedouke>经过集团训练课程获得[gedou]武器操控和[other]所有其他技能奖励。</talentdescription.gedouke>
+  <talentname.dianqi>集团电气训练课程</talentname.dianqi>
+  <talentdescription.dianqi>经过集团训练课程获得[dianqi]电气维修和[other]所有其他技能奖励。</talentdescription.dianqi>
+  <talentname.jixie>集团机械训练课程</talentname.jixie>
+  <talentdescription.jixie>经过集团训练课程获得[jixie]机械技能和[other]所有其他技能奖励。</talentdescription.jixie>
+  <talentname.yiliao>集团医疗训练课程</talentname.yiliao>
+  <talentdescription.yiliao>经过集团训练课程获得[yiliao]医疗技能和[other]所有其他技能奖励。</talentdescription.yiliao>
+  <talentname.jiashi>集团船长训练课程</talentname.jiashi>
+  <talentdescription.jiashi>经过集团训练课程获得[jiashi]船长技能和[other]所有其他技能奖励。</talentdescription.jiashi>
+  <!--常规2线-->
+  <talentname.affiliation2>集团关系网络</talentname.affiliation2>
+  <talentdescription.affiliation2>在派系中的声望增加速度提高[amount]%。
+为所属派系完成任务时，获得的分数增加[amount2]%。
+注：声望最高为所属派系</talentdescription.affiliation2>
+  <talentname.yingji>遇袭应急程序</talentname.yingji>
+  <talentdescription.yingji>每当你的潜艇受到怪物的伤害时，移动速度增加[amount]%</talentdescription.yingji>
+  <talentname.scavenger2>摸金校尉</talentname.scavenger2>
+  <talentdescription.scavenger2>搜索容器有[amount]%的概率找到额外[amount2]%的物资</talentdescription.scavenger2>
+  <talentname.UNmoneymaker>开始走上不归路？</talentname.UNmoneymaker>
+  <talentdescription.UNmoneymaker>解锁[moneymaker]，看看可以做一些什么怪东西吧</talentdescription.UNmoneymaker>
+  <!--后勤线-->
+  <talenttree.TLsafe_specialization>团队后盾</talenttree.TLsafe_specialization>
+  <talentname.jineng>严格学习</talentname.jineng>
+  <talentdescription.jineng>增加技能获取速度[jineng]%</talentdescription.jineng>
+  <talentname.gongyi>制作工艺改进</talentname.gongyi>
+  <talentdescription.gongyi>制作物品增加[amount]品质，并解锁阶段二工具</talentdescription.gongyi>
+  <talentname.fanbei>后勤专精</talentname.fanbei>
+  <talentdescription.fanbei>每当您解构矿石时，您都有[amount]的机会获得三倍的产量。
+使用切割机将矿石分离速度提高[amount2]。</talentdescription.fanbei>
+  <talentname.jiagong>操作台系统重装</talentname.jiagong>
+  <talentdescription.jiagong>制作台和解构仪器的效率增加[amount2]</talentdescription.jiagong>
+  <!--医疗线-->
+  <talenttree.TLsafe_specialization2>奇迹行者</talenttree.TLsafe_specialization2>
+  <talentname.drsubmarinePRO>专业医师</talentname.drsubmarinePRO>
+  <talentdescription.drsubmarinePRO>你使用的药物效力增加[amount]%</talentdescription.drsubmarinePRO>
+  <talentname.miracleworkerPRO>奇迹行者</talentname.miracleworkerPRO>
+  <talentdescription.miracleworkerPRO>你不免疫奇迹进行中</talentdescription.miracleworkerPRO>
+  <talentname.drsubmarinePRO2>医疗部门主任</talentname.drsubmarinePRO2>
+  <talentdescription.drsubmarinePRO2>巡回结束你会获得[amount]个医学书，[amount2]个血袋，[amount]个黄昏晓</talentdescription.drsubmarinePRO2>
+  <!--战斗线-->
+  <talenttree.TLsafe_specialization3>战争故事</talenttree.TLsafe_specialization3>
+  <talentname.swolePRO>伤痕</talentname.swolePRO>
+  <talentdescription.swolePRO>血量上限提升[amount]%，近战力量提升[amount2]%</talentdescription.swolePRO>
+  <talentname.physicalconditioningPRO>特殊训练</talentname.physicalconditioningPRO>
+  <talentdescription.physicalconditioningPRO>移动速度加快[amount]%，低氧抗性[amount2]%，游泳速度加快[amount3]</talentdescription.physicalconditioningPRO>
+  <talentname.easyturtlePRO>身体改造</talentname.easyturtlePRO>
+  <talentdescription.easyturtlePRO>伤害抗性为[amount]%</talentdescription.easyturtlePRO>
+  <talentname.bootcampPRO>泰拉特殊作战部队指挥官</talentname.bootcampPRO>
+  <talentdescription.bootcampPRO>使用泰拉子弹伤害提升[amount]%，并解锁二代武器装备</talentdescription.bootcampPRO>
+  <afflictioncauseofdeath.kill>被华强劈开了</afflictioncauseofdeath.kill>
+  <afflictioncauseofdeathself.kill>被华强砍死惹</afflictioncauseofdeathself.kill>
+</infotexts>
